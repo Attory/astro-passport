@@ -27,7 +27,13 @@ private per-case fingerprints in normal CI. No reference runs have been made by 
 | transit/instance metadata | separate delivery report | enumerated outside content, never blanket-ignore metadata |
 | content/manifest digests affected by source/wire change | future comparison report | retain both and enumerate derivation; never force equal NAD |
 
-This is a group-level design, NOT the complete approved leaf-path comparator or ACEP1 profile.
+This historical table is a group-level overview, NOT an approved leaf-path comparator or ACEP1 profile.
+The current pre-extraction AAC proposal supplies `apt-scientific-leaf-map.v1-proposed` in
+`docs/contracts/pre-extraction/{inventory,comparator,errors}.json`: 185 old and 125 new scalar or
+ordered atomic-array leaves, exactly one explicit classification per leaf, with coverage-mutation
+tests. Private manifest identities stay in the confidential governance packet, not this public
+repository. Human AAC acceptance and public contract publication are still pending. Neither public
+builds nor CI depend on that private packet; no scientific equivalence runner is implemented yet.
 Before scientific extraction approval, inventory every old/new leaf including error/absence/null,
 ordering, canonicalization, limitation fields and derivatively changed digests. Fail on unclassified
 leaves. Preserve the current client's raw-place-query versus selected-query coherence rejection in
@@ -51,11 +57,15 @@ Canonical mismatch remains different content even if future numerical qualificat
 - Pre-1972 UT1 proxy, documented 1972 seam and frozen-future-leap limitations retained unchanged.
 - Half-even ties, signed zero, 360/0 wrap, E9 thresholds; malformed/nonfinite/out-of-range input.
 - Missing/corrupt artifacts, fallback/native warnings, concurrent/timeout/worker failure.
-- Approved full ACEP1 vectors in an independent language once full profile is authorized; the current
-  Sun/Moon JSON is not such a vector and cannot stand in for one.
+- The separately proposed partial ACEP1 content profile has independently authored Python/Node
+  numeric encoding vectors in `conformance/`. These are not astronomy or full NCF/NAD vectors.
+  Full identity profiles remain separately gated.
 
 Coordinates and expected scientific answers are deliberately not fabricated in this design. Pin
 them with case provenance and independent expected-value review during the authorized harness phase.
 Compare old/new science separately from private downstream methodology. Agreement proves migration
 equivalence, not independent astronomical accuracy. Gate report records exact runtimes, artifact
 hashes, corpus revision, comparator version, all mismatches, CI and independent-review verdict.
+
+See [public synthetic specification](public-synthetic-corpus.md) for independently authored inputs
+and the reference-derivation process. No astronomical expected value or successful parity is claimed.

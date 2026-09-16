@@ -1,0 +1,538 @@
+{
+  "profile": "apt.sun-moon-content.v1-proposed",
+  "status": "proposed_not_approved",
+  "provenance": "independently authored fixed numeric inputs; no astronomical expected values",
+  "cases": [
+    {
+      "id": "angle-0",
+      "operation": "scale",
+      "input": "1.0000000005",
+      "kind": "angle",
+      "expected": {
+        "value": 1000000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c313030303030303030305d",
+        "sha256": "de85add30e784042dff9ef16f66882e2d623ab83887cb01effabac30747fbfb5"
+      }
+    },
+    {
+      "id": "angle-1",
+      "operation": "scale",
+      "input": "1.0000000015",
+      "kind": "angle",
+      "expected": {
+        "value": 1000000002,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c313030303030303030325d",
+        "sha256": "3234b47a3ee3c4ba8c0e16c22d70b24ed81e7624ff68eda153e978b0bf8ad9b0"
+      }
+    },
+    {
+      "id": "angle-2",
+      "operation": "scale",
+      "input": "359.9999999995",
+      "kind": "angle",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "angle-3",
+      "operation": "scale",
+      "input": "0",
+      "kind": "angle",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "angle-4",
+      "operation": "scale",
+      "input": "-0",
+      "kind": "angle",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "angle-5",
+      "operation": "scale",
+      "input": "360",
+      "kind": "angle",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "angle-6",
+      "operation": "scale",
+      "input": "-0.000000001",
+      "kind": "angle",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "latitude-0",
+      "operation": "scale",
+      "input": "0.00000005",
+      "kind": "latitude",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "latitude-1",
+      "operation": "scale",
+      "input": "0.00000015",
+      "kind": "latitude",
+      "expected": {
+        "value": 2,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c325d",
+        "sha256": "302bf8a0a2e2cd97270a43faee3fced927d66309b02f1e61e4fd7bc9cc710c6c"
+      }
+    },
+    {
+      "id": "latitude-2",
+      "operation": "scale",
+      "input": "-0.00000005",
+      "kind": "latitude",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "latitude-3",
+      "operation": "scale",
+      "input": "-0.00000015",
+      "kind": "latitude",
+      "expected": {
+        "value": -2,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d325d",
+        "sha256": "d0c26e8eab542e9e21e2aa8cfb2b182ad81a5b0d8fcafc06396afc434236f883"
+      }
+    },
+    {
+      "id": "latitude-4",
+      "operation": "scale",
+      "input": "90",
+      "kind": "latitude",
+      "expected": {
+        "value": 900000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c3930303030303030305d",
+        "sha256": "82817b70e517edb9132323a62a64ec5351cd0be4f3909d8d23ea4ea45b3a5a8a"
+      }
+    },
+    {
+      "id": "latitude-5",
+      "operation": "scale",
+      "input": "-90",
+      "kind": "latitude",
+      "expected": {
+        "value": -900000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d3930303030303030305d",
+        "sha256": "176ae49cb25db9ce5973bc08fc30b283ad52fa1a49030e2f8f484b7844290690"
+      }
+    },
+    {
+      "id": "latitude-6",
+      "operation": "scale",
+      "input": "90.00000001",
+      "kind": "latitude",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "longitude-0",
+      "operation": "scale",
+      "input": "180",
+      "kind": "longitude",
+      "expected": {
+        "value": -1800000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d313830303030303030305d",
+        "sha256": "a52577e7d44731d497b08639394d2b21f5d9b2ec08a0ae88993a1ebaa0c16f19"
+      }
+    },
+    {
+      "id": "longitude-1",
+      "operation": "scale",
+      "input": "-180",
+      "kind": "longitude",
+      "expected": {
+        "value": -1800000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d313830303030303030305d",
+        "sha256": "a52577e7d44731d497b08639394d2b21f5d9b2ec08a0ae88993a1ebaa0c16f19"
+      }
+    },
+    {
+      "id": "longitude-2",
+      "operation": "scale",
+      "input": "179.99999995",
+      "kind": "longitude",
+      "expected": {
+        "value": -1800000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d313830303030303030305d",
+        "sha256": "a52577e7d44731d497b08639394d2b21f5d9b2ec08a0ae88993a1ebaa0c16f19"
+      }
+    },
+    {
+      "id": "longitude-3",
+      "operation": "scale",
+      "input": "-179.99999995",
+      "kind": "longitude",
+      "expected": {
+        "value": -1800000000,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c2d313830303030303030305d",
+        "sha256": "a52577e7d44731d497b08639394d2b21f5d9b2ec08a0ae88993a1ebaa0c16f19"
+      }
+    },
+    {
+      "id": "longitude-4",
+      "operation": "scale",
+      "input": "-0",
+      "kind": "longitude",
+      "expected": {
+        "value": 0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "longitude-5",
+      "operation": "scale",
+      "input": "180.00000001",
+      "kind": "longitude",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "utc-0",
+      "operation": "timestamp",
+      "input": "2000-01-01T00:00:00Z",
+      "expected": {
+        "value": "2000-01-01T00:00:00.000000Z",
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c22323030302d30312d30315430303a30303a30302e3030303030305a225d",
+        "sha256": "87b260cd2876deb4cd82d97826d6a494a53d693a3b6f6391ef00adb840ee2828"
+      }
+    },
+    {
+      "id": "utc-1",
+      "operation": "timestamp",
+      "input": "2000-01-01T00:00:00.1Z",
+      "expected": {
+        "value": "2000-01-01T00:00:00.100000Z",
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c22323030302d30312d30315430303a30303a30302e3130303030305a225d",
+        "sha256": "b614404565fee72d2f82e3b365b0dff8f041a03102bac3c541c03ef5b1836f38"
+      }
+    },
+    {
+      "id": "utc-2",
+      "operation": "timestamp",
+      "input": "2000-01-01T00:00:00.000001Z",
+      "expected": {
+        "value": "2000-01-01T00:00:00.000001Z",
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c22323030302d30312d30315430303a30303a30302e3030303030315a225d",
+        "sha256": "7a6a6bad65fb02fe8e018c6e79a338fc03ac531bd3db26aadb7cd274a35bc6d4"
+      }
+    },
+    {
+      "id": "utc-3",
+      "operation": "timestamp",
+      "input": "2000-02-30T00:00:00Z",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "utc-4",
+      "operation": "timestamp",
+      "input": "2000-01-01T00:00:60Z",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "utc-5",
+      "operation": "timestamp",
+      "input": "2000-01-01T00:00:00.0000001Z",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "utc-6",
+      "operation": "timestamp",
+      "input": "1899-12-31T23:59:59.999999Z",
+      "expected": {
+        "value": "1899-12-31T23:59:59.999999Z",
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c22313839392d31322d33315432333a35393a35392e3939393939395a225d",
+        "sha256": "f964cb626ea34d255dae5a944a0937d8a8934f9d0c2fb2e382968dfd99b9d6ba"
+      }
+    },
+    {
+      "id": "utc-7",
+      "operation": "timestamp",
+      "input": "2101-01-01T00:00:00Z",
+      "expected": {
+        "value": "2101-01-01T00:00:00.000000Z",
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c22323130312d30312d30315430303a30303a30302e3030303030305a225d",
+        "sha256": "a2ef755e33583406df2e7e516b87b20f421e4bdd3432bdaea32583a53acc6691"
+      }
+    },
+    {
+      "id": "nfc-composed",
+      "operation": "canonical",
+      "input": {
+        "label": "\u00e9"
+      },
+      "expected": {
+        "value": {
+          "label": "\u00e9"
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b226c6162656c223a22c3a9227d5d",
+        "sha256": "16f41e0c9f21f2c21b1ebb5938b552665f1c42339a960f61bae8f22e1202bfd5"
+      }
+    },
+    {
+      "id": "nfc-decomposed",
+      "operation": "canonical",
+      "input": {
+        "label": "e\u0301"
+      },
+      "expected": {
+        "value": {
+          "label": "e\u0301"
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b226c6162656c223a22c3a9227d5d",
+        "sha256": "16f41e0c9f21f2c21b1ebb5938b552665f1c42339a960f61bae8f22e1202bfd5"
+      }
+    },
+    {
+      "id": "null",
+      "operation": "canonical",
+      "input": {
+        "x": null
+      },
+      "expected": {
+        "value": {
+          "x": null
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b2278223a6e756c6c7d5d",
+        "sha256": "3f358024575857ad6f7b624e02f53237db8d1a9808bbfa9268c849ec2e8fd57b"
+      }
+    },
+    {
+      "id": "absent",
+      "operation": "canonical",
+      "input": {},
+      "expected": {
+        "value": {},
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b7d5d",
+        "sha256": "5b36e26ed7d97251f5505f119a16dec9578d251aacafb1f84e6c1c0fd5afb500"
+      }
+    },
+    {
+      "id": "order-one",
+      "operation": "canonical",
+      "input": [
+        1,
+        2
+      ],
+      "expected": {
+        "value": [
+          1,
+          2
+        ],
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c5b312c325d5d",
+        "sha256": "c42dfe33a5bc9c8962614175b929911b0d59d9c87a68e2e4a6955d85919703f4"
+      }
+    },
+    {
+      "id": "order-two",
+      "operation": "canonical",
+      "input": [
+        2,
+        1
+      ],
+      "expected": {
+        "value": [
+          2,
+          1
+        ],
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c5b322c315d5d",
+        "sha256": "7816bf97a8b8ce0c903aa6d4312135741726cabc64e08d308affba6881fcc8af"
+      }
+    },
+    {
+      "id": "utf16-keys",
+      "operation": "canonical",
+      "input": {
+        "\ue000": 1,
+        "\ud83d\ude00": 2
+      },
+      "expected": {
+        "value": {
+          "\ue000": 1,
+          "\ud83d\ude00": 2
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22f09f9880223a322c22ee8080223a317d5d",
+        "sha256": "176ea0865d2fc457e868a1b3e64d90439317c199ed1631567aee0a5fd0d1dd9d"
+      }
+    },
+    {
+      "id": "numeric-keys",
+      "operation": "canonical",
+      "input": {
+        "2": 2,
+        "10": 10
+      },
+      "expected": {
+        "value": {
+          "2": 2,
+          "10": 10
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b223130223a31302c2232223a327d5d",
+        "sha256": "84490f889beae9e472a76d2b223f55c3a48fbca187944bb1ecd430e13ffe2d30"
+      }
+    },
+    {
+      "id": "collision",
+      "operation": "canonical",
+      "input": {
+        "\u00e9": 1,
+        "e\u0301": 2
+      },
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "lone-surrogate",
+      "operation": "canonical",
+      "input": "\ud800",
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "unsafe-integer",
+      "operation": "canonical",
+      "input": 9007199254740992,
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "sun-moon-numeric-not-astronomy",
+      "operation": "canonical",
+      "input": [
+        {
+          "body": "sun",
+          "longitude_e9": 1000000000
+        },
+        {
+          "body": "moon",
+          "longitude_e9": 359999999999
+        }
+      ],
+      "expected": {
+        "value": [
+          {
+            "body": "sun",
+            "longitude_e9": 1000000000
+          },
+          {
+            "body": "moon",
+            "longitude_e9": 359999999999
+          }
+        ],
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a313030303030303030307d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3335393939393939393939397d5d5d",
+        "sha256": "7e389eae25211dd45cdd23805974715c7a2231584cd04fbfff302139f475dced"
+      }
+    },
+    {
+      "id": "integer-float",
+      "operation": "canonical",
+      "input": 4.0,
+      "expected": {
+        "value": 4.0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c345d",
+        "sha256": "3cb511d3e72a01d62204c993fc94b2d42bc64de60a3eddc1db0d98abb36587a8"
+      }
+    },
+    {
+      "id": "minus-zero-float",
+      "operation": "canonical",
+      "input": -0.0,
+      "expected": {
+        "value": -0.0,
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c305d",
+        "sha256": "f271f50e8285d64d032d1df4a9473e0b06c360b20e8423af438dc41ed0657a67"
+      }
+    },
+    {
+      "id": "fraction-forbidden",
+      "operation": "canonical",
+      "input": 0.1,
+      "expected": {
+        "error": "invalid_canonical_input"
+      }
+    },
+    {
+      "id": "complete-synthetic-content-not-astronomy",
+      "operation": "canonical",
+      "input": {
+        "schema": "APTCanonicalSunMoonContent.v1-proposed",
+        "profile": "sun-moon.v1",
+        "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+        "utc": "2000-01-01T00:00:00.000001Z",
+        "latitude_e7": 1250000,
+        "longitude_e7": 2500000,
+        "frame": "geocentric-tropical-apparent-ecliptic-of-date",
+        "bodies": [
+          {
+            "body": "sun",
+            "longitude_e9": 1000000000
+          },
+          {
+            "body": "moon",
+            "longitude_e9": 359999999999
+          }
+        ]
+      },
+      "expected": {
+        "value": {
+          "schema": "APTCanonicalSunMoonContent.v1-proposed",
+          "profile": "sun-moon.v1",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "utc": "2000-01-01T00:00:00.000001Z",
+          "latitude_e7": 1250000,
+          "longitude_e7": 2500000,
+          "frame": "geocentric-tropical-apparent-ecliptic-of-date",
+          "bodies": [
+            {
+              "body": "sun",
+              "longitude_e9": 1000000000
+            },
+            {
+              "body": "moon",
+              "longitude_e9": 359999999999
+            }
+          ]
+        },
+        "utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a313030303030303030307d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3335393939393939393939397d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a313235303030302c226c6f6e6769747564655f6537223a323530303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323030302d30312d30315430303a30303a30302e3030303030315a227d5d",
+        "sha256": "b66e909376120c0a9e7a50329a823332c4c4abd7cf706b3752e983642c0c1318"
+      }
+    }
+  ]
+}
