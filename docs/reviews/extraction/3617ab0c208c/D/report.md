@@ -1,0 +1,73 @@
+# Review Lens D — Findings Report
+**Scope:** AstroPassport 1.0.0 rev-2 accepted semantics + partial ACEP1 encoding (E7/E9, binary64, rounding, zero handling, Unicode/NFC, timestamp bounds, independent Python/Node vectors) at exact target `3617ab0c208cbd56927e0b84574b778e832ca8a1`.
+**Not in scope / explicitly excluded from this review:** ACE internals, private methodology, birth data, synastry/scoring, deployment/cutover readiness, legal certification of licensing.
+
+---
+
+## Implemented (extraction/parity) vs. Forbidden (future deployment/cutover) — explicit separation
+
+**Implemented and reviewed here:**
+- `app/canonical.py` production ACEP1 encoder (`scaled`, `timestamp`, `canonical`, `passport_content`/`passport_digest`).
+- `conformance/acep1.py` (Python harness that calls the *same* production module) and `conformance/acep1.mjs` (independently authored Node/BigInt implementation) plus `conformance/vectors.json` fixed byte/digest vectors.
+- Accepted contract bytes (`contracts/accepted/schema.json`, verified reproducible via `scripts/schema.py` hash pin `6d02118d...`), proposed-but-unreleased semantics/profile docs, and origin-tracking metadata (`docs/extraction/origins.json`, `ledger.md`, `checkpoint.md`).
+- Synthetic public reference corpus (`tests/data/public-scientific-reference.v1.json`) and two recorded HTTPS-parity snapshots.
+
+**Explicitly NOT claimed or reviewed as having occurred:** ACE cutover, client migration, public schema tag release, VPS/production deployment, independent re-execution of CI by this reviewer, or astronomical-accuracy certification of the private reference process. All such statements in the source material ("not performed," "not authorized," "proposed_not_approved") are treated as accurate self-report, not verified by me.
+
+---
+
+## Findings
+
+### HIGH — none identified
+No CRITICAL or HIGH defects were found in the reviewed encoding/parity logic. The scaled-integer (E7/E9) rounding, zero/negative-zero collapse, longitude wraparound, UTC timestamp bounds, and canonical-JSON key-sorting/NFC/duplicate-key logic were traced by hand against `conformance/vectors.json` and were internally consistent and mutually reproduced by two arithmetically distinct implementations (Python `Decimal` fixed-precision vs. JS exact `BigInt` quotient/remainder). No epsilon/tolerance comparisons were found anywhere in the encoding path — consistent with the zero-tolerance requirement.
+
+### MEDIUM — Partial independence of the Python conformance harness
+- **File:** `conformance/acep1.py` (imports `scaled`, `timestamp`, `canonical`, `PROFILE` directly from `app.canonical`).
+- **Impact:** The Python side of "independent vectors" is not independent of the shipped encoder — it exercises the identical function objects that production uses. Only `conformance/acep1.mjs` (separate language, separate BigInt/serializer logic) provides a true cross-implementation oracle. A latent bug shared by `scaled()`/`canonical()` and not caught by the Node reimplementation would not be caught by the Python test at all. This is disclosed honestly in the module docstring ("Public independent vectors also exercise the production partial ACEP1 encoder"), so it is not a concealment issue, but the review-lens phrase "independent vectors" should be understood as *Node-independent only*, not dual-independent.
+- **Bounded repair:** No urgent action required given Node parity already exists. Optionally add a second, non-production Python re-implementation (e.g., pure-`fractions.Fraction` arithmetic) purely for cross-checking `app/canonical.py`, mirroring the Node design intent.
+
+### MEDIUM — Vector coverage gap on generic string-escaping edge cases
+- **File:** `conformance/vectors.json`, `app/canonical.py::canonical`, `conformance/acep1.mjs::emit`.
+- **Impact:** Vectors cover NFC composition/decomposition, lone surrogates, collisions, and non-BMP/UTF-16 key ordering (all correctly verified), but do not cover JSON control-character escaping edge cases (e.g., U+0000–U+001F variants beyond the common ones, U+007F, U+2028/U+2029) that could theoretically diverge between Python `json.dumps` and JS `JSON.stringify` in a byte-for-byte "restricted JCS" claim. Current production risk is low because `acep1-profile.md` states production content strings are a **closed ASCII vocabulary**, so this gap cannot currently manifest in real traffic; but the general-purpose `canonical()`/`emit()` primitive is more permissive than the profile and is explicitly earmarked in `acep1-profile.md` for reuse by "a later Unicode-bearing scientific content profile."
+- **Bounded repair:** Add explicit vectors for representative control characters, DEL, and U+2028/U+2029 before any future profile widens beyond the closed ASCII vocabulary. Non-blocking for the current Sun/Moon profile.
+
+### LOW — Dead-code latitude/longitude paths in the production module
+- **File:** `app/canonical.py::scaled` (kinds `"latitude"`, `"longitude"`).
+- **Impact:** `passport_content()` only ever calls `scaled(..., "angle")`; the E7 coordinate path is computed by a separate local `coordinate()` closure using `Decimal(str(number))`, per the profile's explicit design ("Quantization primitive vectors also test shortest-decimal inputs... not a restriction on valid wire coordinates"). The `latitude`/`longitude` branches of `scaled()` are therefore only exercised by conformance vectors, not by any real request path. This is intentional per design docs, not a bug, but it is unused production surface that should be tracked so it isn't mistaken for the live E7 code path during future audits.
+- **Bounded repair:** A code comment cross-referencing `coordinate()` as the actual runtime E7 path (already partially present) would remove ambiguity for future reviewers; no functional change needed.
+
+### LOW / OBSERVATION — Signed-zero comparison relies on host-language equality semantics in test harnesses
+- **Files:** `tests/test_conformance.py` (`assert evaluate(case) == case["expected"]`), `conformance/acep1.mjs` (`JSON.stringify` fallback comparison).
+- **Impact:** The `"minus-zero-float"` vector's diagnostic `"value"` field matches expected output only because Python treats `-0.0 == 0.0` as `True` and JS's `JSON.stringify(-0)` collapses to `"0"`. The **canonical bytes/sha256** are computed correctly and explicitly (normalize step converts `-0.0`/`Object.is(v,-0)` to integer `0` before serialization), so the zero-tolerance byte guarantee is not affected. This is a test-harness subtlety, not an encoding defect.
+- **Bounded repair:** None required; optionally document the reliance on host equality semantics in a comment near the vector, for future maintainers.
+
+### OBSERVATION — Identical HTTPS-parity statistics across two checkpoints
+- **Files:** `docs/extraction/https-parity-948f6a2.json`, `docs/extraction/https-parity-94c8103.json`.
+- **Impact:** Both files report identical case counts and per-classification comparison totals (3718/390/130/62/364/156, zero mismatches) across two different revisions. `docs/extraction/ledger.md` explains the 94c8103 checkpoint was a network/portability-only fix, not a scientific-path change, which is consistent with identical results — but this reviewer cannot independently confirm from the supplied material that no scientific-path file differed between the two revisions; that requires a diff not included here.
+- **Bounded repair:** None blocking; note as an evidence-completeness gap only.
+
+### OBSERVATION — Governance/contract boundary compliance (positive finding)
+Checked and found compliant with the stated resolved gates:
+- `PROFILE = "apt.sun-moon-content.v1-proposed"` and `"APTCanonicalSunMoonContent.v1-proposed"` schema tag are unchanged throughout `app/canonical.py`, `contracts/accepted/*`, and vectors — the `-proposed` suffixes are preserved everywhere as required.
+- `scripts/schema.py` enforces byte-identity of the accepted contract via a hard-coded SHA-256 (`6d02118d...`), preventing silent contract drift.
+- `docs/extraction/origins.json` lists exactly 16 origin entries, matching the "16 listed scientific/neutral ACE origins" authorization.
+- No participant/sex/scoring/synastry/compatibility code, no birth data, and no private methodology are present in any reviewed file.
+- No deployment, activation, public schema-tag release, or ACE modification is claimed or present; README/AGENTS/governance docs are internally consistent on this point.
+- No epsilon/tolerance-based numeric comparisons exist anywhere in the reviewed encoding path — consistent with the zero-tolerance requirement.
+
+---
+
+## Evidence Limitations (must be stated explicitly)
+
+1. I did not execute any code, tests, or CI. The reported "success" conclusion for exact-head CI run `35157967778` is treated as **recorded evidence supplied to me**, not independently reproduced.
+2. I could not verify the **astronomical correctness** of expected Sun/Moon values in `tests/data/public-scientific-reference.v1.json` or the HTTPS-parity JSON files — these depend on an unchanged private reference process I have no access to and am not permitted to request. My review is limited to internal arithmetic/encoding consistency (e.g., recomputing E7/E9 by hand from stated inputs), which held in every case I checked.
+3. I cannot confirm from the supplied files alone that no scientific-path source differed between the 948f6a2 and 94c8103 checkpoints beyond what `ledger.md` narrates.
+4. This is a document/code-reading review only; it is not a certification of legal AGPL compliance, security posture, or production readiness, and makes no claim about anything not directly evidenced in the supplied files.
+
+---
+
+## Verdict
+
+**APPROVE WITH NONBLOCKING FOLLOW-UPS**
+
+Rationale: the reviewed ACEP1 partial-encoding implementation is internally consistent, cross-validated by an arithmetically independent Node/BigInt implementation across all supplied vectors, correctly handles rounding half-even, zero/negative-zero, longitude wraparound, UTC bounds, and NFC/Unicode key-ordering edge cases, and stays within the previously approved contract/extraction/parity boundary with no forbidden content, deployment, or cutover activity present. Findings above are MEDIUM-or-lower, non-blocking, and address test-coverage completeness and documentation clarity rather than correctness defects.
