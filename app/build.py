@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 """Immutable build identity, never runtime environment or filesystem details."""
 
 import re

@@ -17,7 +17,9 @@ RUN groupadd --gid 10001 aptservice && useradd --uid 10001 --gid 10001 --no-crea
 COPY --from=builder /opt/apt/.venv /opt/apt/.venv
 COPY app ./app
 COPY LICENSE THIRD_PARTY_NOTICES.md /usr/share/doc/astro-passport/
+COPY docs/runtime-licenses.json /usr/share/doc/astro-passport/
 RUN GIT_SHA="$GIT_SHA" python -c 'import os,re,pathlib; s=os.environ["GIT_SHA"]; assert re.fullmatch("[0-9a-f]{40}",s); pathlib.Path("app/_revision").write_text(s+"\n",encoding="ascii")'
 USER 10001:10001
 EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live',timeout=2).read()"]
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--no-proxy-headers", "--workers", "1"]

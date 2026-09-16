@@ -5,3 +5,4 @@ check:
 	uv run --frozen mypy app
 	uv run --frozen pytest
 	uv lock --check
+	uv run --frozen python -m scripts.schema --check

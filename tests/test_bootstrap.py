@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: AGPL-3.0-only
 from pathlib import Path
 
 import pytest
@@ -11,10 +12,11 @@ def test_inactive_boundaries() -> None:
     with TestClient(create_app()) as client:
         assert client.get("/health/live").status_code == 200
         assert client.get("/health/ready").status_code == 503
-        for path in ("/docs", "/openapi.json", "/admin", "/v1/passports"):
+        for path in ("/docs", "/openapi.json", "/admin"):
             response = client.get(path)
             assert response.status_code == 404
             assert response.headers["cache-control"] == "no-store"
+        assert client.post("/v1/passports").status_code == 503
 
 
 def test_immutable_source_identity(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

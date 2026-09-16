@@ -1,0 +1,119 @@
+{
+  "root_commit": {
+    "sha": "0a31c4b157398b86799d586f10dfb5b937fa8f4d",
+    "parents": []
+  },
+  "ci": {
+    "id": 35086519869,
+    "head_sha": "0a31c4b157398b86799d586f10dfb5b937fa8f4d",
+    "event": "push",
+    "conclusion": "success",
+    "html_url": "https://github.com/Attory/astro-passport/actions/runs/35086519869"
+  },
+  "jobs": [
+    {
+      "name": "check",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install uv==0.12.10",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run uv sync --frozen",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run make check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run git diff --check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run docker build --build-arg GIT_SHA=\"$GITHUB_SHA\" -t apt-ci .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run test \"$(docker inspect apt-ci --format '{{.Config.User}}')\" = '10001:10001'",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "action_commits": {
+    "actions/checkout": {
+      "sha": "11d5960a326750d5838078e36cf38b85af677262",
+      "html_url": "https://github.com/actions/checkout/commit/11d5960a326750d5838078e36cf38b85af677262"
+    },
+    "actions/setup-python": {
+      "sha": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "html_url": "https://github.com/actions/setup-python/commit/a26af69be951a213d495a4c3e4e4022e16d87065"
+    }
+  },
+  "dev_package_registry": {
+    "mypy": {
+      "url": "https://pypi.org/pypi/mypy/2.3.1/json",
+      "metadata_sha256": "fe6733f084f14994916553cd68bd23ea33f478e3d1581f865a4684c10270e459",
+      "name": "mypy",
+      "version": "2.3.1",
+      "license_expression": "MIT",
+      "requires_dist": [
+        "typing_extensions>=4.6.0; python_version < \"3.15\"",
+        "typing_extensions>=4.14.0; python_version >= \"3.15\"",
+        "mypy_extensions>=1.0.0",
+        "pathspec>=1.0.0",
+        "tomli>=1.1.0; python_version < \"3.11\"",
+        "librt>=0.13.0; platform_python_implementation != \"PyPy\"",
+        "ast-serialize<1.0.0,>=0.6.0",
+        "psutil>=4.0; extra == \"dmypy\"",
+        "setuptools>=50; extra == \"mypyc\"",
+        "lxml; extra == \"reports\"",
+        "pip; extra == \"install-types\"",
+        "orjson; extra == \"faster-cache\""
+      ]
+    },
+    "ast-serialize": {
+      "url": "https://pypi.org/pypi/ast-serialize/0.11.2/json",
+      "metadata_sha256": "26293b7d28c814717c2d9b47df7269db0a87bd243377e1df0cbf759157bf04a9",
+      "name": "ast-serialize",
+      "version": "0.11.2",
+      "license_expression": "MIT",
+      "requires_dist": null
+    },
+    "librt": {
+      "url": "https://pypi.org/pypi/librt/0.15.0/json",
+      "metadata_sha256": "b613e82bebb3a4ef02f8c15c89c132006732fd77bd4798215ba008eab26b3850",
+      "name": "librt",
+      "version": "0.15.0",
+      "license_expression": "MIT",
+      "requires_dist": null
+    }
+  },
+  "registry_limit": "Official public PyPI metadata checked; no publisher signature/attestation verification is claimed."
+}

@@ -24,6 +24,11 @@ expose only safe source/build metadata. An unbuilt checkout returns 503 from the
 endpoints rather than pretending its source revision is known. `/docs`, `/openapi.json` and
 `/admin` are absent. All responses are `no-store`. No automatic deployment exists.
 
+The [API contract candidate](contracts/README.md) defines `/v1/passports` and typed wire envelopes;
+it is default-disabled and has no scientific engine. See [security](docs/security.md),
+[extraction plan](docs/extraction-plan.md), [equivalence design](docs/equivalence-design.md) and
+[deployment plan](docs/deployment-plan.md). No canonical schema tag/release is approved yet.
+
 Build a clean committed revision using Docker:
 
 ```sh

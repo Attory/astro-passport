@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "status": "candidate_not_released",
+  "canonical_url": "https://raw.githubusercontent.com/Attory/astro-passport/astropassport-schema-v1.0.0/contracts/astropassport/v1/schema.json",
+  "sha256": "9abc5b78798fc3de37afd8b286a2b3c5d194208dbf1007ca34cfbcbe67a9de49",
+  "license": "AGPL-3.0-only",
+  "release_git_sha": null,
+  "aac_baseline": "aa4373b5d7b2539adf5bc87c0b4cc7d392d2135d"
+}

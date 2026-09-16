@@ -1,0 +1,9 @@
+{
+  "target": "0a31c4b157398b86799d586f10dfb5b937fa8f4d",
+  "session_id": "43431e56-2754-4d92-9b46-27ae81b8822e",
+  "verdict": "APPROVE WITH NONBLOCKING FOLLOW-UPS",
+  "complete_output": "bootstrap-report.md",
+  "report_sha256": "28b44506a469d5da69e1d54d6260049d8d89fd478c099dbe2c498a49c118c072",
+  "tools": false,
+  "scope": "18 public root-commit files only; no private repository content"
+}
