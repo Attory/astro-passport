@@ -64,8 +64,14 @@ Canonical mismatch remains different content even if future numerical qualificat
 Coordinates and expected scientific answers are deliberately not fabricated in this design. Pin
 them with case provenance and independent expected-value review during the authorized harness phase.
 Compare old/new science separately from private downstream methodology. Agreement proves migration
-equivalence, not independent astronomical accuracy. Gate report records exact runtimes, artifact
-hashes, corpus revision, comparator version, all mismatches, CI and independent-review verdict.
+equivalence, not independent astronomical accuracy. A private-corpus gate report records exact
+runtimes, artifact hashes, corpus revision, comparator version, all mismatches, CI and independent
+review **only for the authorized restricted audience**. Outside that audience, summaries contain
+only overall migration acceptance status and public comparator/runtime release IDs. Suppress
+corpus size, category/mismatch counts, case identifiers, timing, geographic/date-range aggregates
+and report sequences that allow differencing. Do not publish the full private report or link it
+from public CI. Independently public synthetic expected values follow their separately approved
+derivation/publication process; they are not a route for disclosing private migration evidence.
 
 See [public synthetic specification](public-synthetic-corpus.md) for independently authored inputs
 and the reference-derivation process. No astronomical expected value or successful parity is claimed.
