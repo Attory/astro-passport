@@ -100,6 +100,49 @@ def test_valid_request_unavailable_and_private(
     assert "Synthetic" not in repr(request) and "2000" not in str(request)
 
 
+def test_admission_saturation_is_immediate_and_releases_tokens(tmp_path: Path) -> None:
+    settings = provision(tmp_path)
+
+    async def scenario() -> None:
+        release = asyncio.Event()
+        full = asyncio.Event()
+
+        class Holding:
+            calls = 0
+
+            async def calculate(self, request: AstroPassportRequestV1) -> AstroPassportResponseV1:
+                self.calls += 1
+                if self.calls == 4:
+                    full.set()
+                await release.wait()
+                raise ScienceUnavailable
+
+        science = Holding()
+        app = create_app(settings, science)
+        async with httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="https://testserver"
+        ) as client:
+            tasks = [
+                asyncio.create_task(client.post("/v1/passports", json=payload(), headers=HEADERS))
+                for _ in range(4)
+            ]
+            try:
+                await asyncio.wait_for(full.wait(), 2)
+                denied = await asyncio.wait_for(
+                    client.post("/v1/passports", json=payload(), headers=HEADERS), 1
+                )
+                assert denied.status_code == 503 and denied.json()["code"] == "busy"
+                assert science.calls == 4
+            finally:
+                release.set()
+                results = await asyncio.gather(*tasks)
+            assert all(result.json()["code"] == "science_unavailable" for result in results)
+            result = await client.post("/v1/passports", json=payload(), headers=HEADERS)
+            assert result.json()["code"] == "science_unavailable" and science.calls == 5
+
+    asyncio.run(scenario())
+
+
 @pytest.mark.parametrize(
     "mutation,status",
     [

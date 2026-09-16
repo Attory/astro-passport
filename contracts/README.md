@@ -64,6 +64,8 @@ Future scientific codes reserve explicit boundary ambiguity/no-match, civil ambi
 missing/corrupt artifacts; their final HTTP mapping is an acceptance prerequisite, not implemented
 scientific behavior. Absent routes/methods use framework 404/405; operational health uses its own
 small envelope. These are not calculation error responses.
+`forbidden` is reserved for a future reviewed scope distinction, not an emitted 403 in this scaffold;
+the only configured scope is `passport:calculate`.
 
 The server currently supports exactly `1.0.0` in both header and body. No implicit downgrade or
 additive unknown-field acceptance. Future compatible releases need explicit support matrices and

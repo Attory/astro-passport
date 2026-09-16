@@ -18,7 +18,10 @@ example is the schema of `app.security.KeyRecord`, not a reusable secret. A futu
 provisioner must generate with a CSPRNG, transmit once via approved secret delivery, atomically
 replace the verification file and bound rotation overlap. Do not provision real credentials now.
 
-Credential file: root/service-owned regular 0600 file, read-only mount, no symlink/FIFO. Quota file:
+Credential file: service-readable regular 0600 file, read-only mount, no symlink/FIFO. In the non-root
+container its numeric owner must be the service UID (10001); a root-owned 0600 host bind is NOT
+readable merely because it is mounted. Validate effective container access without printing contents.
+Quota file:
 service-owned 0600 regular file in a service-owned 0700 directory; bounded to 1 MiB/128 credential
 rows. Use only trusted operator paths; parents must not be attacker writable. SQLite rollback
 journals stay in this private directory. No birth data or outputs are stored: only key ID, UTC

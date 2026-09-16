@@ -47,7 +47,9 @@ def error(status: int, code: ErrorCode) -> JSONResponse:
 
 
 def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> None:
-    slots = asyncio.Semaphore(4)
+    slots: asyncio.Queue[None] = asyncio.Queue(maxsize=4)
+    for _ in range(4):
+        slots.put_nowait(None)
 
     @service.post("/v1/passports")
     async def calculate(request: Request) -> JSONResponse:
@@ -61,9 +63,11 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
         for name in ("authorization", "content-length", "content-type", "x-apt-contract-version"):
             if len(request.headers.getlist(name)) > 1:
                 return error(400, "invalid_request")
-        if slots.locked():
+        try:
+            slots.get_nowait()
+        except asyncio.QueueEmpty:
             return error(503, "busy")
-        async with slots:
+        try:
             try:
                 now = dt.datetime.now(dt.UTC)
                 key = await asyncio.to_thread(
@@ -115,3 +119,5 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
             except Exception:
                 # Never log traceback, locals, input, URLs or native messages.
                 return error(500, "internal_error")
+        finally:
+            slots.put_nowait(None)

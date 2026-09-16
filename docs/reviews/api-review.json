@@ -1,0 +1,10 @@
+{
+  "target": "99056e6f10805df3aeef4b69a34c51b41f55482f",
+  "ci_run": 35088583397,
+  "session_id": "8018009f-e939-41a3-8b88-c864208600bf",
+  "verdict": "APPROVE WITH NONBLOCKING FOLLOW-UPS",
+  "report_sha256": "b2bb44023550ba198ccc73ed4f01d2fe465fee02bba50e05ae8da24edc710c66",
+  "tools": false,
+  "scope": "full public APT snapshot only; no private documents",
+  "manifest": "api-disclosure-manifest.json"
+}
