@@ -49,3 +49,46 @@ The fixture now explicitly configures the subnet selected for its own empty inte
 as required by [Docker's static-IP contract](https://docs.docker.com/reference/cli/docker/container/run/).
 It changes no existing network and fails on allocation conflicts. Bounded Docker diagnostics
 and cleanup cover failed starts. Production scientific code is unchanged by this portability fix.
+
+## Green transport checkpoint and focused reviews
+
+`3617ab0c208cbd56927e0b84574b778e832ca8a1`: GitHub CI **35157967778 successful**, including
+application/scientific/local-HTTPS container checks and exact native-source audit/bundle reproduction.
+Disclosure manifests committed at `5b5007e2f62d78467e34b4e6ccdfff3e2e25902a` (CI **35158491554 successful**).
+Complete five A–E reports and two quota-error outputs retained by commit `790ddb1`.
+All five completed reviews: APPROVE WITH NONBLOCKING FOLLOW-UPS; no blocking finding.
+F/G returned no actual review (Claude session limit, reset reported 10:50 Australia/Sydney).
+They do not count as approvals. Full disposition: `review-dispositions.md`.
+
+## Comparator/resource-test repair checkpoint
+
+Exact revision: `aeb0bca2857f4921656464e18e0713cb82ac510f`.
+212 local tests and 44 independent Node vectors passed, along with Ruff, format, mypy,
+accepted-schema comparison, compliance metadata, uv lock and diff checks. Existing two
+upstream test-client deprecation warnings are retained; no dependency upgrade made.
+Application/scientific code under `app/` is unchanged from the reviewed 3617ab0 tree.
+The executable comparator gained full retained-stage error dispatch/tests; F review must
+cover this revision or later. Runtime native limits are now tested in real child processes.
+
+Fresh separate frozen-ACE → authenticated, certificate-verified local HTTPS APT parity:
+`https-parity-aeb0bca.json` and exact `image-source-aeb0bca.json`. All 23 independently public
+synthetic cases passed (13 successes, 10 errors). Repeated calls and exact partial ACEP1 bytes
+matched. Failures were compared to freshly executed old-stage evidence, not just static goldens.
+All seven mismatch-classification counts are zero; DELIVERY_METADATA_ONLY has zero comparisons
+for this successful-output/bounded-error corpus, not a fabricated coverage count.
+No real-person migration corpus was used or published. Restricted helper hashes and both exact
+image IDs are retained; private pair manifests stayed in process memory. No forensic RAM-erasure
+claim is made. Host swap policy was not changed; containers disabled swap/core dumps.
+
+Complete Corresponding Source reproduced twice and compared equal locally:
+1,147,535,360 bytes, SHA256
+`a62fe004056ee922cf90825fc044c1ecdf8443bb99f509a61ccb1c7adc00165f`.
+Exact APT source archive hash:
+`ed606211e166e33a5c9dc00763bd8b46994bd7a99d3911d53d6d687ebb2cdb80`.
+Third-party bundle hash and all 396 source pins unchanged. No binary distribution or activation
+has occurred; anonymous complete-bundle delivery remains a pre-distribution/activation gate.
+
+Preservation: AAC main `59500ec0951e082dd4c3984999b8a42fe4ce53c8` clean/synchronized;
+ACE main `18a3776bc1ab1dc52212b4de48a0df36709d72d2` unchanged/clean;
+frozen annotated architecture tag peels to `04b20c8eaed9106e3b299e8d97bdf6fc4452c82d`.
+No SSH/VPS deployment, ACE client/cutover or scientific code removal performed.

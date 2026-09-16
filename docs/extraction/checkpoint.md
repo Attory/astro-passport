@@ -54,8 +54,9 @@ Golden agreement demonstrates migration equivalence, not independent astronomica
 
 ## Remaining checkpoint work
 
-Actual authenticated local HTTPS migration parity, complete adversarial coverage, source/image
-verification, exact-head GitHub CI and independent reviews A–H must finish before a readiness
-claim. Old ACE-owned pair-manifest recomputation after API-client cutover is a separate later
+Actual authenticated local HTTPS parity, source/image verification and a green exact-head CI
+are now recorded by checkpoint in `ledger.md`. Reviews A–E completed with nonblocking follow-ups;
+F, G and final H remain mandatory, followed by final exact-head validation. No final readiness
+claim is made. Old ACE-owned pair-manifest recomputation after API-client cutover is a separate later
 gate; old digests are retained and checked now, never mislabeled as new APT fingerprints.
 No VPS connection or activation is performed. This checkpoint is not final acceptance.

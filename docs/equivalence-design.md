@@ -1,4 +1,12 @@
-# Equivalence harness design — not yet executed
+# Equivalence harness design and execution boundary
+
+Current status: human AAC acceptance and scientific extraction authorization were granted.
+The exact accepted map is public at `contracts/accepted/{comparator,errors}.json`; executable
+implementation is `conformance/comparator.py`. Restricted, separate-process old-reference versus
+actual authenticated HTTPS measurements are recorded in `extraction/ledger.md` with exact revisions.
+Only independently public synthetic cases were used. No real-person/private migration corpus
+was populated. Full final independent-review acceptance remains pending. The historical group-level
+table below is explanatory only and never overrides the accepted leaf-level map.
 
 Two independent corpora: a restricted migration corpus retained outside public Git/CI, and an
 independently authored public synthetic corpus containing no copied/redacted private cases. Public
@@ -10,9 +18,10 @@ scientific path in a restricted subprocess; send identical selected inputs to th
 its actual authenticated HTTPS API. No cross-repository imports or shared DB. Retain both complete
 outputs in the appropriate corpus store plus explicit comparator report. The public suite separately
 uses self-contained synthetic fixtures and approved expected outputs. Never log birth payloads or
-private per-case fingerprints in normal CI. No reference runs have been made by this scaffold.
+private per-case fingerprints in normal CI. Reference runs now exist only as explicitly scoped
+checkpoint evidence; ordinary public CI never accesses the private reference implementation.
 
-## Proposed comparator mapping (approval required)
+## Historical group-level overview (superseded by accepted leaf-level mapping)
 
 | Old scientific field group | Candidate APT field | Rule |
 | --- | --- | --- |
@@ -28,14 +37,14 @@ private per-case fingerprints in normal CI. No reference runs have been made by 
 | content/manifest digests affected by source/wire change | future comparison report | retain both and enumerate derivation; never force equal NAD |
 
 This historical table is a group-level overview, NOT an approved leaf-path comparator or ACEP1 profile.
-The current pre-extraction AAC proposal supplies `apt-scientific-leaf-map.v1-proposed` in
+The accepted pre-extraction AAC contract supplies `apt-scientific-leaf-map.v1-proposed` in
 `docs/contracts/pre-extraction/{inventory,comparator,errors}.json`: 185 old and 125 new scalar or
 ordered atomic-array leaves, exactly one explicit classification per leaf, with coverage-mutation
 tests. Private manifest identities stay in the confidential governance packet, not this public
-repository. Human AAC acceptance and public contract publication are still pending. Neither public
-builds nor CI depend on that private packet; no scientific equivalence runner is implemented yet.
-Before scientific extraction approval, inventory every old/new leaf including error/absence/null,
-ordering, canonicalization, limitation fields and derivatively changed digests. Fail on unclassified
+repository. Human acceptance is complete; public canonical contract release remains separate.
+Neither public builds nor CI depend on that private packet. Every old/new leaf is inventoried,
+including error/absence/null, ordering, canonicalization, limitation fields and changed digests.
+The implemented comparator fails on unclassified
 leaves. Preserve the current client's raw-place-query versus selected-query coherence rejection in
 the migration adapter: both must match before creating the request. The wire has one selected query;
 this simplification must not silently make inconsistent legacy inputs acceptable.
@@ -73,5 +82,6 @@ and report sequences that allow differencing. Do not publish the full private re
 from public CI. Independently public synthetic expected values follow their separately approved
 derivation/publication process; they are not a route for disclosing private migration evidence.
 
-See [public synthetic specification](public-synthetic-corpus.md) for independently authored inputs
-and the reference-derivation process. No astronomical expected value or successful parity is claimed.
+See [public synthetic specification](public-synthetic-corpus.md) for independently authored inputs,
+controlled reference derivation and exact corpus identity. Measured migration agreement does not
+establish independent astronomical accuracy or authorize deployment/client cutover.

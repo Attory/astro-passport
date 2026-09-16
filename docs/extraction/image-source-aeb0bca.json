@@ -1,0 +1,12 @@
+{
+  "schema": "apt-image-source-correspondence.v1",
+  "source_revision": "aeb0bca2857f4921656464e18e0713cb82ac510f",
+  "source_repository": "https://github.com/Attory/astro-passport",
+  "source_archive": "https://github.com/Attory/astro-passport/archive/aeb0bca2857f4921656464e18e0713cb82ac510f.tar.gz",
+  "source_lock_sha256": "53b3ba2243412946224c05e1b4262f547115d4b36050026645ff7c2e4672f7ef",
+  "image_id": "sha256:e1370e19d1b607959f81c6bc551b6f0ad32e8deb0693766a5df8e57e5beb7bdb",
+  "platform": "linux/amd64",
+  "scope": "exact public source/image correspondence; not scientific parity or activation clearance",
+  "distribution": "not published",
+  "deployment": "not performed"
+}
