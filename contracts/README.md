@@ -17,7 +17,7 @@ The sole prospective canonical publication path is the schema's `$id`:
 AAC must approve exact bytes/digest and rights before that immutable tag/release is created.
 Record the tag's resolved Git SHA and protect deletion/retagging; clients additionally pin SHA-256.
 Do not treat a floating main URL, generated OpenAPI, or private governance copy as an authority.
-This candidate is currently AGPL-3.0-only like the repository. A separate neutral schema licence
+These accepted, unreleased schemas are AGPL-3.0-only like the repository. A separate neutral schema licence
 is a rights/approval gate, not an implied Apache-2.0 grant or permission to copy private code.
 
 ## Request
@@ -32,7 +32,7 @@ Each attempted authenticated calculation reserves quota; replay/timeout/retry is
 Request contains one self-contained selected place and unresolved local date/time. All keys are
 required; `attribution` and `fold` are explicitly nullable. Unknown fields are rejected recursively.
 Dates: valid Gregorian 1900–2100; local time: HH:mm[:ss[.ffffff]], without zone/offset/leap second.
-Fold is null unless an explicitly approved ambiguous-time choice 0 or 1 is supplied. The future
+Fold is null unless an explicitly approved ambiguous-time choice 0 or 1 is supplied. The pinned
 resolver rejects gaps and requests a choice for folds; never guesses or adjusts civil inputs.
 
 Place preserves actual finite binary64 latitude/longitude, selected label, opaque provider/source
@@ -41,9 +41,9 @@ is caller assertion, not provider authentication. No search calls, session token
 freshness requirement or ranking occurs here. Manual-coordinate profiles are not introduced.
 No person ID, account, sex/role, A/B role, compatibility, flags, server paths or URLs are accepted.
 
-## Response and provenance candidate
+## Response and provenance
 
-A future successful response preserves the selected input, unique IANA boundary fact and dataset
+A successful response preserves the selected input, unique IANA boundary fact and dataset
 identity/version/checksum, civil input, UTC/offset/fold, tzdb and TZif identity, then ordered Sun/Moon
 raw longitude records. Each longitude retains binary64 hex and the canonical nine-decimal display.
 Provenance separates source revision, runtime, binding/native identity, data hashes, flags,
@@ -63,9 +63,10 @@ Errors contain only schema, contract version and fixed code; never validation in
 Calculation errors: 400 invalid transport/framing, 401 unauthorized, 406 version mismatch,
 408 bounded timeout, 413 oversized, 415 media/encoding, 422 malformed/invalid input, 429 quota,
 503 disabled/busy/security-state unavailable/science unavailable, 500 unexpected failure.
-Future scientific codes reserve explicit boundary ambiguity/no-match, civil ambiguity/nonexistence,
-missing/corrupt artifacts; their final HTTP mapping is an acceptance prerequisite, not implemented
-scientific behavior. Absent routes/methods use framework 404/405; operational health uses its own
+Scientific failures use the exact accepted `accepted/errors.json` mapping: 422 for boundary/
+civil ambiguity, no-match, gap and invalid fold; 503 for unavailable artifacts/runtime; 500 for
+integrity/invalid-artifact/native/fallback/invalid-result failures. No partial passport is returned.
+Absent routes/methods use framework 404/405; operational health uses its own
 small envelope. These are not calculation error responses.
 `forbidden` is reserved for a future reviewed scope distinction, not an emitted 403 in this scaffold;
 the only configured scope is `passport:calculate`.

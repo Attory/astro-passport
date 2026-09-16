@@ -22,6 +22,7 @@ from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1, Error
 from app.science.ephemeris.contracts import longitude_decimal
 
 MAP_SHA = "7e1215f01916b4e0825491c5374423ea372680eef2feb3fa080676cdcc396fdd"
+ERROR_MAP_SHA = "7e942b8e0c48929ebb91b440bbb3fd8a36d123c144ed3af97f4806d7389dc38d"
 OLD_SHA = "18a3776bc1ab1dc52212b4de48a0df36709d72d2"
 OLD_REPOSITORY = "https://github.com/Attory/astrological-compatibility-engine"
 NEW_REPOSITORY = "https://github.com/Attory/astro-passport"
@@ -258,15 +259,61 @@ def compare_pair(
     return dict(counts)
 
 
-def compare_error(source_enum: str, member: str, body: dict, status: int) -> None:
-    ErrorEnvelopeV1.model_validate_json(json.dumps(body))
+def error_rules() -> dict:
+    """The accepted failure map is as immutable as the scientific leaf map."""
     path = Path(__file__).resolve().parents[1] / "contracts/accepted/errors.json"
-    data = json.loads(path.read_bytes())
-    choices = [r for r in data["rows"] if r["path"] == f"/errors/{source_enum}/{member}"]
-    if len(choices) != 1 or "new_code" not in choices[0]:
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != ERROR_MAP_SHA:
+        raise Mismatch("error_classification_integrity")
+    data = json.loads(raw)
+    if len(data["rows"]) != 46 or len({r["path"] for r in data["rows"]}) != 46:
+        raise Mismatch("duplicate_error_classification")
+    return data
+
+
+def compare_error_path(
+    path: str,
+    body: dict,
+    status: int,
+    *,
+    retained_boundary_outcome: str | None = None,
+    retained_underlying_error: str | None = None,
+) -> None:
+    """Never infer a granular error from the legacy service's collapsed unavailable.
+
+    Dispatch evidence comes from the separately executed OLD stage, not the new response
+    or a caller-chosen expected code. Successful outcomes and delivery-only person/stage
+    fields cannot masquerade as error cases.
+    """
+    ErrorEnvelopeV1.model_validate_json(json.dumps(body))
+    data = error_rules()
+    rows = {r["path"]: r for r in data["rows"]}
+    if path not in rows:
+        raise Mismatch("unclassified_error")
+    if path == "/errors/CalculationFailure/UNRESOLVED_GEOGRAPHY":
+        if retained_boundary_outcome not in ("boundary", "ambiguous", "no_match"):
+            raise Mismatch("error_requires_retained_stage_evidence")
+        path = "/boundary/status/" + retained_boundary_outcome
+    elif path == "/errors/CalculationFailure/UNAVAILABLE":
+        if retained_underlying_error not in rows or not retained_underlying_error.startswith(
+            (
+                "/errors/TimezoneBoundaryFailure/",
+                "/errors/CivilTimeFailure/",
+                "/errors/EphemerisFailure/",
+                "/errors/NatalFailure/",
+            )
+        ):
+            raise Mismatch("error_requires_retained_stage_evidence")
+        path = retained_underlying_error
+    code = rows[path].get("new_code")
+    if code is None:
         raise Mismatch("error_requires_retained_stage_evidence")
-    if body["code"] != choices[0]["new_code"] or status not in data["wire_status"][body["code"]]:
+    if body["code"] != code or type(status) is not int or status not in data["wire_status"][code]:
         raise Mismatch("ERROR_MAPPING")
+
+
+def compare_error(source_enum: str, member: str, body: dict, status: int) -> None:
+    compare_error_path(f"/errors/{source_enum}/{member}", body, status)
 
 
 def canonical_agrees(old_response_projection: dict, response: dict) -> bool:

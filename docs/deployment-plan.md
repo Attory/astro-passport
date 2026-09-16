@@ -16,6 +16,14 @@ writable persistent operational directory is the 0700 quota state, not scientifi
 Proposed layout `/srv/astro-passport/{releases,secrets,state,artifacts,evidence}` with exact modes
 and safe artifact hashes validated before starting. Do not perform these host operations yet.
 
+Single uvicorn worker is mandatory for this reviewed envelope. The native semaphore intentionally
+caps all Swiss adapter instances in one process at two workers; moving it to each instance would
+multiply native load. Application admission is four, including bounded authentication/quota work.
+More processes/replicas require a new capacity and shared-quota review. The native subprocess
+scrubs its environment and limits resources but is not itself a network sandbox: container network
+isolation supplies no-egress enforcement. The local HTTPS harness uses an internal Docker network,
+no host ports, read-only root, no capabilities, no-new-privileges and no container swap.
+
 Before drafting executable Compose/Caddy deployment: verify host conflicts, TLS 1.2+ policy,
 real domain, ACME operation and a private Unix-socket or exact-peer trusted-proxy scheme preserving
 the external HTTPS assertion without trusting arbitrary X-Forwarded-* headers. Existing container

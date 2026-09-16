@@ -10,6 +10,12 @@ attestation covers only the listed project-owned scientific/neutral origins. The
 human extraction authorization permits this implementation and isolated parity validation,
 not client cutover or deployment. Contract bytes/domain identifiers remain unchanged.
 
+The reviewed public origins mapping is pinned as SHA256
+`6aeb2735374829e06d47be4fe3b5c759912fbd9e8a550df65b5c4fcd710e97c2`.
+Its 16 source paths/hashes were checked locally against the separate accepted AAC allowlist and
+unchanged ACE revision before publication. Public CI does not need access to either private repo;
+changing the mapping requires fresh AAC/rights review, not just editing a self-referential test.
+
 APT is Astro Passport Transformer, an independent public AGPL service. Only after a reviewed
 migration will APT be the ecosystem's sole Swiss-containing service. The existing calculation
 service is not modified by this bootstrap. AIS interprets; AAC governs cross-service contracts.

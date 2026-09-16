@@ -1,6 +1,10 @@
 # Public synthetic scientific corpus specification
 
-Revision: `apt-public-synthetic-corpus-spec.v1-proposed`. Not an executed golden corpus.
+Specification identity: `apt-public-synthetic-corpus-spec.v1-proposed` (accepted bytes retain suffix).
+Executed public reference: `tests/data/public-scientific-reference.v1.json`, 23 artificial cases,
+13 successes and 10 classified failures. SHA256:
+`00b09dbebcc61bc4ae4a3d28c3ebb2b19af66f58c0406caef8a0b5a66013a826`.
+The source/image and per-checkpoint HTTPS measurements are in `extraction/ledger.md`.
 All inputs below were authored as artificial examples, not copied or de-identified private births.
 Named geography is a coverage label, not a person's birthplace or a claimed provider search result.
 
@@ -41,5 +45,8 @@ ACE-only endpoint. Public builds/CI must remain independent of private repositor
 
 Private migration corpus design/custody is separate. This public file contains no private payload,
 person-derived digest, restricted case identifiers, credential, implementation code or private
-methodology. No scientific expected outputs have yet been derived, no parity asserted, no service
-deployment authorized.
+methodology. Scientific expected outputs were derived from the unchanged frozen reference after
+explicit extraction authorization. Measurements apply only to the image/revisions in their evidence
+records. Fault-injection and real-process resource-limit tests are additional non-astronomical
+coverage, not invented scientific goldens or claims that all faults were measured against old ACE.
+No service deployment is authorized.
