@@ -26,7 +26,11 @@ from app.security import initialize_quota
 
 
 def docker(*args):
-    return subprocess.check_output(["docker", *args], stderr=subprocess.PIPE, text=True).strip()
+    try:
+        return subprocess.check_output(["docker", *args], stderr=subprocess.PIPE, text=True).strip()
+    except subprocess.CalledProcessError as failure:
+        # Docker arguments contain only local setup paths/identities, never API secrets.
+        raise RuntimeError("local Docker operation failed: " + failure.stderr[:2000]) from None
 
 
 @contextlib.contextmanager
@@ -38,6 +42,11 @@ def https_container(image: str, artifacts: Path):
     try:
         network_info = json.loads(docker("network", "inspect", network))[0]
         subnet = ipaddress.ip_network(network_info["IPAM"]["Config"][0]["Subnet"])
+        # Docker's static-IP contract requires an explicitly configured subnet.
+        # Reuse the allocator-selected subnet of OUR empty network; do not guess a
+        # host range or alter existing networks. A concurrent allocation fails closed.
+        docker("network", "rm", network)
+        docker("network", "create", "--internal", "--subnet", str(subnet), network)
         address = str(subnet.network_address + 2)
         with tempfile.TemporaryDirectory(prefix="apt-local-tls-") as temporary:
             folder = Path(temporary)
@@ -83,6 +92,7 @@ def https_container(image: str, artifacts: Path):
             )
             (folder / "keys.json").chmod(0o600)
             initialize_quota(folder / "quota.sqlite3")
+            started = True  # Also clean up a created container if Docker start fails.
             docker(
                 "run",
                 "-d",
@@ -141,7 +151,6 @@ def https_container(image: str, artifacts: Path):
                 "--log-level",
                 "critical",
             )
-            started = True
             inspection = json.loads(docker("inspect", name))[0]
             assert not inspection["HostConfig"]["PortBindings"]
             assert inspection["NetworkSettings"]["Networks"][network]["IPAddress"] == address
@@ -190,8 +199,10 @@ def https_container(image: str, artifacts: Path):
                 yield client, headers, name
     finally:
         if started:
-            docker("rm", "-f", name)
-        docker("network", "rm", network)
+            with contextlib.suppress(RuntimeError):
+                docker("rm", "-f", name)
+        with contextlib.suppress(RuntimeError):
+            docker("network", "rm", network)
 
 
 def smoke(image: str, artifacts: Path, revision: str):

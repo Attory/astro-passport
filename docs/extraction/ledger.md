@@ -27,3 +27,25 @@ explicit participant-index comparison test; complete source-bundle assembly/repr
 installed scientific notices and failure-path tests. These changes require new exact-head
 CI and fresh independent review. Reviews A–H and final parity/source/image verification remain
 outstanding until recorded below. No deployment or ACE cutover has occurred.
+
+## Hardening checkpoint 94c8103
+
+Exact revision: `94c81038e5fa100068a113168ddd4b23ef845abf`.
+All 155 local tests and 44 Node vectors passed. Exact image/source receipt and fresh measured
+HTTPS parity are retained in `image-source-94c8103.json` and `https-parity-94c8103.json`:
+23 public synthetic cases, zero mismatches, exact partial ACEP1 bytes. ACE was unchanged.
+
+Complete source assembly was reproduced twice byte-for-byte (1,147,299,840 bytes):
+`d59e61e2a551bd947085d65b3fcfe6f69eaf7e98b54becaaac845b81a9b66061`.
+The third-party bundle remains
+`6a02fb511282c5519f53d5df54de0d3373d7ede482ec5599c6ec9c0fae1c82ef`.
+The full offline native/OS correspondence report equals the reviewed committed report.
+Bundles are retained locally, not publicly activated/released; anonymous retained-bundle
+delivery and downstream source-offer verification remain pre-distribution/activation gates.
+
+GitHub run `35157462145`: source correspondence/bundle job ran independently; application
+tests/build passed, but the local HTTPS fixture failed creating a static-address container.
+The fixture now explicitly configures the subnet selected for its own empty internal network,
+as required by [Docker's static-IP contract](https://docs.docker.com/reference/cli/docker/container/run/).
+It changes no existing network and fails on allocation conflicts. Bounded Docker diagnostics
+and cleanup cover failed starts. Production scientific code is unchanged by this portability fix.
