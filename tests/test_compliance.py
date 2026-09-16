@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 
+from compliance import release
 from compliance.audit import dsc_checks
 from compliance.bundle import acquire, checked, pack, verify
 from compliance.native import elf_sections, rpm
@@ -110,6 +111,29 @@ def test_dsc_sources_missing_wrong_hash_and_wrong_size_rejected() -> None:
 
 def test_committed_compliance_coverage() -> None:
     validate(Path(__file__).resolve().parents[1])
+
+
+def test_release_outer_bundle_reproducible_and_exclusive(tmp_path, monkeypatch):
+    def git(args, **kwargs):
+        if args[1] == "status":
+            return b""
+        if args[1] == "rev-parse":
+            return "a" * 40 + "\n"
+        if args[1] == "archive":
+            return b"independent synthetic source archive fixture"
+        raise AssertionError("unexpected command")
+
+    def pack_fixture(lock, cache, output):
+        output.write_bytes(b"independent synthetic matching-source fixture")
+
+    monkeypatch.setattr(release.subprocess, "check_output", git)
+    monkeypatch.setattr(release, "pack", pack_fixture)
+    first = release.assemble(tmp_path, tmp_path / "first.tar")
+    second = release.assemble(tmp_path, tmp_path / "second.tar")
+    assert first == second
+    assert (tmp_path / "first.tar").read_bytes() == (tmp_path / "second.tar").read_bytes()
+    with pytest.raises(FileExistsError):
+        release.assemble(tmp_path, tmp_path / "first.tar")
 
 
 @pytest.mark.parametrize("change", ["source", "notice", "base", "wheel", "missing", "failure"])

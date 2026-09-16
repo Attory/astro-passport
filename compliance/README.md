@@ -1,7 +1,7 @@
 # Native/runtime Corresponding Source controls
 
-Scope: the exact Linux/amd64 CPython 3.12.14 scaffold and the **proposed**, not installed,
-scientific dependencies. These are independently authored compliance tools, public upstream
+Scope: the exact Linux/amd64 CPython 3.12.14 runtime and the reviewed pinned
+scientific dependencies, now installed by the extraction branch. These are compliance tools, public upstream
 identities and original public-image notices, not ACE implementation/history/corpora. APT is
 AGPL-3.0-only; original third-party licences remain controlling for their components.
 
@@ -49,7 +49,7 @@ It does not push an image, publish a release or deploy. Only Linux/amd64 is cove
 The Dockerfile pins base/build-tool digests and frozen hashed dependencies. It does not upgrade
 OS packages. uv is a general-purpose build tool absent from the final image; base pip 25.0.1
 is separately inventoried. Runtime notices must not be stripped. Fast CI checks coverage/drift;
-the full offline audit verifies retained bytes. The scaffold still installs no science.
+the full offline audit verifies retained bytes. Scientific extraction adds no unreviewed native pin.
 
 Before **any image distribution/activation**, retain and verify:
 
@@ -60,9 +60,10 @@ Before **any image distribution/activation**, retain and verify:
 5. exact deployed `/source` and `/health/version` correspondence.
 
 A private URL, licence label or source for a different image is insufficient. No scientific
-image exists yet: its later extracted code and generated TZif controls must be public at that
-image's exact revision before distribution. This task does not copy them or waive that release
-gate. Changed binaries/platform/build controls require new evidence and independent review.
+image may be distributed without its extracted code and generated TZif controls public at that
+image's exact revision. The extraction branch supplies those preferred sources and controls;
+this does not waive activation/source-availability gates. Changed binaries/platform/build
+controls require new evidence and independent review.
 
 ## Rights/obligations matrix
 

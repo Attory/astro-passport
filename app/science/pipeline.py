@@ -83,6 +83,8 @@ class PassportScience:
                 boundary,
                 fold_choice=value.civil.fold,
             )
+            # Preserve the retained-rule replay boundary before astronomy consumes UTC.
+            civil = self.civil.verify_result(civil)
             astronomy = self.natal.calculate(EphemerisRequest(utc=civil.utc)).astronomy
             provenance = astronomy.provenance.model_dump(mode="json")
             provenance.update(

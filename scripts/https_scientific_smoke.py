@@ -9,9 +9,11 @@ inputs are independently public synthetic corpus cases; no real-person data is a
 import argparse
 import contextlib
 import hashlib
+import ipaddress
 import json
 import os
 import secrets
+import socket
 import ssl
 import subprocess
 import tempfile
@@ -34,6 +36,9 @@ def https_container(image: str, artifacts: Path):
     docker("network", "create", "--internal", network)
     started = False
     try:
+        network_info = json.loads(docker("network", "inspect", network))[0]
+        subnet = ipaddress.ip_network(network_info["IPAM"]["Config"][0]["Subnet"])
+        address = str(subnet.network_address + 2)
         with tempfile.TemporaryDirectory(prefix="apt-local-tls-") as temporary:
             folder = Path(temporary)
             subprocess.run(
@@ -53,7 +58,7 @@ def https_container(image: str, artifacts: Path):
                     "-subj",
                     "/CN=localhost",
                     "-addext",
-                    "subjectAltName=DNS:localhost,IP:127.0.0.1",
+                    "subjectAltName=DNS:localhost,IP:" + address,
                 ],
                 check=True,
                 stdout=subprocess.DEVNULL,
@@ -85,6 +90,8 @@ def https_container(image: str, artifacts: Path):
                 name,
                 "--network",
                 network,
+                "--ip",
+                address,
                 "--read-only",
                 "--user",
                 f"{os.getuid()}:{os.getgid()}",
@@ -114,8 +121,6 @@ def https_container(image: str, artifacts: Path):
                 "APT_QUOTA_FILE=/local-state/quota.sqlite3",
                 "--env",
                 "APT_SCIENCE_DIRECTORY=/science",
-                "-p",
-                "127.0.0.1::8443",
                 image,
                 "python",
                 "-m",
@@ -138,10 +143,10 @@ def https_container(image: str, artifacts: Path):
             )
             started = True
             inspection = json.loads(docker("inspect", name))[0]
-            binding = inspection["NetworkSettings"]["Ports"]["8443/tcp"][0]
-            assert binding["HostIp"] == "127.0.0.1"
+            assert not inspection["HostConfig"]["PortBindings"]
+            assert inspection["NetworkSettings"]["Networks"][network]["IPAddress"] == address
             assert json.loads(docker("network", "inspect", network))[0]["Internal"] is True
-            url = "https://127.0.0.1:" + binding["HostPort"]
+            url = "https://" + address + ":8443"
             context = ssl.create_default_context(cafile=str(folder / "cert.pem"))
             with httpx.Client(
                 base_url=url,
@@ -161,6 +166,22 @@ def https_container(image: str, artifacts: Path):
                     time.sleep(0.25)
                 else:
                     raise RuntimeError("local scientific readiness failed")
+                # Actual TLS negative tests, not a MockTransport construction assertion.
+                try:
+                    with httpx.Client(trust_env=False, timeout=2) as untrusted:
+                        untrusted.get(url + "/health/live")
+                except httpx.ConnectError:
+                    pass
+                else:
+                    raise AssertionError("untrusted test certificate accepted")
+                try:
+                    with socket.create_connection((address, 8443), timeout=2) as connection:
+                        with context.wrap_socket(connection, server_hostname="wrong.invalid"):
+                            pass
+                except ssl.SSLCertVerificationError:
+                    pass
+                else:
+                    raise AssertionError("wrong TLS hostname accepted")
                 headers = {
                     "Authorization": f"Bearer apt1.{key_id}.{secret}",
                     "X-APT-Contract-Version": "1.0.0",

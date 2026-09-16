@@ -165,3 +165,19 @@ def test_equality_is_not_numeric_epsilon_or_python_bool_coercion():
     assert not equal(None, [])
     assert not equal(float("nan"), float("nan"))
     assert equal(json.loads("0.125"), json.loads("0.125"))
+
+
+def test_manifest_civil_participant_indices_are_not_collapsed():
+    old, requests, responses = synthetic_pair()
+    different = "1" * 64
+    responses[1]["civil"]["provenance"]["tzif_sha256"] = different
+    old[1]["facts"]["civil"]["provenance"]["tzif_sha256"] = different
+    for record in old:
+        record["manifest"]["civil"][1]["tzif_sha256"] = different
+    digest = legacy_manifest_digest(old[0]["manifest"])
+    compare_pair(old, requests, responses, new_revision="0" * 40, retained_manifest_sha256=digest)
+    responses[1]["civil"]["provenance"]["tzif_sha256"] = "0" * 64
+    with pytest.raises(Mismatch):
+        compare_pair(
+            old, requests, responses, new_revision="0" * 40, retained_manifest_sha256=digest
+        )
