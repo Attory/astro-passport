@@ -16,3 +16,8 @@ locked. No Swiss Ephemeris, Python Swiss binding, timezone-boundary or tzdb data
 by this scaffold. No Swiss Professional entitlement is claimed. Before adopting any of them,
 retain the exact distribution, upstream copyright/licence files, checksums, data provenance and
 redistribution requirements in a new reviewed inventory. A dependency name alone is not clearance.
+
+The pre-extraction [native/source compliance inventory](compliance/README.md) now retains exact
+proposed scientific sources/data, native-source lineage and the original public base-image notices.
+It does not install those dependencies or claim scientific parity. Preserve all original notices
+and source/replacement rights described there before any later binary distribution.
