@@ -1,7 +1,6 @@
-"""Build an exact committed PUBLIC scaffold revision and record image/source correspondence.
+"""Build an exact committed PUBLIC revision and record image/source correspondence.
 
-This does not push an image, publish a release, deploy, install scientific dependencies, or
-assert that a future scientific service has satisfied its release gates.
+This does not push an image, publish a release, deploy, or assert scientific acceptance.
 """
 
 import argparse
@@ -68,7 +67,7 @@ def build(output: Path) -> None:
         "source_lock_sha256": hashlib.sha256(lock).hexdigest(),
         "image_id": image["Id"],
         "platform": "linux/amd64",
-        "scope": "scaffold only; not science/extraction clearance",
+        "scope": "exact public source/image correspondence; not scientific parity or activation clearance",
         "distribution": "not published",
         "deployment": "not performed",
     }

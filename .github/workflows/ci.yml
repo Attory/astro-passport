@@ -12,7 +12,11 @@ jobs:
           python-version: '3.12.14'
       - run: python -m pip install uv==0.12.10
       - run: uv sync --frozen
+      - name: Acquire and rebuild exact public scientific artifacts
+        run: uv run --frozen python -m scripts.scientific_artifacts --cache "$RUNNER_TEMP/science-cache" --output "$RUNNER_TEMP/science-artifacts"
       - run: make check
+        env:
+          APT_TEST_ARTIFACTS: ${{ runner.temp }}/science-artifacts
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22.22.2'
@@ -20,6 +24,8 @@ jobs:
       - run: git diff --check
       - run: docker build --build-arg GIT_SHA="$GITHUB_SHA" -t apt-ci .
       - run: test "$(docker inspect apt-ci --format '{{.Config.User}}')" = '10001:10001'
+      - name: Real local HTTPS scientific corpus
+        run: uv run --frozen python -m scripts.https_scientific_smoke --image apt-ci --artifacts "$RUNNER_TEMP/science-artifacts" --revision "$GITHUB_SHA"
       - run: |
           docker run -d --name apt-smoke --network none --read-only --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,noexec,nosuid,size=16m apt-ci
           docker exec -i -e EXPECTED_SHA="$GITHUB_SHA" apt-smoke python < scripts/container_smoke.py

@@ -7,16 +7,13 @@ from pathlib import Path
 import pytest
 
 from app.contracts import AstroPassportResponseV1
+from app.science.boundaries.identity import pinned_provenance
+from app.science.civil.contracts import ARCHIVE_SHA256, TZCODE_SHA256, TZDATA_SHA256
+from app.science.ephemeris.identity import BINARY_SHA256, BINDING_SOURCE_SHA256, DATA
 from scripts.schema import render
 
 
 def response() -> dict:
-    artifact = {
-        "identity": "synthetic",
-        "version": "test-only",
-        "sha256": "0" * 64,
-        "license": "test-only",
-    }
     return {
         "schema_version": "AstroPassportResponse.v1",
         "contract_version": "1.0.0",
@@ -34,21 +31,33 @@ def response() -> dict:
             "selected_index": 0,
             "result_count": 1,
         },
-        "civil_input": {"date": "2000-01-02", "time": "03:04:05", "fold": None},
+        "civil_input": {"date": "2000-01-02", "time": "03:04:05.000000", "fold": None},
         "boundary": {
+            "schema_version": "timezone-boundary.v1",
             "outcome": "unique",
             "iana_zone": "Etc/UTC",
-            "dataset": artifact,
-            "resolver": "test-only",
+            "provenance": pinned_provenance().model_dump(mode="json"),
         },
         "civil": {
-            "utc": "2000-01-02T03:04:05Z",
+            "schema_version": "civil-time.v1",
+            "utc": "2000-01-02T03:04:05.000000Z",
             "offset_seconds": 0,
             "resolution": "unique",
             "fold": None,
-            "tzdata": artifact,
-            "tzif_sha256": "0" * 64,
-            "resolver": "test-only",
+            "provenance": {
+                "iana_version": "2026c",
+                "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+                "archive_sha256": ARCHIVE_SHA256,
+                "tzdata_source_sha256": TZDATA_SHA256,
+                "tzcode_source_sha256": TZCODE_SHA256,
+                "tzif_sha256": "0" * 64,
+                "resolver": "zoneinfo-roundtrip.v1",
+                "python_runtime": "CPython-3.12.14",
+                "calendar": "proleptic-gregorian",
+                "utc_convention": "posix-no-leap-seconds",
+                "historical_assurance": "pinned-dataset-rules-only",
+            },
+            "limitations": ["modern-geography-not-date-specific-jurisdiction"],
         },
         "bodies": [
             {"body": name, "binary64_hex": value.hex(), "decimal_degrees": f"{value:.9f}"}
@@ -58,18 +67,25 @@ def response() -> dict:
             "schema_version": "AstroPassportProvenance.v1",
             "source_repository": "https://github.com/Attory/astro-passport",
             "source_revision": "0" * 40,
-            "runtime_identity": "test-only",
-            "binding": artifact,
-            "native_version": "test-only",
-            "native_binary_sha256": "0" * 64,
-            "data_files": [artifact],
-            "ephemeris_flags": 2,
+            "ephemeris_schema": "ephemeris.v1",
+            "adapter": "swiss-isolated.v1",
+            "binding": "pysweph-2.10.3.6",
+            "library": "2.10.03",
+            "binary_sha256": BINARY_SHA256,
+            "binding_source_sha256": BINDING_SOURCE_SHA256,
+            "planet_data_sha256": DATA[0][2],
+            "moon_data_sha256": DATA[1][2],
+            "data_origin": "DE441",
+            "requested_flags": 2,
+            "returned_flags": [2, 2],
             "projection": "geocentric-tropical-apparent-ecliptic-of-date",
-            "numerical_policy": "test-only",
-            "time_scale_policy": "test-only",
-            "tt_jd_binary64": (1.0).hex(),
-            "ut1_jd_binary64": (1.0).hex(),
-            "limitations": ["not-a-scientific-answer"],
+            "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+            "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+            "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+            "runtime": "CPython-3.12.14-Linux-x86_64",
+            "tt_jd_binary64": (2451545.0).hex(),
+            "ut1_jd_binary64": (2451545.0).hex(),
+            "limitations": ["modelled-ut1-not-measured-earth-orientation"],
         },
         "serialization": "astro-passport-json.v1",
         "authenticity": "unsigned-direct-client-only",
@@ -100,7 +116,7 @@ def test_response_invalid(case: str) -> None:
     if case == "hex":
         data["provenance"]["tt_jd_binary64"] = "1"
     if case == "flags":
-        data["provenance"]["ephemeris_flags"] = True
+        data["provenance"]["requested_flags"] = True
     if case == "unknown":
         data["score"] = 42
     if case == "source":

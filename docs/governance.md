@@ -1,15 +1,14 @@
 # Governance baseline
 
-Canonical AAC merge: `aa4373b5d7b2539adf5bc87c0b4cc7d392d2135d`.
-Merge parents: `c5fc9c7f58282d5ab7c5cab5f009fb21955e7855` and
-`f7993f61797e2e8ca24e9248bd680316d4b250d8`. AAC PR #1 merged before this repository was created.
+Canonical AAC extraction merge: `59500ec0951e082dd4c3984999b8a42fe4ce53c8`.
+Merge parents: `aa4373b5d7b2539adf5bc87c0b4cc7d392d2135d` and
+`7df4d66f4fdce2e6d4df80167825486d339ea7be`. AAC PR #2 merged before extraction began.
 
-`app/build.py:AAC_BASELINE` identifies this **merged scaffold-governance baseline**, not the
-separately human-accepted pre-extraction contract checkpoint
-`75092aac79c39c6893900a0758ab176a47fe0c7a`. Contract acceptance and the narrow project-owned
-publication-rights attestation are now recorded in AAC; its later merge/publication and APT's
-scientific adoption remain separate operations. The public runtime constant is deliberately
-unchanged: this scaffold has not implemented or published that canonical scientific contract.
+`app/build.py:AAC_BASELINE` identifies the merged governance accepting normative contract
+checkpoint `75092aac79c39c6893900a0758ab176a47fe0c7a`, revision 2. The explicit rights-holder
+attestation covers only the listed project-owned scientific/neutral origins. The subsequent
+human extraction authorization permits this implementation and isolated parity validation,
+not client cutover or deployment. Contract bytes/domain identifiers remain unchanged.
 
 APT is Astro Passport Transformer, an independent public AGPL service. Only after a reviewed
 migration will APT be the ecosystem's sole Swiss-containing service. The existing calculation
@@ -21,10 +20,10 @@ automatic legal conclusion about another service's rights.
 This public repository is self-contained for build/test/review. The AAC hash identifies governing
 approval; private AAC files are not runtime inputs and are not distributed here. Public changes
 can be proposed without private access; canonical schema release remains subject to AAC approval.
-Current authorization covers bootstrap, API contract scaffold and plans, not scientific extraction,
+Current authorization covers the allowlisted scientific extraction and parity gates, not
 deployment, an existing-client cutover or removal of another service's code.
 
-Future gates: canonical contract publication and explicit extraction approval, full ACEP1
+Future gates: canonical contract publication, full ACEP1
 profile/vectors where required beyond the accepted partial Sun/Moon profile, scientific parity and independent audit, exact distribution rights
 and notices, source availability verification, operational approval and separate client cutover.
 Initial Sun/Moon facts must not claim a full natal identity profile or its fingerprint prefixes.

@@ -29,7 +29,10 @@ artifact hashes/licences and image identity; build/pin immutable image; provisio
 key hashes and durable quota state; start disabled/private; verify source archive anonymously;
 test actual TLS/auth/proxy/size/quota/concurrency/privacy/egress/health/version boundaries; verify
 scientific golden calls; only then enable computational access under explicit activation approval.
-Liveness alone never proves scientific readiness. Current ready stays 503 and engine is unavailable.
+Liveness alone never proves scientific readiness. The extraction implementation requires
+`APT_SCIENCE_DIRECTORY` with verified `boundaries/`, `civil/` and `swiss/` subdirectories and
+immutable build metadata. No artifact acquisition occurs at startup or on requests. The API
+remains disabled unless explicitly configured; deployment/activation is still unauthorized.
 
 Source gate: anonymously download the exact running revision's Corresponding Source and required
 control/build sources; match image SHA and notices; verify downstream source offers, not merely

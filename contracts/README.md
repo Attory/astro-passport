@@ -1,11 +1,13 @@
-# Candidate public API boundary
+# Accepted public API semantics — canonical release pending
 
-Status: **candidate, not an AAC-approved schema release**. API/schema version candidate `1.0.0`;
+Status: **AAC-accepted 1.0.0 revision 2 semantics; not a published schema release**.
 request/response/provenance/error families are `.v1`. No schema tag or canonical release exists.
 The limited `sun-moon.v1` profile is not full AstroIdentity, ACEP1, NCF, NAD, WPF or a fingerprint.
 
-Preferred editable source: `app/contracts.py`; deterministic generator: `scripts/schema.py`.
-`contracts/manifest.json` pins generated candidate bytes. All references resolve inside that file.
+Accepted bytes: `accepted/schema.json`; validators: `app/contracts.py`; conformance checker:
+`scripts/schema.py`. The checker preserves the exact approved bytes while comparing every
+runtime definition's constraints. `contracts/manifest.json` records approval and digest.
+All references resolve inside that file. Normative semantics are in `accepted/semantics.md`.
 Pydantic semantic validators add invariants beyond JSON Schema (calendar validity, coherence,
 finite hexadecimal numbers); the release must approve both the specification and conformance
 tests. This implementation is not a required client SDK. Independent JSON/HTTPS clients only.
@@ -47,8 +49,9 @@ raw longitude records. Each longitude retains binary64 hex and the canonical nin
 Provenance separates source revision, runtime, binding/native identity, data hashes, flags,
 projection, numerical/time-scale policies and limitations. No transport ID, timing, API key or
 execution timestamp enters deterministic content. Currently shape/coherence checks do NOT prove
-astronomical correctness or bind decimal output to its native value; the future approved scientific
-adapter/comparator must prove that derivation. No hashing or ACEP1 encoder is implemented here.
+astronomical correctness by themselves. The extracted adapter now binds decimal output to its
+native binary64 value. `app/canonical.py` implements only the accepted partial Sun/Moon profile,
+with its unchanged encoded `-proposed` domain; it does not emit frozen full NCF/NAD identities.
 
 Unsigned responses are usable only as direct authenticated-client results over verified TLS from
 the trusted service. Do not accept arbitrary uploaded/deserialized passports as authentic, claim
@@ -71,5 +74,6 @@ The server currently supports exactly `1.0.0` in both header and body. No implic
 additive unknown-field acceptance. Future compatible releases need explicit support matrices and
 conformance tests; incompatible changes require a new major route. Scientific profile, datasets,
 numerical policy and source SHA remain separate from API version. Limits are operational policy,
-not astrological constants. **Default disabled; all authenticated valid requests still return
-science_unavailable; readiness remains 503. No successful scientific calculation is claimed.**
+not astrological constants. **Default disabled; missing artifacts/build/runtime prerequisites
+fail readiness closed. Scientific implementation and parity evidence are under review; no
+deployment or external activation is authorized.**

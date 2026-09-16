@@ -1,0 +1,3542 @@
+{
+  "version": "apt-scientific-leaf-map.v1-proposed",
+  "status": "proposed_not_approved",
+  "old_projection": "SelectedBirthInput + PersonCalculationFacts per participant, with all CalculationManifest leaves separately classified; never full private compatibility payload",
+  "array_policy": "primitive arrays are atomic exact ordered sequences; fixed body/provenance tuples expanded by index. Missing/null/empty/order/extra keys are distinct; compare structural shape before leaf rules",
+  "rows": [
+    {
+      "side": "old",
+      "path": "/selected/raw/date",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/civil/date",
+        "/response/civil_input/date"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/raw/time",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/request/civil/time",
+        "/response/civil_input/time"
+      ],
+      "rule": "fixed HH:mm:ss.ffffff from validated naive civil clock; exact microseconds, never offset conversion",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/raw/place_query",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/query",
+        "/response/selected_place/query"
+      ],
+      "rule": "both legacy values must first agree EXACTLY after existing legacy validation; mismatch rejects before HTTP; no query normalization in transport",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "targets": [
+        "/request/selected_place/schema_version",
+        "/response/selected_place/schema_version"
+      ],
+      "rule": "selected-place.v1 -> SelectedPlaceInput.v1; encoding family only, actual selected values unchanged",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/provider",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/provider",
+        "/response/selected_place/provider"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/source_id",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/source_id",
+        "/response/selected_place/source_id"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/display_name",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/display_name",
+        "/response/selected_place/display_name"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/latitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/latitude",
+        "/response/selected_place/latitude"
+      ],
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/longitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/longitude",
+        "/response/selected_place/longitude"
+      ],
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/candidate/attribution",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/attribution",
+        "/response/selected_place/attribution"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/search_request/query",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/query",
+        "/response/selected_place/query"
+      ],
+      "rule": "both legacy values must first agree EXACTLY after existing legacy validation; mismatch rejects before HTTP; no query normalization in transport",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/search_request/limit",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/requested_limit",
+        "/response/selected_place/requested_limit"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/selected_index",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/selected_index",
+        "/response/selected_place/selected_index"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/selected_place/result_count",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/result_count",
+        "/response/selected_place/result_count"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/selected/fold_choice",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/civil/fold",
+        "/response/civil_input/fold",
+        "/response/civil/fold"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/schema_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/schema_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/coordinates/latitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/latitude",
+        "/response/selected_place/latitude"
+      ],
+      "rule": "resolver input must equal retained selected binary64 exactly; no pre-rounding",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/coordinates/longitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/longitude",
+        "/response/selected_place/longitude"
+      ],
+      "rule": "resolver input must equal retained selected binary64 exactly; no pre-rounding",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/dataset",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/dataset"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/release",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/release"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/variant",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/variant"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/manifest_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/boundary/provenance/manifest_sha256"
+      ],
+      "rule": "exact reviewed old/new manifest byte hashes; scientific data/runtime leaves remain exact. Proposed APT manifest removes private retention location, records public target as not yet uploaded; no blanket provenance exclusion",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/geometry_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geometry_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/catalog_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/catalog_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/resolver"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/shapely_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/shapely_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/geos_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geos_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/numpy_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/numpy_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/python_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/python_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/execution_target",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/execution_target"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/license",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/attribution",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/attribution"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/provenance/license_url",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license_url"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/status",
+      "classification": "ERROR_MAPPING",
+      "targets": [
+        "/response/boundary/outcome",
+        "/error/code"
+      ],
+      "rule": "resolved -> success unique; boundary -> boundary_boundary; ambiguous -> boundary_ambiguous; no_match -> boundary_no_match",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/tzid",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/iana_zone"
+      ],
+      "rule": "success only: exact tzid; failures have no successful response and use classified error mapping",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/reason",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "success requires null reason and empty candidate_ids; failure diagnostics retained only in private stage-level reference evidence, not public error body. Public API parity proves classified outcome, not diagnostic-list equality; separate offline stage conformance required",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/boundary/candidate_ids",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "success requires null reason and empty candidate_ids; failure diagnostics retained only in private stage-level reference evidence, not public error body. Public API parity proves classified outcome, not diagnostic-list equality; separate offline stage conformance required",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/schema_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/schema_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/local_date",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/civil/date",
+        "/response/civil_input/date"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/local_time",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/request/civil/time",
+        "/response/civil_input/time"
+      ],
+      "rule": "fixed HH:mm:ss.ffffff from validated naive civil clock; exact microseconds, never offset conversion",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/schema_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/schema_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/coordinates/latitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/latitude",
+        "/response/selected_place/latitude"
+      ],
+      "rule": "resolver input must equal retained selected binary64 exactly; no pre-rounding",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/coordinates/longitude",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/selected_place/longitude",
+        "/response/selected_place/longitude"
+      ],
+      "rule": "resolver input must equal retained selected binary64 exactly; no pre-rounding",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/dataset",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/dataset"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/release",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/release"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/variant",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/variant"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/manifest_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/boundary/provenance/manifest_sha256"
+      ],
+      "rule": "exact reviewed old/new manifest byte hashes; scientific data/runtime leaves remain exact. Proposed APT manifest removes private retention location, records public target as not yet uploaded; no blanket provenance exclusion",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/geometry_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geometry_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/catalog_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/catalog_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/resolver"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/shapely_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/shapely_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/geos_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geos_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/numpy_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/numpy_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/python_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/python_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/execution_target",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/execution_target"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/license",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/attribution",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/attribution"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/provenance/license_url",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license_url"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/status",
+      "classification": "ERROR_MAPPING",
+      "targets": [
+        "/response/boundary/outcome",
+        "/error/code"
+      ],
+      "rule": "resolved -> success unique; boundary -> boundary_boundary; ambiguous -> boundary_ambiguous; no_match -> boundary_no_match",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/tzid",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/iana_zone"
+      ],
+      "rule": "success only: exact tzid; failures have no successful response and use classified error mapping",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/reason",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "success requires null reason and empty candidate_ids; failure diagnostics retained only in private stage-level reference evidence, not public error body. Public API parity proves classified outcome, not diagnostic-list equality; separate offline stage conformance required",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/boundary/candidate_ids",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "success requires null reason and empty candidate_ids; failure diagnostics retained only in private stage-level reference evidence, not public error body. Public API parity proves classified outcome, not diagnostic-list equality; separate offline stage conformance required",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/utc",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/civil/utc"
+      ],
+      "rule": "UTC zero-offset instant -> fixed YYYY-MM-DDTHH:mm:ss.ffffffZ; exact microseconds and same instant; reject unknown offset/fold",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/offset_seconds",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/offset_seconds"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/resolution",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/resolution"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/fold_choice",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/request/civil/fold",
+        "/response/civil_input/fold",
+        "/response/civil/fold"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/iana_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/iana_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/build_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/build_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/tzdata_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzdata_source_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/tzcode_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzcode_source_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/tzif_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzif_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/resolver"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/python_runtime",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/python_runtime"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/calendar",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/calendar"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/utc_convention",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/utc_convention"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/provenance/historical_assurance",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/historical_assurance"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/civil/limitations",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/limitations"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/schema_version",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "ACE Western wrapper stays ACE-owned; raw astronomical frame and Sun/Moon order retained, no APT Western projection fingerprint",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/projection",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "ACE Western wrapper stays ACE-owned; raw astronomical frame and Sun/Moon order retained, no APT Western projection fingerprint",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/schema_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/ephemeris_schema",
+        "/provenance/ephemeris_schema"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/utc",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/civil/utc"
+      ],
+      "rule": "UTC zero-offset instant -> fixed YYYY-MM-DDTHH:mm:ss.ffffffZ; exact microseconds and same instant; reject unknown offset/fold",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/0/body",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/bodies/0/body"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/0/longitude",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/bodies/0/decimal_degrees"
+      ],
+      "rule": "format existing exact quantized Decimal as exactly nine decimal places; value MUST equal legacy shortest-binary64-decimal ROUND_HALF_EVEN modulo360 derivation; no re-quantization of exact binary rational",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/0/binary64_hex",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/bodies/0/binary64_hex"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/1/body",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/bodies/1/body"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/1/longitude",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/bodies/1/decimal_degrees"
+      ],
+      "rule": "format existing exact quantized Decimal as exactly nine decimal places; value MUST equal legacy shortest-binary64-decimal ROUND_HALF_EVEN modulo360 derivation; no re-quantization of exact binary rational",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/positions/1/binary64_hex",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/bodies/1/binary64_hex"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/jd_tt_hex",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/tt_jd_binary64",
+        "/provenance/tt_jd_binary64"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/jd_ut1_hex",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/ut1_jd_binary64",
+        "/provenance/ut1_jd_binary64"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/limitations",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/limitations",
+        "/provenance/limitations"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/adapter",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/adapter",
+        "/provenance/adapter"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/binding",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binding",
+        "/provenance/binding"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/library",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/library",
+        "/provenance/library"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/binary_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binary_sha256",
+        "/provenance/binary_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/binding_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binding_source_sha256",
+        "/provenance/binding_source_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/planet_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/planet_data_sha256",
+        "/provenance/planet_data_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/moon_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/moon_data_sha256",
+        "/provenance/moon_data_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/data_origin",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/data_origin",
+        "/provenance/data_origin"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/requested_flags",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/requested_flags",
+        "/provenance/requested_flags"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/returned_flags",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/returned_flags",
+        "/provenance/returned_flags"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/projection",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/projection",
+        "/provenance/projection"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/numerical_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/numerical_policy",
+        "/provenance/numerical_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/time_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/time_policy",
+        "/provenance/time_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/delta_t_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/delta_t_policy",
+        "/provenance/delta_t_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/runtime",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/runtime",
+        "/provenance/runtime"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/source_repository",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "targets": [
+        "/response/provenance/source_repository",
+        "/provenance/source_repository"
+      ],
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/facts/natal/astronomy/provenance/ace_git_sha",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "targets": [
+        "/response/provenance/source_revision",
+        "/provenance/source_revision"
+      ],
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/schema_version",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/pipeline",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/canonicalization",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/source_repository",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ace_git_sha",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/place_schema",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "targets": [],
+      "rule": "ACE-owned composed pair-manifest identity, retained privately unchanged as baseline; not the single-person APT envelope identity. ace-calculation-json.v1 is NOT ACEP1",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/dataset",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/dataset"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/release",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/release"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/variant",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/variant"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/manifest_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [
+        "/response/boundary/provenance/manifest_sha256"
+      ],
+      "rule": "exact reviewed old/new manifest byte hashes; scientific data/runtime leaves remain exact. Proposed APT manifest removes private retention location, records public target as not yet uploaded; no blanket provenance exclusion",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/geometry_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geometry_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/catalog_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/catalog_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/resolver"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/shapely_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/shapely_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/geos_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/geos_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/numpy_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/numpy_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/python_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/python_version"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/execution_target",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/execution_target"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/license",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/attribution",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/attribution"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary/license_url",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/boundary/provenance/license_url"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/iana_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/iana_version"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/build_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/build_policy"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/tzdata_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzdata_source_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/tzcode_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzcode_source_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/tzif_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzif_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/resolver"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/python_runtime",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/python_runtime"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/calendar",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/calendar"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/utc_convention",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/utc_convention"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/0/historical_assurance",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/historical_assurance"
+      ],
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants",
+      "target_context": "participant-0"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/iana_version",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/iana_version"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/build_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/build_policy"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/archive_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/tzdata_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzdata_source_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/tzcode_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzcode_source_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/tzif_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/tzif_sha256"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/resolver",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/resolver"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/python_runtime",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/python_runtime"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/calendar",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/calendar"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/utc_convention",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/utc_convention"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil/1/historical_assurance",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/civil/provenance/historical_assurance"
+      ],
+      "rule": "exact typed value in passport for participant index 1; do not collapse participants",
+      "target_context": "participant-1"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/adapter",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/adapter",
+        "/provenance/adapter"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/binding",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binding",
+        "/provenance/binding"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/library",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/library",
+        "/provenance/library"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/binary_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binary_sha256",
+        "/provenance/binary_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/binding_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/binding_source_sha256",
+        "/provenance/binding_source_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/planet_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/planet_data_sha256",
+        "/provenance/planet_data_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/moon_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/moon_data_sha256",
+        "/provenance/moon_data_sha256"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/data_origin",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/data_origin",
+        "/provenance/data_origin"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/requested_flags",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/requested_flags",
+        "/provenance/requested_flags"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/returned_flags",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/returned_flags",
+        "/provenance/returned_flags"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/projection",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/projection",
+        "/provenance/projection"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/numerical_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/numerical_policy",
+        "/provenance/numerical_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/time_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/time_policy",
+        "/provenance/time_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/delta_t_policy",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/delta_t_policy",
+        "/provenance/delta_t_policy"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/runtime",
+      "classification": "EXACT_EQUAL",
+      "targets": [
+        "/response/provenance/runtime",
+        "/provenance/runtime"
+      ],
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/source_repository",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "targets": [
+        "/response/provenance/source_repository",
+        "/provenance/source_repository"
+      ],
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/ephemeris/ace_git_sha",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "targets": [
+        "/response/provenance/source_revision",
+        "/provenance/source_revision"
+      ],
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/projection",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/methodology",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/methodology_sha256",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/scoring_profile",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/scoring_profile_sha256",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/numerical_policy",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/input_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/context_sha256",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/boundary_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/civil_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/natal_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/synastry_sha256",
+      "classification": "INTENTIONALLY_ABSENT",
+      "targets": [],
+      "rule": "private downstream ACE context/methodology/projection/scoring leaf; never in APT scientific output or public corpus. Null values remain explicit in retained private manifest",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/facts_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "old",
+      "path": "/manifest/result_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "targets": [],
+      "rule": "ACE-owned pair manifest; recompute after approved client migration from exact new complete payload using its declared legacy serialization; retain both old/new digests; not an APT fingerprint and not expected equal",
+      "target_context": "current-participant; duplicated shared manifest identity must agree for both participants"
+    },
+    {
+      "side": "new",
+      "path": "/request/civil/date",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/raw/date",
+        "/facts/civil/local_date"
+      ],
+      "source_contexts": {
+        "/selected/raw/date": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/local_date": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/civil/fold",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/fold_choice",
+        "/facts/civil/fold_choice"
+      ],
+      "source_contexts": {
+        "/selected/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/civil/time",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/selected/raw/time",
+        "/facts/civil/local_time"
+      ],
+      "source_contexts": {
+        "/selected/raw/time": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/local_time": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "fixed HH:mm:ss.ffffff from validated naive civil clock; exact microseconds, never offset conversion"
+    },
+    {
+      "side": "new",
+      "path": "/request/contract_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/request/profile",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/request/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/attribution",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/attribution"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/attribution": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/display_name",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/display_name"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/display_name": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/latitude",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/latitude",
+        "/facts/boundary/coordinates/latitude",
+        "/facts/civil/boundary/coordinates/latitude"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/latitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/boundary/coordinates/latitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/coordinates/latitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup; resolver input must equal retained selected binary64 exactly; no pre-rounding"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/longitude",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/longitude",
+        "/facts/boundary/coordinates/longitude",
+        "/facts/civil/boundary/coordinates/longitude"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/longitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/boundary/coordinates/longitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/coordinates/longitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup; resolver input must equal retained selected binary64 exactly; no pre-rounding"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/provider",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/provider"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/provider": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/query",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/raw/place_query",
+        "/selected/selected_place/search_request/query"
+      ],
+      "source_contexts": {
+        "/selected/raw/place_query": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/selected/selected_place/search_request/query": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "both legacy values must first agree EXACTLY after existing legacy validation; mismatch rejects before HTTP; no query normalization in transport"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/requested_limit",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/search_request/limit"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/search_request/limit": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/result_count",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/result_count"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/result_count": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/selected/selected_place/schema_version"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "selected-place.v1 -> SelectedPlaceInput.v1; encoding family only, actual selected values unchanged"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/selected_index",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/selected_index"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/selected_index": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/request/selected_place/source_id",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/source_id"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/source_id": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/authenticity",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/0/binary64_hex",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/positions/0/binary64_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/0/binary64_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/0/body",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/positions/0/body"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/0/body": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/0/decimal_degrees",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/facts/natal/astronomy/positions/0/longitude"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/0/longitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "format existing exact quantized Decimal as exactly nine decimal places; value MUST equal legacy shortest-binary64-decimal ROUND_HALF_EVEN modulo360 derivation; no re-quantization of exact binary rational"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/1/binary64_hex",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/positions/1/binary64_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/1/binary64_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/1/body",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/positions/1/body"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/1/body": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/bodies/1/decimal_degrees",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/facts/natal/astronomy/positions/1/longitude"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/positions/1/longitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "format existing exact quantized Decimal as exactly nine decimal places; value MUST equal legacy shortest-binary64-decimal ROUND_HALF_EVEN modulo360 derivation; no re-quantization of exact binary rational"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/schema_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/schema_version",
+        "/facts/civil/boundary/schema_version"
+      ],
+      "source_contexts": {
+        "/facts/boundary/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/outcome",
+      "classification": "ERROR_MAPPING",
+      "sources": [
+        "/facts/boundary/status",
+        "/facts/civil/boundary/status"
+      ],
+      "source_contexts": {
+        "/facts/boundary/status": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/status": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "resolved -> success unique; boundary -> boundary_boundary; ambiguous -> boundary_ambiguous; no_match -> boundary_no_match"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/iana_zone",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/tzid",
+        "/facts/civil/boundary/tzid"
+      ],
+      "source_contexts": {
+        "/facts/boundary/tzid": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/tzid": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "success only: exact tzid; failures have no successful response and use classified error mapping"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/dataset",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/dataset",
+        "/facts/civil/boundary/provenance/dataset",
+        "/manifest/boundary/dataset"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/dataset": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/dataset": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/dataset": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/release",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/release",
+        "/facts/civil/boundary/provenance/release",
+        "/manifest/boundary/release"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/release": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/release": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/release": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/variant",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/variant",
+        "/facts/civil/boundary/provenance/variant",
+        "/manifest/boundary/variant"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/variant": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/variant": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/variant": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/manifest_sha256",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/facts/boundary/provenance/manifest_sha256",
+        "/facts/civil/boundary/provenance/manifest_sha256",
+        "/manifest/boundary/manifest_sha256"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/manifest_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/manifest_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/manifest_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact reviewed old/new manifest byte hashes; scientific data/runtime leaves remain exact. Proposed APT manifest removes private retention location, records public target as not yet uploaded; no blanket provenance exclusion"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/archive_sha256",
+        "/facts/civil/boundary/provenance/archive_sha256",
+        "/manifest/boundary/archive_sha256"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/archive_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/archive_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/archive_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/geometry_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/geometry_sha256",
+        "/facts/civil/boundary/provenance/geometry_sha256",
+        "/manifest/boundary/geometry_sha256"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/geometry_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/geometry_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/geometry_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/catalog_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/catalog_sha256",
+        "/facts/civil/boundary/provenance/catalog_sha256",
+        "/manifest/boundary/catalog_sha256"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/catalog_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/catalog_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/catalog_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/resolver",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/resolver",
+        "/facts/civil/boundary/provenance/resolver",
+        "/manifest/boundary/resolver"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/resolver": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/resolver": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/resolver": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/shapely_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/shapely_version",
+        "/facts/civil/boundary/provenance/shapely_version",
+        "/manifest/boundary/shapely_version"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/shapely_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/shapely_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/shapely_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/geos_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/geos_version",
+        "/facts/civil/boundary/provenance/geos_version",
+        "/manifest/boundary/geos_version"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/geos_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/geos_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/geos_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/numpy_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/numpy_version",
+        "/facts/civil/boundary/provenance/numpy_version",
+        "/manifest/boundary/numpy_version"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/numpy_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/numpy_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/numpy_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/python_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/python_version",
+        "/facts/civil/boundary/provenance/python_version",
+        "/manifest/boundary/python_version"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/python_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/python_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/python_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/execution_target",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/execution_target",
+        "/facts/civil/boundary/provenance/execution_target",
+        "/manifest/boundary/execution_target"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/execution_target": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/execution_target": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/execution_target": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/license",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/license",
+        "/facts/civil/boundary/provenance/license",
+        "/manifest/boundary/license"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/license": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/license": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/license": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/attribution",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/attribution",
+        "/facts/civil/boundary/provenance/attribution",
+        "/manifest/boundary/attribution"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/attribution": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/attribution": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/attribution": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/boundary/provenance/license_url",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/boundary/provenance/license_url",
+        "/facts/civil/boundary/provenance/license_url",
+        "/manifest/boundary/license_url"
+      ],
+      "source_contexts": {
+        "/facts/boundary/provenance/license_url": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/provenance/license_url": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/boundary/license_url": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/fold",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/fold_choice",
+        "/facts/civil/fold_choice"
+      ],
+      "source_contexts": {
+        "/selected/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/offset_seconds",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/offset_seconds"
+      ],
+      "source_contexts": {
+        "/facts/civil/offset_seconds": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/resolution",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/resolution"
+      ],
+      "source_contexts": {
+        "/facts/civil/resolution": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/utc",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/facts/civil/utc",
+        "/facts/natal/astronomy/utc"
+      ],
+      "source_contexts": {
+        "/facts/civil/utc": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/natal/astronomy/utc": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "UTC zero-offset instant -> fixed YYYY-MM-DDTHH:mm:ss.ffffffZ; exact microseconds and same instant; reject unknown offset/fold"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/schema_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/schema_version"
+      ],
+      "source_contexts": {
+        "/facts/civil/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/iana_version",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/iana_version",
+        "/manifest/civil/0/iana_version",
+        "/manifest/civil/1/iana_version"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/iana_version": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/iana_version": "participant-0",
+        "/manifest/civil/1/iana_version": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/build_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/build_policy",
+        "/manifest/civil/0/build_policy",
+        "/manifest/civil/1/build_policy"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/build_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/build_policy": "participant-0",
+        "/manifest/civil/1/build_policy": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/archive_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/archive_sha256",
+        "/manifest/civil/0/archive_sha256",
+        "/manifest/civil/1/archive_sha256"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/archive_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/archive_sha256": "participant-0",
+        "/manifest/civil/1/archive_sha256": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/tzdata_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/tzdata_source_sha256",
+        "/manifest/civil/0/tzdata_source_sha256",
+        "/manifest/civil/1/tzdata_source_sha256"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/tzdata_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/tzdata_source_sha256": "participant-0",
+        "/manifest/civil/1/tzdata_source_sha256": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/tzcode_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/tzcode_source_sha256",
+        "/manifest/civil/0/tzcode_source_sha256",
+        "/manifest/civil/1/tzcode_source_sha256"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/tzcode_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/tzcode_source_sha256": "participant-0",
+        "/manifest/civil/1/tzcode_source_sha256": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/tzif_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/tzif_sha256",
+        "/manifest/civil/0/tzif_sha256",
+        "/manifest/civil/1/tzif_sha256"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/tzif_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/tzif_sha256": "participant-0",
+        "/manifest/civil/1/tzif_sha256": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/resolver",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/resolver",
+        "/manifest/civil/0/resolver",
+        "/manifest/civil/1/resolver"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/resolver": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/resolver": "participant-0",
+        "/manifest/civil/1/resolver": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/python_runtime",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/python_runtime",
+        "/manifest/civil/0/python_runtime",
+        "/manifest/civil/1/python_runtime"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/python_runtime": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/python_runtime": "participant-0",
+        "/manifest/civil/1/python_runtime": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/calendar",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/calendar",
+        "/manifest/civil/0/calendar",
+        "/manifest/civil/1/calendar"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/calendar": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/calendar": "participant-0",
+        "/manifest/civil/1/calendar": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/utc_convention",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/utc_convention",
+        "/manifest/civil/0/utc_convention",
+        "/manifest/civil/1/utc_convention"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/utc_convention": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/utc_convention": "participant-0",
+        "/manifest/civil/1/utc_convention": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/provenance/historical_assurance",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/provenance/historical_assurance",
+        "/manifest/civil/0/historical_assurance",
+        "/manifest/civil/1/historical_assurance"
+      ],
+      "source_contexts": {
+        "/facts/civil/provenance/historical_assurance": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/civil/0/historical_assurance": "participant-0",
+        "/manifest/civil/1/historical_assurance": "participant-1"
+      },
+      "rule": "exact typed value in passport for participant index 0; do not collapse participants; exact typed value in passport for participant index 1; do not collapse participants; exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil/limitations",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/civil/limitations"
+      ],
+      "source_contexts": {
+        "/facts/civil/limitations": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil_input/date",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/raw/date",
+        "/facts/civil/local_date"
+      ],
+      "source_contexts": {
+        "/selected/raw/date": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/local_date": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil_input/fold",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/fold_choice",
+        "/facts/civil/fold_choice"
+      ],
+      "source_contexts": {
+        "/selected/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/fold_choice": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/civil_input/time",
+      "classification": "DERIVED_RECOMPUTE",
+      "sources": [
+        "/selected/raw/time",
+        "/facts/civil/local_time"
+      ],
+      "source_contexts": {
+        "/selected/raw/time": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/local_time": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "fixed HH:mm:ss.ffffff from validated naive civil clock; exact microseconds, never offset conversion"
+    },
+    {
+      "side": "new",
+      "path": "/response/contract_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/response/profile",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/adapter",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/adapter",
+        "/manifest/ephemeris/adapter"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/adapter": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/adapter": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/binding",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binding",
+        "/manifest/ephemeris/binding"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binding": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binding": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/library",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/library",
+        "/manifest/ephemeris/library"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/library": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/library": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/binary_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binary_sha256",
+        "/manifest/ephemeris/binary_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binary_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binary_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/binding_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binding_source_sha256",
+        "/manifest/ephemeris/binding_source_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binding_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binding_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/planet_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/planet_data_sha256",
+        "/manifest/ephemeris/planet_data_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/planet_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/planet_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/moon_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/moon_data_sha256",
+        "/manifest/ephemeris/moon_data_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/moon_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/moon_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/data_origin",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/data_origin",
+        "/manifest/ephemeris/data_origin"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/data_origin": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/data_origin": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/requested_flags",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/requested_flags",
+        "/manifest/ephemeris/requested_flags"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/requested_flags": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/requested_flags": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/returned_flags",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/returned_flags",
+        "/manifest/ephemeris/returned_flags"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/returned_flags": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/returned_flags": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/projection",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/projection",
+        "/manifest/ephemeris/projection"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/projection": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/projection": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/numerical_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/numerical_policy",
+        "/manifest/ephemeris/numerical_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/numerical_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/numerical_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/time_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/time_policy",
+        "/manifest/ephemeris/time_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/time_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/time_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/delta_t_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/delta_t_policy",
+        "/manifest/ephemeris/delta_t_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/delta_t_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/delta_t_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/runtime",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/runtime",
+        "/manifest/ephemeris/runtime"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/runtime": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/runtime": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/source_repository",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/facts/natal/astronomy/provenance/source_repository",
+        "/manifest/ephemeris/source_repository"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/source_repository": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/source_repository": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/source_revision",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/facts/natal/astronomy/provenance/ace_git_sha",
+        "/manifest/ephemeris/ace_git_sha"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/ace_git_sha": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/ace_git_sha": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/ephemeris_schema",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/schema_version"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/tt_jd_binary64",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/jd_tt_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/jd_tt_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/ut1_jd_binary64",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/jd_ut1_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/jd_ut1_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/provenance/limitations",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/limitations"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/limitations": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/attribution",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/attribution"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/attribution": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/display_name",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/display_name"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/display_name": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/latitude",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/latitude",
+        "/facts/boundary/coordinates/latitude",
+        "/facts/civil/boundary/coordinates/latitude"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/latitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/boundary/coordinates/latitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/coordinates/latitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup; resolver input must equal retained selected binary64 exactly; no pre-rounding"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/longitude",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/longitude",
+        "/facts/boundary/coordinates/longitude",
+        "/facts/civil/boundary/coordinates/longitude"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/longitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/boundary/coordinates/longitude": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/coordinates/longitude": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact decoded finite binary64 bit pattern, including signed zero; no E7 rounding before lookup; resolver input must equal retained selected binary64 exactly; no pre-rounding"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/provider",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/provider"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/provider": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/query",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/raw/place_query",
+        "/selected/selected_place/search_request/query"
+      ],
+      "source_contexts": {
+        "/selected/raw/place_query": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/selected/selected_place/search_request/query": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "both legacy values must first agree EXACTLY after existing legacy validation; mismatch rejects before HTTP; no query normalization in transport"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/requested_limit",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/search_request/limit"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/search_request/limit": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/result_count",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/result_count"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/result_count": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/selected/selected_place/schema_version"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "selected-place.v1 -> SelectedPlaceInput.v1; encoding family only, actual selected values unchanged"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/selected_index",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/selected_index"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/selected_index": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/selected_place/source_id",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/selected/selected_place/candidate/source_id"
+      ],
+      "source_contexts": {
+        "/selected/selected_place/candidate/source_id": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/response/serialization",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/adapter",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/adapter",
+        "/manifest/ephemeris/adapter"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/adapter": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/adapter": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/binding",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binding",
+        "/manifest/ephemeris/binding"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binding": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binding": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/library",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/library",
+        "/manifest/ephemeris/library"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/library": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/library": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/binary_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binary_sha256",
+        "/manifest/ephemeris/binary_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binary_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binary_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/binding_source_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/binding_source_sha256",
+        "/manifest/ephemeris/binding_source_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/binding_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/binding_source_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/planet_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/planet_data_sha256",
+        "/manifest/ephemeris/planet_data_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/planet_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/planet_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/moon_data_sha256",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/moon_data_sha256",
+        "/manifest/ephemeris/moon_data_sha256"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/moon_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/moon_data_sha256": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/data_origin",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/data_origin",
+        "/manifest/ephemeris/data_origin"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/data_origin": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/data_origin": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/requested_flags",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/requested_flags",
+        "/manifest/ephemeris/requested_flags"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/requested_flags": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/requested_flags": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/returned_flags",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/returned_flags",
+        "/manifest/ephemeris/returned_flags"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/returned_flags": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/returned_flags": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/projection",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/projection",
+        "/manifest/ephemeris/projection"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/projection": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/projection": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/numerical_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/numerical_policy",
+        "/manifest/ephemeris/numerical_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/numerical_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/numerical_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/time_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/time_policy",
+        "/manifest/ephemeris/time_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/time_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/time_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/delta_t_policy",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/delta_t_policy",
+        "/manifest/ephemeris/delta_t_policy"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/delta_t_policy": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/delta_t_policy": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/runtime",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/provenance/runtime",
+        "/manifest/ephemeris/runtime"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/runtime": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/runtime": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/source_repository",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/facts/natal/astronomy/provenance/source_repository",
+        "/manifest/ephemeris/source_repository"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/source_repository": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/source_repository": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/source_revision",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [
+        "/facts/natal/astronomy/provenance/ace_git_sha",
+        "/manifest/ephemeris/ace_git_sha"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/provenance/ace_git_sha": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/manifest/ephemeris/ace_git_sha": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "retain old exact approved ACE repo/revision and new exact APT repo/revision separately; unknown is inadmissible for reference acceptance"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/ephemeris_schema",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/schema_version"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/schema_version": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/tt_jd_binary64",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/jd_tt_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/jd_tt_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/ut1_jd_binary64",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/jd_ut1_hex"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/jd_ut1_hex": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/provenance/limitations",
+      "classification": "EXACT_EQUAL",
+      "sources": [
+        "/facts/natal/astronomy/limitations"
+      ],
+      "source_contexts": {
+        "/facts/natal/astronomy/limitations": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "exact typed value; arrays include length/order/nulls; no epsilon"
+    },
+    {
+      "side": "new",
+      "path": "/error/code",
+      "classification": "ERROR_MAPPING",
+      "sources": [
+        "/facts/boundary/status",
+        "/facts/civil/boundary/status"
+      ],
+      "source_contexts": {
+        "/facts/boundary/status": "current-participant; duplicated shared manifest identity must agree for both participants",
+        "/facts/civil/boundary/status": "current-participant; duplicated shared manifest identity must agree for both participants"
+      },
+      "rule": "resolved -> success unique; boundary -> boundary_boundary; ambiguous -> boundary_ambiguous; no_match -> boundary_no_match"
+    },
+    {
+      "side": "new",
+      "path": "/error/contract_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    },
+    {
+      "side": "new",
+      "path": "/error/schema_version",
+      "classification": "EXPECTED_IDENTITY_SUBSTITUTION",
+      "sources": [],
+      "source_contexts": {},
+      "rule": "new explicit APT contract/profile/envelope constant; not frozen NCF/NAD or a signature"
+    }
+  ]
+}
