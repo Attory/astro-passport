@@ -109,3 +109,7 @@ shipped runtime/library sources are retained regardless of narrower runtime/syst
 
 Maintain source availability for the exact distributed version; repeat the full audit before
 release. Public-only reviewers receive only this repository's material, never private corpora.
+The 103 Cargo entries (including target/dev supersets, not a claim all are linked) and 27 Swiss
+C/header files are deliberate version-specific coverage checks. A dependency change requires
+reviewed source-lock/`expand.py` regeneration and an explicit corresponding count update in
+`validate.py`; never bump a count merely to silence an unexplained failure.

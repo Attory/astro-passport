@@ -21,3 +21,8 @@ The pre-extraction [native/source compliance inventory](compliance/README.md) no
 proposed scientific sources/data, native-source lineage and the original public base-image notices.
 It does not install those dependencies or claim scientific parity. Preserve all original notices
 and source/replacement rights described there before any later binary distribution.
+
+The inventory's `publication_evidence` is only an upstream PyPI HTTPS publication record and
+subject-hash consistency check. It is **not** independently verified Sigstore/Fulcio/Rekor
+attestation and is not proof of a bit-reproducible upstream compiler build. Preserve this scope
+statement whenever that evidence is summarized in release notes or source-offer metadata.
