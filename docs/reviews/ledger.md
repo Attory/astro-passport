@@ -46,3 +46,12 @@ Gate 1 follow-ups verified closed. Anonymous exact-commit source archive probe: 
 
 CI's pinned older Action revisions emit a Node 20 deprecation annotation (runner uses Node 24);
 jobs pass. Upstream Action upgrade is a routine future maintenance item, not a scientific/runtime change.
+
+Hardening checkpoint `4763bb0efcd8e79f14b54acbf0454f5bc36841d8` passed local 59 tests but CI
+[35089255656](https://github.com/Attory/astro-passport/actions/runs/35089255656) failed waiting for
+all four requests to reach the held test engine. The first test did not report early response codes;
+the underlying denial was not established by that log. Durable quota transactions may legitimately
+fail closed under contention. Refine the saturation fixture to confirm each engine admission in
+sequence, then hold all four simultaneously before the fifth request; report an early safe error
+code instead of hiding it behind a timeout. Keep production quota/time limits unchanged. The separate
+concurrent quota atomicity test remains. A fresh green exact-head run is required, not a waived failure.

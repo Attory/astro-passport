@@ -105,15 +105,14 @@ def test_admission_saturation_is_immediate_and_releases_tokens(tmp_path: Path) -
 
     async def scenario() -> None:
         release = asyncio.Event()
-        full = asyncio.Event()
+        entered: asyncio.Queue[None] = asyncio.Queue()
 
         class Holding:
             calls = 0
 
             async def calculate(self, request: AstroPassportRequestV1) -> AstroPassportResponseV1:
                 self.calls += 1
-                if self.calls == 4:
-                    full.set()
+                entered.put_nowait(None)
                 await release.wait()
                 raise ScienceUnavailable
 
@@ -122,12 +121,26 @@ def test_admission_saturation_is_immediate_and_releases_tokens(tmp_path: Path) -
         async with httpx.AsyncClient(
             transport=httpx.ASGITransport(app=app), base_url="https://testserver"
         ) as client:
-            tasks = [
-                asyncio.create_task(client.post("/v1/passports", json=payload(), headers=HEADERS))
-                for _ in range(4)
-            ]
+            tasks = []
             try:
-                await asyncio.wait_for(full.wait(), 2)
+                # Establish each held engine admission before starting the next. This tests
+                # saturation, not whether simultaneous durable quota transactions all succeed.
+                for _ in range(4):
+                    task = asyncio.create_task(
+                        client.post("/v1/passports", json=payload(), headers=HEADERS)
+                    )
+                    tasks.append(task)
+                    arrival = asyncio.create_task(entered.get())
+                    done, _ = await asyncio.wait(
+                        {task, arrival}, timeout=2, return_when=asyncio.FIRST_COMPLETED
+                    )
+                    if arrival not in done:
+                        arrival.cancel()
+                        await asyncio.gather(arrival, return_exceptions=True)
+                        pytest.fail(
+                            "engine admission not established: "
+                            + (task.result().json()["code"] if task.done() else "timeout")
+                        )
                 denied = await asyncio.wait_for(
                     client.post("/v1/passports", json=payload(), headers=HEADERS), 1
                 )
