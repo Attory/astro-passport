@@ -55,3 +55,23 @@ fail closed under contention. Refine the saturation fixture to confirm each engi
 sequence, then hold all four simultaneously before the fifth request; report an early safe error
 code instead of hiding it behind a timeout. Keep production quota/time limits unchanged. The separate
 concurrent quota atomicity test remains. A fresh green exact-head run is required, not a waived failure.
+
+## Gate 2 — fresh hardening re-review
+
+Exact reviewed HEAD: `82d14724028384ce5ee104953197e05bd70c5581`.
+Exact-head CI [35089402312](https://github.com/Attory/astro-passport/actions/runs/35089402312):
+success, 59 tests plus all gates and built-container smoke. Complete [report](hardening-report.md),
+[identity/hash](hardening-review.json) and [public-only manifest](hardening-disclosure-manifest.json).
+Verdict: **APPROVE WITH NONBLOCKING FOLLOW-UPS**; no critical/high/medium findings or scaffold blockers.
+Previous admission-control, reserved-error and key-file-access items confirmed closed; ingress
+parser/TLS/provisioning requirements remain activation gates. No science or private documents reviewed.
+
+New LOW L1 disposition: a future edit violating token balance could cause `QueueFull` in the release
+`finally` outside the controlled error handler. Reviewer found no current invariant violation,
+double-release or leak path. Retain as a future hardening/code-review invariant, not an existing
+exploit or reason to silently change the now-reviewed runtime. L2 requires no further action.
+Observation: overload status is visible before auth; no identity/secret is returned. Ingress/global
+abuse controls remain mandatory before exposure. No review here constitutes deployment approval.
+
+The following evidence-only commit retains this report and validation record; it does not change
+runtime, tests, dependencies, contract bytes or security behavior after the exact reviewed checkpoint.

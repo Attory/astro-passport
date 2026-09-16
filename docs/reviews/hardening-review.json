@@ -1,0 +1,11 @@
+{
+  "target": "82d14724028384ce5ee104953197e05bd70c5581",
+  "base": "99056e6f10805df3aeef4b69a34c51b41f55482f",
+  "ci_run": 35089402312,
+  "session_id": "b4fe8fe4-e9e8-44e4-a340-71316fd8aba6",
+  "verdict": "APPROVE WITH NONBLOCKING FOLLOW-UPS",
+  "report_sha256": "0e72174753a70db50aab1168317ff7b1e46353c83689f8ce08769a642f7f756d",
+  "tools": false,
+  "scope": "public APT exact diff and current code/context; no private content",
+  "manifest": "hardening-disclosure-manifest.json"
+}

@@ -1,0 +1,134 @@
+{
+  "base": "99056e6f10805df3aeef4b69a34c51b41f55482f",
+  "head": "82d14724028384ce5ee104953197e05bd70c5581",
+  "ci": {
+    "id": 35089402312,
+    "head_sha": "82d14724028384ce5ee104953197e05bd70c5581",
+    "conclusion": "success",
+    "html_url": "https://github.com/Attory/astro-passport/actions/runs/35089402312"
+  },
+  "files": [
+    {
+      "path": "app/__init__.py",
+      "sha256": "38d3199fc7683b6e9d58517f9d20938596aa6f77a92da8ccf91ebda095db5aa3",
+      "bytes": 90
+    },
+    {
+      "path": "app/api.py",
+      "sha256": "3b9bef45a2620b7665ec5870652e12f8b96d6430d854f7ec5646e655de1841e4",
+      "bytes": 5275
+    },
+    {
+      "path": "app/build.py",
+      "sha256": "0952927b1c91988726c7be920471553fc4f7ef64b85e32c98e26ff836a3df710",
+      "bytes": 1034
+    },
+    {
+      "path": "app/contracts.py",
+      "sha256": "e1f0a59c4a42b7285e1d2894bb9e8869a4525a34a6174455ea186e872593caeb",
+      "bytes": 7717
+    },
+    {
+      "path": "app/main.py",
+      "sha256": "256c542a9e0538d8b203a5b5f466543d61c7d74409ce9fb9e4189c279fc6b91c",
+      "bytes": 1679
+    },
+    {
+      "path": "app/security.py",
+      "sha256": "3ac05e23239eb9b9e11a2324f46e764c7c9a71944fb75878543b83e467236585",
+      "bytes": 5937
+    },
+    {
+      "path": "scripts/container_smoke.py",
+      "sha256": "8e81d2f3e640c0591b7a9b0e06b57e2abb4d2886b2c64249601cbcd723dd3e51",
+      "bytes": 1283
+    },
+    {
+      "path": "scripts/schema.py",
+      "sha256": "ee978e04a121d025b2763938ffe2fdcdb2af7c6e6f3749838c3b55c8af9ae1ba",
+      "bytes": 1241
+    },
+    {
+      "path": "tests/test_api.py",
+      "sha256": "e631bf3bdf8b44f78d9213cc0521977f8c47d76b41c536a97aae62761fc156ac",
+      "bytes": 13059
+    },
+    {
+      "path": "tests/test_bootstrap.py",
+      "sha256": "18530821714459f3f7904eba9e6cdbf39cf7ec6b6f6e97c6f717f01ef1c58ef6",
+      "bytes": 1379
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "sha256": "8d30c271c796006a1e7067ed189f421ddbe8648e914b5622476bcb44c899692d",
+      "bytes": 4513
+    },
+    {
+      "path": "contracts/README.md",
+      "sha256": "5cc44c3c1f2cff425ecd6bd260ef0c6d84a1515a09dcafa4024f55a18dc09007",
+      "bytes": 5601
+    },
+    {
+      "path": "contracts/manifest.json",
+      "sha256": "933096ddca80b14932f331314756d299fc3115d3cdc9f1b3bc8bf61582e843cc",
+      "bytes": 414
+    },
+    {
+      "path": "docs/security.md",
+      "sha256": "9f8c300cfbcb7f70975d29796010f975bf737adfd1499746a1cc1e562a8fe808",
+      "bytes": 4314
+    },
+    {
+      "path": "docs/licensing.md",
+      "sha256": "ba7dde49779fbf27e9fdf809cb00deccea9fe12ab6acb109ef250f34b0182e92",
+      "bytes": 2012
+    },
+    {
+      "path": "docs/governance.md",
+      "sha256": "d77530f11295c8fce2221d069f1b71c22f02253b38cd3252893eb319612e1ff8",
+      "bytes": 1641
+    },
+    {
+      "path": "docs/deployment-plan.md",
+      "sha256": "71fbec0dd89995360c54c14eac2d1048c9d58f112b40a3955176392fd138fdfa",
+      "bytes": 3474
+    },
+    {
+      "path": "docs/extraction-plan.md",
+      "sha256": "7bed91261d6c8384e5af095ab520c32d80836782501a8ad79907197928efeaaf",
+      "bytes": 4594
+    },
+    {
+      "path": "docs/equivalence-design.md",
+      "sha256": "97c9929709e92d6819dcdd707a4c1b13149ed3da2fe14509fdff10e07036de85",
+      "bytes": 4976
+    },
+    {
+      "path": "docs/reviews/api-report.md",
+      "sha256": "b2bb44023550ba198ccc73ed4f01d2fe465fee02bba50e05ae8da24edc710c66",
+      "bytes": 12350
+    },
+    {
+      "path": "docs/reviews/ledger.md",
+      "sha256": "6a8c5c10c767aca22148c808d6441edc2f7ec1f683a7dac1104701ac9ee9fa92",
+      "bytes": 4175
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "de3c66a18d33402b427ea97ff2e178361448f33b8feaa5aa725d6df38011025e",
+      "bytes": 1656
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "88b851e15c86b1a3367b8fb380c682b0141678b3bdb7bfebe0e03e3dc0e503ad",
+      "bytes": 949
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "4b6d0e44d4a40b5c75d6381844414ebc81325731e0e90009000c2b4ee8bc2fed",
+      "bytes": 716
+    }
+  ],
+  "diff_sha256": "cd7052728228107fa427bdc4a60c21d6046838f365ef73b3a421c6e354d52443",
+  "scope": "public APT only; tools disabled"
+}
