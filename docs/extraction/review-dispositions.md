@@ -4,7 +4,8 @@ Reviewed target: `3617ab0c208cbd56927e0b84574b778e832ca8a1`.
 Exact-head CI: [35157967778](https://github.com/Attory/astro-passport/actions/runs/35157967778), both jobs successful.
 Complete manifests, CLI outputs and reports: `../reviews/extraction/3617ab0c208c/`.
 Five completed tool-disabled reviews A–E returned **APPROVE WITH NONBLOCKING FOLLOW-UPS**.
-F and G returned only a session-limit error, not a review. They and final H remain mandatory.
+At that initial checkpoint F/G returned only session-limit errors, not reviews. The later
+completed F/G/H reviews and their dispositions are recorded below; failed calls were never approvals.
 No approval is claimed for unreviewed later behavior. This is not cutover/deployment acceptance.
 
 ## A — source/public-private boundary
@@ -113,4 +114,38 @@ compliance defect was identified. This is not legal certification or activation 
 - L2: SHA256 integrity, not GPG/Sigstore authentication, is claimed; optional signature verification
   remains a disclosed supply-chain hardening item.
 
-Whole-extraction H remains required before readiness. A–E reviewed production code is unchanged.
+## H — whole-extraction review completed
+
+Exact target `8c45ff11c5ecb13f9e270a8aa5f670cc53e5e2b9`; CI **35207611341 successful**.
+Verdict: **APPROVE WITH NONBLOCKING FOLLOW-UPS**. No earlier nonblocking finding escalated
+to a blocking scientific, privacy, security or source-fulfillment defect. Full report/output:
+`../reviews/extraction/8c45ff11c5ec/H/`; disclosure committed before the tool-disabled call.
+
+- H's HIGH-priority documentation condition is closed by `review-h-diff.json`: every tracked
+  non-docs blob is identical at measured d5d659c, reviewed 8c45ff1 and disclosure commit 44cfa8b.
+  Exact changed paths and a reproducible blob-manifest hash are included. This is the explicit
+  documentation-only alternative H requested; no fabricated 8c45ff1 parity receipt is created.
+  Final handoff repeats the no-runtime-change check. Final CI and a new final-source bundle are
+  required; earlier bundle hashes are never reused for changed documentation archives.
+- External authority already exists in separately approved AAC at baseline 59500ec0951e082dd4c3984999b8a42fe4ce53c8.
+  AAC's acceptance/source-preservation validators were rerun read-only successfully: accepted
+  normative bytes, 16 complete source records and exact old source hashes remain unchanged.
+  Public in-repo hash checks are drift guards, not independently signed approval. No unapproved
+  publication/tag convention or disclosure of private AAC content is introduced.
+- H missed the count breakdown already in the F disposition. The ledger now repeats the exact
+  4,820-row breakdown prominently. The original reviewer output is retained without rewriting.
+- Process-wide native capacity is intentionally a shared **upper bound**, not an accidental
+  per-instance quota. Moving it to each instance would permit multiplied native load; do not
+  apply that optional suggestion. Scaling still requires independent quota/resource review.
+- Hypothetical civil model-construction failure remains fail-closed via generic privacy-safe 500.
+  Broader geographic coverage, generic future Unicode-profile vectors, deeper automated native
+  lineage/build-control assertions, signature authentication and durable source mirroring remain
+  explicitly scoped nonblocking follow-ups/pre-activation gates as recorded above.
+- Review-coverage correction: H's claim that `scripts/container_smoke.py` was in its supplied
+  packet is incorrect (the immutable manifest is authoritative). It was locally inspected: an
+  unchanged, loopback-only CI test helper from accepted conformance, not a service/runtime input.
+  Its checks run in network-none CI; no independent line-by-line Claude review of it is claimed.
+  The actual HTTPS scientific harness was supplied. This limitation does not hide a changed surface.
+
+No runtime/comparator/contract/build-control change occurred in this resumed review pass, so A–G
+are not invalidated. Final records are evidence-only; human approval for actual cutover remains required.

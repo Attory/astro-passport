@@ -111,3 +111,31 @@ correct dispositions and precise scope of non-equality classes are in `review-di
 Supplementary read-only public-archive evidence resolves the missing-documentation points without
 changing runtime, science, comparator, dependency pins, accepted contracts or source-bundle tooling.
 H and final exact-head gates remain required. No new A–E review is needed absent a material repair.
+
+## Whole-extraction review completion
+
+H target: **8c45ff11c5ecb13f9e270a8aa5f670cc53e5e2b9**; exact-head CI **35207611341 SUCCESS**.
+H disclosure commit: **44cfa8bdc3f6bbe00aab5b0bf81514aa7918dd87**.
+H verdict: **APPROVE WITH NONBLOCKING FOLLOW-UPS**. No earlier nonblocking finding became blocking.
+Complete report/process output and disclosure manifest retained; dispositions correct two reviewer
+evidence-reading errors without rewriting the original report or overclaiming review coverage.
+
+The new H evidence condition is closed by `review-h-diff.json`, proving every non-docs file at
+H target equals the measured d5d659c checkpoint. All resumed changes are docs/review evidence only;
+no extraction restart, scientific/comparator/runtime repair, dependency/pin or normative byte change.
+Therefore measured d5d659c HTTPS parity is retained rather than falsely relabeled as a later run.
+
+Precise measured checks: **4,820 classified row checks** = 4,144 cross-path value/error rows
+(3,718 exact + 234 mapped derivations + 130 identity substitutions + 62 outcome/errors), 156
+old composed-digest retention checks, 364 intentional-absence and 156 non-comparable manifest
+checks. Delivery-only has zero exercised checks. All seven mismatch counts are zero. This is
+not equality of private pair methodology/identity or independent astronomical accuracy.
+
+Final handoff must include final exact-head CI and two identical complete source assemblies of
+the final evidence commit. The d5d659c bundle remains historical and is not reused as that hash.
+No scientific change requires repeating private parity or A–E. All normal local gates will be
+rerun after H; source assembly follows the final evidence commit to avoid self-referential hashes.
+Post-H local result: **212 tests and 44 independent Node vectors passed**; Ruff, formatting,
+mypy, exact accepted schema, compliance validation, uv lock check and git diff check passed.
+Only the two previously recorded upstream test-client deprecation warnings remain.
+No deployment, source-offer activation, client cutover or ACE modification is authorized/performed.

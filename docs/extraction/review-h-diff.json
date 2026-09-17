@@ -1,0 +1,60 @@
+{
+  "schema": "apt-review-nonruntime-diff.v1",
+  "measured_base": "d5d659ce44dab90049019d0df9f8f848dd2fed33",
+  "scope": "All tracked files outside docs/ identical, including application, contracts, comparator, compliance/build tools, dependencies, Docker, tests and CI. Git tree entries include mode/type/blob ID/path in git ls-tree -rz order. Digest uses compact ASCII JSON of those entries.",
+  "revisions": [
+    {
+      "revision": "d5d659ce44dab90049019d0df9f8f848dd2fed33",
+      "non_docs_blob_manifest_sha256": "e64bfbc0410f697a753e583b4602ff990975eb9857cf308ff73fa5a65b3d3050",
+      "non_docs_file_count": 86,
+      "changed_paths_from_measured_base": []
+    },
+    {
+      "revision": "8c45ff11c5ecb13f9e270a8aa5f670cc53e5e2b9",
+      "non_docs_blob_manifest_sha256": "e64bfbc0410f697a753e583b4602ff990975eb9857cf308ff73fa5a65b3d3050",
+      "non_docs_file_count": 86,
+      "changed_paths_from_measured_base": [
+        "docs/extraction/checkpoint.md",
+        "docs/extraction/https-parity-d5d659c.json",
+        "docs/extraction/image-source-d5d659c.json",
+        "docs/extraction/ledger.md",
+        "docs/extraction/review-dispositions.md",
+        "docs/extraction/review-g-supplementary.json",
+        "docs/extraction/source-bundle-d5d659c.json",
+        "docs/reviews/extraction/d5d659ce44da/F/manifest.json",
+        "docs/reviews/extraction/d5d659ce44da/F/process.json",
+        "docs/reviews/extraction/d5d659ce44da/F/report.md",
+        "docs/reviews/extraction/d5d659ce44da/F/result.json",
+        "docs/reviews/extraction/d5d659ce44da/G/manifest.json",
+        "docs/reviews/extraction/d5d659ce44da/G/process.json",
+        "docs/reviews/extraction/d5d659ce44da/G/report.md",
+        "docs/reviews/extraction/d5d659ce44da/G/result.json"
+      ]
+    },
+    {
+      "revision": "44cfa8bdc3f6bbe00aab5b0bf81514aa7918dd87",
+      "non_docs_blob_manifest_sha256": "e64bfbc0410f697a753e583b4602ff990975eb9857cf308ff73fa5a65b3d3050",
+      "non_docs_file_count": 86,
+      "changed_paths_from_measured_base": [
+        "docs/extraction/checkpoint.md",
+        "docs/extraction/https-parity-d5d659c.json",
+        "docs/extraction/image-source-d5d659c.json",
+        "docs/extraction/ledger.md",
+        "docs/extraction/review-dispositions.md",
+        "docs/extraction/review-g-supplementary.json",
+        "docs/extraction/source-bundle-d5d659c.json",
+        "docs/reviews/extraction/8c45ff11c5ec/H/manifest.json",
+        "docs/reviews/extraction/d5d659ce44da/F/manifest.json",
+        "docs/reviews/extraction/d5d659ce44da/F/process.json",
+        "docs/reviews/extraction/d5d659ce44da/F/report.md",
+        "docs/reviews/extraction/d5d659ce44da/F/result.json",
+        "docs/reviews/extraction/d5d659ce44da/G/manifest.json",
+        "docs/reviews/extraction/d5d659ce44da/G/process.json",
+        "docs/reviews/extraction/d5d659ce44da/G/report.md",
+        "docs/reviews/extraction/d5d659ce44da/G/result.json"
+      ]
+    }
+  ],
+  "parity_reexecution_required": false,
+  "source_bundle_note": "Documentation changes alter complete source archive/bundle identity; final bundle must be reproduced for final evidence HEAD."
+}
