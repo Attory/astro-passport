@@ -60,3 +60,9 @@ F, G and final H remain mandatory, followed by final exact-head validation. No f
 claim is made. Old ACE-owned pair-manifest recomputation after API-client cutover is a separate later
 gate; old digests are retained and checked now, never mislabeled as new APT fingerprints.
 No VPS connection or activation is performed. This checkpoint is not final acceptance.
+
+Schema evolution invariant: any future added/removed scientific leaf or changed error requires
+an approved comparator/error-map update. Exact actual old/new leaf sets are checked, not merely
+row totals. Current finite-corpus agreement cannot certify every future schema or runtime.
+Zero mismatches includes explicitly scoped retention/absence/non-comparability checks; see the
+precise row-count breakdown in `review-dispositions.md`, not a claim of full old pair-identity equality.

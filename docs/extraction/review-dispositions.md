@@ -66,3 +66,51 @@ retained-boundary dispatch, unavailable-with-underlying-stage evidence, malforme
 unclassified errors. The private HTTPS runner compares failures against **fresh old-stage evidence**
 as well as the immutable public golden. No error taxonomy or normative contract bytes changed.
 This behavior requires a fresh F review; successful parity alone does not replace it.
+
+## F — completed resumed scientific-equivalence review
+
+Exact target `d5d659ce44dab90049019d0df9f8f848dd2fed33`, CI **35159954335 successful**.
+Verdict: **APPROVE WITH NONBLOCKING FOLLOW-UPS**. Complete immutable output and disclosure
+manifest are under `../reviews/extraction/d5d659ce44da/F/`. No comparator/code repair requested.
+
+- The review labels its completeness limitation HIGH but explicitly nonblocking: no finite corpus
+  proves every future schema shape. Existing exact leaf-set guards reject unexpected fields;
+  future schema evolution requires a separately approved comparator/error-map change, not a bypass.
+- The review's arithmetic is incorrect and is not adopted: totals are **4,820**, not 5,382.
+  There are 4,144 cross-path value/error row checks (3,718 EXACT_EQUAL, 234 mapped derived,
+  130 identity substitutions, 62 error/outcome mappings); 156 retained old composed-digest checks;
+  364 explicitly absent-field checks; 156 explicitly non-comparable manifest-identity checks.
+  DELIVERY_METADATA_ONLY has zero exercised comparisons. These are row counts, not claims that
+  every class is direct equality or that the new one-person service reproduces an old pair identity.
+  The entire old manifest digest is retained/checked privately; downstream ACE-owned composed
+  digest recomputation remains a separate client-cutover gate. No exclusions were widened.
+- Exact d5d659c HTTPS/image receipts now committed under `docs/extraction/`; these already existed
+  outside Git and were reported at the previous handoff. No new run is invented or relabeled.
+- Raw binary64 comparison distinguishes signed zero; the accepted canonical E7/E9 normalization
+  deliberately collapses scaled signed zero. Different layers, no numerical tolerance introduced.
+
+## G — completed resumed Corresponding Source review
+
+Exact target `d5d659ce44dab90049019d0df9f8f848dd2fed33`, CI **35159954335 successful**.
+Verdict: **APPROVE WITH NONBLOCKING FOLLOW-UPS**. Complete immutable output and manifest:
+`../reviews/extraction/d5d659ce44da/G/`. No missing required source/build material or blocking
+compliance defect was identified. This is not legal certification or activation clearance.
+
+- M1: exact d5d659c source-bundle, image and HTTPS receipts now committed. Both previously
+  produced complete source bundles were rehashed and agree with the reported `4336febf...` digest.
+- M2: `review-g-supplementary.json` records hash-verified wheel members, ELF build-ID section
+  hashes and embedded GEOS/Swiss versions. Existing scientific startup checks validate actual
+  GEOS 3.13.1 and Swiss 2.10.03, with Swiss native binary SHA before import. This supplements
+  the source/build-control record, NOT independent proof of reproducing an upstream compiler run.
+  The different proof depths are retained explicitly; no source-to-binary rebuild claim is added.
+- M3: offline archive inspection confirmed NumPy's ILP64/no-fallback BLAS controls and the
+  OpenBLAS64 interface/symbol flags, plus the retained patch-member inventory; exact source/member
+  hashes are in the supplementary receipt. This is a one-time read-only evidence check, not a claim
+  that `compliance.audit` already enforces these particular assertions. Automating them remains a
+  bounded pre-distribution hardening follow-up; all underlying source/build bytes are already bundled.
+- L1: durable anonymous mirroring/retention and exact running-image source offer remain mandatory
+  before distribution/activation. Login-required CI artifacts are not a substitute.
+- L2: SHA256 integrity, not GPG/Sigstore authentication, is claimed; optional signature verification
+  remains a disclosed supply-chain hardening item.
+
+Whole-extraction H remains required before readiness. A–E reviewed production code is unchanged.

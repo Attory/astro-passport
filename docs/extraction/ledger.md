@@ -92,3 +92,22 @@ Preservation: AAC main `59500ec0951e082dd4c3984999b8a42fe4ce53c8` clean/synchron
 ACE main `18a3776bc1ab1dc52212b4de48a0df36709d72d2` unchanged/clean;
 frozen annotated architecture tag peels to `04b20c8eaed9106e3b299e8d97bdf6fc4452c82d`.
 No SSH/VPS deployment, ACE client/cutover or scientific code removal performed.
+
+## Resumed final reviews — d5d659c
+
+Reviewed target: `d5d659ce44dab90049019d0df9f8f848dd2fed33`; exact-head CI
+**35159954335 successful**. No extraction or scientific execution is restarted for review.
+Existing exact target receipts are now committed: `https-parity-d5d659c.json`,
+`image-source-d5d659c.json`, `source-bundle-d5d659c.json`.
+Complete source bundle: `4336febf4f83918e7cd2ea9bab0a81339665f01f4d5bbbe2ba389da51c45941c`,
+1,147,545,600 bytes, two independent assemblies equal (retained copies rehashed during review).
+Fresh previous measured HTTPS parity remains 23/13/10, zero mismatches, exact canonical bytes.
+
+New public-only disclosure manifests were committed at `5885fcc549d1a2ccefc91d2699badfb920ed0675`
+before invoking tool-disabled F/G calls. Both completed actual reports with verdict
+**APPROVE WITH NONBLOCKING FOLLOW-UPS**. No required source/build absence or blocking scientific
+comparator defect found. Reports are retained in full, including reviewer arithmetic mistakes;
+correct dispositions and precise scope of non-equality classes are in `review-dispositions.md`.
+Supplementary read-only public-archive evidence resolves the missing-documentation points without
+changing runtime, science, comparator, dependency pins, accepted contracts or source-bundle tooling.
+H and final exact-head gates remain required. No new A–E review is needed absent a material repair.

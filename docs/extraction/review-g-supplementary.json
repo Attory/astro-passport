@@ -1,0 +1,51 @@
+{
+  "schema": "apt-review-g-supplementary-evidence.v1",
+  "reviewed_revision": "d5d659ce44dab90049019d0df9f8f848dd2fed33",
+  "scope": "offline inspection of retained public bytes; no execution, no rebuild/bit-reproducibility claim; source lock unchanged",
+  "build_controls": [
+    {
+      "artifact": "numpy-release-build-controls.tar.gz",
+      "artifact_sha256": "bc6841eb9425750793719ec1081b520be985693d244f5c4fc7a8053afe67c58e",
+      "member": "numpy-release-a1cc2f4a9705f4171d480263fde93fa01ba816d6/cibuildwheel.toml",
+      "member_sha256": "f810e084df8267177e374b58b770ccd69f85ab136240efe7d5f68cc48a39f37a",
+      "verified_literals": [
+        "-Duse-ilp64=true",
+        "-Dallow-noblas=false"
+      ],
+      "patch_members": []
+    },
+    {
+      "artifact": "openblas-libs-build-controls.tar.gz",
+      "artifact_sha256": "ce4197b8d3c006370d3ee0f4e2d9d4940480b649a62fa209a405d419666cfb6b",
+      "member": "openblas-libs-78fc0eaf6de71d92fd98f74f7e5bfa356a2f83e3/local/scipy_openblas64/__init__.py",
+      "member_sha256": "ae5089d3312133e542fe2846d715de1b81628162396cea3894e559a0ccb68c14",
+      "verified_literals": [
+        "-DBLAS_SYMBOL_SUFFIX=64_",
+        "-DHAVE_BLAS_ILP64"
+      ],
+      "patch_members": [
+        "openblas-libs-78fc0eaf6de71d92fd98f74f7e5bfa356a2f83e3/patches-windows/openblas-make-libs.patch"
+      ]
+    }
+  ],
+  "native_identity": [
+    {
+      "artifact": "shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "1e7d4d7ad262a48bb44277ca12c7c78cb1b0f56b32c10734ec9a1d30c0b0c54b",
+      "member": "shapely.libs/libgeos-3ef06f11.so.3.13.1",
+      "member_sha256": "59e0139d1ccea9a331b932c60b399974bafdff5c0e07b554c6a5df80edacf150",
+      "embedded_version": "3.13.1",
+      "build_id_section_sha256": "955cf425ce1b757309af35807b24e28855c7a1dc4f99fefca0dd0b8d9da179b6",
+      "limitation": "version/hash/build ID bind the retained wheel; not an independent compiler/source rebuild proof"
+    },
+    {
+      "artifact": "pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "wheel_sha256": "fbe43b68fba86bb15136c02cd8913e5f77ab3a36da3e5c193df6a91141e9b521",
+      "member": "swisseph.cpython-312-x86_64-linux-gnu.so",
+      "member_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+      "embedded_version": "2.10.03",
+      "build_id_section_sha256": "909957a29d8005771f3a927d695cf4f3704467611db684caf23cad46bee20ac3",
+      "limitation": "version/hash/build ID bind the retained wheel; not an independent compiler/source rebuild proof"
+    }
+  ]
+}
