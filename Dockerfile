@@ -18,6 +18,8 @@ COPY --from=builder /opt/apt/.venv /opt/apt/.venv
 COPY app ./app
 COPY LICENSE THIRD_PARTY_NOTICES.md /usr/share/doc/astro-passport/
 COPY docs/runtime-licenses.json /usr/share/doc/astro-passport/
+COPY compliance/source-lock.json compliance/correspondence.json compliance/README.md /usr/share/doc/astro-passport/compliance/
+COPY compliance/native-notices.json /usr/share/doc/astro-passport/compliance/
 RUN GIT_SHA="$GIT_SHA" python -c 'import os,re,pathlib; s=os.environ["GIT_SHA"]; assert re.fullmatch("[0-9a-f]{40}",s); pathlib.Path("app/_revision").write_text(s+"\n",encoding="ascii")'
 USER 10001:10001
 EXPOSE 8000

@@ -16,6 +16,14 @@ writable persistent operational directory is the 0700 quota state, not scientifi
 Proposed layout `/srv/astro-passport/{releases,secrets,state,artifacts,evidence}` with exact modes
 and safe artifact hashes validated before starting. Do not perform these host operations yet.
 
+Single uvicorn worker is mandatory for this reviewed envelope. The native semaphore intentionally
+caps all Swiss adapter instances in one process at two workers; moving it to each instance would
+multiply native load. Application admission is four, including bounded authentication/quota work.
+More processes/replicas require a new capacity and shared-quota review. The native subprocess
+scrubs its environment and limits resources but is not itself a network sandbox: container network
+isolation supplies no-egress enforcement. The local HTTPS harness uses an internal Docker network,
+no host ports, read-only root, no capabilities, no-new-privileges and no container swap.
+
 Before drafting executable Compose/Caddy deployment: verify host conflicts, TLS 1.2+ policy,
 real domain, ACME operation and a private Unix-socket or exact-peer trusted-proxy scheme preserving
 the external HTTPS assertion without trusting arbitrary X-Forwarded-* headers. Existing container
@@ -29,7 +37,10 @@ artifact hashes/licences and image identity; build/pin immutable image; provisio
 key hashes and durable quota state; start disabled/private; verify source archive anonymously;
 test actual TLS/auth/proxy/size/quota/concurrency/privacy/egress/health/version boundaries; verify
 scientific golden calls; only then enable computational access under explicit activation approval.
-Liveness alone never proves scientific readiness. Current ready stays 503 and engine is unavailable.
+Liveness alone never proves scientific readiness. The extraction implementation requires
+`APT_SCIENCE_DIRECTORY` with verified `boundaries/`, `civil/` and `swiss/` subdirectories and
+immutable build metadata. No artifact acquisition occurs at startup or on requests. The API
+remains disabled unless explicitly configured; deployment/activation is still unauthorized.
 
 Source gate: anonymously download the exact running revision's Corresponding Source and required
 control/build sources; match image SHA and notices; verify downstream source offers, not merely

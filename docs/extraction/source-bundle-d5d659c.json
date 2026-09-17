@@ -1,0 +1,14 @@
+{
+  "activation": "not authorized",
+  "apt_source_archive_sha256": "de4e902be1d90dbcf3962068e17e8a593b6950c7f58bee5ba4905819fc63d213",
+  "schema": "apt-corresponding-source.v1",
+  "source_lock_sha256": "53b3ba2243412946224c05e1b4262f547115d4b36050026645ff7c2e4672f7ef",
+  "source_repository": "https://github.com/Attory/astro-passport",
+  "source_revision": "d5d659ce44dab90049019d0df9f8f848dd2fed33",
+  "third_party_bundle_sha256": "6a02fb511282c5519f53d5df54de0d3373d7ede482ec5599c6ec9c0fae1c82ef",
+  "upstream_compiler_bit_reproducibility": "not claimed",
+  "bundle_sha256": "4336febf4f83918e7cd2ea9bab0a81339665f01f4d5bbbe2ba389da51c45941c",
+  "bundle_bytes": 1147545600,
+  "independent_assemblies_equal": true,
+  "distribution": "not performed"
+}

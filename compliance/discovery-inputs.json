@@ -1,0 +1,628 @@
+{
+  "purpose": "Public third-party runtime compliance discovery only; no private ACE modules/corpora; not scientific extraction or clearance",
+  "base_image": "python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254",
+  "debian_sources": [
+    {
+      "source_package": "acl",
+      "source_version": "2.3.1-3"
+    },
+    {
+      "source_package": "adduser",
+      "source_version": "3.134"
+    },
+    {
+      "source_package": "apt",
+      "source_version": "2.6.1"
+    },
+    {
+      "source_package": "attr",
+      "source_version": "1:2.5.1-4"
+    },
+    {
+      "source_package": "audit",
+      "source_version": "1:3.0.9-1"
+    },
+    {
+      "source_package": "base-files",
+      "source_version": "12.4+deb12u15"
+    },
+    {
+      "source_package": "base-passwd",
+      "source_version": "3.6.1"
+    },
+    {
+      "source_package": "bash",
+      "source_version": "5.2.15-2"
+    },
+    {
+      "source_package": "bzip2",
+      "source_version": "1.0.8-5"
+    },
+    {
+      "source_package": "ca-certificates",
+      "source_version": "20250419~deb12u1"
+    },
+    {
+      "source_package": "cdebconf",
+      "source_version": "0.270"
+    },
+    {
+      "source_package": "coreutils",
+      "source_version": "9.1-1"
+    },
+    {
+      "source_package": "dash",
+      "source_version": "0.5.12-2"
+    },
+    {
+      "source_package": "db5.3",
+      "source_version": "5.3.28+dfsg2-1"
+    },
+    {
+      "source_package": "debconf",
+      "source_version": "1.5.82"
+    },
+    {
+      "source_package": "debian-archive-keyring",
+      "source_version": "2023.3+deb12u2"
+    },
+    {
+      "source_package": "debianutils",
+      "source_version": "5.7-0.5~deb12u1"
+    },
+    {
+      "source_package": "diffutils",
+      "source_version": "1:3.8-4"
+    },
+    {
+      "source_package": "dpkg",
+      "source_version": "1.21.23"
+    },
+    {
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.0-2"
+    },
+    {
+      "source_package": "findutils",
+      "source_version": "4.9.0-4"
+    },
+    {
+      "source_package": "gcc-12",
+      "source_version": "12.2.0-14+deb12u1"
+    },
+    {
+      "source_package": "gdbm",
+      "source_version": "1.23-3"
+    },
+    {
+      "source_package": "glibc",
+      "source_version": "2.36-9+deb12u14"
+    },
+    {
+      "source_package": "gmp",
+      "source_version": "2:6.2.1+dfsg1-1.1"
+    },
+    {
+      "source_package": "gnupg2",
+      "source_version": "2.2.40-1.1+deb12u2"
+    },
+    {
+      "source_package": "gnutls28",
+      "source_version": "3.7.9-2+deb12u7"
+    },
+    {
+      "source_package": "grep",
+      "source_version": "3.8-5"
+    },
+    {
+      "source_package": "gzip",
+      "source_version": "1.12-1"
+    },
+    {
+      "source_package": "hostname",
+      "source_version": "3.23+nmu1"
+    },
+    {
+      "source_package": "init-system-helpers",
+      "source_version": "1.65.2+deb12u1"
+    },
+    {
+      "source_package": "keyutils",
+      "source_version": "1.6.3-2"
+    },
+    {
+      "source_package": "krb5",
+      "source_version": "1.20.1-2+deb12u5"
+    },
+    {
+      "source_package": "libcap-ng",
+      "source_version": "0.8.3-1"
+    },
+    {
+      "source_package": "libcap2",
+      "source_version": "1:2.66-4+deb12u3"
+    },
+    {
+      "source_package": "libffi",
+      "source_version": "3.4.4-1"
+    },
+    {
+      "source_package": "libgcrypt20",
+      "source_version": "1.10.1-3+deb12u1"
+    },
+    {
+      "source_package": "libgpg-error",
+      "source_version": "1.46-1"
+    },
+    {
+      "source_package": "libidn2",
+      "source_version": "2.3.3-1"
+    },
+    {
+      "source_package": "libmd",
+      "source_version": "1.0.4-2"
+    },
+    {
+      "source_package": "libnsl",
+      "source_version": "1.3.0-2"
+    },
+    {
+      "source_package": "libseccomp",
+      "source_version": "2.5.4-1+deb12u1"
+    },
+    {
+      "source_package": "libselinux",
+      "source_version": "3.4-1"
+    },
+    {
+      "source_package": "libsemanage",
+      "source_version": "3.4-1"
+    },
+    {
+      "source_package": "libsepol",
+      "source_version": "3.4-2.1"
+    },
+    {
+      "source_package": "libtasn1-6",
+      "source_version": "4.19.0-2+deb12u1"
+    },
+    {
+      "source_package": "libtirpc",
+      "source_version": "1.3.3+ds-1"
+    },
+    {
+      "source_package": "libunistring",
+      "source_version": "1.0-2"
+    },
+    {
+      "source_package": "libxcrypt",
+      "source_version": "1:4.4.33-2"
+    },
+    {
+      "source_package": "libzstd",
+      "source_version": "1.5.4+dfsg2-5"
+    },
+    {
+      "source_package": "lz4",
+      "source_version": "1.9.4-1"
+    },
+    {
+      "source_package": "mawk",
+      "source_version": "1.3.4.20200120-3.1"
+    },
+    {
+      "source_package": "ncurses",
+      "source_version": "6.4-4"
+    },
+    {
+      "source_package": "netbase",
+      "source_version": "6.4"
+    },
+    {
+      "source_package": "nettle",
+      "source_version": "3.8.1-2"
+    },
+    {
+      "source_package": "openssl",
+      "source_version": "3.0.20-1~deb12u2"
+    },
+    {
+      "source_package": "p11-kit",
+      "source_version": "0.24.1-2"
+    },
+    {
+      "source_package": "pam",
+      "source_version": "1.5.2-6+deb12u2"
+    },
+    {
+      "source_package": "pcre2",
+      "source_version": "10.42-1"
+    },
+    {
+      "source_package": "perl",
+      "source_version": "5.36.0-7+deb12u3"
+    },
+    {
+      "source_package": "readline",
+      "source_version": "8.2-1.3"
+    },
+    {
+      "source_package": "sed",
+      "source_version": "4.9-1+deb12u1"
+    },
+    {
+      "source_package": "shadow",
+      "source_version": "1:4.13+dfsg1-1+deb12u2"
+    },
+    {
+      "source_package": "sqlite3",
+      "source_version": "3.40.1-2+deb12u2"
+    },
+    {
+      "source_package": "systemd",
+      "source_version": "252.39-1~deb12u2"
+    },
+    {
+      "source_package": "sysvinit",
+      "source_version": "3.06-4"
+    },
+    {
+      "source_package": "tar",
+      "source_version": "1.34+dfsg-1.2+deb12u1"
+    },
+    {
+      "source_package": "tzdata",
+      "source_version": "2026b-0+deb12u1"
+    },
+    {
+      "source_package": "usrmerge",
+      "source_version": "37~deb12u1"
+    },
+    {
+      "source_package": "util-linux",
+      "source_version": "2.38.1-5+deb12u3"
+    },
+    {
+      "source_package": "xxhash",
+      "source_version": "0.8.1-1"
+    },
+    {
+      "source_package": "xz-utils",
+      "source_version": "5.4.1-1+deb12u1"
+    },
+    {
+      "source_package": "zlib",
+      "source_version": "1:1.2.13.dfsg-1"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "fastapi-0.141.1-py3-none-any.whl",
+      "component": "fastapi=0.141.1",
+      "url": "https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl",
+      "sha256": "bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3"
+    },
+    {
+      "name": "fastapi-0.141.1.tar.gz",
+      "component": "fastapi=0.141.1",
+      "url": "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz",
+      "sha256": "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
+    },
+    {
+      "name": "starlette-1.6.0-py3-none-any.whl",
+      "component": "starlette=1.6.0",
+      "url": "https://files.pythonhosted.org/packages/c8/cb/6a6a47d5b464bd08695d254f3da6e7986cc70c9fa5d778eda57538edfe56/starlette-1.6.0-py3-none-any.whl",
+      "sha256": "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
+    },
+    {
+      "name": "starlette-1.6.0.tar.gz",
+      "component": "starlette=1.6.0",
+      "url": "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz",
+      "sha256": "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    },
+    {
+      "name": "pydantic-2.13.5-py3-none-any.whl",
+      "component": "pydantic=2.13.5",
+      "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+      "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+    },
+    {
+      "name": "pydantic-2.13.5.tar.gz",
+      "component": "pydantic=2.13.5",
+      "url": "https://files.pythonhosted.org/packages/53/ef/fc4f868f4e2cee79f863883abffceff107875f569b848507319842d2a681/pydantic-2.13.5.tar.gz",
+      "sha256": "51a9c5f7b2f8e636f04c6cada605d9b6a3bf1348fdf945a3d8869b19bba0ee08"
+    },
+    {
+      "name": "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "component": "pydantic-core=2.46.5",
+      "url": "https://files.pythonhosted.org/packages/c0/a4/eb9409ec0736e50aa70a412f16c204ed149516846912f7e6724d4c73ee53/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2"
+    },
+    {
+      "name": "pydantic_core-2.46.5.tar.gz",
+      "component": "pydantic-core=2.46.5",
+      "url": "https://files.pythonhosted.org/packages/af/f9/8a06bea35ef8daf588f707784c973a7046e0034c8d8cfb08828eeffb8b75/pydantic_core-2.46.5.tar.gz",
+      "sha256": "10416c15b8839ecc4ef4d0885da76da6fd0f67333a0eb8aff6d93c4b8f2910fc"
+    },
+    {
+      "name": "uvicorn-0.53.0-py3-none-any.whl",
+      "component": "uvicorn=0.53.0",
+      "url": "https://files.pythonhosted.org/packages/76/18/0eea75741ee812e9f598b687619ce2454f6c3a1c5cd21ea990ec6bd26f45/uvicorn-0.53.0-py3-none-any.whl",
+      "sha256": "e8dca71ec86dce5f04e333f0d56cdedf942446e6643b9cea1af0d6d3a02cb03e"
+    },
+    {
+      "name": "uvicorn-0.53.0.tar.gz",
+      "component": "uvicorn=0.53.0",
+      "url": "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz",
+      "sha256": "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+    },
+    {
+      "name": "anyio-4.15.1-py3-none-any.whl",
+      "component": "anyio=4.15.1",
+      "url": "https://files.pythonhosted.org/packages/12/b8/4bd346e22b28902df4d651910f5242c28d84e4a5c2435ca5c3f797ed7e2e/anyio-4.15.1-py3-none-any.whl",
+      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101"
+    },
+    {
+      "name": "anyio-4.15.1.tar.gz",
+      "component": "anyio=4.15.1",
+      "url": "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz",
+      "sha256": "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+    },
+    {
+      "name": "annotated_doc-0.0.5-py3-none-any.whl",
+      "component": "annotated-doc=0.0.5",
+      "url": "https://files.pythonhosted.org/packages/3e/30/e900b21425a860e195f32e37657aa1f7c7f2b1bfb26f03ca209b90933c06/annotated_doc-0.0.5-py3-none-any.whl",
+      "sha256": "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101"
+    },
+    {
+      "name": "annotated_doc-0.0.5.tar.gz",
+      "component": "annotated-doc=0.0.5",
+      "url": "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz",
+      "sha256": "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
+    },
+    {
+      "name": "annotated_types-0.8.0-py3-none-any.whl",
+      "component": "annotated-types=0.8.0",
+      "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+    },
+    {
+      "name": "annotated_types-0.8.0.tar.gz",
+      "component": "annotated-types=0.8.0",
+      "url": "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz",
+      "sha256": "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
+    },
+    {
+      "name": "typing_extensions-4.16.0-py3-none-any.whl",
+      "component": "typing-extensions=4.16.0",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "name": "typing_extensions-4.16.0.tar.gz",
+      "component": "typing-extensions=4.16.0",
+      "url": "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz",
+      "sha256": "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+    },
+    {
+      "name": "typing_inspection-0.4.4-py3-none-any.whl",
+      "component": "typing-inspection=0.4.4",
+      "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+    },
+    {
+      "name": "typing_inspection-0.4.4.tar.gz",
+      "component": "typing-inspection=0.4.4",
+      "url": "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz",
+      "sha256": "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+    },
+    {
+      "name": "click-8.5.0-py3-none-any.whl",
+      "component": "click=8.5.0",
+      "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360"
+    },
+    {
+      "name": "click-8.5.0.tar.gz",
+      "component": "click=8.5.0",
+      "url": "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz",
+      "sha256": "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    },
+    {
+      "name": "h11-0.16.0-py3-none-any.whl",
+      "component": "h11=0.16.0",
+      "url": "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl",
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+    },
+    {
+      "name": "h11-0.16.0.tar.gz",
+      "component": "h11=0.16.0",
+      "url": "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz",
+      "sha256": "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+    },
+    {
+      "name": "idna-3.19-py3-none-any.whl",
+      "component": "idna=3.19",
+      "url": "https://files.pythonhosted.org/packages/57/b0/0e52c878c53f245edd3a11020f20979b3f490f245af532c7cae3027754b5/idna-3.19-py3-none-any.whl",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
+    },
+    {
+      "name": "idna-3.19.tar.gz",
+      "component": "idna=3.19",
+      "url": "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz",
+      "sha256": "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    },
+    {
+      "name": "pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "component": "pysweph=2.10.3.6",
+      "url": "https://files.pythonhosted.org/packages/f3/8a/6df06956b08c0536c91dfa0d8a0473b56c1a501424b9d2088106741dfbad/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "fbe43b68fba86bb15136c02cd8913e5f77ab3a36da3e5c193df6a91141e9b521"
+    },
+    {
+      "name": "pysweph-2.10.3.6.tar.gz",
+      "component": "pysweph=2.10.3.6",
+      "url": "https://files.pythonhosted.org/packages/e6/c4/9af783bfa24288f3f27ecd4e8cbcd0a93f980414aab3394de5e111859d10/pysweph-2.10.3.6.tar.gz",
+      "sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a"
+    },
+    {
+      "name": "shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "component": "shapely=2.1.2",
+      "url": "https://files.pythonhosted.org/packages/b9/37/e781683abac55dde9771e086b790e554811a71ed0b2b8a1e789b7430dd44/shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "1e7d4d7ad262a48bb44277ca12c7c78cb1b0f56b32c10734ec9a1d30c0b0c54b"
+    },
+    {
+      "name": "shapely-2.1.2.tar.gz",
+      "component": "shapely=2.1.2",
+      "url": "https://files.pythonhosted.org/packages/4d/bc/0989043118a27cccb4e906a46b7565ce36ca7b57f5a18b78f4f1b0f72d9d/shapely-2.1.2.tar.gz",
+      "sha256": "2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9"
+    },
+    {
+      "name": "numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "component": "numpy=2.5.3",
+      "url": "https://files.pythonhosted.org/packages/65/af/aa78d1a88805456e212b65461354cd943197fb9acecc4c90fd12295123a3/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b7e18c623bb5c95acb3b3328861272816ba199fb531921c5d6d0b675f1fde9e3"
+    },
+    {
+      "name": "numpy-2.5.3.tar.gz",
+      "component": "numpy=2.5.3",
+      "url": "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz",
+      "sha256": "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
+    },
+    {
+      "name": "Python-3.12.14.tar.xz",
+      "component": "CPython=3.12.14",
+      "url": "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz",
+      "sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a"
+    },
+    {
+      "name": "gcc-8.5.0-28.el8_10.alma.1.src.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/vault/8.10/BaseOS/Source/Packages/gcc-8.5.0-28.el8_10.alma.1.src.rpm"
+    },
+    {
+      "name": "libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm"
+    },
+    {
+      "name": "libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm"
+    },
+    {
+      "name": "geos-3.13.1.tar.bz2",
+      "component": "GEOS=3.13.1",
+      "url": "https://download.osgeo.org/geos/geos-3.13.1.tar.bz2",
+      "sha256": "df2c50503295f325e7c8d7b783aca8ba4773919cde984193850cf9e361dfd28c"
+    },
+    {
+      "name": "openblas-libs-build-controls.tar.gz",
+      "component": "OpenBLAS build controls",
+      "url": "https://codeload.github.com/MacPython/openblas-libs/tar.gz/78fc0eaf6de71d92fd98f74f7e5bfa356a2f83e3"
+    },
+    {
+      "name": "numpy-release-build-controls.tar.gz",
+      "component": "NumPy build controls",
+      "url": "https://codeload.github.com/numpy/numpy-release/tar.gz/a1cc2f4a9705f4171d480263fde93fa01ba816d6"
+    },
+    {
+      "name": "pysweph-source.tar.gz",
+      "component": "pysweph complete upstream source",
+      "url": "https://codeload.github.com/sailorfe/pysweph/tar.gz/9dd0ca73345406addd5597ccb30488391b61cd1a"
+    },
+    {
+      "name": "swisseph-core-source.tar.gz",
+      "component": "Swiss complete upstream source",
+      "url": "https://codeload.github.com/aloistr/swisseph/tar.gz/5ae0bce00dbc66c6315c86da20518e3dd138255b"
+    },
+    {
+      "name": "pip-25.0.1.tar.gz",
+      "component": "pip=25.0.1",
+      "url": "https://files.pythonhosted.org/packages/70/53/b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cf/pip-25.0.1.tar.gz",
+      "sha256": "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
+    },
+    {
+      "name": "scipy_openblas64-0.3.34.106.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "component": "scipy-openblas64=0.3.34.106.0",
+      "url": "https://files.pythonhosted.org/packages/3a/87/127a5870cf8cb84b275046084ec93d9e218616fafff257ffb6e04b76499b/scipy_openblas64-0.3.34.106.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "e3d0667352f91ad851141a99eb326a6bbb4142db898e4f68bff8665247f0e951"
+    },
+    {
+      "name": "OpenBLAS-446c436-source.tar.gz",
+      "component": "OpenBLAS=0.3.34+106",
+      "url": "https://codeload.github.com/OpenMathLib/OpenBLAS/tar.gz/446c436e10450c348169808f1a6b3fae0925c9f7"
+    },
+    {
+      "name": "shapely-build-controls.tar.gz",
+      "component": "Shapely=2.1.2 build controls",
+      "url": "https://codeload.github.com/shapely/shapely/tar.gz/5fb639d1056888d135fe56bfaf750c9648addeec"
+    },
+    {
+      "name": "tzdata2026c.tar.gz",
+      "component": "IANA tzdata=2026c",
+      "url": "https://data.iana.org/time-zones/releases/tzdata2026c.tar.gz",
+      "sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4"
+    },
+    {
+      "name": "tzcode2026c.tar.gz",
+      "component": "IANA tzcode=2026c",
+      "url": "https://data.iana.org/time-zones/releases/tzcode2026c.tar.gz",
+      "sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8"
+    },
+    {
+      "name": "python-image-build-controls.tar.gz",
+      "component": "CPython official image build controls",
+      "url": "https://codeload.github.com/docker-library/python/tar.gz/688a0b86bb44289df16a363e9f41d90514c1a5f9"
+    },
+    {
+      "name": "sepl_18.se1",
+      "component": "Swiss DE441 data",
+      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/sepl_18.se1",
+      "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    },
+    {
+      "name": "semo_18.se1",
+      "component": "Swiss DE441 data",
+      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/semo_18.se1",
+      "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+    },
+    {
+      "name": "timezones.geojson.zip",
+      "component": "TBB=2026c comprehensive no-oceans",
+      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezones.geojson.zip",
+      "sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948"
+    },
+    {
+      "name": "timezone-names.json",
+      "component": "TBB=2026c catalog",
+      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezone-names.json",
+      "sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff"
+    },
+    {
+      "name": "tbb-source-2026c.tar.gz",
+      "component": "TBB=2026c source and notices",
+      "url": "https://codeload.github.com/evansiroky/timezone-boundary-builder/tar.gz/refs/tags/2026c"
+    },
+    {
+      "name": "wit-bindgen-source.tar.gz",
+      "component": "wit-bindgen-rt missing upstream notices",
+      "url": "https://codeload.github.com/bytecodealliance/wit-bindgen/tar.gz/f2393e6e98fa5f9236cac580db8a3fc9de6a4b70"
+    },
+    {
+      "name": "rustc-1.98.0-src.tar.xz",
+      "component": "Rust statically linked runtime sources and notices",
+      "url": "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.xz",
+      "sha256": "271fa73d8174f53d713c46a8310da7bf7cfdcfb8b7cfd1c2b74b84a83ae9fb1e"
+    },
+    {
+      "name": "pysweph-publication-provenance.json",
+      "component": "pysweph PyPI publication evidence",
+      "url": "https://pypi.org/integrity/pysweph/2.10.3.6/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl/provenance"
+    },
+    {
+      "name": "numpy-publication-provenance.json",
+      "component": "numpy PyPI publication evidence",
+      "url": "https://pypi.org/integrity/numpy/2.5.3/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl/provenance"
+    }
+  ]
+}

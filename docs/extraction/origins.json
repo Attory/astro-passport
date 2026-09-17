@@ -1,0 +1,121 @@
+{
+  "schema": "apt-extraction-origins.v1",
+  "aac_baseline": "59500ec0951e082dd4c3984999b8a42fe4ce53c8",
+  "apt_base": "dae015fd069308e408280d980e10ff72ed722488",
+  "reference_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+  "authority": "Explicit human APT SCIENTIFIC EXTRACTION approval after AAC PR #2 merge; no cutover or deployment authorized.",
+  "origins": [
+    {
+      "path": "app/domain/birth/raw_input.py",
+      "sha256": "86fcab9c68a8b7da530f113e1acd97b6298592f9ed3db888055d7da741251837",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/raw_input.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/geo/contracts.py",
+      "sha256": "48123d92e4913f3ef6179608630ff18c85fd6d4ff62b33fad08bb2838e406c80",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": null,
+      "adaptation": "Not copied: public selected-place wire is independently authored; acquisition uses public compliance bundle, never private ACE releases."
+    },
+    {
+      "path": "app/geo/selection.py",
+      "sha256": "b116f6c9157a8ce1afc1ad2b4f9f2471934e4dc47585f453336dd0d38e203854",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": null,
+      "adaptation": "Not copied: public selected-place wire is independently authored; acquisition uses public compliance bundle, never private ACE releases."
+    },
+    {
+      "path": "app/timezone/boundaries/contracts.py",
+      "sha256": "b51fbae33a42551299db7f3c45d47b824aab64dbeccbea8175eae1ddff46f78f",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/boundaries/contracts.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change. Omitted unused selected-snapshot helper; coordinates enter from public validated wire."
+    },
+    {
+      "path": "app/timezone/boundaries/identity.py",
+      "sha256": "2928e59be646f2b870f9b41e0dff466445aac73fdb255389e0dfe1462df7b3f3",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/boundaries/identity.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/timezone/boundaries/tbb.py",
+      "sha256": "6731dc458cc4cb3776a47de5c970687745c39fc15f8e0434a0ab856b87e5a693",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/boundaries/tbb.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/timezone/resolution/contracts.py",
+      "sha256": "57623b8cb3895f5a5b0c246f25093fb597e97328ba1342b97d59c10fa53879e2",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/civil/contracts.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/timezone/resolution/tzdb.py",
+      "sha256": "f41ecd0159480092709e6573f543e8801bd76926e6f6ea631e4ee7b8240b3398",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/civil/tzdb.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/ephemeris/ports/ephemeris.py",
+      "sha256": "456c4ba5c9e87951ff30f18b70aed1bf974a1a8c02f457270de450746188cced",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/ephemeris/contracts.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/ephemeris/swiss/identity.py",
+      "sha256": "182d215828fc995c91c079b4a35225d15e110aba60f327e22c6e13abb3f2c499",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/ephemeris/identity.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/ephemeris/swiss/adapter.py",
+      "sha256": "05b0dd6a7cdc28b03aace66ed7afae34fe9df34301c5fc6b91210a5a88c32d81",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/ephemeris/adapter.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/ephemeris/swiss/worker.py",
+      "sha256": "b824816fc9e4b881773c30f7879407e6ebcda3c2f1bee72faff29d1d838bf2f3",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/ephemeris/worker.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "app/engines/western/natal.py",
+      "sha256": "4075b0d26d814c66cd29db48d85b2fee41d922b1acb7394479c14061c94a18a4",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/natal/facts.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change. Raw scientific validation only; renamed neutral NatalFacts/NatalService and omitted ACE Western wrapper schema/projection identities."
+    },
+    {
+      "path": "app/services/western_natal.py",
+      "sha256": "11e99942c114bc3f33df47c23d1a062fb2ec40b48eaaf19984a0b71c513d0910",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "app/science/natal/service.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change. Raw scientific validation only; renamed neutral NatalFacts/NatalService and omitted ACE Western wrapper schema/projection identities."
+    },
+    {
+      "path": "scripts/build-tzdb-artifact.py",
+      "sha256": "a31cb6f2aa81a4798563252282fd5ca1156e6ac442f6aef19bc463a25b1c81ba",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": "scripts/build_tzdb_artifact.py",
+      "adaptation": "Import relocation; APT immutable source identity; approved public TBB manifest substitution where applicable; no scientific algorithm change."
+    },
+    {
+      "path": "scripts/prepare-timezone-artifact.py",
+      "sha256": "ec51de0b2ddf27e589402949fcab5a198f4537a20ad41f88c2ad0e430728463c",
+      "origin_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+      "destination": null,
+      "adaptation": "Not copied: public selected-place wire is independently authored; acquisition uses public compliance bundle, never private ACE releases."
+    }
+  ]
+}

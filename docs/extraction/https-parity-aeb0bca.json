@@ -1,0 +1,45 @@
+{
+  "schema": "apt-public-synthetic-https-parity.v1",
+  "apt_revision": "aeb0bca2857f4921656464e18e0713cb82ac510f",
+  "ace_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+  "comparator": "apt-scientific-leaf-map.v1-proposed",
+  "public_corpus_sha256": "00b09dbebcc61bc4ae4a3d28c3ebb2b19af66f58c0406caef8a0b5a66013a826",
+  "cases": 23,
+  "success_cases": 13,
+  "classified_error_cases": 10,
+  "comparisons_by_classification": {
+    "DELIVERY_METADATA_ONLY": 0,
+    "DERIVED_RECOMPUTE": 390,
+    "ERROR_MAPPING": 62,
+    "EXACT_EQUAL": 3718,
+    "EXPECTED_IDENTITY_SUBSTITUTION": 130,
+    "INTENTIONALLY_ABSENT": 364,
+    "NOT_COMPARABLE_WITH_REASON": 156
+  },
+  "mismatches_by_classification": {
+    "DELIVERY_METADATA_ONLY": 0,
+    "DERIVED_RECOMPUTE": 0,
+    "ERROR_MAPPING": 0,
+    "EXACT_EQUAL": 0,
+    "EXPECTED_IDENTITY_SUBSTITUTION": 0,
+    "INTENTIONALLY_ABSENT": 0,
+    "NOT_COMPARABLE_WITH_REASON": 0
+  },
+  "actual_https": true,
+  "zero_tolerance": true,
+  "canonical_bytes_equal": true,
+  "fresh_old_error_stage_compared": true,
+  "image_ids": {
+    "old": "sha256:21fe507b9d92e06309e9d0993b46154794eba436811b992f23749be5e6aac9b5",
+    "new": "sha256:e1370e19d1b607959f81c6bc551b6f0ad32e8deb0693766a5df8e57e5beb7bdb"
+  },
+  "restricted_tool_sha256": {
+    "reference.py": "cfbfe57a7aac72a085fd19a1b6d68af7b91356ecb6e2116ee49fe87cf3ab2d1e",
+    "generate_public_reference.py": "8247ea8913b0df9a21bcceb9d0336e242b6d1cdc43cdb9a6aace9b8ea5a5c2f0",
+    "parity.py": "ec683c92ec49ecfbe788665954abea8cfcb2f42a99036a2eebad0356fc11b6c5"
+  },
+  "comparator_implementation_sha256": "a8a6f7f50df28f7afc8ae2af32043eb08983d9204db5b71b6ba6c911699a6474",
+  "private_manifest_retention": "verified in restricted process memory; not exported",
+  "private_real_person_corpus": "not used",
+  "vps_deployment": "not performed"
+}

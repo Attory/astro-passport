@@ -1,0 +1,2159 @@
+{
+  "cases": [
+    {
+      "acep1_sha256": "27ee0c80ad47fb5a3b6a67059bd88ad3976328cfc787d66456a3d6a84f93a7be",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a38343337363733383931307d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3330353835393334323830337d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a3539393330303030302c226c6f6e6769747564655f6537223a3330333130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313937362d30362d31355430393a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.5181c7d840377p+6",
+            "body": "sun",
+            "decimal_degrees": "84.376738910"
+          },
+          {
+            "binary64_hex": "0x1.31dbfde3d236cp+8",
+            "body": "moon",
+            "decimal_degrees": "305.859342803"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Europe/Moscow",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 10800,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "ed2e0a099fb446b2416683438d3f56f9fc5a62a16c7549a7f59cbc935b364c8a",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1976-06-15T09:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "1976-06-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2a3607011e51dp+21",
+          "ut1_jd_binary64": "0x1.2a360700017c1p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 59.93,
+          "longitude": 30.31,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "spb-1976",
+      "request": {
+        "civil": {
+          "date": "1976-06-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 59.93,
+          "longitude": 30.31,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "3edd7f2633d8b840c4fff70077b3c47a94d6058f274576bab95904ea12604423",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3332363436313130383238397d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3237323531333236303234347d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a3534393230303030302c226c6f6e6769747564655f6537223a3832393930303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313938352d30322d31355430353a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.46760b315cfbfp+8",
+            "body": "sun",
+            "decimal_degrees": "326.461108289"
+          },
+          {
+            "binary64_hex": "0x1.10836505fba78p+8",
+            "body": "moon",
+            "decimal_degrees": "272.513260244"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Asia/Novosibirsk",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 25200,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "2369f830212569df6c31cc8900073861d553e9ec1b851efd3a8000ba11097c26",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1985-02-15T05:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "1985-02-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2a98fdabf376ap+21",
+          "ut1_jd_binary64": "0x1.2a98fdaaa949fp+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 54.92,
+          "longitude": 82.99,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "krasnoobsk-1985",
+      "request": {
+        "civil": {
+          "date": "1985-02-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 54.92,
+          "longitude": 82.99,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "f520d6248815f14ba7c03bf6bb37d7ca9aac50b9ba9fc1219536d8d04c8cf069",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3239343137323637363837347d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a33303231323230363332307d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323030302d30312d31355430313a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.262c348d35a21p+8",
+            "body": "sun",
+            "decimal_degrees": "294.172676874"
+          },
+          {
+            "binary64_hex": "0x1.e36532744042dp+4",
+            "body": "moon",
+            "decimal_degrees": "30.212206320"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "2000-01-15T01:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "2000-01-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2b433456dacfbp+21",
+          "ut1_jd_binary64": "0x1.2b433455576b9p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "sydney-summer",
+      "request": {
+        "civil": {
+          "date": "2000-01-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "72b2df4967c961a205808847012d9d2f6a8916bb0c948add186b7af9d958c4ca",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3131323839363334393438377d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3237363636333237353936387d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323030302d30372d31355430323a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.c395dca3cfc0ep+6",
+            "body": "sun",
+            "decimal_degrees": "112.896349487"
+          },
+          {
+            "binary64_hex": "0x1.14a9cc742fdecp+8",
+            "body": "moon",
+            "decimal_degrees": "276.663275968"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 36000,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "2000-07-15T02:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "2000-07-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2b48e4ac30251p+21",
+          "ut1_jd_binary64": "0x1.2b48e4aaabea0p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "sydney-winter",
+      "request": {
+        "civil": {
+          "date": "2000-07-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "error": {
+        "code": "civil_ambiguous",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "sydney-fold-missing",
+      "request": {
+        "civil": {
+          "date": "2020-04-05",
+          "fold": null,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "acep1_sha256": "196a48c81ff94c5025479a6a7e535444eb10f02620b5e11cb6b64cdfcc4e43c3",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a31353332323634313332357d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3134363436393139363239337d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323032302d30342d30345431353a33303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.ea5313e62e56dp+3",
+            "body": "sun",
+            "decimal_degrees": "15.322641325"
+          },
+          {
+            "binary64_hex": "0x1.24f03a7f1e8e7p+7",
+            "body": "moon",
+            "decimal_degrees": "146.469196293"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": 0,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "explicit_fold",
+          "schema_version": "civil-time.v1",
+          "utc": "2020-04-04T15:30:00.000000Z"
+        },
+        "civil_input": {
+          "date": "2020-04-05",
+          "fold": 0,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "leap-table-frozen-after-2016-not-a-future-prediction"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2c2a012c4e7c5p+21",
+          "ut1_jd_binary64": "0x1.2c2a012aa9874p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "sydney-fold-0",
+      "request": {
+        "civil": {
+          "date": "2020-04-05",
+          "fold": 0,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "57e650261d682b5575f1c1a2a5df632cc9c70f715f29d70cd968f60003d926d4",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a31353336333636343733367d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3134373037353437303531307d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323032302d30342d30345431363a33303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.eba3243a8cabbp+3",
+            "body": "sun",
+            "decimal_degrees": "15.363664736"
+          },
+          {
+            "binary64_hex": "0x1.2626a412162fcp+7",
+            "body": "moon",
+            "decimal_degrees": "147.075470510"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": 1,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 36000,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "explicit_fold",
+          "schema_version": "civil-time.v1",
+          "utc": "2020-04-04T16:30:00.000000Z"
+        },
+        "civil_input": {
+          "date": "2020-04-05",
+          "fold": 1,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "leap-table-frozen-after-2016-not-a-future-prediction"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2c2a0181a3d1ap+21",
+          "ut1_jd_binary64": "0x1.2c2a017ffedc9p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "sydney-fold-1",
+      "request": {
+        "civil": {
+          "date": "2020-04-05",
+          "fold": 1,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "error": {
+        "code": "civil_nonexistent",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "sydney-gap",
+      "request": {
+        "civil": {
+          "date": "2020-10-04",
+          "fold": null,
+          "time": "02:30:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "invalid_fold",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "unnecessary-fold",
+      "request": {
+        "civil": {
+          "date": "2000-07-15",
+          "fold": 0,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_no_match",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "ocean-no-match",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 0.0,
+          "longitude": -140.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_boundary",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "north-pole",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 90.0,
+          "longitude": 0.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_boundary",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "south-pole",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -90.0,
+          "longitude": 0.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_boundary",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "dateline-positive",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 0.0,
+          "longitude": 180.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_boundary",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "dateline-negative",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 0.0,
+          "longitude": -180.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "acep1_sha256": "1ba59cad66874f5f8dddb8a3adbd26efab2bec2fb1cbe25a609575f51a5af8fd",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3237393732383432363236377d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3236363437373536363835367d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313839392d31322d33315431343a30303a30302e3030303030315a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.17ba7a24d3861p+8",
+            "body": "sun",
+            "decimal_degrees": "279.728426267"
+          },
+          {
+            "binary64_hex": "0x1.0a7a41d24b608p+8",
+            "body": "moon",
+            "decimal_degrees": "266.477566856"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction",
+            "pre1970-records-have-limited-assurance"
+          ],
+          "offset_seconds": 36000,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1899-12-31T14:00:00.000001Z"
+        },
+        "civil_input": {
+          "date": "1900-01-01",
+          "fold": null,
+          "time": "00:00:00.000001"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "pre1972-proleptic-utc-used-as-ut1-proxy"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.26cd60aa9ece4p+21",
+          "ut1_jd_binary64": "0x1.26cd60aaaaaabp+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "year-minimum",
+      "request": {
+        "civil": {
+          "date": "1900-01-01",
+          "fold": null,
+          "time": "00:00:00.000001"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "71b3727e926985b01336443d9cd32843fed4cd04caeb9df733afa4436860707c",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3237393839363531303234397d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3238373239393136383534337d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323130302d31322d33315431323a35393a35392e3939393939395a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.17e581b2196c2p+8",
+            "body": "sun",
+            "decimal_degrees": "279.896510249"
+          },
+          {
+            "binary64_hex": "0x1.1f4c964f42464p+8",
+            "body": "moon",
+            "decimal_degrees": "287.299168543"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction",
+            "post-release-rules-are-not-a-prediction-guarantee"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "2100-12-31T12:59:59.999999Z"
+        },
+        "civil_input": {
+          "date": "2100-12-31",
+          "fold": null,
+          "time": "23:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "leap-table-frozen-after-2016-not-a-future-prediction"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2fc39056f926fp+21",
+          "ut1_jd_binary64": "0x1.2fc39054c0e59p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "year-maximum",
+      "request": {
+        "civil": {
+          "date": "2100-12-31",
+          "fold": null,
+          "time": "23:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "e6f0efec2ca80f6b567d5aa0892fd82516fef06a8d188fc4a79f06240ef287db",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3237393339323031343437307d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3231313732363136353530387d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313939392d31322d33315431333a30303a30302e3132333435365a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.17645b0f71e7ep+8",
+            "body": "sun",
+            "decimal_degrees": "279.392014470"
+          },
+          {
+            "binary64_hex": "0x1.a773cbf72691cp+7",
+            "body": "moon",
+            "decimal_degrees": "211.726165508"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1999-12-31T13:00:00.123456Z"
+        },
+        "civil_input": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "00:00:00.123456"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2b42c056db8f8p+21",
+          "ut1_jd_binary64": "0x1.2b42c055583e0p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "utc-previous-date",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "00:00:00.123456"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "d7796776a5ffb6db8988e80212f725526596a7984e0401c35a1dbeddc5e1a97c",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3238313039313034353132397d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3233313830353239343436307d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a3430373130303030302c226c6f6e6769747564655f6537223a2d3734303030303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323030302d30312d30325430343a35393a35392e3939393939395a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.19174ebbcbdd9p+8",
+            "body": "sun",
+            "decimal_degrees": "281.091045129"
+          },
+          {
+            "binary64_hex": "0x1.cf9c4f8e36b71p+7",
+            "body": "moon",
+            "decimal_degrees": "231.805294460"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "America/New_York",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": -18000,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "d7f2206b3a45989fc9ad63d558922532fa7352280d5f87176bf1db79cb1d1fa9",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "2000-01-02T04:59:59.999999Z"
+        },
+        "civil_input": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "23:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2b42cdac30251p+21",
+          "ut1_jd_binary64": "0x1.2b42cdaaacd16p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 40.71,
+          "longitude": -74.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "utc-next-date",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "23:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 40.71,
+          "longitude": -74.0,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "6fd70bf0cbf9a8f540d430dd3bdf55b5cdda66e8eed1074a5d621af61420dd7e",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3237393636323731313434357d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3130313633303331363731397d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313937312d31322d33315432333a35393a35392e3939393939395a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.17a9a7750d5b6p+8",
+            "body": "sun",
+            "decimal_degrees": "279.662711445"
+          },
+          {
+            "binary64_hex": "0x1.968571bef3fbep+6",
+            "body": "moon",
+            "decimal_degrees": "101.630316719"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1971-12-31T23:59:59.999999Z"
+        },
+        "civil_input": {
+          "date": "1972-01-01",
+          "fold": null,
+          "time": "10:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "pre1972-proleptic-utc-used-as-ut1-proxy"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2a032c0100420p+21",
+          "ut1_jd_binary64": "0x1.2a032c0000000p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "ut1-proxy-last-day",
+      "request": {
+        "civil": {
+          "date": "1972-01-01",
+          "fold": null,
+          "time": "10:59:59.999999"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "7a30905bb7c2d0f39b83447bdd4545db9937afae5c1473d5c14b239d00153be7",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3237393636323731303930327d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3130313633303330393334397d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22313937322d30312d30315430303a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.17a9a76bf3eb5p+8",
+            "body": "sun",
+            "decimal_degrees": "279.662710902"
+          },
+          {
+            "binary64_hex": "0x1.96856fd05de32p+6",
+            "body": "moon",
+            "decimal_degrees": "101.630309349"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "1972-01-01T00:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "1972-01-01",
+          "fold": null,
+          "time": "11:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2a032c00fffa9p+21",
+          "ut1_jd_binary64": "0x1.2a032bffffb89p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "1972-policy-seam",
+      "request": {
+        "civil": {
+          "date": "1972-01-01",
+          "fold": null,
+          "time": "11:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "acep1_sha256": "29d88f9659ad7e4988fb12603665f581d1f1804ac687153b20d0a1fa5216d197",
+      "acep1_utf8_hex": "5b224143455031222c226170742e73756e2d6d6f6f6e2d636f6e74656e742e76312d70726f706f736564222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3238303735353238393936347d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a3331313834333535313535367d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a2273756e2d6d6f6f6e2e7631222c22736368656d61223a2241505443616e6f6e6963616c53756e4d6f6f6e436f6e74656e742e76312d70726f706f736564222c22757463223a22323031372d30312d30315430303a30303a30302e3030303030305a227d5d",
+      "expected": {
+        "authenticity": "unsigned-direct-client-only",
+        "bodies": [
+          {
+            "binary64_hex": "0x1.18c15aaedc470p+8",
+            "body": "sun",
+            "decimal_degrees": "280.755289964"
+          },
+          {
+            "binary64_hex": "0x1.37d7f2feab080p+8",
+            "body": "moon",
+            "decimal_degrees": "311.843551556"
+          }
+        ],
+        "boundary": {
+          "iana_zone": "Australia/Sydney",
+          "outcome": "unique",
+          "provenance": {
+            "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+            "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+            "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+            "dataset": "timezone-boundary-builder",
+            "execution_target": "linux-amd64",
+            "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+            "geos_version": "3.13.1",
+            "license": "ODbL-1.0",
+            "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+            "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+            "numpy_version": "2.5.3",
+            "python_version": "3.12.14",
+            "release": "2026c",
+            "resolver": "tbb-planar.v1",
+            "shapely_version": "2.1.2",
+            "variant": "comprehensive-no-oceans"
+          },
+          "schema_version": "timezone-boundary.v1"
+        },
+        "civil": {
+          "fold": null,
+          "limitations": [
+            "modern-geography-not-date-specific-jurisdiction"
+          ],
+          "offset_seconds": 39600,
+          "provenance": {
+            "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+            "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+            "calendar": "proleptic-gregorian",
+            "historical_assurance": "pinned-dataset-rules-only",
+            "iana_version": "2026c",
+            "python_runtime": "CPython-3.12.14",
+            "resolver": "zoneinfo-roundtrip.v1",
+            "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+            "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+            "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+            "utc_convention": "posix-no-leap-seconds"
+          },
+          "resolution": "unique",
+          "schema_version": "civil-time.v1",
+          "utc": "2017-01-01T00:00:00.000000Z"
+        },
+        "civil_input": {
+          "date": "2017-01-01",
+          "fold": null,
+          "time": "11:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "provenance": {
+          "adapter": "swiss-isolated.v1",
+          "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+          "binding": "pysweph-2.10.3.6",
+          "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+          "data_origin": "DE441",
+          "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+          "ephemeris_schema": "ephemeris.v1",
+          "library": "2.10.03",
+          "limitations": [
+            "modelled-ut1-not-measured-earth-orientation",
+            "leap-table-frozen-after-2016-not-a-future-prediction"
+          ],
+          "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "requested_flags": 2,
+          "returned_flags": [
+            2,
+            2
+          ],
+          "runtime": "CPython-3.12.14-Linux-x86_64",
+          "schema_version": "AstroPassportProvenance.v1",
+          "source_repository": "https://github.com/Attory/astro-passport",
+          "source_revision": "0000000000000000000000000000000000000000",
+          "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "tt_jd_binary64": "0x1.2c04d401a3d1ap+21",
+          "ut1_jd_binary64": "0x1.2c04d40003953p+21"
+        },
+        "schema_version": "AstroPassportResponse.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        },
+        "serialization": "astro-passport-json.v1"
+      },
+      "id": "2017-leap-limit",
+      "request": {
+        "civil": {
+          "date": "2017-01-01",
+          "fold": null,
+          "time": "11:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      }
+    },
+    {
+      "error": {
+        "code": "boundary_boundary",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "certified-dataset-vertex",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 10.374405,
+          "longitude": -5.852021,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    },
+    {
+      "error": {
+        "code": "boundary_ambiguous",
+        "contract_version": "1.0.0",
+        "schema_version": "AstroPassportError.v1"
+      },
+      "id": "certified-dataset-overlap",
+      "request": {
+        "civil": {
+          "date": "2000-01-01",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "sun-moon.v1",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Artificial research geography",
+          "latitude": 9.73052,
+          "longitude": 28.42445305222344,
+          "provider": "synthetic",
+          "query": "Public artificial case",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-case"
+        }
+      },
+      "status": 422
+    }
+  ],
+  "corpus_origin": "independently-authored-artificial-inputs; no real-person fixtures",
+  "equivalence_not_accuracy": true,
+  "method": "Unchanged frozen ACE image; network-none; isolated native workers; full reference replay verified; only approved scientific targets exported.",
+  "reference_image": "sha256:21fe507b9d92e06309e9d0993b46154794eba436811b992f23749be5e6aac9b5",
+  "reference_revision": "18a3776bc1ab1dc52212b4de48a0df36709d72d2",
+  "schema": "apt-public-scientific-reference.v1",
+  "source_revision_slot": "Expected response uses zero SHA as an explicit substitution slot, never a claimed running build."
+}

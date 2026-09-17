@@ -2,7 +2,10 @@
 
 This new scaffold is **AGPL-3.0-only from its first public commit**. See the complete [licence](../LICENSE)
 and [notices](../THIRD_PARTY_NOTICES.md). There is no Swiss Professional entitlement claim.
-The scaffold is newly authored; no private implementation or Git history is copied here.
+The initial scaffold was newly authored. Subsequent scientific extraction is limited to the
+rights-holder-authorized origins in [the extraction inventory](extraction/origins.json), under
+AGPL-3.0-only with upstream notices preserved. No private Git history or downstream methodology
+is copied. This grant does not change rights or implementation in another repository.
 The standard upstream AGPL licence text is not private implementation.
 
 Public source: <https://github.com/Attory/astro-passport>. A release must retain its exact source

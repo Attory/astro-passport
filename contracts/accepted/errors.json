@@ -1,0 +1,460 @@
+{
+  "version": "apt-scientific-errors.v1-proposed",
+  "status": "proposed",
+  "rows": [
+    {
+      "source_file": "app/timezone/boundaries/contracts.py",
+      "path": "/errors/TimezoneBoundaryFailure/INVALID_INPUT",
+      "old_value": "invalid_input",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_request",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/boundaries/contracts.py",
+      "path": "/errors/TimezoneBoundaryFailure/ARTIFACT_UNAVAILABLE",
+      "old_value": "artifact_unavailable",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_unavailable",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/boundaries/contracts.py",
+      "path": "/errors/TimezoneBoundaryFailure/ARTIFACT_INTEGRITY",
+      "old_value": "artifact_integrity",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_integrity",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/boundaries/contracts.py",
+      "path": "/errors/TimezoneBoundaryFailure/ARTIFACT_INVALID",
+      "old_value": "artifact_invalid",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_invalid",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/boundaries/contracts.py",
+      "path": "/errors/TimezoneBoundaryFailure/UNSUPPORTED_RUNTIME",
+      "old_value": "unsupported_runtime",
+      "classification": "ERROR_MAPPING",
+      "new_code": "unsupported_runtime",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/INVALID_INPUT",
+      "old_value": "invalid_input",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_request",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/UNRESOLVED_ZONE",
+      "old_value": "unresolved_zone",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/INVALID_FOLD",
+      "old_value": "invalid_fold",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_fold",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/AMBIGUOUS_LOCAL_TIME",
+      "old_value": "ambiguous_local_time",
+      "classification": "ERROR_MAPPING",
+      "new_code": "civil_ambiguous",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/NONEXISTENT_LOCAL_TIME",
+      "old_value": "nonexistent_local_time",
+      "classification": "ERROR_MAPPING",
+      "new_code": "civil_nonexistent",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/ARTIFACT_UNAVAILABLE",
+      "old_value": "artifact_unavailable",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_unavailable",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/ARTIFACT_INTEGRITY",
+      "old_value": "artifact_integrity",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_integrity",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/ARTIFACT_INVALID",
+      "old_value": "artifact_invalid",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_invalid",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/timezone/resolution/contracts.py",
+      "path": "/errors/CivilTimeFailure/UNSUPPORTED_RUNTIME",
+      "old_value": "unsupported_runtime",
+      "classification": "ERROR_MAPPING",
+      "new_code": "unsupported_runtime",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/INVALID_INPUT",
+      "old_value": "invalid_input",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_request",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/DATA_UNAVAILABLE",
+      "old_value": "data_unavailable",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_unavailable",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/DATA_INTEGRITY",
+      "old_value": "data_integrity",
+      "classification": "ERROR_MAPPING",
+      "new_code": "artifact_integrity",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/UNSUPPORTED_RUNTIME",
+      "old_value": "unsupported_runtime",
+      "classification": "ERROR_MAPPING",
+      "new_code": "unsupported_runtime",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/BUSY",
+      "old_value": "busy",
+      "classification": "ERROR_MAPPING",
+      "new_code": "busy",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/TIMEOUT",
+      "old_value": "timeout",
+      "classification": "ERROR_MAPPING",
+      "new_code": "timeout",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/NATIVE_FAILURE",
+      "old_value": "native_failure",
+      "classification": "ERROR_MAPPING",
+      "new_code": "native_failure",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/FALLBACK_REJECTED",
+      "old_value": "fallback_rejected",
+      "classification": "ERROR_MAPPING",
+      "new_code": "fallback_rejected",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/ephemeris/ports/ephemeris.py",
+      "path": "/errors/EphemerisFailure/INVALID_RESULT",
+      "old_value": "invalid_result",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/western_natal.py",
+      "path": "/errors/NatalFailure/INVALID_INPUT",
+      "old_value": "invalid_input",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_request",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/western_natal.py",
+      "path": "/errors/NatalFailure/INVALID_RESULT",
+      "old_value": "invalid_result",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/western_natal.py",
+      "path": "/errors/NatalFailure/REPLAY_MISMATCH",
+      "old_value": "replay_mismatch",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/western_natal.py",
+      "path": "/errors/NatalFailure/ASYNC_CONTEXT",
+      "old_value": "async_context",
+      "classification": "ERROR_MAPPING",
+      "new_code": "internal_error",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/INVALID_INPUT",
+      "old_value": "invalid_input",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_request",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/UNRESOLVED_GEOGRAPHY",
+      "old_value": "unresolved_geography",
+      "classification": "ERROR_MAPPING",
+      "new_code": null,
+      "condition": "Inspect retained underlying boundary.status; dispatch only to boundary_boundary/boundary_ambiguous/boundary_no_match. The dispatch marker is never a wire code.",
+      "dispatch_rule": "retained_boundary_outcome"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/AMBIGUOUS_LOCAL_TIME",
+      "old_value": "ambiguous_local_time",
+      "classification": "ERROR_MAPPING",
+      "new_code": "civil_ambiguous",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/NONEXISTENT_LOCAL_TIME",
+      "old_value": "nonexistent_local_time",
+      "classification": "ERROR_MAPPING",
+      "new_code": "civil_nonexistent",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/INVALID_FOLD",
+      "old_value": "invalid_fold",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_fold",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/UNAVAILABLE",
+      "old_value": "unavailable",
+      "classification": "NOT_COMPARABLE_WITH_REASON",
+      "new_code": null,
+      "condition": "Legacy composed service collapses several underlying failures. Compare retained underlying stage category using its explicit row; coarse unavailable alone cannot prove a new granular error. Never invent a one-to-one mapping."
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/INVALID_RESULT",
+      "old_value": "invalid_result",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/REPLAY_MISMATCH",
+      "old_value": "replay_mismatch",
+      "classification": "ERROR_MAPPING",
+      "new_code": "invalid_result",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/BUSY",
+      "old_value": "busy",
+      "classification": "ERROR_MAPPING",
+      "new_code": "busy",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/TIMEOUT",
+      "old_value": "timeout",
+      "classification": "ERROR_MAPPING",
+      "new_code": "timeout",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/CLOSED",
+      "old_value": "closed",
+      "classification": "ERROR_MAPPING",
+      "new_code": "science_unavailable",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "source_file": "app/services/calculation.py",
+      "path": "/errors/CalculationFailure/ASYNC_CONTEXT",
+      "old_value": "async_context",
+      "classification": "ERROR_MAPPING",
+      "new_code": "internal_error",
+      "condition": "single-person scientific invocation; private downstream methodology errors are outside APT"
+    },
+    {
+      "path": "/boundary/status/resolved",
+      "classification": "ERROR_MAPPING",
+      "new_code": null,
+      "condition": "Successful response, no error envelope/code exists; unique zone only.",
+      "success_outcome": "unique"
+    },
+    {
+      "path": "/boundary/status/boundary",
+      "classification": "ERROR_MAPPING",
+      "new_code": "boundary_boundary",
+      "condition": "polygon boundary or seam/pole; never choose a zone"
+    },
+    {
+      "path": "/boundary/status/ambiguous",
+      "classification": "ERROR_MAPPING",
+      "new_code": "boundary_ambiguous",
+      "condition": "multiple interiors; never choose a zone"
+    },
+    {
+      "path": "/boundary/status/no_match",
+      "classification": "ERROR_MAPPING",
+      "new_code": "boundary_no_match",
+      "condition": "outside dataset; never use an ocean fallback"
+    },
+    {
+      "path": "/native/warning",
+      "classification": "ERROR_MAPPING",
+      "new_code": "native_failure",
+      "condition": "any native warning is failure; no warning text exposed"
+    },
+    {
+      "path": "/error/person",
+      "classification": "DELIVERY_METADATA_ONLY",
+      "new_code": null,
+      "condition": "single-person APT has no A/B; retain legacy error person privately for two-call correlation"
+    },
+    {
+      "path": "/error/stage",
+      "classification": "INTENTIONALLY_ABSENT",
+      "new_code": null,
+      "condition": "retain old internal stage privately; public error code only, no raw diagnostic"
+    }
+  ],
+  "dispatch": "retained_boundary_outcome MUST inspect retained stage evidence; dispatch_rule is not new_code. Unresolved zone after a claimed success is invalid_result.",
+  "warning_policy": "no successful warning collection; limitation tuples are separate ordered facts",
+  "wire_status": {
+    "disabled": [
+      503
+    ],
+    "unauthorized": [
+      401
+    ],
+    "forbidden": [
+      403
+    ],
+    "invalid_request": [
+      400,
+      422
+    ],
+    "unsupported_version": [
+      406
+    ],
+    "too_large": [
+      413
+    ],
+    "unsupported_media_type": [
+      415
+    ],
+    "rate_limited": [
+      429
+    ],
+    "busy": [
+      503
+    ],
+    "state_unavailable": [
+      503
+    ],
+    "science_unavailable": [
+      503
+    ],
+    "timeout": [
+      408
+    ],
+    "internal_error": [
+      500
+    ],
+    "boundary_ambiguous": [
+      422
+    ],
+    "boundary_no_match": [
+      422
+    ],
+    "civil_ambiguous": [
+      422
+    ],
+    "civil_nonexistent": [
+      422
+    ],
+    "artifact_unavailable": [
+      503
+    ],
+    "artifact_integrity": [
+      500
+    ],
+    "boundary_boundary": [
+      422
+    ],
+    "invalid_fold": [
+      422
+    ],
+    "unsupported_runtime": [
+      503
+    ],
+    "artifact_invalid": [
+      500
+    ],
+    "native_failure": [
+      500
+    ],
+    "fallback_rejected": [
+      500
+    ],
+    "invalid_result": [
+      500
+    ]
+  },
+  "wire_status_conditions": {
+    "invalid_request": "400 for transport/framing/header/query violations; 422 for body JSON/schema/semantic input violations",
+    "forbidden": "reserved only, not emitted in v1"
+  },
+  "transport_origin_only": [
+    "disabled",
+    "unauthorized",
+    "forbidden",
+    "unsupported_version",
+    "too_large",
+    "unsupported_media_type",
+    "rate_limited",
+    "state_unavailable"
+  ],
+  "transport_note": "These new admission/delivery errors have no old scientific output analogue. No synthetic old error mapping is invented; wire_status still covers every code."
+}

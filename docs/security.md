@@ -1,15 +1,18 @@
-# Scaffold security policy and future activation gates
+# Scientific service security policy and future activation gates
 
-Single process/worker, default disabled. `APT_API_ENABLED=1` only enables the fail-closed scaffold,
-not science. `APT_KEYS_FILE` and `APT_QUOTA_FILE` identify local private files; no secrets in env
+Single process/worker, default disabled. `APT_API_ENABLED=1` requires separately configured,
+validated scientific artifacts and immutable build identity before readiness. `APT_KEYS_FILE`
+and `APT_QUOTA_FILE` identify local private files; no secrets in env
 examples, Git, URL, response, repr, ordinary logs or command arguments. No provider credential exists.
 
 Operational envelope: at most 16 configured credentials, each 1–60 attempts per UTC minute;
-16 KiB request body; 16 KiB combined application header bytes; 2 s body deadline; 6 s future engine
+16 KiB request body; 16 KiB combined application header bytes; 2 s body deadline; 6 s science
 deadline; four concurrent admissions including auth/body/engine. Reverse proxy must impose
 connection/header/idle/global-rate budgets before activation; application limits do not bound the
-network parser. Native workers must independently enforce kill/resource limits before any engine
-is installed: cancelling an async call alone cannot safely cancel a native computation.
+network parser. Native workers enforce independent 5 s wall/2 s CPU deadlines, 256 MiB address
+space, 8 KiB regular-file output, 32 file descriptors and no core dumps. Cancelling an HTTP waiter
+does not release its science slot before the worker finishes. Real subprocess tests exercise
+the limits; they are not a claim that a subprocess alone is a network sandbox.
 
 Credentials are independent high-entropy 256-bit secrets with 64-bit opaque IDs, explicit UTC
 expiry, enabled/revoked flag and `passport:calculate` scope. Server stores SHA-256 verification
@@ -37,7 +40,9 @@ quota semantics; per-replica independent files are prohibited. Counters may char
 
 Authentication, version/media/size, quota and validation precede scientific work. Disabled,
 unauthorized, expired/revoked, oversized, malformed and exhausted requests invoke no science.
-No scientific or provider process exists in this checkpoint. Responses are no-store; API does not
+Admission slots deliberately include bounded authentication/quota work, so invalid-credential
+floods can occupy those slots; ingress global abuse control remains a deployment gate. Scientific
+workers exist only when enabled and ready; no provider process exists. Responses are no-store; API does not
 log bodies, headers, errors or tracebacks. Uvicorn access logging is disabled. Proxy/host logging
 must also exclude paths/query/auth/body details; no telemetry/exporter is present.
 

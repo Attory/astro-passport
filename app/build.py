@@ -4,9 +4,16 @@
 import re
 from pathlib import Path
 
-AAC_BASELINE = "aa4373b5d7b2539adf5bc87c0b4cc7d392d2135d"
+AAC_BASELINE = "59500ec0951e082dd4c3984999b8a42fe4ce53c8"
 REPOSITORY = "https://github.com/Attory/astro-passport"
 REVISION_FILE = Path(__file__).with_name("_revision")
+
+
+def require_revision() -> str:
+    revision = identity()["git_sha"]
+    if revision is None:
+        raise ValueError("immutable source revision unavailable")
+    return revision
 
 
 def identity() -> dict[str, str | None]:

@@ -1,0 +1,38 @@
+{
+  "schema_version": "timezone-artifact.v1",
+  "dataset": "timezone-boundary-builder",
+  "release": "2026c",
+  "variant": "comprehensive-no-oceans",
+  "source_commit": "7c04f5cb462fe007f229aa42c8cb5aacb1c71dc4",
+  "archive": {
+    "name": "timezones.geojson.zip",
+    "size": 51283605,
+    "sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+    "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezones.geojson.zip"
+  },
+  "geometry": {
+    "name": "combined.json",
+    "size": 170230574,
+    "sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf"
+  },
+  "catalog": {
+    "name": "timezone-names.json",
+    "size": 7734,
+    "sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+    "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezone-names.json"
+  },
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+  "retrieved_utc_date": "2026-09-08",
+  "retention_release": "data-timezones-tbb-2026c",
+  "retention_repository": "Attory/astro-passport",
+  "runtime": {
+    "shapely": "2.1.2",
+    "geos": "3.13.1",
+    "numpy": "2.5.3",
+    "python": "3.12.14",
+    "target": "linux-amd64"
+  },
+  "retention_status": "proposed-not-uploaded"
+}

@@ -12,7 +12,25 @@ The exact installed runtime licence identities are recorded in
 [the runtime inventory](docs/runtime-licenses.json); licence texts remain in the installed wheels.
 
 uv is an MIT/Apache-2.0 build tool, not a scientific runtime. Development tools are separately
-locked. No Swiss Ephemeris, Python Swiss binding, timezone-boundary or tzdb data is distributed
-by this scaffold. No Swiss Professional entitlement is claimed. Before adopting any of them,
-retain the exact distribution, upstream copyright/licence files, checksums, data provenance and
-redistribution requirements in a new reviewed inventory. A dependency name alone is not clearance.
+locked. Scientific extraction installs pysweph 2.10.3.6 (AGPL-3.0), Swiss 2.10.03,
+Shapely 2.1.2 (BSD-3-Clause), its GEOS 3.13.1 (LGPL-2.1-or-later), and NumPy 2.5.3
+(BSD-3-Clause plus its individually licensed bundled native libraries). All exact original
+notices, native-source lineage and replacement/relinking requirements remain in the reviewed
+inventory below. No Swiss Professional entitlement is claimed.
+
+TBB 2026c comprehensive/no-oceans geometry and the embedded catalog are ODbL-1.0 data,
+not relicensed under APT's program grant: Timezone Boundary Builder; OpenStreetMap contributors
+(https://www.openstreetmap.org/copyright). See https://opendatacommons.org/licenses/odbl/1-0/.
+The unchanged dataset is acquired separately with its exact public source/license evidence.
+IANA tzdata/tzcode 2026c notices and build sources are retained alongside the exact compiled
+TZif artifact recipe. Swiss DE441 data files retain their upstream licence/source notices.
+
+The pre-extraction [native/source compliance inventory](compliance/README.md) now retains exact
+scientific sources/data, native-source lineage and the original public base-image notices.
+It does not by itself establish scientific parity. Preserve all original notices
+and source/replacement rights described there before any later binary distribution.
+
+The inventory's `publication_evidence` is only an upstream PyPI HTTPS publication record and
+subject-hash consistency check. It is **not** independently verified Sigstore/Fulcio/Rekor
+attestation and is not proof of a bit-reproducible upstream compiler build. Preserve this scope
+statement whenever that evidence is summarized in release notes or source-offer metadata.

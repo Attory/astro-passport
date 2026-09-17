@@ -1,4 +1,12 @@
-# Equivalence harness design — not yet executed
+# Equivalence harness design and execution boundary
+
+Current status: human AAC acceptance and scientific extraction authorization were granted.
+The exact accepted map is public at `contracts/accepted/{comparator,errors}.json`; executable
+implementation is `conformance/comparator.py`. Restricted, separate-process old-reference versus
+actual authenticated HTTPS measurements are recorded in `extraction/ledger.md` with exact revisions.
+Only independently public synthetic cases were used. No real-person/private migration corpus
+was populated. Full final independent-review acceptance remains pending. The historical group-level
+table below is explanatory only and never overrides the accepted leaf-level map.
 
 Two independent corpora: a restricted migration corpus retained outside public Git/CI, and an
 independently authored public synthetic corpus containing no copied/redacted private cases. Public
@@ -10,9 +18,10 @@ scientific path in a restricted subprocess; send identical selected inputs to th
 its actual authenticated HTTPS API. No cross-repository imports or shared DB. Retain both complete
 outputs in the appropriate corpus store plus explicit comparator report. The public suite separately
 uses self-contained synthetic fixtures and approved expected outputs. Never log birth payloads or
-private per-case fingerprints in normal CI. No reference runs have been made by this scaffold.
+private per-case fingerprints in normal CI. Reference runs now exist only as explicitly scoped
+checkpoint evidence; ordinary public CI never accesses the private reference implementation.
 
-## Proposed comparator mapping (approval required)
+## Historical group-level overview (superseded by accepted leaf-level mapping)
 
 | Old scientific field group | Candidate APT field | Rule |
 | --- | --- | --- |
@@ -27,9 +36,15 @@ private per-case fingerprints in normal CI. No reference runs have been made by 
 | transit/instance metadata | separate delivery report | enumerated outside content, never blanket-ignore metadata |
 | content/manifest digests affected by source/wire change | future comparison report | retain both and enumerate derivation; never force equal NAD |
 
-This is a group-level design, NOT the complete approved leaf-path comparator or ACEP1 profile.
-Before scientific extraction approval, inventory every old/new leaf including error/absence/null,
-ordering, canonicalization, limitation fields and derivatively changed digests. Fail on unclassified
+This historical table is a group-level overview, NOT an approved leaf-path comparator or ACEP1 profile.
+The accepted pre-extraction AAC contract supplies `apt-scientific-leaf-map.v1-proposed` in
+`docs/contracts/pre-extraction/{inventory,comparator,errors}.json`: 185 old and 125 new scalar or
+ordered atomic-array leaves, exactly one explicit classification per leaf, with coverage-mutation
+tests. Private manifest identities stay in the confidential governance packet, not this public
+repository. Human acceptance is complete; public canonical contract release remains separate.
+Neither public builds nor CI depend on that private packet. Every old/new leaf is inventoried,
+including error/absence/null, ordering, canonicalization, limitation fields and changed digests.
+The implemented comparator fails on unclassified
 leaves. Preserve the current client's raw-place-query versus selected-query coherence rejection in
 the migration adapter: both must match before creating the request. The wire has one selected query;
 this simplification must not silently make inconsistent legacy inputs acceptable.
@@ -51,11 +66,22 @@ Canonical mismatch remains different content even if future numerical qualificat
 - Pre-1972 UT1 proxy, documented 1972 seam and frozen-future-leap limitations retained unchanged.
 - Half-even ties, signed zero, 360/0 wrap, E9 thresholds; malformed/nonfinite/out-of-range input.
 - Missing/corrupt artifacts, fallback/native warnings, concurrent/timeout/worker failure.
-- Approved full ACEP1 vectors in an independent language once full profile is authorized; the current
-  Sun/Moon JSON is not such a vector and cannot stand in for one.
+- The separately proposed partial ACEP1 content profile has independently authored Python/Node
+  numeric encoding vectors in `conformance/`. These are not astronomy or full NCF/NAD vectors.
+  Full identity profiles remain separately gated.
 
 Coordinates and expected scientific answers are deliberately not fabricated in this design. Pin
 them with case provenance and independent expected-value review during the authorized harness phase.
 Compare old/new science separately from private downstream methodology. Agreement proves migration
-equivalence, not independent astronomical accuracy. Gate report records exact runtimes, artifact
-hashes, corpus revision, comparator version, all mismatches, CI and independent-review verdict.
+equivalence, not independent astronomical accuracy. A private-corpus gate report records exact
+runtimes, artifact hashes, corpus revision, comparator version, all mismatches, CI and independent
+review **only for the authorized restricted audience**. Outside that audience, summaries contain
+only overall migration acceptance status and public comparator/runtime release IDs. Suppress
+corpus size, category/mismatch counts, case identifiers, timing, geographic/date-range aggregates
+and report sequences that allow differencing. Do not publish the full private report or link it
+from public CI. Independently public synthetic expected values follow their separately approved
+derivation/publication process; they are not a route for disclosing private migration evidence.
+
+See [public synthetic specification](public-synthetic-corpus.md) for independently authored inputs,
+controlled reference derivation and exact corpus identity. Measured migration agreement does not
+establish independent astronomical accuracy or authorize deployment/client cutover.

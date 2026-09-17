@@ -15,6 +15,7 @@ from app.contracts import (
     ErrorCode,
     ErrorEnvelopeV1,
 )
+from app.science.errors import STATUS, ScienceFailure
 from app.security import SecurityStateError, Settings, authenticate, reserve_quota, unique_json
 
 MAX_BODY = 16384
@@ -42,7 +43,11 @@ def error(status: int, code: ErrorCode) -> JSONResponse:
     if status == 429:
         headers["Retry-After"] = "60"
     return JSONResponse(
-        ErrorEnvelopeV1(code=code).model_dump(), status_code=status, headers=headers
+        ErrorEnvelopeV1(
+            schema_version="AstroPassportError.v1", contract_version="1.0.0", code=code
+        ).model_dump(),
+        status_code=status,
+        headers=headers,
     )
 
 
@@ -114,6 +119,8 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
                 return error(503, "state_unavailable")
             except ScienceUnavailable:
                 return error(503, "science_unavailable")
+            except ScienceFailure as failure:
+                return error(STATUS[failure.code], failure.code)
             except TimeoutError:
                 return error(408, "timeout")
             except Exception:
