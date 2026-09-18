@@ -43,9 +43,11 @@ def test_authorized_origins_and_no_cross_repository_runtime():
                 )
                 for module in imports:
                     if module == "app" or module.startswith("app."):
-                        assert module in ("app.build", "app.contracts") or module.startswith(
-                            "app.science."
-                        )
+                        assert module in (
+                            "app.build",
+                            "app.contracts",
+                            "app.lahiri",
+                        ) or module.startswith("app.science.")
 
 
 def test_exact_accepted_contract_and_manifest_bytes():

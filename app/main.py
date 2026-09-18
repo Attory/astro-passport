@@ -8,9 +8,10 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from starlette.responses import JSONResponse, Response
 
-from app.api import SciencePort, UnavailableScience, install_api
+from app.api import SciencePort, ScienceUnavailable, UnavailableScience, install_api
 from app.build import identity
 from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1
+from app.lahiri import LahiriRequest, LahiriResponse
 from app.security import Settings
 
 
@@ -23,6 +24,13 @@ def create_app(settings: Settings | None = None, science: SciencePort | None = N
 
         async def calculate(self, request: AstroPassportRequestV1) -> AstroPassportResponseV1:
             return await self.delegate.calculate(request)
+
+        async def calculate_lahiri(self, request: LahiriRequest) -> LahiriResponse:
+            method = getattr(self.delegate, "calculate_lahiri", None)
+            if method is None:
+                raise ScienceUnavailable
+            result = await method(request)
+            return LahiriResponse.model_validate_json(result.model_dump_json())
 
     runtime = Runtime()
 

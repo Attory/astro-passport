@@ -77,7 +77,7 @@ def _library() -> Any:
     return swe
 
 
-def run(utc: dt.datetime, directory: Path) -> dict[str, object]:
+def run(utc: dt.datetime, directory: Path, lahiri: bool = False) -> dict[str, object]:
     swe = _library()
     swe.set_ephe_path(str(directory))
     swe.set_tid_acc(swe.TIDAL_DE441)
@@ -113,17 +113,45 @@ def run(utc: dt.datetime, directory: Path) -> dict[str, object]:
         if warning or len(values) != 6 or not all(math.isfinite(value) for value in values):
             raise WorkerFailure("native_failure")
         positions.append(float(values[0]).hex())
+    sidereal = None
+    if lahiri:
+        swe.set_sid_mode(swe.SIDM_LAHIRI, 0.0, 0.0)
+        requested = swe.FLG_SWIEPH | swe.FLG_SIDEREAL
+        values, flags, warning = swe.calc(jd_tt, swe.MOON, requested)
+        aya_flags, ayanamsha = swe.get_ayanamsa_ex(jd_tt, swe.FLG_SWIEPH)
+        # NONUT is returned for sidereal coordinates. Ayanamsha includes nutation,
+        # matching the existing apparent tropical Moon.
+        if flags != requested | swe.FLG_NONUT or aya_flags != swe.FLG_SWIEPH:
+            raise WorkerFailure("fallback_rejected")
+        if warning or len(values) != 6 or not all(math.isfinite(v) for v in values):
+            raise WorkerFailure("native_failure")
+        if not math.isfinite(ayanamsha) or not 0 <= ayanamsha < 360 or not 0 <= values[0] < 360:
+            raise WorkerFailure("native_failure")
+        difference = ((float.fromhex(positions[1]) - ayanamsha) % 360 - values[0] + 180) % 360 - 180
+        # Internal Swiss consistency, not migration parity tolerance.
+        if abs(difference) > 1e-10:
+            raise WorkerFailure("invalid_result")
+        sidereal = {
+            "moon_binary64": float(values[0]).hex(),
+            "ayanamsha_binary64": float(ayanamsha).hex(),
+            "requested_flags": requested,
+            "returned_flags": flags,
+            "ayanamsha_flags": aya_flags,
+        }
     for index, name in ((0, "sepl_18.se1"), (1, "semo_18.se1")):
         actual_path, start, end, generation = swe.get_current_file_data(index)
         if Path(actual_path) != directory / name or generation != 441 or not start < jd_tt < end:
             raise WorkerFailure("fallback_rejected")
     swe.close()
-    return {
+    result: dict[str, object] = {
         "positions": positions,
         "jd_tt_hex": jd_tt.hex(),
         "jd_ut1_hex": jd_ut1.hex(),
         "limitations": limitations,
     }
+    if lahiri:
+        result["lahiri"] = sidereal
+    return result
 
 
 def main() -> None:
@@ -135,9 +163,13 @@ def main() -> None:
     try:
         raw = json.loads(sys.stdin.read(257))
         utc = dt.datetime.fromisoformat(raw["utc"])
-        if utc.utcoffset() != dt.timedelta(0) or set(raw) != {"utc"}:
+        if (
+            utc.utcoffset() != dt.timedelta(0)
+            or set(raw) not in ({"utc"}, {"utc", "lahiri"})
+            or ("lahiri" in raw and raw["lahiri"] is not True)
+        ):
             raise WorkerFailure("invalid_input")
-        result = run(utc, Path.cwd())
+        result = run(utc, Path.cwd(), True) if raw.get("lahiri") else run(utc, Path.cwd())
         print(json.dumps(result, separators=(",", ":"), allow_nan=False))
     except WorkerFailure as error:
         print(json.dumps({"error": str(error)}))

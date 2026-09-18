@@ -15,6 +15,7 @@ from app.contracts import (
     ErrorCode,
     ErrorEnvelopeV1,
 )
+from app.lahiri import LahiriRequest, LahiriResponse
 from app.science.errors import STATUS, ScienceFailure
 from app.security import SecurityStateError, Settings, authenticate, reserve_quota, unique_json
 
@@ -102,15 +103,32 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
                 if length is not None and len(body) != int(length):
                     return error(400, "invalid_request")
                 try:
-                    unique_json(bytes(body))
-                    value = AstroPassportRequestV1.model_validate_json(body)
+                    raw = unique_json(bytes(body))
+                    is_lahiri = (
+                        isinstance(raw, dict) and raw.get("profile") == "sun-moon-lahiri.v1-mvp"
+                    )
+                    value = (
+                        LahiriRequest.model_validate_json(body)
+                        if is_lahiri
+                        else AstroPassportRequestV1.model_validate_json(body)
+                    )
                 except (ValueError, TypeError, RecursionError):
                     return error(422, "invalid_request")
                 async with asyncio.timeout(6):
-                    result = await science.calculate(value)
+                    if isinstance(value, LahiriRequest):
+                        method = getattr(science, "calculate_lahiri", None)
+                        if method is None:
+                            raise ScienceUnavailable
+                        result = await method(value)
+                    else:
+                        result = await science.calculate(value)
                 # Deserialization is shape checking, NOT authenticity; only this trusted port
                 # may construct successful facts after its independent scientific acceptance.
-                checked = AstroPassportResponseV1.model_validate_json(result.model_dump_json())
+                checked = (
+                    LahiriResponse.model_validate_json(result.model_dump_json())
+                    if is_lahiri
+                    else AstroPassportResponseV1.model_validate_json(result.model_dump_json())
+                )
                 return JSONResponse(
                     json.loads(checked.model_dump_json()),
                     headers={"X-APT-Contract-Version": "1.0.0"},

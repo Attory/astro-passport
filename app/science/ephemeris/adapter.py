@@ -11,6 +11,7 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
+from typing import Any
 
 from app.build import require_revision
 from app.science.ephemeris.contracts import (
@@ -50,6 +51,14 @@ class SwissEphemeris:
             raise EphemerisError(EphemerisFailure.DATA_UNAVAILABLE) from None
 
     def calculate(self, request: EphemerisRequest) -> EphemerisResult:
+        return self._calculate(request, lahiri=False)[0]
+
+    def calculate_lahiri(self, request: EphemerisRequest) -> tuple[EphemerisResult, dict[str, Any]]:
+        return self._calculate(request, lahiri=True)
+
+    def _calculate(
+        self, request: EphemerisRequest, *, lahiri: bool
+    ) -> tuple[EphemerisResult, dict[str, Any]]:
         try:
             if not isinstance(request, EphemerisRequest):
                 raise ValueError
@@ -69,7 +78,9 @@ class SwissEphemeris:
                 with tempfile.TemporaryFile() as output:
                     result = subprocess.run(
                         [sys.executable, "-I", str(_WORKER)],
-                        input=json.dumps({"utc": checked.utc.isoformat()}).encode(),
+                        input=json.dumps(
+                            {"utc": checked.utc.isoformat(), **({"lahiri": True} if lahiri else {})}
+                        ).encode(),
                         stdout=output,
                         stderr=subprocess.DEVNULL,
                         timeout=5,
@@ -84,7 +95,10 @@ class SwissEphemeris:
             value = json.loads(encoded)
             if isinstance(value, dict) and set(value) == {"error"}:
                 raise EphemerisError(EphemerisFailure(value["error"]))
-            return self._result(checked, value)
+            extension = value.pop("lahiri") if lahiri else {}
+            if not isinstance(extension, dict):
+                raise ValueError
+            return self._result(checked, value), extension
         except subprocess.TimeoutExpired:
             raise EphemerisError(EphemerisFailure.TIMEOUT) from None
         except OSError:
