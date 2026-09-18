@@ -4,17 +4,19 @@
 import asyncio
 import datetime as dt
 import threading
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any
+from typing import Any, TypeVar
 
 from app.build import require_revision
 from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1, ErrorCode
+from app.lahiri import LahiriRequest, LahiriResponse
 from app.science.boundaries.contracts import GeographicCoordinates, TimezoneBoundaryError
 from app.science.boundaries.tbb import TBBTimezoneBoundaryResolver
 from app.science.civil.contracts import CivilTimeError
 from app.science.civil.tzdb import PinnedCivilTimeResolver
 from app.science.ephemeris.adapter import SwissEphemeris
-from app.science.ephemeris.contracts import EphemerisError, EphemerisRequest
+from app.science.ephemeris.contracts import EphemerisError, EphemerisRequest, longitude_decimal
 from app.science.errors import ScienceFailure
 from app.science.natal.service import NatalError, NatalService
 from app.science.raw_input import RawBirthInput
@@ -40,6 +42,8 @@ ERROR_CODES: dict[str, ErrorCode] = {
     "async_context": "internal_error",
 }
 
+T = TypeVar("T")
+
 
 class PassportScience:
     """Construct once from operator-owned read-only artifacts, never request paths.
@@ -53,10 +57,14 @@ class PassportScience:
         self._capacity = threading.BoundedSemaphore(2)
         self.boundaries = TBBTimezoneBoundaryResolver(directory / "boundaries")
         self.civil = PinnedCivilTimeResolver(directory / "civil")
-        self.natal = NatalService(SwissEphemeris(directory / "swiss"))
+        self.ephemeris = SwissEphemeris(directory / "swiss")
+        self.natal = NatalService(self.ephemeris)
         # Startup checks exercise exact runtime/binary/data/worker prerequisites, not a
         # personal case. Failure prevents the instance from ever becoming ready.
         self.natal.calculate(EphemerisRequest(utc=dt.datetime(2000, 1, 1, tzinfo=dt.UTC)))
+        self.ephemeris.calculate_lahiri(
+            EphemerisRequest(utc=dt.datetime(2000, 1, 1, tzinfo=dt.UTC))
+        )
         self.ready = True
 
     def _calculate(self, request: AstroPassportRequestV1) -> AstroPassportResponseV1:
@@ -139,12 +147,74 @@ class PassportScience:
             raise ScienceFailure(ERROR_CODES[exc.category.value]) from None
 
     async def calculate(self, request: AstroPassportRequestV1) -> AstroPassportResponseV1:
+        return await self._submit(lambda: self._calculate(request))
+
+    def _lahiri(self, request: LahiriRequest) -> LahiriResponse:
+        tropical = self._calculate(request.tropical_request())
+        try:
+            astronomy, raw = self.ephemeris.calculate_lahiri(
+                EphemerisRequest(utc=dt.datetime.fromisoformat(tropical.civil.utc))
+            )
+        except EphemerisError as exc:
+            raise ScienceFailure(ERROR_CODES[exc.category.value]) from None
+        if (
+            tuple(p.binary64_hex for p in astronomy.positions)
+            != tuple(p.binary64_hex for p in tropical.bodies)
+            or astronomy.jd_tt_hex != tropical.provenance.tt_jd_binary64
+        ):
+            raise ScienceFailure("invalid_result")
+        if set(raw) != {
+            "moon_binary64",
+            "ayanamsha_binary64",
+            "requested_flags",
+            "returned_flags",
+            "ayanamsha_flags",
+        }:
+            raise ScienceFailure("invalid_result")
+        import json
+
+        def angle(hex_value: str) -> dict[str, str]:
+            return {
+                "binary64_hex": hex_value,
+                "decimal_degrees": format(longitude_decimal(float.fromhex(hex_value)), ".9f"),
+            }
+
+        return LahiriResponse.model_validate_json(
+            json.dumps(
+                {
+                    "schema_version": "AstroPassportLahiriResponse.v1-mvp",
+                    "contract_version": "1.0.0",
+                    "profile": "sun-moon-lahiri.v1-mvp",
+                    "tropical": tropical.model_dump(mode="json"),
+                    "sidereal": {
+                        "schema_version": "LahiriMoonFact.v1-mvp",
+                        "system": "lahiri",
+                        "swiss_sidereal_mode": 1,
+                        "policy": "swiss-lahiri-apparent-moon.v1-mvp",
+                        "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+                        "requested_flags": raw["requested_flags"],
+                        "returned_flags": raw["returned_flags"],
+                        "ayanamsha_flags": raw["ayanamsha_flags"],
+                        "ayanamsha_kind": "true-including-nutation",
+                        "ayanamsha": angle(raw["ayanamsha_binary64"]),
+                        "moon": {"body": "moon", **angle(raw["moon_binary64"])},
+                    },
+                    "serialization": "astro-passport-lahiri-json.v1-mvp",
+                    "authenticity": "unsigned-direct-client-only",
+                }
+            )
+        )
+
+    async def calculate_lahiri(self, request: LahiriRequest) -> LahiriResponse:
+        return await self._submit(lambda: self._lahiri(request))
+
+    async def _submit(self, calculate: Callable[[], T]) -> T:
         if not self._capacity.acquire(blocking=False):
             raise ScienceFailure("busy")
 
-        def work() -> AstroPassportResponseV1:
+        def work() -> T:
             try:
-                return self._calculate(request)
+                return calculate()
             finally:
                 self._capacity.release()
 

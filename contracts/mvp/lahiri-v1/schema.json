@@ -1,0 +1,887 @@
+{
+  "$defs": {
+    "AstroPassportResponseV1": {
+      "additionalProperties": false,
+      "properties": {
+        "authenticity": {
+          "const": "unsigned-direct-client-only",
+          "title": "Authenticity",
+          "type": "string"
+        },
+        "bodies": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/SunLongitude"
+            },
+            {
+              "$ref": "#/$defs/MoonLongitude"
+            }
+          ],
+          "title": "Bodies",
+          "type": "array"
+        },
+        "boundary": {
+          "$ref": "#/$defs/BoundaryFact"
+        },
+        "civil": {
+          "$ref": "#/$defs/CivilFact"
+        },
+        "civil_input": {
+          "$ref": "#/$defs/CivilInput"
+        },
+        "contract_version": {
+          "const": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "profile": {
+          "const": "sun-moon.v1",
+          "title": "Profile",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/ProvenanceV1"
+        },
+        "schema_version": {
+          "const": "AstroPassportResponse.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "selected_place": {
+          "$ref": "#/$defs/SelectedPlace"
+        },
+        "serialization": {
+          "const": "astro-passport-json.v1",
+          "title": "Serialization",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "contract_version",
+        "profile",
+        "selected_place",
+        "civil_input",
+        "boundary",
+        "civil",
+        "bodies",
+        "provenance",
+        "serialization",
+        "authenticity"
+      ],
+      "title": "AstroPassportResponseV1",
+      "type": "object"
+    },
+    "Ayanamsha": {
+      "additionalProperties": false,
+      "properties": {
+        "binary64_hex": {
+          "maxLength": 32,
+          "minLength": 8,
+          "title": "Binary64 Hex",
+          "type": "string"
+        },
+        "decimal_degrees": {
+          "pattern": "^(?:0|[1-9][0-9]?|[12][0-9]{2}|3[0-5][0-9])\\.[0-9]{9}$",
+          "title": "Decimal Degrees",
+          "type": "string"
+        }
+      },
+      "required": [
+        "binary64_hex",
+        "decimal_degrees"
+      ],
+      "title": "Ayanamsha",
+      "type": "object"
+    },
+    "BoundaryFact": {
+      "additionalProperties": false,
+      "properties": {
+        "iana_zone": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Iana Zone",
+          "type": "string"
+        },
+        "outcome": {
+          "const": "unique",
+          "title": "Outcome",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/BoundaryProvenance"
+        },
+        "schema_version": {
+          "const": "timezone-boundary.v1",
+          "title": "Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "outcome",
+        "iana_zone",
+        "provenance"
+      ],
+      "title": "BoundaryFact",
+      "type": "object"
+    },
+    "BoundaryProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Archive Sha256",
+          "type": "string"
+        },
+        "attribution": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        },
+        "catalog_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Catalog Sha256",
+          "type": "string"
+        },
+        "dataset": {
+          "const": "timezone-boundary-builder",
+          "title": "Dataset",
+          "type": "string"
+        },
+        "execution_target": {
+          "const": "linux-amd64",
+          "title": "Execution Target",
+          "type": "string"
+        },
+        "geometry_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Geometry Sha256",
+          "type": "string"
+        },
+        "geos_version": {
+          "const": "3.13.1",
+          "title": "Geos Version",
+          "type": "string"
+        },
+        "license": {
+          "const": "ODbL-1.0",
+          "title": "License",
+          "type": "string"
+        },
+        "license_url": {
+          "const": "https://opendatacommons.org/licenses/odbl/1-0/",
+          "title": "License Url",
+          "type": "string"
+        },
+        "manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Manifest Sha256",
+          "type": "string"
+        },
+        "numpy_version": {
+          "const": "2.5.3",
+          "title": "Numpy Version",
+          "type": "string"
+        },
+        "python_version": {
+          "const": "3.12.14",
+          "title": "Python Version",
+          "type": "string"
+        },
+        "release": {
+          "const": "2026c",
+          "title": "Release",
+          "type": "string"
+        },
+        "resolver": {
+          "const": "tbb-planar.v1",
+          "title": "Resolver",
+          "type": "string"
+        },
+        "shapely_version": {
+          "const": "2.1.2",
+          "title": "Shapely Version",
+          "type": "string"
+        },
+        "variant": {
+          "const": "comprehensive-no-oceans",
+          "title": "Variant",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataset",
+        "release",
+        "variant",
+        "manifest_sha256",
+        "archive_sha256",
+        "geometry_sha256",
+        "catalog_sha256",
+        "resolver",
+        "shapely_version",
+        "geos_version",
+        "numpy_version",
+        "python_version",
+        "execution_target",
+        "license",
+        "attribution",
+        "license_url"
+      ],
+      "title": "BoundaryProvenance",
+      "type": "object"
+    },
+    "CivilFact": {
+      "additionalProperties": false,
+      "properties": {
+        "fold": {
+          "anyOf": [
+            {
+              "enum": [
+                0,
+                1
+              ],
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Fold"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        },
+        "offset_seconds": {
+          "exclusiveMaximum": 86400,
+          "exclusiveMinimum": -86400,
+          "title": "Offset Seconds",
+          "type": "integer"
+        },
+        "provenance": {
+          "$ref": "#/$defs/CivilProvenance"
+        },
+        "resolution": {
+          "enum": [
+            "unique",
+            "explicit_fold"
+          ],
+          "title": "Resolution",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "civil-time.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "utc": {
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{6}Z$",
+          "title": "Utc",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "utc",
+        "offset_seconds",
+        "resolution",
+        "fold",
+        "provenance",
+        "limitations"
+      ],
+      "title": "CivilFact",
+      "type": "object"
+    },
+    "CivilInput": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "title": "Date",
+          "type": "string"
+        },
+        "fold": {
+          "anyOf": [
+            {
+              "enum": [
+                0,
+                1
+              ],
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Fold"
+        },
+        "time": {
+          "pattern": "^[0-9]{2}:[0-9]{2}(?::[0-9]{2}(?:\\.[0-9]{1,6})?)?$",
+          "title": "Time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "time",
+        "fold"
+      ],
+      "title": "CivilInput",
+      "type": "object"
+    },
+    "CivilProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Archive Sha256",
+          "type": "string"
+        },
+        "build_policy": {
+          "const": "main-backzone-zone.tab-posix-slim.v1",
+          "title": "Build Policy",
+          "type": "string"
+        },
+        "calendar": {
+          "const": "proleptic-gregorian",
+          "title": "Calendar",
+          "type": "string"
+        },
+        "historical_assurance": {
+          "const": "pinned-dataset-rules-only",
+          "title": "Historical Assurance",
+          "type": "string"
+        },
+        "iana_version": {
+          "const": "2026c",
+          "title": "Iana Version",
+          "type": "string"
+        },
+        "python_runtime": {
+          "const": "CPython-3.12.14",
+          "title": "Python Runtime",
+          "type": "string"
+        },
+        "resolver": {
+          "const": "zoneinfo-roundtrip.v1",
+          "title": "Resolver",
+          "type": "string"
+        },
+        "tzcode_source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Tzcode Source Sha256",
+          "type": "string"
+        },
+        "tzdata_source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Tzdata Source Sha256",
+          "type": "string"
+        },
+        "tzif_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Tzif Sha256",
+          "type": "string"
+        },
+        "utc_convention": {
+          "const": "posix-no-leap-seconds",
+          "title": "Utc Convention",
+          "type": "string"
+        }
+      },
+      "required": [
+        "iana_version",
+        "build_policy",
+        "archive_sha256",
+        "tzdata_source_sha256",
+        "tzcode_source_sha256",
+        "tzif_sha256",
+        "resolver",
+        "python_runtime",
+        "calendar",
+        "utc_convention",
+        "historical_assurance"
+      ],
+      "title": "CivilProvenance",
+      "type": "object"
+    },
+    "LahiriFact": {
+      "additionalProperties": false,
+      "properties": {
+        "ayanamsha": {
+          "$ref": "#/$defs/Ayanamsha"
+        },
+        "ayanamsha_flags": {
+          "const": 2,
+          "title": "Ayanamsha Flags",
+          "type": "integer"
+        },
+        "ayanamsha_kind": {
+          "const": "true-including-nutation",
+          "title": "Ayanamsha Kind",
+          "type": "string"
+        },
+        "moon": {
+          "$ref": "#/$defs/MoonLongitude"
+        },
+        "numerical_policy": {
+          "const": "binary64-to-decimal-9dp-half-even.v1",
+          "title": "Numerical Policy",
+          "type": "string"
+        },
+        "policy": {
+          "const": "swiss-lahiri-apparent-moon.v1-mvp",
+          "title": "Policy",
+          "type": "string"
+        },
+        "requested_flags": {
+          "const": 65538,
+          "title": "Requested Flags",
+          "type": "integer"
+        },
+        "returned_flags": {
+          "const": 65602,
+          "title": "Returned Flags",
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": "LahiriMoonFact.v1-mvp",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "swiss_sidereal_mode": {
+          "const": 1,
+          "title": "Swiss Sidereal Mode",
+          "type": "integer"
+        },
+        "system": {
+          "const": "lahiri",
+          "title": "System",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "system",
+        "swiss_sidereal_mode",
+        "policy",
+        "numerical_policy",
+        "requested_flags",
+        "returned_flags",
+        "ayanamsha_flags",
+        "ayanamsha_kind",
+        "ayanamsha",
+        "moon"
+      ],
+      "title": "LahiriFact",
+      "type": "object"
+    },
+    "LahiriRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "civil": {
+          "$ref": "#/$defs/CivilInput"
+        },
+        "contract_version": {
+          "const": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "profile": {
+          "const": "sun-moon-lahiri.v1-mvp",
+          "title": "Profile",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "AstroPassportRequest.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "selected_place": {
+          "$ref": "#/$defs/SelectedPlace"
+        }
+      },
+      "required": [
+        "schema_version",
+        "contract_version",
+        "profile",
+        "selected_place",
+        "civil"
+      ],
+      "title": "LahiriRequest",
+      "type": "object"
+    },
+    "LahiriResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "authenticity": {
+          "const": "unsigned-direct-client-only",
+          "title": "Authenticity",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "profile": {
+          "const": "sun-moon-lahiri.v1-mvp",
+          "title": "Profile",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "AstroPassportLahiriResponse.v1-mvp",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "serialization": {
+          "const": "astro-passport-lahiri-json.v1-mvp",
+          "title": "Serialization",
+          "type": "string"
+        },
+        "sidereal": {
+          "$ref": "#/$defs/LahiriFact"
+        },
+        "tropical": {
+          "$ref": "#/$defs/AstroPassportResponseV1"
+        }
+      },
+      "required": [
+        "schema_version",
+        "contract_version",
+        "profile",
+        "tropical",
+        "sidereal",
+        "serialization",
+        "authenticity"
+      ],
+      "title": "LahiriResponse",
+      "type": "object"
+    },
+    "MoonLongitude": {
+      "additionalProperties": false,
+      "properties": {
+        "binary64_hex": {
+          "maxLength": 32,
+          "minLength": 8,
+          "title": "Binary64 Hex",
+          "type": "string"
+        },
+        "body": {
+          "const": "moon",
+          "title": "Body",
+          "type": "string"
+        },
+        "decimal_degrees": {
+          "pattern": "^(?:0|[1-9][0-9]?|[12][0-9]{2}|3[0-5][0-9])\\.[0-9]{9}$",
+          "title": "Decimal Degrees",
+          "type": "string"
+        }
+      },
+      "required": [
+        "body",
+        "binary64_hex",
+        "decimal_degrees"
+      ],
+      "title": "MoonLongitude",
+      "type": "object"
+    },
+    "ProvenanceV1": {
+      "additionalProperties": false,
+      "properties": {
+        "adapter": {
+          "const": "swiss-isolated.v1",
+          "title": "Adapter",
+          "type": "string"
+        },
+        "binary_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Binary Sha256",
+          "type": "string"
+        },
+        "binding": {
+          "const": "pysweph-2.10.3.6",
+          "title": "Binding",
+          "type": "string"
+        },
+        "binding_source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Binding Source Sha256",
+          "type": "string"
+        },
+        "data_origin": {
+          "const": "DE441",
+          "title": "Data Origin",
+          "type": "string"
+        },
+        "delta_t_policy": {
+          "const": "swiss-2.10.03-auto-model-tidal-DE441",
+          "title": "Delta T Policy",
+          "type": "string"
+        },
+        "ephemeris_schema": {
+          "const": "ephemeris.v1",
+          "title": "Ephemeris Schema",
+          "type": "string"
+        },
+        "library": {
+          "const": "2.10.03",
+          "title": "Library",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        },
+        "moon_data_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Moon Data Sha256",
+          "type": "string"
+        },
+        "numerical_policy": {
+          "const": "binary64-to-decimal-9dp-half-even.v1",
+          "title": "Numerical Policy",
+          "type": "string"
+        },
+        "planet_data_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Planet Data Sha256",
+          "type": "string"
+        },
+        "projection": {
+          "const": "geocentric-tropical-apparent-ecliptic-of-date",
+          "title": "Projection",
+          "type": "string"
+        },
+        "requested_flags": {
+          "const": 2,
+          "title": "Requested Flags",
+          "type": "integer"
+        },
+        "returned_flags": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "const": 2,
+              "type": "integer"
+            },
+            {
+              "const": 2,
+              "type": "integer"
+            }
+          ],
+          "title": "Returned Flags",
+          "type": "array"
+        },
+        "runtime": {
+          "const": "CPython-3.12.14-Linux-x86_64",
+          "title": "Runtime",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "AstroPassportProvenance.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "source_repository": {
+          "const": "https://github.com/Attory/astro-passport",
+          "title": "Source Repository",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "time_policy": {
+          "const": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+          "title": "Time Policy",
+          "type": "string"
+        },
+        "tt_jd_binary64": {
+          "maxLength": 32,
+          "minLength": 8,
+          "title": "Tt Jd Binary64",
+          "type": "string"
+        },
+        "ut1_jd_binary64": {
+          "maxLength": 32,
+          "minLength": 8,
+          "title": "Ut1 Jd Binary64",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "source_repository",
+        "source_revision",
+        "ephemeris_schema",
+        "adapter",
+        "binding",
+        "library",
+        "binary_sha256",
+        "binding_source_sha256",
+        "planet_data_sha256",
+        "moon_data_sha256",
+        "data_origin",
+        "requested_flags",
+        "returned_flags",
+        "projection",
+        "numerical_policy",
+        "time_policy",
+        "delta_t_policy",
+        "runtime",
+        "tt_jd_binary64",
+        "ut1_jd_binary64",
+        "limitations"
+      ],
+      "title": "ProvenanceV1",
+      "type": "object"
+    },
+    "SelectedPlace": {
+      "additionalProperties": false,
+      "properties": {
+        "attribution": {
+          "anyOf": [
+            {
+              "maxLength": 512,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Attribution"
+        },
+        "display_name": {
+          "maxLength": 512,
+          "minLength": 1,
+          "title": "Display Name",
+          "type": "string"
+        },
+        "latitude": {
+          "maximum": 90,
+          "minimum": -90,
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "maximum": 180,
+          "minimum": -180,
+          "title": "Longitude",
+          "type": "number"
+        },
+        "provider": {
+          "maxLength": 64,
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+          "title": "Provider",
+          "type": "string"
+        },
+        "query": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Query",
+          "type": "string"
+        },
+        "requested_limit": {
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Requested Limit",
+          "type": "integer"
+        },
+        "result_count": {
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Result Count",
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": "SelectedPlaceInput.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "selected_index": {
+          "maximum": 9,
+          "minimum": 0,
+          "title": "Selected Index",
+          "type": "integer"
+        },
+        "source_id": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "provider",
+        "source_id",
+        "display_name",
+        "latitude",
+        "longitude",
+        "attribution",
+        "query",
+        "requested_limit",
+        "selected_index",
+        "result_count"
+      ],
+      "title": "SelectedPlace",
+      "type": "object"
+    },
+    "SunLongitude": {
+      "additionalProperties": false,
+      "properties": {
+        "binary64_hex": {
+          "maxLength": 32,
+          "minLength": 8,
+          "title": "Binary64 Hex",
+          "type": "string"
+        },
+        "body": {
+          "const": "sun",
+          "title": "Body",
+          "type": "string"
+        },
+        "decimal_degrees": {
+          "pattern": "^(?:0|[1-9][0-9]?|[12][0-9]{2}|3[0-5][0-9])\\.[0-9]{9}$",
+          "title": "Decimal Degrees",
+          "type": "string"
+        }
+      },
+      "required": [
+        "body",
+        "binary64_hex",
+        "decimal_degrees"
+      ],
+      "title": "SunLongitude",
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/Attory/astro-passport/contracts/mvp/lahiri-v1/schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "$ref": "#/$defs/LahiriRequest"
+    },
+    {
+      "$ref": "#/$defs/LahiriResponse"
+    }
+  ],
+  "title": "CP-010 Lahiri MVP candidate; not an AAC canonical release"
+}
