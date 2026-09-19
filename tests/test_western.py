@@ -176,3 +176,17 @@ def test_candidate_schema_matches():
     from scripts.western_schema import render
 
     assert Path("contracts/mvp/western-v1/schema.json").read_bytes() == render()
+
+
+def test_retained_public_reference_scientific_bytes(science):
+    packet = json.loads(Path("tests/fixtures/western-public-synthetic.json").read_bytes())
+    for case in packet["cases"]:
+        value = WesternRequest.model_validate_json(json.dumps(case["request"]))
+        actual = asyncio.run(science.calculate_western(value))
+        expected = copy.deepcopy(case["response"])
+        # Fixture records the real producer SHA; this unit fixture uses a clearly
+        # synthetic build identity. All scientific/contract bytes remain exact.
+        expected["base"]["tropical"]["provenance"]["source_revision"] = science.revision
+        assert actual.model_dump(mode="json") == expected
+        retained = WesternResponse.model_validate_json(json.dumps(case["response"]))
+        assert western_content(retained).hex() == case["canonical_hex"]

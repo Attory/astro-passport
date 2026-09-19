@@ -1,0 +1,592 @@
+{
+  "cases": [
+    {
+      "apt_revision": "fab6b485beb27bcff3fd1da3b99d24e5ecb534c5",
+      "canonical_hex": "5b224143455031222c226170742e7765737465726e2d73796e61737472792d636f72652d636f6e74656e742e76312d6d7670222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3239343137323637363837347d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a33303231323230363332307d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a2d3333383730303030302c226c6f6e6769747564655f6537223a313531323130303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a227765737465726e2d73796e61737472792d636f72652e76312d6d7670222c22736368656d61223a2241505443616e6f6e6963616c5765737465726e436f6e74656e742e76312d6d7670222c22736964657265616c223a7b226179616e616d7368615f6539223a32333835333833343633352c226179616e616d7368615f6b696e64223a22747275652d696e636c7564696e672d6e75746174696f6e222c226d6f6f6e5f6c6f6e6769747564655f6539223a363335383337313638352c22706f6c696379223a2273776973732d6c61686972692d6170706172656e742d6d6f6f6e2e76312d6d7670222c2273776973735f736964657265616c5f6d6f6465223a312c2273797374656d223a226c6168697269227d2c22757463223a22323030302d30312d31355430313a30303a30302e3030303030305a222c227765737465726e223a7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3239343137323637363837342c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a33303231323230363332302c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d657263757279222c226c6f6e6769747564655f6539223a3239333533313538323638322c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a2276656e7573222c226c6f6e6769747564655f6539223a3235383032343239343730342c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d617273222c226c6f6e6769747564655f6539223a3333383436313334343739302c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226a757069746572222c226c6f6e6769747564655f6539223a32363130353838393235372c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a2273617475726e222c226c6f6e6769747564655f6539223a34303239363032393334352c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a227572616e7573222c226c6f6e6769747564655f6539223a3331353532363032313937382c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226e657074756e65222c226c6f6e6769747564655f6539223a3330333639303134383130372c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a22706c75746f222c226c6f6e6769747564655f6539223a3235313930333830373530332c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a22747275655f6e6f7274685f6e6f6465222c226c6f6e6769747564655f6539223a3132333733393830353232352c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d5d2c22686f75736573223a7b22617363656e64616e745f6539223a383435313639313937362c2263757370735f6539223a5b383435313639313937362c33363132303931353039322c36363736333636363330352c39393230343238303638322c3133313538313632343639372c3136313831343431373932392c3138383435313639313937362c3231363132303931353039322c3234363736333636363330352c3237393230343238303638322c3331313538313632343639372c3334313831343431373932395d2c22666c616773223a302c226d635f6539223a3237393230343238303638322c22706f6c696379223a2273776973732d706c6163696475732d7574312d74726f706963616c2d63757370732e76312d6d7670222c22737461747573223a22617661696c61626c65222c2273797374656d223a22706c616369647573227d2c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f6a656374696f6e223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c22736368656d61223a225765737465726e436f726546616374732e76312d6d7670227d7d5d",
+      "id": "sydney",
+      "origin": "Independent public synthetic geography/time, no personal records",
+      "request": {
+        "civil": {
+          "date": "2000-01-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "western-synastry-core.v1-mvp",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Synthetic research case",
+          "latitude": -33.87,
+          "longitude": 151.21,
+          "provider": "synthetic",
+          "query": "Exact synthetic query",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-geography"
+        }
+      },
+      "response": {
+        "authenticity": "unsigned-direct-client-only",
+        "base": {
+          "authenticity": "unsigned-direct-client-only",
+          "contract_version": "1.0.0",
+          "profile": "sun-moon-lahiri.v1-mvp",
+          "schema_version": "AstroPassportLahiriResponse.v1-mvp",
+          "serialization": "astro-passport-lahiri-json.v1-mvp",
+          "sidereal": {
+            "ayanamsha": {
+              "binary64_hex": "0x1.7da94e8182483p+4",
+              "decimal_degrees": "23.853834635"
+            },
+            "ayanamsha_flags": 2,
+            "ayanamsha_kind": "true-including-nutation",
+            "moon": {
+              "binary64_hex": "0x1.96ef8fcaf7eaep+2",
+              "body": "moon",
+              "decimal_degrees": "6.358371685"
+            },
+            "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+            "policy": "swiss-lahiri-apparent-moon.v1-mvp",
+            "requested_flags": 65538,
+            "returned_flags": 65602,
+            "schema_version": "LahiriMoonFact.v1-mvp",
+            "swiss_sidereal_mode": 1,
+            "system": "lahiri"
+          },
+          "tropical": {
+            "authenticity": "unsigned-direct-client-only",
+            "bodies": [
+              {
+                "binary64_hex": "0x1.262c348d35a21p+8",
+                "body": "sun",
+                "decimal_degrees": "294.172676874"
+              },
+              {
+                "binary64_hex": "0x1.e36532744042dp+4",
+                "body": "moon",
+                "decimal_degrees": "30.212206320"
+              }
+            ],
+            "boundary": {
+              "iana_zone": "Australia/Sydney",
+              "outcome": "unique",
+              "provenance": {
+                "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+                "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+                "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+                "dataset": "timezone-boundary-builder",
+                "execution_target": "linux-amd64",
+                "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+                "geos_version": "3.13.1",
+                "license": "ODbL-1.0",
+                "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+                "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+                "numpy_version": "2.5.3",
+                "python_version": "3.12.14",
+                "release": "2026c",
+                "resolver": "tbb-planar.v1",
+                "shapely_version": "2.1.2",
+                "variant": "comprehensive-no-oceans"
+              },
+              "schema_version": "timezone-boundary.v1"
+            },
+            "civil": {
+              "fold": null,
+              "limitations": [
+                "modern-geography-not-date-specific-jurisdiction"
+              ],
+              "offset_seconds": 39600,
+              "provenance": {
+                "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+                "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+                "calendar": "proleptic-gregorian",
+                "historical_assurance": "pinned-dataset-rules-only",
+                "iana_version": "2026c",
+                "python_runtime": "CPython-3.12.14",
+                "resolver": "zoneinfo-roundtrip.v1",
+                "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+                "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+                "tzif_sha256": "820d45a868a88f81c731d5b2c758b4ed000039b6260a80433f8e0f094a604b59",
+                "utc_convention": "posix-no-leap-seconds"
+              },
+              "resolution": "unique",
+              "schema_version": "civil-time.v1",
+              "utc": "2000-01-15T01:00:00.000000Z"
+            },
+            "civil_input": {
+              "date": "2000-01-15",
+              "fold": null,
+              "time": "12:00:00.000000"
+            },
+            "contract_version": "1.0.0",
+            "profile": "sun-moon.v1",
+            "provenance": {
+              "adapter": "swiss-isolated.v1",
+              "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+              "binding": "pysweph-2.10.3.6",
+              "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+              "data_origin": "DE441",
+              "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+              "ephemeris_schema": "ephemeris.v1",
+              "library": "2.10.03",
+              "limitations": [
+                "modelled-ut1-not-measured-earth-orientation"
+              ],
+              "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+              "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+              "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+              "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+              "requested_flags": 2,
+              "returned_flags": [
+                2,
+                2
+              ],
+              "runtime": "CPython-3.12.14-Linux-x86_64",
+              "schema_version": "AstroPassportProvenance.v1",
+              "source_repository": "https://github.com/Attory/astro-passport",
+              "source_revision": "fab6b485beb27bcff3fd1da3b99d24e5ecb534c5",
+              "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+              "tt_jd_binary64": "0x1.2b433456dacfbp+21",
+              "ut1_jd_binary64": "0x1.2b433455576b9p+21"
+            },
+            "schema_version": "AstroPassportResponse.v1",
+            "selected_place": {
+              "attribution": null,
+              "display_name": "Synthetic research case",
+              "latitude": -33.87,
+              "longitude": 151.21,
+              "provider": "synthetic",
+              "query": "Exact synthetic query",
+              "requested_limit": 1,
+              "result_count": 1,
+              "schema_version": "SelectedPlaceInput.v1",
+              "selected_index": 0,
+              "source_id": "public-artificial-geography"
+            },
+            "serialization": "astro-passport-json.v1"
+          }
+        },
+        "contract_version": "1.0.0",
+        "profile": "western-synastry-core.v1-mvp",
+        "schema_version": "AstroPassportWesternResponse.v1-mvp",
+        "serialization": "astro-passport-western-json.v1-mvp",
+        "western": {
+          "bodies": [
+            {
+              "binary64_hex": "0x1.262c348d35a21p+8",
+              "body": "sun",
+              "decimal_degrees": "294.172676874",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.e36532744042dp+4",
+              "body": "moon",
+              "decimal_degrees": "30.212206320",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.258815cd7a7acp+8",
+              "body": "mercury",
+              "decimal_degrees": "293.531582682",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.0206382d7f963p+8",
+              "body": "venus",
+              "decimal_degrees": "258.024294704",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.52761ab130763p+8",
+              "body": "mars",
+              "decimal_degrees": "338.461344790",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.a1b1b8eef34eap+4",
+              "body": "jupiter",
+              "decimal_degrees": "26.105889257",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.425e44a211288p+5",
+              "body": "saturn",
+              "decimal_degrees": "40.296029345",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.3b86a96057c2fp+8",
+              "body": "uranus",
+              "decimal_degrees": "315.526021978",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.2fb0ad8bdcd14p+8",
+              "body": "neptune",
+              "decimal_degrees": "303.690148107",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.f7cebfdb658ecp+7",
+              "body": "pluto",
+              "decimal_degrees": "251.903807503",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.eef58f8035283p+6",
+              "body": "true_north_node",
+              "decimal_degrees": "123.739805225",
+              "requested_flags": 2,
+              "returned_flags": 2
+            }
+          ],
+          "houses": {
+            "ascendant": {
+              "binary64_hex": "0x1.0e7442bb48f17p+3",
+              "decimal_degrees": "8.451691976"
+            },
+            "cusps": [
+              {
+                "binary64_hex": "0x1.0e7442bb48f17p+3",
+                "decimal_degrees": "8.451691976"
+              },
+              {
+                "binary64_hex": "0x1.20f7a254f63d3p+5",
+                "decimal_degrees": "36.120915092"
+              },
+              {
+                "binary64_hex": "0x1.0b0dfe8a2f0f4p+6",
+                "decimal_degrees": "66.763666305"
+              },
+              {
+                "binary64_hex": "0x1.8cd12ef4855e4p+6",
+                "decimal_degrees": "99.204280682"
+              },
+              {
+                "binary64_hex": "0x1.0729cab654ebap+7",
+                "decimal_degrees": "131.581624697"
+              },
+              {
+                "binary64_hex": "0x1.43a0fb6303dc0p+7",
+                "decimal_degrees": "161.814417929"
+              },
+              {
+                "binary64_hex": "0x1.78e7442bb48f1p+7",
+                "decimal_degrees": "188.451691976"
+              },
+              {
+                "binary64_hex": "0x1.b03de8953d8f5p+7",
+                "decimal_degrees": "216.120915092"
+              },
+              {
+                "binary64_hex": "0x1.ed86ff451787ap+7",
+                "decimal_degrees": "246.763666305"
+              },
+              {
+                "binary64_hex": "0x1.17344bbd21579p+8",
+                "decimal_degrees": "279.204280682"
+              },
+              {
+                "binary64_hex": "0x1.3794e55b2a75dp+8",
+                "decimal_degrees": "311.581624697"
+              },
+              {
+                "binary64_hex": "0x1.55d07db181ee0p+8",
+                "decimal_degrees": "341.814417929"
+              }
+            ],
+            "flags": 0,
+            "mc": {
+              "binary64_hex": "0x1.17344bbd21579p+8",
+              "decimal_degrees": "279.204280682"
+            },
+            "policy": "swiss-placidus-ut1-tropical-cusps.v1-mvp",
+            "status": "available",
+            "system": "placidus"
+          },
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "schema_version": "WesternCoreFacts.v1-mvp"
+        }
+      }
+    },
+    {
+      "apt_revision": "fab6b485beb27bcff3fd1da3b99d24e5ecb534c5",
+      "canonical_hex": "5b224143455031222c226170742e7765737465726e2d73796e61737472792d636f72652d636f6e74656e742e76312d6d7670222c7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3239343539373035393031347d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a33353939303639373639337d5d2c226672616d65223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c226c617469747564655f6537223a3738323230303030302c226c6f6e6769747564655f6537223a3135363530303030302c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f66696c65223a227765737465726e2d73796e61737472792d636f72652e76312d6d7670222c22736368656d61223a2241505443616e6f6e6963616c5765737465726e436f6e74656e742e76312d6d7670222c22736964657265616c223a7b226179616e616d7368615f6539223a32333835333834373337362c226179616e616d7368615f6b696e64223a22747275652d696e636c7564696e672d6e75746174696f6e222c226d6f6f6e5f6c6f6e6769747564655f6539223a31323133363835303331382c22706f6c696379223a2273776973732d6c61686972692d6170706172656e742d6d6f6f6e2e76312d6d7670222c2273776973735f736964657265616c5f6d6f6465223a312c2273797374656d223a226c6168697269227d2c22757463223a22323030302d30312d31355431313a30303a30302e3030303030305a222c227765737465726e223a7b22626f64696573223a5b7b22626f6479223a2273756e222c226c6f6e6769747564655f6539223a3239343539373035393031342c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d6f6f6e222c226c6f6e6769747564655f6539223a33353939303639373639332c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d657263757279222c226c6f6e6769747564655f6539223a3239343231383537303635372c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a2276656e7573222c226c6f6e6769747564655f6539223a3235383533323934393632302c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226d617273222c226c6f6e6769747564655f6539223a3333383738333837373231302c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226a757069746572222c226c6f6e6769747564655f6539223a32363134313332303934392c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a2273617475726e222c226c6f6e6769747564655f6539223a34303239383432323330352c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a227572616e7573222c226c6f6e6769747564655f6539223a3331353534393031353430352c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a226e657074756e65222c226c6f6e6769747564655f6539223a3330333730353830323435342c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a22706c75746f222c226c6f6e6769747564655f6539223a3235313931363634383831342c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d2c7b22626f6479223a22747275655f6e6f7274685f6e6f6465222c226c6f6e6769747564655f6539223a3132333733373535333534302c227265717565737465645f666c616773223a322c2272657475726e65645f666c616773223a327d5d2c22686f75736573223a7b22706f6c696379223a2273776973732d706c6163696475732d7574312d74726f706963616c2d63757370732e76312d6d7670222c22726561736f6e223a22706c6163696475735f756e646566696e6564222c22737461747573223a22756e617661696c61626c65222c2273797374656d223a22706c616369647573227d2c226e756d65726963616c5f706f6c696379223a2262696e61727936342d746f2d646563696d616c2d3964702d68616c662d6576656e2e7631222c2270726f6a656374696f6e223a2267656f63656e747269632d74726f706963616c2d6170706172656e742d65636c69707469632d6f662d64617465222c22736368656d61223a225765737465726e436f726546616374732e76312d6d7670227d7d5d",
+      "id": "polar",
+      "origin": "Independent public synthetic geography/time, no personal records",
+      "request": {
+        "civil": {
+          "date": "2000-01-15",
+          "fold": null,
+          "time": "12:00:00.000000"
+        },
+        "contract_version": "1.0.0",
+        "profile": "western-synastry-core.v1-mvp",
+        "schema_version": "AstroPassportRequest.v1",
+        "selected_place": {
+          "attribution": null,
+          "display_name": "Synthetic research case",
+          "latitude": 78.22,
+          "longitude": 15.65,
+          "provider": "synthetic",
+          "query": "Exact synthetic query",
+          "requested_limit": 1,
+          "result_count": 1,
+          "schema_version": "SelectedPlaceInput.v1",
+          "selected_index": 0,
+          "source_id": "public-artificial-geography"
+        }
+      },
+      "response": {
+        "authenticity": "unsigned-direct-client-only",
+        "base": {
+          "authenticity": "unsigned-direct-client-only",
+          "contract_version": "1.0.0",
+          "profile": "sun-moon-lahiri.v1-mvp",
+          "schema_version": "AstroPassportLahiriResponse.v1-mvp",
+          "serialization": "astro-passport-lahiri-json.v1-mvp",
+          "sidereal": {
+            "ayanamsha": {
+              "binary64_hex": "0x1.7da95bdd9ef06p+4",
+              "decimal_degrees": "23.853847376"
+            },
+            "ayanamsha_flags": 2,
+            "ayanamsha_kind": "true-including-nutation",
+            "moon": {
+              "binary64_hex": "0x1.846113eaf2dfcp+3",
+              "body": "moon",
+              "decimal_degrees": "12.136850318"
+            },
+            "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+            "policy": "swiss-lahiri-apparent-moon.v1-mvp",
+            "requested_flags": 65538,
+            "returned_flags": 65602,
+            "schema_version": "LahiriMoonFact.v1-mvp",
+            "swiss_sidereal_mode": 1,
+            "system": "lahiri"
+          },
+          "tropical": {
+            "authenticity": "unsigned-direct-client-only",
+            "bodies": [
+              {
+                "binary64_hex": "0x1.2698d8dc08d31p+8",
+                "body": "sun",
+                "decimal_degrees": "294.597059014"
+              },
+              {
+                "binary64_hex": "0x1.1fecf2e98c303p+5",
+                "body": "moon",
+                "decimal_degrees": "35.990697693"
+              }
+            ],
+            "boundary": {
+              "iana_zone": "Arctic/Longyearbyen",
+              "outcome": "unique",
+              "provenance": {
+                "archive_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+                "attribution": "Timezone Boundary Builder; OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+                "catalog_sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff",
+                "dataset": "timezone-boundary-builder",
+                "execution_target": "linux-amd64",
+                "geometry_sha256": "40863a7e585e4c1f25a7dd9b0b204d591f4af45a180aa9ec44775fed8a8510bf",
+                "geos_version": "3.13.1",
+                "license": "ODbL-1.0",
+                "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+                "manifest_sha256": "2721941b70ba791ab06052972bbe493d7c7758884dea7ba72f339fb939e106e9",
+                "numpy_version": "2.5.3",
+                "python_version": "3.12.14",
+                "release": "2026c",
+                "resolver": "tbb-planar.v1",
+                "shapely_version": "2.1.2",
+                "variant": "comprehensive-no-oceans"
+              },
+              "schema_version": "timezone-boundary.v1"
+            },
+            "civil": {
+              "fold": null,
+              "limitations": [
+                "modern-geography-not-date-specific-jurisdiction"
+              ],
+              "offset_seconds": 3600,
+              "provenance": {
+                "archive_sha256": "ff4d43e00b4de4ca68a892c0361a071af3a05583fac315a5f0b6c5490d4a58fa",
+                "build_policy": "main-backzone-zone.tab-posix-slim.v1",
+                "calendar": "proleptic-gregorian",
+                "historical_assurance": "pinned-dataset-rules-only",
+                "iana_version": "2026c",
+                "python_runtime": "CPython-3.12.14",
+                "resolver": "zoneinfo-roundtrip.v1",
+                "tzcode_source_sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8",
+                "tzdata_source_sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4",
+                "tzif_sha256": "a7fd9932d785d4d690900b834c3563c1810c1cf2e01711bcc0926af6c0767cb7",
+                "utc_convention": "posix-no-leap-seconds"
+              },
+              "resolution": "unique",
+              "schema_version": "civil-time.v1",
+              "utc": "2000-01-15T11:00:00.000000Z"
+            },
+            "civil_input": {
+              "date": "2000-01-15",
+              "fold": null,
+              "time": "12:00:00.000000"
+            },
+            "contract_version": "1.0.0",
+            "profile": "sun-moon.v1",
+            "provenance": {
+              "adapter": "swiss-isolated.v1",
+              "binary_sha256": "2b3234b6678dfa5666c98e898c16ee7e8c6c8457100e293c24ce679cd4387764",
+              "binding": "pysweph-2.10.3.6",
+              "binding_source_sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a",
+              "data_origin": "DE441",
+              "delta_t_policy": "swiss-2.10.03-auto-model-tidal-DE441",
+              "ephemeris_schema": "ephemeris.v1",
+              "library": "2.10.03",
+              "limitations": [
+                "modelled-ut1-not-measured-earth-orientation"
+              ],
+              "moon_data_sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7",
+              "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+              "planet_data_sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66",
+              "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+              "requested_flags": 2,
+              "returned_flags": [
+                2,
+                2
+              ],
+              "runtime": "CPython-3.12.14-Linux-x86_64",
+              "schema_version": "AstroPassportProvenance.v1",
+              "source_repository": "https://github.com/Attory/astro-passport",
+              "source_revision": "fab6b485beb27bcff3fd1da3b99d24e5ecb534c5",
+              "time_policy": "pinned-leaps-2016-pre1972-ut1-proxy.v1",
+              "tt_jd_binary64": "0x1.2b4337ac30251p+21",
+              "ut1_jd_binary64": "0x1.2b4337aaacc07p+21"
+            },
+            "schema_version": "AstroPassportResponse.v1",
+            "selected_place": {
+              "attribution": null,
+              "display_name": "Synthetic research case",
+              "latitude": 78.22,
+              "longitude": 15.65,
+              "provider": "synthetic",
+              "query": "Exact synthetic query",
+              "requested_limit": 1,
+              "result_count": 1,
+              "schema_version": "SelectedPlaceInput.v1",
+              "selected_index": 0,
+              "source_id": "public-artificial-geography"
+            },
+            "serialization": "astro-passport-json.v1"
+          }
+        },
+        "contract_version": "1.0.0",
+        "profile": "western-synastry-core.v1-mvp",
+        "schema_version": "AstroPassportWesternResponse.v1-mvp",
+        "serialization": "astro-passport-western-json.v1-mvp",
+        "western": {
+          "bodies": [
+            {
+              "binary64_hex": "0x1.2698d8dc08d31p+8",
+              "body": "sun",
+              "decimal_degrees": "294.597059014",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.1fecf2e98c303p+5",
+              "body": "moon",
+              "decimal_degrees": "35.990697693",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.2637f43f20740p+8",
+              "body": "mercury",
+              "decimal_degrees": "294.218570657",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.02886f62e4d9cp+8",
+              "body": "venus",
+              "decimal_degrees": "258.532949620",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.52c8ac2d431efp+8",
+              "body": "mars",
+              "decimal_degrees": "338.783877210",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.a242d9c162b10p+4",
+              "body": "jupiter",
+              "decimal_degrees": "26.141320949",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.42632b3bc06a0p+5",
+              "body": "saturn",
+              "decimal_degrees": "40.298422305",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.3b8c8c46093ddp+8",
+              "body": "uranus",
+              "decimal_degrees": "315.549015405",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.2fb4af783a8a4p+8",
+              "body": "neptune",
+              "decimal_degrees": "303.705802454",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.f7d552fe4e556p+7",
+              "body": "pluto",
+              "decimal_degrees": "251.916648814",
+              "requested_flags": 2,
+              "returned_flags": 2
+            },
+            {
+              "binary64_hex": "0x1.eef3413c31a61p+6",
+              "body": "true_north_node",
+              "decimal_degrees": "123.737553540",
+              "requested_flags": 2,
+              "returned_flags": 2
+            }
+          ],
+          "houses": {
+            "policy": "swiss-placidus-ut1-tropical-cusps.v1-mvp",
+            "reason": "placidus_undefined",
+            "status": "unavailable",
+            "system": "placidus"
+          },
+          "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+          "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+          "schema_version": "WesternCoreFacts.v1-mvp"
+        }
+      }
+    }
+  ]
+}
