@@ -20,6 +20,7 @@ from app.science.ephemeris.contracts import EphemerisError, EphemerisRequest, lo
 from app.science.errors import ScienceFailure
 from app.science.natal.service import NatalError, NatalService
 from app.science.raw_input import RawBirthInput
+from app.western import BODIES, WesternRequest, WesternResponse
 
 ERROR_CODES: dict[str, ErrorCode] = {
     "invalid_input": "invalid_request",
@@ -64,6 +65,9 @@ class PassportScience:
         self.natal.calculate(EphemerisRequest(utc=dt.datetime(2000, 1, 1, tzinfo=dt.UTC)))
         self.ephemeris.calculate_lahiri(
             EphemerisRequest(utc=dt.datetime(2000, 1, 1, tzinfo=dt.UTC))
+        )
+        self.ephemeris.calculate_western(
+            EphemerisRequest(utc=dt.datetime(2000, 1, 1, tzinfo=dt.UTC)), 0.0, 0.0
         )
         self.ready = True
 
@@ -207,6 +211,83 @@ class PassportScience:
 
     async def calculate_lahiri(self, request: LahiriRequest) -> LahiriResponse:
         return await self._submit(lambda: self._lahiri(request))
+
+    def _western(self, request: WesternRequest) -> WesternResponse:
+        base = self._lahiri(request.lahiri_request())
+        try:
+            astronomy, raw = self.ephemeris.calculate_western(
+                EphemerisRequest(utc=dt.datetime.fromisoformat(base.tropical.civil.utc)),
+                request.selected_place.latitude,
+                request.selected_place.longitude,
+            )
+        except EphemerisError as exc:
+            raise ScienceFailure(ERROR_CODES[exc.category.value]) from None
+        if (
+            tuple(p.binary64_hex for p in astronomy.positions)
+            != tuple(p.binary64_hex for p in base.tropical.bodies)
+            or astronomy.jd_tt_hex != base.tropical.provenance.tt_jd_binary64
+            or astronomy.jd_ut1_hex != base.tropical.provenance.ut1_jd_binary64
+            or set(raw) != {"positions", "houses"}
+        ):
+            raise ScienceFailure("invalid_result")
+        import json
+
+        def angle(value: str) -> dict[str, str]:
+            return {
+                "binary64_hex": value,
+                "decimal_degrees": format(longitude_decimal(float.fromhex(value)), ".9f"),
+            }
+
+        houses = raw["houses"]
+        common = {"system": "placidus", "policy": "swiss-placidus-ut1-tropical-cusps.v1-mvp"}
+        if houses.get("status") == "available" and set(houses) == {
+            "status",
+            "cusps",
+            "ascendant",
+            "mc",
+        }:
+            output_houses = {
+                **common,
+                "status": "available",
+                "flags": 0,
+                "cusps": [angle(c) for c in houses["cusps"]],
+                "ascendant": angle(houses["ascendant"]),
+                "mc": angle(houses["mc"]),
+            }
+        elif houses == {"status": "unavailable", "reason": "placidus_undefined"}:
+            output_houses = {**common, **houses}
+        else:
+            raise ScienceFailure("invalid_result")
+        return WesternResponse.model_validate_json(
+            json.dumps(
+                {
+                    "schema_version": "AstroPassportWesternResponse.v1-mvp",
+                    "contract_version": "1.0.0",
+                    "profile": "western-synastry-core.v1-mvp",
+                    "base": base.model_dump(mode="json"),
+                    "western": {
+                        "schema_version": "WesternCoreFacts.v1-mvp",
+                        "projection": "geocentric-tropical-apparent-ecliptic-of-date",
+                        "numerical_policy": "binary64-to-decimal-9dp-half-even.v1",
+                        "bodies": [
+                            {
+                                "body": body,
+                                **angle(position),
+                                "requested_flags": 2,
+                                "returned_flags": 2,
+                            }
+                            for body, position in zip(BODIES, raw["positions"], strict=True)
+                        ],
+                        "houses": output_houses,
+                    },
+                    "serialization": "astro-passport-western-json.v1-mvp",
+                    "authenticity": "unsigned-direct-client-only",
+                }
+            )
+        )
+
+    async def calculate_western(self, request: WesternRequest) -> WesternResponse:
+        return await self._submit(lambda: self._western(request))
 
     async def _submit(self, calculate: Callable[[], T]) -> T:
         if not self._capacity.acquire(blocking=False):

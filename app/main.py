@@ -13,6 +13,7 @@ from app.build import identity
 from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1
 from app.lahiri import LahiriRequest, LahiriResponse
 from app.security import Settings
+from app.western import WesternRequest, WesternResponse
 
 
 def create_app(settings: Settings | None = None, science: SciencePort | None = None) -> FastAPI:
@@ -31,6 +32,13 @@ def create_app(settings: Settings | None = None, science: SciencePort | None = N
                 raise ScienceUnavailable
             result = await method(request)
             return LahiriResponse.model_validate_json(result.model_dump_json())
+
+        async def calculate_western(self, request: WesternRequest) -> WesternResponse:
+            method = getattr(self.delegate, "calculate_western", None)
+            if method is None:
+                raise ScienceUnavailable
+            result = await method(request)
+            return WesternResponse.model_validate_json(result.model_dump_json())
 
     runtime = Runtime()
 

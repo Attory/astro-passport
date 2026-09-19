@@ -5,6 +5,7 @@
 
 import hashlib
 import json
+import math
 import os
 import subprocess
 import sys
@@ -56,8 +57,22 @@ class SwissEphemeris:
     def calculate_lahiri(self, request: EphemerisRequest) -> tuple[EphemerisResult, dict[str, Any]]:
         return self._calculate(request, lahiri=True)
 
+    def calculate_western(
+        self, request: EphemerisRequest, latitude: float, longitude: float
+    ) -> tuple[EphemerisResult, dict[str, Any]]:
+        if (
+            type(latitude) is not float
+            or type(longitude) is not float
+            or not math.isfinite(latitude)
+            or not math.isfinite(longitude)
+            or not -90 <= latitude <= 90
+            or not -180 <= longitude <= 180
+        ):
+            raise EphemerisError(EphemerisFailure.INVALID_INPUT)
+        return self._calculate(request, lahiri=False, western=(latitude, longitude))
+
     def _calculate(
-        self, request: EphemerisRequest, *, lahiri: bool
+        self, request: EphemerisRequest, *, lahiri: bool, western: tuple[float, float] | None = None
     ) -> tuple[EphemerisResult, dict[str, Any]]:
         try:
             if not isinstance(request, EphemerisRequest):
@@ -79,7 +94,15 @@ class SwissEphemeris:
                     result = subprocess.run(
                         [sys.executable, "-I", str(_WORKER)],
                         input=json.dumps(
-                            {"utc": checked.utc.isoformat(), **({"lahiri": True} if lahiri else {})}
+                            {
+                                "utc": checked.utc.isoformat(),
+                                **({"lahiri": True} if lahiri else {}),
+                                **(
+                                    {"western": [v.hex() for v in western]}
+                                    if western is not None
+                                    else {}
+                                ),
+                            }
                         ).encode(),
                         stdout=output,
                         stderr=subprocess.DEVNULL,
@@ -95,7 +118,13 @@ class SwissEphemeris:
             value = json.loads(encoded)
             if isinstance(value, dict) and set(value) == {"error"}:
                 raise EphemerisError(EphemerisFailure(value["error"]))
-            extension = value.pop("lahiri") if lahiri else {}
+            extension = (
+                value.pop("western")
+                if western is not None
+                else value.pop("lahiri")
+                if lahiri
+                else {}
+            )
             if not isinstance(extension, dict):
                 raise ValueError
             return self._result(checked, value), extension

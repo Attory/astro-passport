@@ -77,7 +77,12 @@ def _library() -> Any:
     return swe
 
 
-def run(utc: dt.datetime, directory: Path, lahiri: bool = False) -> dict[str, object]:
+def run(
+    utc: dt.datetime,
+    directory: Path,
+    lahiri: bool = False,
+    western: tuple[float, float] | None = None,
+) -> dict[str, object]:
     swe = _library()
     swe.set_ephe_path(str(directory))
     swe.set_tid_acc(swe.TIDAL_DE441)
@@ -113,6 +118,53 @@ def run(utc: dt.datetime, directory: Path, lahiri: bool = False) -> dict[str, ob
         if warning or len(values) != 6 or not all(math.isfinite(value) for value in values):
             raise WorkerFailure("native_failure")
         positions.append(float(values[0]).hex())
+    western_result = None
+    if western is not None:
+        bodies = []
+        for body in (
+            swe.SUN,
+            swe.MOON,
+            swe.MERCURY,
+            swe.VENUS,
+            swe.MARS,
+            swe.JUPITER,
+            swe.SATURN,
+            swe.URANUS,
+            swe.NEPTUNE,
+            swe.PLUTO,
+            swe.TRUE_NODE,
+        ):
+            values, flags, warning = swe.calc(jd_tt, body, 2)
+            if flags != 2:
+                raise WorkerFailure("fallback_rejected")
+            if (
+                warning
+                or len(values) != 6
+                or not all(math.isfinite(v) for v in values)
+                or not 0 <= values[0] < 360
+            ):
+                raise WorkerFailure("native_failure")
+            bodies.append(float(values[0]).hex())
+        houses: dict[str, object]
+        try:
+            cusps, axes = swe.houses_ex(jd_ut1, western[0], western[1], b"P", 0)
+        except swe.Error:
+            # The binding raises on native ERR; never use returned Porphyry substitutes.
+            houses = {"status": "unavailable", "reason": "placidus_undefined"}
+        else:
+            if (
+                len(cusps) != 13
+                or len(axes) != 8
+                or any(not math.isfinite(v) or not 0 <= v < 360 for v in (*cusps[1:], *axes[:2]))
+            ):
+                raise WorkerFailure("invalid_result")
+            houses = {
+                "status": "available",
+                "cusps": [float(v).hex() for v in cusps[1:]],
+                "ascendant": float(axes[0]).hex(),
+                "mc": float(axes[1]).hex(),
+            }
+        western_result = {"positions": bodies, "houses": houses}
     sidereal = None
     if lahiri:
         swe.set_sid_mode(swe.SIDM_LAHIRI, 0.0, 0.0)
@@ -151,6 +203,8 @@ def run(utc: dt.datetime, directory: Path, lahiri: bool = False) -> dict[str, ob
     }
     if lahiri:
         result["lahiri"] = sidereal
+    if western is not None:
+        result["western"] = western_result
     return result
 
 
@@ -165,11 +219,25 @@ def main() -> None:
         utc = dt.datetime.fromisoformat(raw["utc"])
         if (
             utc.utcoffset() != dt.timedelta(0)
-            or set(raw) not in ({"utc"}, {"utc", "lahiri"})
+            or set(raw) not in ({"utc"}, {"utc", "lahiri"}, {"utc", "western"})
             or ("lahiri" in raw and raw["lahiri"] is not True)
         ):
             raise WorkerFailure("invalid_input")
-        result = run(utc, Path.cwd(), True) if raw.get("lahiri") else run(utc, Path.cwd())
+        if "western" in raw:
+            coordinates = raw["western"]
+            if not isinstance(coordinates, list) or len(coordinates) != 2:
+                raise WorkerFailure("invalid_input")
+            lat, lon = (float.fromhex(v) for v in coordinates)
+            if (
+                not math.isfinite(lat)
+                or not math.isfinite(lon)
+                or not -90 <= lat <= 90
+                or not -180 <= lon <= 180
+            ):
+                raise WorkerFailure("invalid_input")
+            result = run(utc, Path.cwd(), western=(lat, lon))
+        else:
+            result = run(utc, Path.cwd(), True) if raw.get("lahiri") else run(utc, Path.cwd())
         print(json.dumps(result, separators=(",", ":"), allow_nan=False))
     except WorkerFailure as error:
         print(json.dumps({"error": str(error)}))

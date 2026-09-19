@@ -47,6 +47,7 @@ def test_authorized_origins_and_no_cross_repository_runtime():
                             "app.build",
                             "app.contracts",
                             "app.lahiri",
+                            "app.western",
                         ) or module.startswith("app.science.")
 
 
