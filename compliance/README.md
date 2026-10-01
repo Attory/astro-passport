@@ -25,7 +25,10 @@ retained sources, Rust1.98.1 commit48a229ceaefd4985c50990b14116b6d856af0985,
 OpenSSL4.0.3 exact source SHA325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9,
 and CFFI's explicit static libffi3.4.6 build controls/source. Original notices are
 retained; these components are not relicensed under a blanket Python-package label.
-The new shared codec's publication/licence grant remains a separate release gate.
+The newly authored neutral codec and two scoped schema copies carry the
+2026-10-01 Apache-2.0 grant; see `passport_codec/NOTICE`, `contracts/NOTICE`
+and `docs/publication/rights-inventory.md`. This does not waive exact-source,
+tag-protection, image, hosted verification or activation gates.
 
 Existing public source bundles can be reused with `python -m compliance.import_bundle`
 only with exact operator-verified outer SHA256/size. It validates each opaque inner

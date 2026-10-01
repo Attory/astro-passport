@@ -45,7 +45,7 @@ def assemble(cache: Path, output: Path) -> dict:
             "apt_source_archive_sha256": hashlib.sha256(source).hexdigest(),
             "third_party_bundle_sha256": digest(third),
             "source_lock_sha256": hashlib.sha256(lock.read_bytes()).hexdigest(),
-            "activation": "not authorized",
+            "activation": "source_bundle_only_not_deployment_evidence",
             "upstream_compiler_bit_reproducibility": "not claimed",
         }
         # Fixed outer metadata. Inner git archive is fixed by exact source revision;

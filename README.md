@@ -56,5 +56,6 @@ docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges \
   --tmpfs /tmp:rw,noexec,nosuid,size=16m -p 127.0.0.1:8000:8000 astro-passport:local
 ```
 
-Do not expose this service to external users yet. A source link and public GitHub repository alone
-are not an activation approval or proof of a future deployed source/runtime match.
+The 2026-10-01 authorization permits a gated additive `/v2` rollout on the
+existing host after exact-head CI, source, rights, host and synthetic verification.
+A source link or process startup alone is not proof of activation success.

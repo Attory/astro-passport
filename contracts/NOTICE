@@ -8,6 +8,7 @@ semantics are unchanged. Other files in this directory retain their previously
 applicable licence and governance status; no private ACE methodology is granted
 for publication under this notice.
 
-The canonical schema is published at the immutable
-`astropassport-schema-v1.0.0` tag. Consumers must pin its resolved Git commit
-and schema SHA-256, rather than relying on a mutable branch or tag name alone.
+The canonical schema is intended for the immutable
+`astropassport-schema-v1.0.0` tag. Until that exact protected tag and its
+resolved Git commit are verified publicly, this notice does not claim a
+canonical release. Consumers must pin both commit and schema SHA-256.

@@ -1,8 +1,9 @@
-# Separate APT VPS deployment plan — no deployment authorized/performed
+# Separate APT VPS deployment plan — gated authorization, not a success receipt
 
-Target: the separately approved Ubuntu APT VPS; operator inventory holds its address. Domain/DNS,
-host access and credentials are future operational inputs, not committed here. No SSH, firewall,
-packages, remote files or other services are changed by this plan.
+The 2026-10-01 publication/activation instruction authorizes a gated rollout
+to the existing APT host. This plan alone does not prove any host change or
+release gate. Domain, host access and credentials are verified separately in
+the release ledger; never put credentials or birth data here.
 
 Topology: Internet → Caddy TLS (only 80/443 host ports) → APT private non-root service → local pinned
 scientific data. No birth database. No shared network/database/runtime with ACE or AIS. Science has
@@ -13,8 +14,8 @@ Use dedicated deploy/service identities; deployment-user Docker access is host-r
 must be explicitly approved. App UID/GID 10001, read-only root, no capabilities, no-new-privileges,
 bounded RAM/CPU/PIDs, private tmpfs. Read-only key verification file and licensed artifacts; sole
 writable persistent operational directory is the 0700 quota state, not scientific inputs/results.
-Proposed layout `/srv/astro-passport/{releases,secrets,state,artifacts,evidence}` with exact modes
-and safe artifact hashes validated before starting. Do not perform these host operations yet.
+The existing layout is `/srv/astro-passport/{releases,secrets,state,artifacts,evidence}`;
+verify its current modes and artifact hashes before any additive change.
 
 Single uvicorn worker is mandatory for this reviewed envelope. The native semaphore intentionally
 caps all Swiss adapter instances in one process at two workers; moving it to each instance would
@@ -32,15 +33,15 @@ with secrets/body; only harmless GETs may redirect. Request/global-rate/connecti
 must be enforced at ingress as well as app admission. No access/body/query/authorization logs,
 no wildcard CORS, no admin/docs/OpenAPI exposure, all result/error pages no-store.
 
-Deployment sequence after separate approval: fetch approved exact public SHA; verify clean source,
+Deployment sequence under the 2026-10-01 authorization: fetch the exact public SHA; verify clean source,
 artifact hashes/licences and image identity; build/pin immutable image; provision separately approved
 key hashes and durable quota state; start disabled/private; verify source archive anonymously;
 test actual TLS/auth/proxy/size/quota/concurrency/privacy/egress/health/version boundaries; verify
-scientific golden calls; only then enable computational access under explicit activation approval.
+scientific golden calls; only then enable computational access after all defined gates pass.
 Liveness alone never proves scientific readiness. The extraction implementation requires
 `APT_SCIENCE_DIRECTORY` with verified `boundaries/`, `civil/` and `swiss/` subdirectories and
 immutable build metadata. No artifact acquisition occurs at startup or on requests. The API
-remains disabled unless explicitly configured; deployment/activation is still unauthorized.
+remains disabled unless explicitly configured; source publication alone is not activation.
 
 Source gate: anonymously download the exact running revision's Corresponding Source and required
 control/build sources; match image SHA and notices; verify downstream source offers, not merely
