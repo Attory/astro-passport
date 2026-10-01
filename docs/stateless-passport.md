@@ -3,7 +3,9 @@
 2026-10-01 user-authorized custody/technical direction, AAC ADR0010 and additive
 implementation contract in isolated codex/stateless-passport-20261001. Existing
 accepted legacy scientific profiles are preserved, not redefined. This candidate
-does not resolve CP006/CP003, publish a new shared-code licence, or activate members.
+does not resolve CP006/CP003 or activate members. The later 2026-10-01
+publication authorization grants Apache-2.0 to the new neutral codec/schema
+only, with exact rights/source evidence required before release.
 Base24f24000b735df8700e6eab3ee4ad46a9be166a3; source checkpoint recorded at commit.
 
 ## Service boundary

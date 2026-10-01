@@ -17,8 +17,12 @@ The sole prospective canonical publication path is the schema's `$id`:
 AAC must approve exact bytes/digest and rights before that immutable tag/release is created.
 Record the tag's resolved Git SHA and protect deletion/retagging; clients additionally pin SHA-256.
 Do not treat a floating main URL, generated OpenAPI, or private governance copy as an authority.
-These accepted, unreleased schemas are AGPL-3.0-only like the repository. A separate neutral schema licence
-is a rights/approval gate, not an implied Apache-2.0 grant or permission to copy private code.
+The 2026-10-01 publication authorization grants Apache-2.0 only for the two
+identical, independently authored neutral JSON Schema files identified in
+[`NOTICE`](NOTICE). Their accepted bytes and `$id` do not change. The other
+contract documents and the APT scientific service retain their prior terms.
+Publication must still pin the exact commit and schema SHA-256 and protect the
+canonical tag; a licence grant by itself is not proof of a released tag.
 
 ## Request
 

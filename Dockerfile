@@ -17,6 +17,7 @@ RUN groupadd --gid 10001 aptservice && useradd --uid 10001 --gid 10001 --no-crea
 COPY --from=builder /opt/apt/.venv /opt/apt/.venv
 COPY app ./app
 COPY passport_codec ./passport_codec
+COPY contracts/LICENSE contracts/NOTICE /usr/share/doc/astro-passport/contracts/
 COPY LICENSE THIRD_PARTY_NOTICES.md /usr/share/doc/astro-passport/
 COPY docs/runtime-licenses.json /usr/share/doc/astro-passport/
 COPY compliance/source-lock.json compliance/correspondence.json compliance/README.md /usr/share/doc/astro-passport/compliance/

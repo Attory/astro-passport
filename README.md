@@ -1,6 +1,9 @@
 # Astro Passport Transformer (APT)
 
-Public **AGPL-3.0-only** service. **Scientific extraction under validation; not deployed.**
+Public **AGPL-3.0-only** service implementation. The additive signed `/v2`
+candidate is not deployed at this source checkpoint; the hosted `/v1` service
+is an older release. The neutral codec and two JSON Schema files have narrow
+Apache-2.0 grants; see [licensing](docs/licensing.md).
 APT produces deterministic geographic, civil-time and astronomical facts for one
 person. It does not calculate compatibility, scores, interpretation or social/account identity.
 
@@ -21,13 +24,17 @@ uv run uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log --no-pr
 `GET /health/live` reports process liveness. `/health/ready` returns 503 unless explicit local
 scientific configuration and all pinned execution prerequisites validate. `/health/version` and `/source`
 expose only safe source/build metadata. An unbuilt checkout returns 503 from these identity
-endpoints rather than pretending its source revision is known. `/docs`, `/openapi.json` and
+endpoints rather than pretending its source revision is known. `/v2/source` is
+public even though `/v2/passports` requires a credential. The source offer
+identifies the commit, tag, service/codec/schema licences and signed profile.
+`/docs`, `/openapi.json` and
 `/admin` are absent. All responses are `no-store`. No automatic deployment exists.
 
 The [accepted contract](contracts/README.md) defines `/v1/passports` and typed wire envelopes;
 the API remains default-disabled. See [security](docs/security.md),
 [extraction plan](docs/extraction-plan.md), [equivalence design](docs/equivalence-design.md) and
-[deployment plan](docs/deployment-plan.md). No canonical schema tag/release is approved yet.
+[deployment plan](docs/deployment-plan.md). The canonical schema tag is created
+only after exact publication checks pass.
 
 Run the full scientific tests with exact publicly acquired artifacts (no private repositories):
 

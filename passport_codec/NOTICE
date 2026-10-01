@@ -1,0 +1,11 @@
+AstroPassport portable transport codec
+Copyright 2026 Attory contributors
+
+The files in this directory are newly authored implementation-neutral transport
+code and synthetic conformance data, licensed under Apache-2.0. They contain no
+APT scientific implementation or ACE compatibility methodology. The codec uses
+external cwt, cbor2 and cryptography distributions; these are dependencies,
+not vendored source. Their own licences and notices remain controlling.
+
+This notice does not change the AGPL-3.0-only licence of the APT service or the
+distinct licences of scientific software and datasets.

@@ -15,8 +15,11 @@ Signed delivery adds maintained CWT/CBOR/cryptography dependencies, not custom c
 The crypto wheel embeds OpenSSL4.0.3 and Rust runtime/dependencies; CFFI embeds
 libffi3.4.6. Their complete matching source, build controls and original notices are
 retained by the expanded compliance inventory. The package-level licence summary
-does not replace bundled-native terms. The new original shared science-free codec's
-publication/licence grant is a separate pending gate; no MIT grant is invented here.
+does not replace bundled-native terms. The new original science-free
+`passport_codec/` is separately Apache-2.0 under the 2026-10-01 rights-holder
+publication authorization, with its own `LICENSE` and `NOTICE`. The two neutral
+JSON Schema files scoped by `contracts/NOTICE` are also Apache-2.0. These narrow
+grants do not relicense APT scientific implementation, other contracts or data.
 
 uv is an MIT/Apache-2.0 build tool, not a scientific runtime. Development tools are separately
 locked. Scientific extraction installs pysweph 2.10.3.6 (AGPL-3.0), Swiss 2.10.03,

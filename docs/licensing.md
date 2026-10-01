@@ -1,12 +1,21 @@
 # Licensing and source delivery
 
-This new scaffold is **AGPL-3.0-only from its first public commit**. See the complete [licence](../LICENSE)
+The APT service and scientific implementation are **AGPL-3.0-only**. See the complete [licence](../LICENSE)
 and [notices](../THIRD_PARTY_NOTICES.md). There is no Swiss Professional entitlement claim.
 The initial scaffold was newly authored. Subsequent scientific extraction is limited to the
 rights-holder-authorized origins in [the extraction inventory](extraction/origins.json), under
 AGPL-3.0-only with upstream notices preserved. No private Git history or downstream methodology
 is copied. This grant does not change rights or implementation in another repository.
 The standard upstream AGPL licence text is not private implementation.
+
+The newly authored implementation-neutral [passport codec](../passport_codec/README.md)
+is independently Apache-2.0 at version 1.0.0; its package licence and notice
+are in that directory. The two identical neutral JSON Schema files named in
+`contracts/NOTICE` are independently Apache-2.0 without changing their accepted
+bytes. No ACE compatibility methodology or AGPL scientific code was copied into
+either narrow grant. The 2026-10-01 human publication authorization supplies
+the previously missing licence choice; the provenance inventory remains the
+limit on what can be granted. Other contract documents retain their prior terms.
 
 Public source: <https://github.com/Attory/astro-passport>. A release must retain its exact source
 commit, lockfile, Docker/build instructions, editable contract sources and public synthetic tests.
@@ -15,7 +24,7 @@ obtain the service's Corresponding Source. Independently needed datasets and the
 sources must be legally available and pinned before they enter a runtime release.
 
 The immutable build revision is baked into the image, not read from a runtime environment variable.
-Unauthenticated `/source` and `/health/version` provide an exact Git source/tree/archive and licence
+Unauthenticated `/source`, `/v2/source` and the version routes provide an exact Git source/tree/archive and licence
 link. Unknown build identity fails closed. API-key protection of computation must not protect the
 source offer. Downstream interfaces must prominently surface the exact running-version source
 offer as applicable; do not assume developer-only visibility satisfies remote-user obligations.
