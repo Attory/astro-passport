@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "authority": "AAC ADR0010 implementation candidate; update only with explicit version/review evidence",
+  "files": {
+    "__init__.py": "1c647ee8d272b6c918ac4f977311b0496e2d34f5825aba8280e165bf0dd09e31",
+    "codec.py": "ad286b7e9e80b215c9672c84aa0b1069f28adaf0fe80b17d3cd16187c4421f96",
+    "conformance.py": "69049ace3e19cfc9c68675a3f9273a3373da156f72c2121391dc8e8399164fb7",
+    "fixtures/golden-v1.json": "3032f603c8d25436682bc3996dfd6ce38e1143013d6de94c0a8c0f17f57db64c"
+  }
+}

@@ -11,6 +11,14 @@ from .codec import FIELDS, canonical, verify
 
 
 def check() -> int:
+    root = Path(__file__).parent
+    pins = json.loads((root / "PINS.json").read_text())
+    expected = {"__init__.py", "codec.py", "conformance.py", "fixtures/golden-v1.json"}
+    if pins["version"] != 1 or set(pins["files"]) != expected:
+        raise ValueError("Invalid frozen codec pin inventory")
+    for name, digest in pins["files"].items():
+        if hashlib.sha256((root / name).read_bytes()).hexdigest() != digest:
+            raise ValueError("Codec copy differs from the frozen reviewed inventory")
     fixture = json.loads((Path(__file__).parent / "fixtures/golden-v1.json").read_text())
     fields = hashlib.sha256(json.dumps(FIELDS, separators=(",", ":")).encode()).hexdigest()
     if fields != fixture["field_table_sha256"]:

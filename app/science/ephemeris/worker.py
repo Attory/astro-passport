@@ -123,7 +123,7 @@ def run(
     if western is not None:
         bodies = []
         motion = []
-        for body in (
+        body_ids = (
             swe.SUN,
             swe.MOON,
             swe.MERCURY,
@@ -135,7 +135,8 @@ def run(
             swe.NEPTUNE,
             swe.PLUTO,
             swe.TRUE_NODE,
-        ):
+        )
+        for body in body_ids:
             values, flags, warning = swe.calc(jd_tt, body, 2)
             if flags != 2:
                 raise WorkerFailure("fallback_rejected")
@@ -147,20 +148,6 @@ def run(
             ):
                 raise WorkerFailure("native_failure")
             bodies.append(float(values[0]).hex())
-            if kinematics:
-                # Additive facts only: preserve the established flags2 longitudes
-                # above. SPEED supplies actual native velocities, never finite
-                # differences or an ACE/Unbubble recomputation.
-                complete, complete_flags, complete_warning = swe.calc(jd_tt, body, 258)
-                if complete_flags != 258:
-                    raise WorkerFailure("fallback_rejected")
-                if (
-                    complete_warning
-                    or len(complete) != 6
-                    or not all(math.isfinite(v) for v in complete)
-                ):
-                    raise WorkerFailure("native_failure")
-                motion.append([float(v).hex() for v in complete])
         houses: dict[str, object]
         try:
             cusps, axes = swe.houses_ex(jd_ut1, western[0], western[1], b"P", 0)
@@ -182,6 +169,19 @@ def run(
             }
         western_result = {"positions": bodies, "houses": houses}
         if kinematics:
+            # Finish ALL legacy flags2/house work before touching the native
+            # speed cache. Additive velocities cannot perturb a later legacy call.
+            for body in body_ids:
+                complete, complete_flags, complete_warning = swe.calc(jd_tt, body, 258)
+                if complete_flags != 258:
+                    raise WorkerFailure("fallback_rejected")
+                if (
+                    complete_warning
+                    or len(complete) != 6
+                    or not all(math.isfinite(v) for v in complete)
+                ):
+                    raise WorkerFailure("native_failure")
+                motion.append([float(v).hex() for v in complete])
             western_result["kinematics"] = {
                 "profile": "swiss-geocentric-kinematics.v1",
                 "requested_flags": 258,
