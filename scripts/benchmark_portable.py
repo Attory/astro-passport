@@ -35,7 +35,7 @@ def summarize(values: list[float]) -> dict[str, float | int]:
 
 async def run(artifacts: Path, count: int, revision: str) -> tuple[dict, dict]:
     startup = time.perf_counter()
-    science = PassportScience(artifacts)
+    science = await asyncio.to_thread(PassportScience, artifacts)
     startup_ms = (time.perf_counter() - startup) * 1000
     key = Ed25519PrivateKey.generate()
     kid = b"synthetic-benchmark-only"
