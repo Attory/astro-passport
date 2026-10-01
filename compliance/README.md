@@ -7,15 +7,33 @@ AGPL-3.0-only; original third-party licences remain controlling for their compon
 
 ## Evidence and operation
 
-- `source-lock.json`: 396 exact artifacts, SHA256, size and credential-free HTTPS location.
+- `source-lock.json`: 447 exact artifacts, SHA256, size and credential-free HTTPS location.
   Discovery status is deliberately not an approval flag. Reviews/approval belong in the ledger.
 - `base-image.json`: all 105 Debian binary/source identities and all 105 original copyright
   files, CPython licence, pip identity and immutable public-image build history; not host data.
 - `correspondence.json`: 73 Debian source-version groups verified against `.dsc` SHA256 lists;
-  103 Cargo source archives/notices; native section matches; 27 matching Swiss C/header files;
+  134 Cargo source archives/notices (existing103 plus31 new; crypto32 shares one);
+  native section matches; 27 matching Swiss C/header files;
   original wheel-notice hashes.
 - `discovery-inputs.json`: maintainer acquisition inputs. `expand.py` derives Cargo source pins
   from retained pydantic-core Cargo.lock. Discovery never updates a release implicitly.
+
+Stateless signed-passport candidate adds CWT3.3.0/cbor2 5.9.0/cryptography50.0.2,
+CFFI2.1.1/pyhpke0.6.5/pycparser3.0 and Starlette1.7.0 runtime sources/wheels.
+`portable_native.py` checks cryptography's embedded Cargo/OpenSSL SBOM against
+retained sources, Rust1.98.1 commit48a229ceaefd4985c50990b14116b6d856af0985,
+OpenSSL4.0.3 exact source SHA325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9,
+and CFFI's explicit static libffi3.4.6 build controls/source. Original notices are
+retained; these components are not relicensed under a blanket Python-package label.
+The new shared codec's publication/licence grant remains a separate release gate.
+
+Existing public source bundles can be reused with `python -m compliance.import_bundle`
+only with exact operator-verified outer SHA256/size. It validates each opaque inner
+content blob before cache publication, never extracts paths/links or executes code.
+New importer traversal/link/tamper tests and full offline correspondence passed.
+Reproduce current generation with the commands below; upstream compiler binary
+reproducibility is still not claimed. No source availability for a new image is
+claimed until that exact release's complete bundle is actually published/verified.
 
 From the exact public APT checkout using Python 3.12 (new output files required):
 

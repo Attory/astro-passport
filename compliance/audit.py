@@ -273,6 +273,9 @@ def run(lock: dict, cache: Path) -> dict:
         versions = [v for n, v in archive_members(paths[name]) if n == "version"]
         if versions != [b"2026c\n"]:
             raise ValueError("IANA source version changed")
+    from compliance.portable_native import audit as portable_audit
+
+    result["portable_crypto"] = portable_audit(entries, paths)
     return result
 
 

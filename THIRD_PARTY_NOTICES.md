@@ -11,6 +11,13 @@ notices under `/usr/share/doc`; this file does not relicense them.
 The exact installed runtime licence identities are recorded in
 [the runtime inventory](docs/runtime-licenses.json); licence texts remain in the installed wheels.
 
+Signed delivery adds maintained CWT/CBOR/cryptography dependencies, not custom crypto.
+The crypto wheel embeds OpenSSL4.0.3 and Rust runtime/dependencies; CFFI embeds
+libffi3.4.6. Their complete matching source, build controls and original notices are
+retained by the expanded compliance inventory. The package-level licence summary
+does not replace bundled-native terms. The new original shared science-free codec's
+publication/licence grant is a separate pending gate; no MIT grant is invented here.
+
 uv is an MIT/Apache-2.0 build tool, not a scientific runtime. Development tools are separately
 locked. Scientific extraction installs pysweph 2.10.3.6 (AGPL-3.0), Swiss 2.10.03,
 Shapely 2.1.2 (BSD-3-Clause), its GEOS 3.13.1 (LGPL-2.1-or-later), and NumPy 2.5.3

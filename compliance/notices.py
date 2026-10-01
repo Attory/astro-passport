@@ -24,7 +24,17 @@ def collect(lock: dict, cache: Path) -> dict:
         name = entry["name"]
         if not (
             name.endswith((".crate", ".whl"))
-            or name in ("rustc-1.98.0-src.tar.xz", "wit-bindgen-source.tar.gz")
+            or name
+            in (
+                "rustc-1.98.0-src.tar.xz",
+                "rustc-1.98.1-src.tar.xz",
+                "wit-bindgen-source.tar.gz",
+                "openssl-4.0.3.tar.gz",
+                "openssl-4.0.3-source.tar.gz",
+                "libffi-3.4.6-source.tar.gz",
+                "cryptography-50.0.2-build-controls.tar.gz",
+                "cffi-2.1.1-build-controls.tar.gz",
+            )
         ):
             continue
         path = acquire(entry, cache, offline=True)

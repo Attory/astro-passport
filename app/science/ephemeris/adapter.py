@@ -58,7 +58,12 @@ class SwissEphemeris:
         return self._calculate(request, lahiri=True)
 
     def calculate_western(
-        self, request: EphemerisRequest, latitude: float, longitude: float
+        self,
+        request: EphemerisRequest,
+        latitude: float,
+        longitude: float,
+        *,
+        kinematics: bool = False,
     ) -> tuple[EphemerisResult, dict[str, Any]]:
         if (
             type(latitude) is not float
@@ -69,10 +74,17 @@ class SwissEphemeris:
             or not -180 <= longitude <= 180
         ):
             raise EphemerisError(EphemerisFailure.INVALID_INPUT)
-        return self._calculate(request, lahiri=False, western=(latitude, longitude))
+        return self._calculate(
+            request, lahiri=False, western=(latitude, longitude), kinematics=kinematics
+        )
 
     def _calculate(
-        self, request: EphemerisRequest, *, lahiri: bool, western: tuple[float, float] | None = None
+        self,
+        request: EphemerisRequest,
+        *,
+        lahiri: bool,
+        western: tuple[float, float] | None = None,
+        kinematics: bool = False,
     ) -> tuple[EphemerisResult, dict[str, Any]]:
         try:
             if not isinstance(request, EphemerisRequest):
@@ -97,6 +109,7 @@ class SwissEphemeris:
                             {
                                 "utc": checked.utc.isoformat(),
                                 **({"lahiri": True} if lahiri else {}),
+                                **({"kinematics": True} if kinematics else {}),
                                 **(
                                     {"western": [v.hex() for v in western]}
                                     if western is not None

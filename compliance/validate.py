@@ -95,11 +95,47 @@ def validate(root: Path) -> None:
                     w["hash"] for w in package["wheels"]
                 }:
                     raise ValueError("runtime wheel differs from uv lock")
+    inventory = json.loads((root / "docs/runtime-licenses.json").read_text())
+    expected_runtime = {
+        (p["name"], p["version"]) for p in packages if p["name"] in runtime - {"astro-passport"}
+    }
+    if {(r["distribution"], r["version"]) for r in inventory} != expected_runtime or len(
+        inventory
+    ) != len(expected_runtime):
+        raise ValueError("runtime licence inventory is stale")
+    for item in inventory:
+        component = item["distribution"] + "=" + item["version"]
+        wheel = next(
+            e for e in entries if e["component"] == component and e["name"].endswith(".whl")
+        )
+        evidence = next(n for n in report["notices"] if n["artifact"] == wheel["name"])
+        if not item["license"] or item["retained_license_sha256"] != evidence["files"]:
+            raise ValueError("runtime original notices differ from audited wheel")
     for crate in report["rust_crates"]:
         if not crate["notices"] or not crate["license"]:
             raise ValueError("missing Rust notice")
-    if len(report["rust_crates"]) != 103 or len(report["swiss_source_equal"]) != 27:
+    locked_crates = {e["name"]: e["sha256"] for e in entries if e["name"].endswith(".crate")}
+    proved_crates = {
+        c["name"] + "-" + c["version"] + ".crate": c["source_sha256"] for c in report["rust_crates"]
+    }
+    if locked_crates != proved_crates or len(report["swiss_source_equal"]) != 27:
         raise ValueError("native source inventory changed")
+    portable = report["portable_crypto"]
+    for name, digest in portable["crypto_cargo_sources"].items():
+        if locked_crates.get(name) != digest:
+            raise ValueError("Crypto Cargo closure missing")
+    by_name = {e["name"]: e for e in entries}
+    for name, field in (
+        ("openssl-4.0.3.tar.gz", "openssl_source_sha256"),
+        ("rustc-1.98.1-src.tar.xz", "rust_source_sha256"),
+        ("libffi-3.4.6-source.tar.gz", "libffi_source_sha256"),
+        ("cryptography-50.0.2-build-controls.tar.gz", "crypto_build_controls_sha256"),
+        ("cffi-2.1.1-build-controls.tar.gz", "cffi_build_controls_sha256"),
+    ):
+        if by_name[name]["sha256"] != portable[field] or not any(
+            any(origin.startswith(name + ":") for origin in notice["origins"]) for notice in notices
+        ):
+            raise ValueError("Portable native source/notices missing")
     for line in report["native_lineage"].values():
         if not re.fullmatch(r"[a-f0-9]{64}", line["wheel_sha256"]):
             raise ValueError("native image identity missing")

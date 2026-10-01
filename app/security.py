@@ -96,17 +96,22 @@ class Settings:
     keys_file: Path | None = None
     quota_file: Path | None = None
     science_directory: Path | None = None
+    signing_key_file: Path | None = None
+    signing_key_id: str | None = None
 
     @classmethod
     def environment(cls) -> "Settings":
         keys = os.environ.get("APT_KEYS_FILE")
         quota = os.environ.get("APT_QUOTA_FILE")
         science = os.environ.get("APT_SCIENCE_DIRECTORY")
+        signing = os.environ.get("APT_SIGNING_KEY_FILE")
         return cls(
             os.environ.get("APT_API_ENABLED") == "1",
             Path(keys) if keys else None,
             Path(quota) if quota else None,
             Path(science) if science else None,
+            Path(signing) if signing else None,
+            os.environ.get("APT_SIGNING_KEY_ID"),
         )
 
 

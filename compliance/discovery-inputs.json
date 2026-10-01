@@ -297,76 +297,114 @@
   ],
   "artifacts": [
     {
-      "name": "fastapi-0.141.1-py3-none-any.whl",
-      "component": "fastapi=0.141.1",
-      "url": "https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl",
-      "sha256": "bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3"
+      "name": "gcc-8.5.0-28.el8_10.alma.1.src.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/vault/8.10/BaseOS/Source/Packages/gcc-8.5.0-28.el8_10.alma.1.src.rpm"
     },
     {
-      "name": "fastapi-0.141.1.tar.gz",
-      "component": "fastapi=0.141.1",
-      "url": "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz",
-      "sha256": "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
+      "name": "libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm"
     },
     {
-      "name": "starlette-1.6.0-py3-none-any.whl",
-      "component": "starlette=1.6.0",
-      "url": "https://files.pythonhosted.org/packages/c8/cb/6a6a47d5b464bd08695d254f3da6e7986cc70c9fa5d778eda57538edfe56/starlette-1.6.0-py3-none-any.whl",
-      "sha256": "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
+      "name": "libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm",
+      "component": "AlmaLinux GCC native runtime",
+      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm"
     },
     {
-      "name": "starlette-1.6.0.tar.gz",
-      "component": "starlette=1.6.0",
-      "url": "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz",
-      "sha256": "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+      "name": "python-image-build-controls.tar.gz",
+      "component": "CPython official image build controls",
+      "url": "https://codeload.github.com/docker-library/python/tar.gz/688a0b86bb44289df16a363e9f41d90514c1a5f9"
     },
     {
-      "name": "pydantic-2.13.5-py3-none-any.whl",
-      "component": "pydantic=2.13.5",
-      "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
-      "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+      "name": "Python-3.12.14.tar.xz",
+      "component": "CPython=3.12.14",
+      "url": "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz",
+      "sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a"
     },
     {
-      "name": "pydantic-2.13.5.tar.gz",
-      "component": "pydantic=2.13.5",
-      "url": "https://files.pythonhosted.org/packages/53/ef/fc4f868f4e2cee79f863883abffceff107875f569b848507319842d2a681/pydantic-2.13.5.tar.gz",
-      "sha256": "51a9c5f7b2f8e636f04c6cada605d9b6a3bf1348fdf945a3d8869b19bba0ee08"
+      "name": "geos-3.13.1.tar.bz2",
+      "component": "GEOS=3.13.1",
+      "url": "https://download.osgeo.org/geos/geos-3.13.1.tar.bz2",
+      "sha256": "df2c50503295f325e7c8d7b783aca8ba4773919cde984193850cf9e361dfd28c"
     },
     {
-      "name": "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-      "component": "pydantic-core=2.46.5",
-      "url": "https://files.pythonhosted.org/packages/c0/a4/eb9409ec0736e50aa70a412f16c204ed149516846912f7e6724d4c73ee53/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-      "sha256": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2"
+      "name": "tzcode2026c.tar.gz",
+      "component": "IANA tzcode=2026c",
+      "url": "https://data.iana.org/time-zones/releases/tzcode2026c.tar.gz",
+      "sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8"
     },
     {
-      "name": "pydantic_core-2.46.5.tar.gz",
-      "component": "pydantic-core=2.46.5",
-      "url": "https://files.pythonhosted.org/packages/af/f9/8a06bea35ef8daf588f707784c973a7046e0034c8d8cfb08828eeffb8b75/pydantic_core-2.46.5.tar.gz",
-      "sha256": "10416c15b8839ecc4ef4d0885da76da6fd0f67333a0eb8aff6d93c4b8f2910fc"
+      "name": "tzdata2026c.tar.gz",
+      "component": "IANA tzdata=2026c",
+      "url": "https://data.iana.org/time-zones/releases/tzdata2026c.tar.gz",
+      "sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4"
     },
     {
-      "name": "uvicorn-0.53.0-py3-none-any.whl",
-      "component": "uvicorn=0.53.0",
-      "url": "https://files.pythonhosted.org/packages/76/18/0eea75741ee812e9f598b687619ce2454f6c3a1c5cd21ea990ec6bd26f45/uvicorn-0.53.0-py3-none-any.whl",
-      "sha256": "e8dca71ec86dce5f04e333f0d56cdedf942446e6643b9cea1af0d6d3a02cb03e"
+      "name": "numpy-release-build-controls.tar.gz",
+      "component": "NumPy build controls",
+      "url": "https://codeload.github.com/numpy/numpy-release/tar.gz/a1cc2f4a9705f4171d480263fde93fa01ba816d6"
     },
     {
-      "name": "uvicorn-0.53.0.tar.gz",
-      "component": "uvicorn=0.53.0",
-      "url": "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz",
-      "sha256": "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+      "name": "openblas-libs-build-controls.tar.gz",
+      "component": "OpenBLAS build controls",
+      "url": "https://codeload.github.com/MacPython/openblas-libs/tar.gz/78fc0eaf6de71d92fd98f74f7e5bfa356a2f83e3"
     },
     {
-      "name": "anyio-4.15.1-py3-none-any.whl",
-      "component": "anyio=4.15.1",
-      "url": "https://files.pythonhosted.org/packages/12/b8/4bd346e22b28902df4d651910f5242c28d84e4a5c2435ca5c3f797ed7e2e/anyio-4.15.1-py3-none-any.whl",
-      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101"
+      "name": "OpenBLAS-446c436-source.tar.gz",
+      "component": "OpenBLAS=0.3.34+106",
+      "url": "https://codeload.github.com/OpenMathLib/OpenBLAS/tar.gz/446c436e10450c348169808f1a6b3fae0925c9f7"
     },
     {
-      "name": "anyio-4.15.1.tar.gz",
-      "component": "anyio=4.15.1",
-      "url": "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz",
-      "sha256": "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+      "name": "openssl-4.0.3-source.tar.gz",
+      "component": "OpenSSL=4.0.3",
+      "url": "https://codeload.github.com/openssl/openssl/tar.gz/af1775b60dfa141a4ad762585052cabeb9f37e9e",
+      "sha256": "219c0a389f3c76e58f2d9e2b216101887f94747e669bb79c43225d7b6ac1253a"
+    },
+    {
+      "name": "rustc-1.98.0-src.tar.xz",
+      "component": "Rust statically linked runtime sources and notices",
+      "url": "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.xz",
+      "sha256": "271fa73d8174f53d713c46a8310da7bf7cfdcfb8b7cfd1c2b74b84a83ae9fb1e"
+    },
+    {
+      "name": "shapely-build-controls.tar.gz",
+      "component": "Shapely=2.1.2 build controls",
+      "url": "https://codeload.github.com/shapely/shapely/tar.gz/5fb639d1056888d135fe56bfaf750c9648addeec"
+    },
+    {
+      "name": "semo_18.se1",
+      "component": "Swiss DE441 data",
+      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/semo_18.se1",
+      "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+    },
+    {
+      "name": "sepl_18.se1",
+      "component": "Swiss DE441 data",
+      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/sepl_18.se1",
+      "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+    },
+    {
+      "name": "swisseph-core-source.tar.gz",
+      "component": "Swiss complete upstream source",
+      "url": "https://codeload.github.com/aloistr/swisseph/tar.gz/5ae0bce00dbc66c6315c86da20518e3dd138255b"
+    },
+    {
+      "name": "timezone-names.json",
+      "component": "TBB=2026c catalog",
+      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezone-names.json",
+      "sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff"
+    },
+    {
+      "name": "timezones.geojson.zip",
+      "component": "TBB=2026c comprehensive no-oceans",
+      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezones.geojson.zip",
+      "sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948"
+    },
+    {
+      "name": "tbb-source-2026c.tar.gz",
+      "component": "TBB=2026c source and notices",
+      "url": "https://codeload.github.com/evansiroky/timezone-boundary-builder/tar.gz/refs/tags/2026c"
     },
     {
       "name": "annotated_doc-0.0.5-py3-none-any.whl",
@@ -393,28 +431,52 @@
       "sha256": "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
     },
     {
-      "name": "typing_extensions-4.16.0-py3-none-any.whl",
-      "component": "typing-extensions=4.16.0",
-      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
-      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      "name": "anyio-4.15.1-py3-none-any.whl",
+      "component": "anyio=4.15.1",
+      "url": "https://files.pythonhosted.org/packages/12/b8/4bd346e22b28902df4d651910f5242c28d84e4a5c2435ca5c3f797ed7e2e/anyio-4.15.1-py3-none-any.whl",
+      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101"
     },
     {
-      "name": "typing_extensions-4.16.0.tar.gz",
-      "component": "typing-extensions=4.16.0",
-      "url": "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz",
-      "sha256": "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+      "name": "anyio-4.15.1.tar.gz",
+      "component": "anyio=4.15.1",
+      "url": "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz",
+      "sha256": "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
     },
     {
-      "name": "typing_inspection-0.4.4-py3-none-any.whl",
-      "component": "typing-inspection=0.4.4",
-      "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
-      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      "name": "cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "component": "cbor2=5.9.0",
+      "url": "https://files.pythonhosted.org/packages/db/9d/7ede2cc42f9bb4260492e7d29d2aab781eacbbcfb09d983de1e695077199/cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "4cd43d8fc374b31643b2830910f28177a606a7bc84975a62675dd3f2e320fc7b"
     },
     {
-      "name": "typing_inspection-0.4.4.tar.gz",
-      "component": "typing-inspection=0.4.4",
-      "url": "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz",
-      "sha256": "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+      "name": "cbor2-5.9.0.tar.gz",
+      "component": "cbor2=5.9.0",
+      "url": "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz",
+      "sha256": "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea"
+    },
+    {
+      "name": "cffi-2.1.1-build-controls.tar.gz",
+      "component": "cffi build controls=fd33e7700f0ebafe6f30bd5053f13327221b77a2",
+      "url": "https://codeload.github.com/python-cffi/cffi/tar.gz/fd33e7700f0ebafe6f30bd5053f13327221b77a2",
+      "sha256": "3c63006cdf332696a1e16b76e0c6aed38c17208e5de26737459ae6125c091482"
+    },
+    {
+      "name": "libffi-3.4.6-source.tar.gz",
+      "component": "cffi bundled libffi=3.4.6",
+      "url": "https://codeload.github.com/libffi/libffi/tar.gz/3d0ce1e6fcf19f853894862abcbac0ae78a7be60",
+      "sha256": "148ebda16fc2dde2f0538541e7078ecf24628bbbf716fb5367e047192ebb806f"
+    },
+    {
+      "name": "cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "component": "cffi=2.1.1",
+      "url": "https://files.pythonhosted.org/packages/b1/db/dceb9dd5b231e1da801793f8acc9f3c52a7e1afe40bb1aae37e02b0faad5/cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "c1453022f490d2459a11819d83ad1d586e9ff65a12ac3e705ffebd46d3685dcf"
+    },
+    {
+      "name": "cffi-2.1.1.tar.gz",
+      "component": "cffi=2.1.1",
+      "url": "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz",
+      "sha256": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
     },
     {
       "name": "click-8.5.0-py3-none-any.whl",
@@ -427,6 +489,246 @@
       "component": "click=8.5.0",
       "url": "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz",
       "sha256": "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    },
+    {
+      "name": "asn1-0.24.1.crate",
+      "component": "cryptography Cargo source:asn1=0.24.1",
+      "url": "https://static.crates.io/crates/asn1/asn1-0.24.1.crate",
+      "sha256": "c9795210620c0cb3f9a7ce4f882808c38e1ef7b347c90591dceae0886e031fb1"
+    },
+    {
+      "name": "asn1_derive-0.24.1.crate",
+      "component": "cryptography Cargo source:asn1_derive=0.24.1",
+      "url": "https://static.crates.io/crates/asn1_derive/asn1_derive-0.24.1.crate",
+      "sha256": "909e307f1cc32bb8bccbd98f446e6d1bf03fa30f7b53a4337da7181ad30fa11a"
+    },
+    {
+      "name": "base64-0.23.0.crate",
+      "component": "cryptography Cargo source:base64=0.23.0",
+      "url": "https://static.crates.io/crates/base64/base64-0.23.0.crate",
+      "sha256": "b25655df2c3cdd83c5e5b293b88acd880332b2ddadd7c30ac43144fdc0033da9"
+    },
+    {
+      "name": "bitflags-2.13.1.crate",
+      "component": "cryptography Cargo source:bitflags=2.13.1",
+      "url": "https://static.crates.io/crates/bitflags/bitflags-2.13.1.crate",
+      "sha256": "b588b76d00fde79687d7646a9b5bdf3cc0f655e0bbd080335a95d7e96f3587da"
+    },
+    {
+      "name": "cc-1.4.0.crate",
+      "component": "cryptography Cargo source:cc=1.4.0",
+      "url": "https://static.crates.io/crates/cc/cc-1.4.0.crate",
+      "sha256": "5add81bb678e6cb321aff7fa0dc7689ad82b112dbc032cea19f91d6b8e3582b9"
+    },
+    {
+      "name": "cfg-if-1.0.4.crate",
+      "component": "cryptography Cargo source:cfg-if=1.0.4",
+      "url": "https://static.crates.io/crates/cfg-if/cfg-if-1.0.4.crate",
+      "sha256": "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
+    },
+    {
+      "name": "find-msvc-tools-0.1.9.crate",
+      "component": "cryptography Cargo source:find-msvc-tools=0.1.9",
+      "url": "https://static.crates.io/crates/find-msvc-tools/find-msvc-tools-0.1.9.crate",
+      "sha256": "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
+    },
+    {
+      "name": "foreign-types-shared-0.1.1.crate",
+      "component": "cryptography Cargo source:foreign-types-shared=0.1.1",
+      "url": "https://static.crates.io/crates/foreign-types-shared/foreign-types-shared-0.1.1.crate",
+      "sha256": "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
+    },
+    {
+      "name": "foreign-types-0.3.2.crate",
+      "component": "cryptography Cargo source:foreign-types=0.3.2",
+      "url": "https://static.crates.io/crates/foreign-types/foreign-types-0.3.2.crate",
+      "sha256": "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1"
+    },
+    {
+      "name": "itoa-1.0.18.crate",
+      "component": "cryptography Cargo source:itoa=1.0.18",
+      "url": "https://static.crates.io/crates/itoa/itoa-1.0.18.crate",
+      "sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
+    },
+    {
+      "name": "libc-0.2.189.crate",
+      "component": "cryptography Cargo source:libc=0.2.189",
+      "url": "https://static.crates.io/crates/libc/libc-0.2.189.crate",
+      "sha256": "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
+    },
+    {
+      "name": "once_cell-1.21.4.crate",
+      "component": "cryptography Cargo source:once_cell=1.21.4",
+      "url": "https://static.crates.io/crates/once_cell/once_cell-1.21.4.crate",
+      "sha256": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+    },
+    {
+      "name": "openssl-macros-0.1.1.crate",
+      "component": "cryptography Cargo source:openssl-macros=0.1.1",
+      "url": "https://static.crates.io/crates/openssl-macros/openssl-macros-0.1.1.crate",
+      "sha256": "a948666b637a0f465e8564c73e89d4dde00d72d4d473cc972f390fc3dcee7d9c"
+    },
+    {
+      "name": "openssl-sys-0.9.117.crate",
+      "component": "cryptography Cargo source:openssl-sys=0.9.117",
+      "url": "https://static.crates.io/crates/openssl-sys/openssl-sys-0.9.117.crate",
+      "sha256": "b47e7e6bb2c38cd930d25a23b40fa52e068c10e85f3e03a7f5ba5aaca5713695"
+    },
+    {
+      "name": "openssl-0.10.81.crate",
+      "component": "cryptography Cargo source:openssl=0.10.81",
+      "url": "https://static.crates.io/crates/openssl/openssl-0.10.81.crate",
+      "sha256": "77823a27f0babb03091cb9ed9ef80af3b39dbc82f97e8fa530374b7dafd87a45"
+    },
+    {
+      "name": "pem-4.0.0.crate",
+      "component": "cryptography Cargo source:pem=4.0.0",
+      "url": "https://static.crates.io/crates/pem/pem-4.0.0.crate",
+      "sha256": "d354a98a3d1251555de99e8fdd8afda05573c31b82f59063a7b0a29b5527f120"
+    },
+    {
+      "name": "pkg-config-0.3.33.crate",
+      "component": "cryptography Cargo source:pkg-config=0.3.33",
+      "url": "https://static.crates.io/crates/pkg-config/pkg-config-0.3.33.crate",
+      "sha256": "19f132c84eca552bf34cab8ec81f1c1dcc229b811638f9d283dceabe58c5569e"
+    },
+    {
+      "name": "portable-atomic-1.14.0.crate",
+      "component": "cryptography Cargo source:portable-atomic=1.14.0",
+      "url": "https://static.crates.io/crates/portable-atomic/portable-atomic-1.14.0.crate",
+      "sha256": "3d20d5497ef88037a52ff98267d066e7f11fcc5e99bbfbd58a42336193aacec3"
+    },
+    {
+      "name": "proc-macro2-1.0.107.crate",
+      "component": "cryptography Cargo source:proc-macro2=1.0.107",
+      "url": "https://static.crates.io/crates/proc-macro2/proc-macro2-1.0.107.crate",
+      "sha256": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9"
+    },
+    {
+      "name": "pyo3-build-config-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-build-config=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-build-config/pyo3-build-config-0.29.2.crate",
+      "sha256": "f41027e41b4bd03f6e60f9f417fe24a6341a6bb744edd62b6f709f2a52ea30e9"
+    },
+    {
+      "name": "pyo3-ffi-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-ffi=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-ffi/pyo3-ffi-0.29.2.crate",
+      "sha256": "e591a95526fead067432c3b3a33fc74770b87b1e04e73671090d9c2055a2b327"
+    },
+    {
+      "name": "pyo3-macros-backend-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-macros-backend=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-macros-backend/pyo3-macros-backend-0.29.2.crate",
+      "sha256": "571575aa3749fa6216757dd47d2a3e7ef360f329a40f0666a9fbd14889024952"
+    },
+    {
+      "name": "pyo3-macros-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-macros=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-macros/pyo3-macros-0.29.2.crate",
+      "sha256": "73225868fc1cd84eef2c3c230ddb91273bf1de46aeb8a4248da76d32a0924a1c"
+    },
+    {
+      "name": "pyo3-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3/pyo3-0.29.2.crate",
+      "sha256": "4688ddedf473e32662b9b067670129a8afb8c18e351482c70d62ba4a88171e8b"
+    },
+    {
+      "name": "quote-1.0.47.crate",
+      "component": "cryptography Cargo source:quote=1.0.47",
+      "url": "https://static.crates.io/crates/quote/quote-1.0.47.crate",
+      "sha256": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001"
+    },
+    {
+      "name": "self_cell-1.3.0.crate",
+      "component": "cryptography Cargo source:self_cell=1.3.0",
+      "url": "https://static.crates.io/crates/self_cell/self_cell-1.3.0.crate",
+      "sha256": "2ab42ca02749e120097e328d91d415325bdf43b1c72c4c8badf37375fe40a813"
+    },
+    {
+      "name": "shlex-2.0.1.crate",
+      "component": "cryptography Cargo source:shlex=2.0.1",
+      "url": "https://static.crates.io/crates/shlex/shlex-2.0.1.crate",
+      "sha256": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
+    },
+    {
+      "name": "syn-2.0.119.crate",
+      "component": "cryptography Cargo source:syn=2.0.119",
+      "url": "https://static.crates.io/crates/syn/syn-2.0.119.crate",
+      "sha256": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297"
+    },
+    {
+      "name": "target-lexicon-0.13.5.crate",
+      "component": "cryptography Cargo source:target-lexicon=0.13.5",
+      "url": "https://static.crates.io/crates/target-lexicon/target-lexicon-0.13.5.crate",
+      "sha256": "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca"
+    },
+    {
+      "name": "unicode-ident-1.0.24.crate",
+      "component": "cryptography Cargo source:unicode-ident=1.0.24",
+      "url": "https://static.crates.io/crates/unicode-ident/unicode-ident-1.0.24.crate",
+      "sha256": "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
+    },
+    {
+      "name": "vcpkg-0.2.15.crate",
+      "component": "cryptography Cargo source:vcpkg=0.2.15",
+      "url": "https://static.crates.io/crates/vcpkg/vcpkg-0.2.15.crate",
+      "sha256": "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+    },
+    {
+      "name": "rustc-1.98.1-src.tar.xz",
+      "component": "cryptography Rust runtime=1.98.1",
+      "url": "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.xz",
+      "sha256": "be1816e7f6c40abb90245ad6e024bed2a7e88d7dda4561e4d5470207df616b9f"
+    },
+    {
+      "name": "openssl-4.0.3.tar.gz",
+      "component": "cryptography SBOM OpenSSL=4.0.3",
+      "url": "https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz",
+      "sha256": "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
+    },
+    {
+      "name": "cryptography-50.0.2-build-controls.tar.gz",
+      "component": "cryptography build controls=4dda5c7fe4ae71b8925f2551910a0ef959df9c7a",
+      "url": "https://codeload.github.com/pyca/cryptography/tar.gz/4dda5c7fe4ae71b8925f2551910a0ef959df9c7a",
+      "sha256": "6471dd1d85685ec951a5457b1098161b73cccd165d267a420487ce1256bdd0eb"
+    },
+    {
+      "name": "cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+      "component": "cryptography=50.0.2",
+      "url": "https://files.pythonhosted.org/packages/d3/69/2c833a049475e0a3444e94c7d0aca0aa51d166374a449b09e92ac98138de/cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+      "sha256": "9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079"
+    },
+    {
+      "name": "cryptography-50.0.2.tar.gz",
+      "component": "cryptography=50.0.2",
+      "url": "https://files.pythonhosted.org/packages/9d/af/182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252/cryptography-50.0.2.tar.gz",
+      "sha256": "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5"
+    },
+    {
+      "name": "cwt-3.3.0-py3-none-any.whl",
+      "component": "cwt=3.3.0",
+      "url": "https://files.pythonhosted.org/packages/15/b8/be71b74139ca0da69f137361b5f89fc9cf5f0f2d752992d25e093bc60802/cwt-3.3.0-py3-none-any.whl",
+      "sha256": "37547b286e84942e89c02b1ebcbe8f3e4b2a40c22c9b5837391175bcb8437146"
+    },
+    {
+      "name": "cwt-3.3.0.tar.gz",
+      "component": "cwt=3.3.0",
+      "url": "https://files.pythonhosted.org/packages/d5/7e/4d4e9bff3b12a39a06da913ad9835a6cc844ec573a8957fceec41f89db56/cwt-3.3.0.tar.gz",
+      "sha256": "407d6bde19f8d584093904df8c8a3a7b1312db077fb534091d8899b16614eb3b"
+    },
+    {
+      "name": "fastapi-0.141.1-py3-none-any.whl",
+      "component": "fastapi=0.141.1",
+      "url": "https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl",
+      "sha256": "bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3"
+    },
+    {
+      "name": "fastapi-0.141.1.tar.gz",
+      "component": "fastapi=0.141.1",
+      "url": "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz",
+      "sha256": "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
     },
     {
       "name": "h11-0.16.0-py3-none-any.whl",
@@ -453,28 +755,9 @@
       "sha256": "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
     },
     {
-      "name": "pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-      "component": "pysweph=2.10.3.6",
-      "url": "https://files.pythonhosted.org/packages/f3/8a/6df06956b08c0536c91dfa0d8a0473b56c1a501424b9d2088106741dfbad/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-      "sha256": "fbe43b68fba86bb15136c02cd8913e5f77ab3a36da3e5c193df6a91141e9b521"
-    },
-    {
-      "name": "pysweph-2.10.3.6.tar.gz",
-      "component": "pysweph=2.10.3.6",
-      "url": "https://files.pythonhosted.org/packages/e6/c4/9af783bfa24288f3f27ecd4e8cbcd0a93f980414aab3394de5e111859d10/pysweph-2.10.3.6.tar.gz",
-      "sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a"
-    },
-    {
-      "name": "shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-      "component": "shapely=2.1.2",
-      "url": "https://files.pythonhosted.org/packages/b9/37/e781683abac55dde9771e086b790e554811a71ed0b2b8a1e789b7430dd44/shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
-      "sha256": "1e7d4d7ad262a48bb44277ca12c7c78cb1b0f56b32c10734ec9a1d30c0b0c54b"
-    },
-    {
-      "name": "shapely-2.1.2.tar.gz",
-      "component": "shapely=2.1.2",
-      "url": "https://files.pythonhosted.org/packages/4d/bc/0989043118a27cccb4e906a46b7565ce36ca7b57f5a18b78f4f1b0f72d9d/shapely-2.1.2.tar.gz",
-      "sha256": "2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9"
+      "name": "numpy-publication-provenance.json",
+      "component": "numpy PyPI publication evidence",
+      "url": "https://pypi.org/integrity/numpy/2.5.3/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl/provenance"
     },
     {
       "name": "numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -489,41 +772,63 @@
       "sha256": "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
     },
     {
-      "name": "Python-3.12.14.tar.xz",
-      "component": "CPython=3.12.14",
-      "url": "https://www.python.org/ftp/python/3.12.14/Python-3.12.14.tar.xz",
-      "sha256": "5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a"
+      "name": "pip-25.0.1.tar.gz",
+      "component": "pip=25.0.1",
+      "url": "https://files.pythonhosted.org/packages/70/53/b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cf/pip-25.0.1.tar.gz",
+      "sha256": "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
     },
     {
-      "name": "gcc-8.5.0-28.el8_10.alma.1.src.rpm",
-      "component": "AlmaLinux GCC native runtime",
-      "url": "https://repo.almalinux.org/vault/8.10/BaseOS/Source/Packages/gcc-8.5.0-28.el8_10.alma.1.src.rpm"
+      "name": "pycparser-3.0-py3-none-any.whl",
+      "component": "pycparser=3.0",
+      "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
     },
     {
-      "name": "libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm",
-      "component": "AlmaLinux GCC native runtime",
-      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libquadmath-8.5.0-28.el8_10.alma.1.x86_64.rpm"
+      "name": "pycparser-3.0.tar.gz",
+      "component": "pycparser=3.0",
+      "url": "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz",
+      "sha256": "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
     },
     {
-      "name": "libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm",
-      "component": "AlmaLinux GCC native runtime",
-      "url": "https://repo.almalinux.org/almalinux/8/BaseOS/x86_64/os/Packages/libgfortran-8.5.0-28.el8_10.alma.1.x86_64.rpm"
+      "name": "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "component": "pydantic-core=2.46.5",
+      "url": "https://files.pythonhosted.org/packages/c0/a4/eb9409ec0736e50aa70a412f16c204ed149516846912f7e6724d4c73ee53/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2"
     },
     {
-      "name": "geos-3.13.1.tar.bz2",
-      "component": "GEOS=3.13.1",
-      "url": "https://download.osgeo.org/geos/geos-3.13.1.tar.bz2",
-      "sha256": "df2c50503295f325e7c8d7b783aca8ba4773919cde984193850cf9e361dfd28c"
+      "name": "pydantic_core-2.46.5.tar.gz",
+      "component": "pydantic-core=2.46.5",
+      "url": "https://files.pythonhosted.org/packages/af/f9/8a06bea35ef8daf588f707784c973a7046e0034c8d8cfb08828eeffb8b75/pydantic_core-2.46.5.tar.gz",
+      "sha256": "10416c15b8839ecc4ef4d0885da76da6fd0f67333a0eb8aff6d93c4b8f2910fc"
     },
     {
-      "name": "openblas-libs-build-controls.tar.gz",
-      "component": "OpenBLAS build controls",
-      "url": "https://codeload.github.com/MacPython/openblas-libs/tar.gz/78fc0eaf6de71d92fd98f74f7e5bfa356a2f83e3"
+      "name": "pydantic-2.13.5-py3-none-any.whl",
+      "component": "pydantic=2.13.5",
+      "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+      "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
     },
     {
-      "name": "numpy-release-build-controls.tar.gz",
-      "component": "NumPy build controls",
-      "url": "https://codeload.github.com/numpy/numpy-release/tar.gz/a1cc2f4a9705f4171d480263fde93fa01ba816d6"
+      "name": "pydantic-2.13.5.tar.gz",
+      "component": "pydantic=2.13.5",
+      "url": "https://files.pythonhosted.org/packages/53/ef/fc4f868f4e2cee79f863883abffceff107875f569b848507319842d2a681/pydantic-2.13.5.tar.gz",
+      "sha256": "51a9c5f7b2f8e636f04c6cada605d9b6a3bf1348fdf945a3d8869b19bba0ee08"
+    },
+    {
+      "name": "pyhpke-0.6.5-py3-none-any.whl",
+      "component": "pyhpke=0.6.5",
+      "url": "https://files.pythonhosted.org/packages/04/31/2a0edff785b15d700199fed77186b3d070724cafd02fccfffb187e450d83/pyhpke-0.6.5-py3-none-any.whl",
+      "sha256": "e8d794724e43053fe04e8971be55033225d6da904effc748b303cece763a3f3c"
+    },
+    {
+      "name": "pyhpke-0.6.5.tar.gz",
+      "component": "pyhpke=0.6.5",
+      "url": "https://files.pythonhosted.org/packages/bd/81/692a67c409e0a81423941791f875313e7ebcf1493180363eec8051acc767/pyhpke-0.6.5.tar.gz",
+      "sha256": "8dac22eb143cd83b8066213b8ad0ecc9d5326ef41f930197197f3bbb5c99cb93"
+    },
+    {
+      "name": "pysweph-publication-provenance.json",
+      "component": "pysweph PyPI publication evidence",
+      "url": "https://pypi.org/integrity/pysweph/2.10.3.6/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl/provenance"
     },
     {
       "name": "pysweph-source.tar.gz",
@@ -531,15 +836,16 @@
       "url": "https://codeload.github.com/sailorfe/pysweph/tar.gz/9dd0ca73345406addd5597ccb30488391b61cd1a"
     },
     {
-      "name": "swisseph-core-source.tar.gz",
-      "component": "Swiss complete upstream source",
-      "url": "https://codeload.github.com/aloistr/swisseph/tar.gz/5ae0bce00dbc66c6315c86da20518e3dd138255b"
+      "name": "pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "component": "pysweph=2.10.3.6",
+      "url": "https://files.pythonhosted.org/packages/f3/8a/6df06956b08c0536c91dfa0d8a0473b56c1a501424b9d2088106741dfbad/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "fbe43b68fba86bb15136c02cd8913e5f77ab3a36da3e5c193df6a91141e9b521"
     },
     {
-      "name": "pip-25.0.1.tar.gz",
-      "component": "pip=25.0.1",
-      "url": "https://files.pythonhosted.org/packages/70/53/b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cf/pip-25.0.1.tar.gz",
-      "sha256": "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
+      "name": "pysweph-2.10.3.6.tar.gz",
+      "component": "pysweph=2.10.3.6",
+      "url": "https://files.pythonhosted.org/packages/e6/c4/9af783bfa24288f3f27ecd4e8cbcd0a93f980414aab3394de5e111859d10/pysweph-2.10.3.6.tar.gz",
+      "sha256": "690080559951f827e95d568dc6764aa8d4bfb4fa8a5435eb5abe24c1e01c166a"
     },
     {
       "name": "scipy_openblas64-0.3.34.106.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -548,81 +854,81 @@
       "sha256": "e3d0667352f91ad851141a99eb326a6bbb4142db898e4f68bff8665247f0e951"
     },
     {
-      "name": "OpenBLAS-446c436-source.tar.gz",
-      "component": "OpenBLAS=0.3.34+106",
-      "url": "https://codeload.github.com/OpenMathLib/OpenBLAS/tar.gz/446c436e10450c348169808f1a6b3fae0925c9f7"
+      "name": "shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "component": "shapely=2.1.2",
+      "url": "https://files.pythonhosted.org/packages/b9/37/e781683abac55dde9771e086b790e554811a71ed0b2b8a1e789b7430dd44/shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "1e7d4d7ad262a48bb44277ca12c7c78cb1b0f56b32c10734ec9a1d30c0b0c54b"
     },
     {
-      "name": "shapely-build-controls.tar.gz",
-      "component": "Shapely=2.1.2 build controls",
-      "url": "https://codeload.github.com/shapely/shapely/tar.gz/5fb639d1056888d135fe56bfaf750c9648addeec"
+      "name": "shapely-2.1.2.tar.gz",
+      "component": "shapely=2.1.2",
+      "url": "https://files.pythonhosted.org/packages/4d/bc/0989043118a27cccb4e906a46b7565ce36ca7b57f5a18b78f4f1b0f72d9d/shapely-2.1.2.tar.gz",
+      "sha256": "2ed4ecb28320a433db18a5bf029986aa8afcfd740745e78847e330d5d94922a9"
     },
     {
-      "name": "tzdata2026c.tar.gz",
-      "component": "IANA tzdata=2026c",
-      "url": "https://data.iana.org/time-zones/releases/tzdata2026c.tar.gz",
-      "sha256": "e4a178a4477f3d0ea77cc31828ff72aa38feff8d61aa13e7e99e142e9d902be4"
+      "name": "starlette-1.6.0-py3-none-any.whl",
+      "component": "starlette=1.6.0",
+      "url": "https://files.pythonhosted.org/packages/c8/cb/6a6a47d5b464bd08695d254f3da6e7986cc70c9fa5d778eda57538edfe56/starlette-1.6.0-py3-none-any.whl",
+      "sha256": "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
     },
     {
-      "name": "tzcode2026c.tar.gz",
-      "component": "IANA tzcode=2026c",
-      "url": "https://data.iana.org/time-zones/releases/tzcode2026c.tar.gz",
-      "sha256": "b1cffc3ace4c4c7cd0efba2f7add86ec3d0b79da48bcf03582671fd3c8feace8"
+      "name": "starlette-1.6.0.tar.gz",
+      "component": "starlette=1.6.0",
+      "url": "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz",
+      "sha256": "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
     },
     {
-      "name": "python-image-build-controls.tar.gz",
-      "component": "CPython official image build controls",
-      "url": "https://codeload.github.com/docker-library/python/tar.gz/688a0b86bb44289df16a363e9f41d90514c1a5f9"
+      "name": "starlette-1.7.0-py3-none-any.whl",
+      "component": "starlette=1.7.0",
+      "url": "https://files.pythonhosted.org/packages/4e/d6/1ec1b290f9e0fb067899b61e1d37a30c923068bad260b216dbe37a7d2967/starlette-1.7.0-py3-none-any.whl",
+      "sha256": "67f8e99895493dd2911a03f11314af6ceebeae4e704bb9f43dfc6a9db151c93e"
     },
     {
-      "name": "sepl_18.se1",
-      "component": "Swiss DE441 data",
-      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/sepl_18.se1",
-      "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      "name": "starlette-1.7.0.tar.gz",
+      "component": "starlette=1.7.0",
+      "url": "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz",
+      "sha256": "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
     },
     {
-      "name": "semo_18.se1",
-      "component": "Swiss DE441 data",
-      "url": "https://raw.githubusercontent.com/aloistr/swisseph/91339e55d2351f32548d8a8d5bca6aa93b4f6da7/ephe/semo_18.se1",
-      "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      "name": "typing_extensions-4.16.0-py3-none-any.whl",
+      "component": "typing-extensions=4.16.0",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
     },
     {
-      "name": "timezones.geojson.zip",
-      "component": "TBB=2026c comprehensive no-oceans",
-      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezones.geojson.zip",
-      "sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948"
+      "name": "typing_extensions-4.16.0.tar.gz",
+      "component": "typing-extensions=4.16.0",
+      "url": "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz",
+      "sha256": "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
     },
     {
-      "name": "timezone-names.json",
-      "component": "TBB=2026c catalog",
-      "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezone-names.json",
-      "sha256": "2584551f8c9af23a19bc8b197bf46ad458d9fa8c78d4df056f0408c67fd315ff"
+      "name": "typing_inspection-0.4.4-py3-none-any.whl",
+      "component": "typing-inspection=0.4.4",
+      "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
     },
     {
-      "name": "tbb-source-2026c.tar.gz",
-      "component": "TBB=2026c source and notices",
-      "url": "https://codeload.github.com/evansiroky/timezone-boundary-builder/tar.gz/refs/tags/2026c"
+      "name": "typing_inspection-0.4.4.tar.gz",
+      "component": "typing-inspection=0.4.4",
+      "url": "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz",
+      "sha256": "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+    },
+    {
+      "name": "uvicorn-0.53.0-py3-none-any.whl",
+      "component": "uvicorn=0.53.0",
+      "url": "https://files.pythonhosted.org/packages/76/18/0eea75741ee812e9f598b687619ce2454f6c3a1c5cd21ea990ec6bd26f45/uvicorn-0.53.0-py3-none-any.whl",
+      "sha256": "e8dca71ec86dce5f04e333f0d56cdedf942446e6643b9cea1af0d6d3a02cb03e"
+    },
+    {
+      "name": "uvicorn-0.53.0.tar.gz",
+      "component": "uvicorn=0.53.0",
+      "url": "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz",
+      "sha256": "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
     },
     {
       "name": "wit-bindgen-source.tar.gz",
       "component": "wit-bindgen-rt missing upstream notices",
       "url": "https://codeload.github.com/bytecodealliance/wit-bindgen/tar.gz/f2393e6e98fa5f9236cac580db8a3fc9de6a4b70"
-    },
-    {
-      "name": "rustc-1.98.0-src.tar.xz",
-      "component": "Rust statically linked runtime sources and notices",
-      "url": "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.xz",
-      "sha256": "271fa73d8174f53d713c46a8310da7bf7cfdcfb8b7cfd1c2b74b84a83ae9fb1e"
-    },
-    {
-      "name": "pysweph-publication-provenance.json",
-      "component": "pysweph PyPI publication evidence",
-      "url": "https://pypi.org/integrity/pysweph/2.10.3.6/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl/provenance"
-    },
-    {
-      "name": "numpy-publication-provenance.json",
-      "component": "numpy PyPI publication evidence",
-      "url": "https://pypi.org/integrity/numpy/2.5.3/numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl/provenance"
     }
   ]
 }

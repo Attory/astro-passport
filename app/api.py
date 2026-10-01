@@ -16,6 +16,7 @@ from app.contracts import (
     ErrorEnvelopeV1,
 )
 from app.lahiri import LahiriRequest, LahiriResponse
+from app.portable import PortableIssuer, PortableRequest
 from app.science.errors import STATUS, ScienceFailure
 from app.security import SecurityStateError, Settings, authenticate, reserve_quota, unique_json
 from app.western import WesternRequest, WesternResponse
@@ -38,42 +39,59 @@ class UnavailableScience:
         raise ScienceUnavailable
 
 
-def error(status: int, code: ErrorCode) -> JSONResponse:
-    headers = {"Cache-Control": "no-store", "X-APT-Contract-Version": "1.0.0"}
+def error(status: int, code: ErrorCode, contract: str = "1.0.0") -> JSONResponse:
+    headers = {"Cache-Control": "no-store", "X-APT-Contract-Version": contract}
     if status == 401:
         headers["WWW-Authenticate"] = "Bearer"
     if status == 429:
         headers["Retry-After"] = "60"
-    return JSONResponse(
+    data = (
         ErrorEnvelopeV1(
             schema_version="AstroPassportError.v1", contract_version="1.0.0", code=code
-        ).model_dump(),
-        status_code=status,
-        headers=headers,
+        ).model_dump()
+        if contract == "1.0.0"
+        else {
+            "schema_version": "AstroPassportError.v2",
+            "contract_version": "2.0.0",
+            "code": code,
+        }
     )
+    return JSONResponse(data, status_code=status, headers=headers)
 
 
-def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> None:
+def install_api(
+    service: FastAPI,
+    settings: Settings,
+    science: SciencePort,
+    issuer: PortableIssuer | None = None,
+) -> None:
     slots: asyncio.Queue[None] = asyncio.Queue(maxsize=4)
     for _ in range(4):
         slots.put_nowait(None)
 
     @service.post("/v1/passports")
+    @service.post("/v2/passports")
     async def calculate(request: Request) -> JSONResponse:
+        portable = request.url.path == "/v2/passports"
+        contract = "2.0.0" if portable else "1.0.0"
+
+        def reply_error(status: int, code: ErrorCode) -> JSONResponse:
+            return error(status, code, contract)
+
         if not settings.enabled:
-            return error(503, "disabled")
+            return reply_error(503, "disabled")
         if request.url.scheme != "https" or request.scope.get("query_string"):
-            return error(400, "invalid_request")
+            return reply_error(400, "invalid_request")
         headers = request.scope["headers"]
         if sum(len(k) + len(v) for k, v in headers) > MAX_HEADERS:
-            return error(413, "too_large")
+            return reply_error(413, "too_large")
         for name in ("authorization", "content-length", "content-type", "x-apt-contract-version"):
             if len(request.headers.getlist(name)) > 1:
-                return error(400, "invalid_request")
+                return reply_error(400, "invalid_request")
         try:
             slots.get_nowait()
         except asyncio.QueueEmpty:
-            return error(503, "busy")
+            return reply_error(503, "busy")
         try:
             try:
                 now = dt.datetime.now(dt.UTC)
@@ -81,28 +99,28 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
                     authenticate, settings.keys_file, request.headers.get("authorization", ""), now
                 )
                 if key is None:
-                    return error(401, "unauthorized")
-                if request.headers.get("x-apt-contract-version") != "1.0.0":
-                    return error(406, "unsupported_version")
+                    return reply_error(401, "unauthorized")
+                if request.headers.get("x-apt-contract-version") != contract:
+                    return reply_error(406, "unsupported_version")
                 if request.headers.get("content-type", "").lower() != "application/json":
-                    return error(415, "unsupported_media_type")
+                    return reply_error(415, "unsupported_media_type")
                 if request.headers.get("content-encoding") not in (None, "identity"):
-                    return error(415, "unsupported_media_type")
+                    return reply_error(415, "unsupported_media_type")
                 length = request.headers.get("content-length")
                 if length is not None and (not length.isascii() or not length.isdecimal()):
-                    return error(400, "invalid_request")
+                    return reply_error(400, "invalid_request")
                 if length is not None and (len(length) > 8 or int(length) > MAX_BODY):
-                    return error(413, "too_large")
+                    return reply_error(413, "too_large")
                 if not await asyncio.to_thread(reserve_quota, settings.quota_file, key, now):
-                    return error(429, "rate_limited")
+                    return reply_error(429, "rate_limited")
                 body = bytearray()
                 async with asyncio.timeout(BODY_SECONDS):
                     async for chunk in request.stream():
                         if len(body) + len(chunk) > MAX_BODY:
-                            return error(413, "too_large")
+                            return reply_error(413, "too_large")
                         body.extend(chunk)
                 if length is not None and len(body) != int(length):
-                    return error(400, "invalid_request")
+                    return reply_error(400, "invalid_request")
                 try:
                     raw = unique_json(bytes(body))
                     is_lahiri = (
@@ -113,14 +131,22 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
                         and raw.get("profile") == "western-synastry-core.v1-mvp"
                     )
                     value = (
-                        WesternRequest.model_validate_json(body)
+                        PortableRequest.model_validate_json(body)
+                        if portable
+                        else WesternRequest.model_validate_json(body)
                         if is_western
                         else LahiriRequest.model_validate_json(body)
                         if is_lahiri
                         else AstroPassportRequestV1.model_validate_json(body)
                     )
                 except (ValueError, TypeError, RecursionError):
-                    return error(422, "invalid_request")
+                    return reply_error(422, "invalid_request")
+                if isinstance(value, PortableRequest):
+                    if issuer is None:
+                        return reply_error(503, "state_unavailable")
+                    async with asyncio.timeout(6):
+                        token = await issuer.issue(value, science)
+                    return JSONResponse(token, headers={"X-APT-Contract-Version": contract})
                 async with asyncio.timeout(6):
                     if isinstance(value, WesternRequest):
                         method = getattr(science, "calculate_western", None)
@@ -148,15 +174,15 @@ def install_api(service: FastAPI, settings: Settings, science: SciencePort) -> N
                     headers={"X-APT-Contract-Version": "1.0.0"},
                 )
             except SecurityStateError:
-                return error(503, "state_unavailable")
+                return reply_error(503, "state_unavailable")
             except ScienceUnavailable:
-                return error(503, "science_unavailable")
+                return reply_error(503, "science_unavailable")
             except ScienceFailure as failure:
-                return error(STATUS[failure.code], failure.code)
+                return reply_error(STATUS[failure.code], failure.code)
             except TimeoutError:
-                return error(408, "timeout")
+                return reply_error(408, "timeout")
             except Exception:
                 # Never log traceback, locals, input, URLs or native messages.
-                return error(500, "internal_error")
+                return reply_error(500, "internal_error")
         finally:
             slots.put_nowait(None)

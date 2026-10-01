@@ -80,6 +80,13 @@
       "bytes": 25546951
     },
     {
+      "name": "openssl-4.0.3-source.tar.gz",
+      "component": "OpenSSL=4.0.3",
+      "url": "https://codeload.github.com/openssl/openssl/tar.gz/af1775b60dfa141a4ad762585052cabeb9f37e9e",
+      "sha256": "219c0a389f3c76e58f2d9e2b216101887f94747e669bb79c43225d7b6ac1253a",
+      "bytes": 55429548
+    },
+    {
       "name": "rustc-1.98.0-src.tar.xz",
       "component": "Rust statically linked runtime sources and notices",
       "url": "https://static.rust-lang.org/dist/rustc-1.98.0-src.tar.xz",
@@ -178,6 +185,48 @@
       "bytes": 276966
     },
     {
+      "name": "cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "component": "cbor2=5.9.0",
+      "url": "https://files.pythonhosted.org/packages/db/9d/7ede2cc42f9bb4260492e7d29d2aab781eacbbcfb09d983de1e695077199/cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "4cd43d8fc374b31643b2830910f28177a606a7bc84975a62675dd3f2e320fc7b",
+      "bytes": 288246
+    },
+    {
+      "name": "cbor2-5.9.0.tar.gz",
+      "component": "cbor2=5.9.0",
+      "url": "https://files.pythonhosted.org/packages/bd/cb/09939728be094d155b5d4ac262e39877875f5f7e36eea66beb359f647bd0/cbor2-5.9.0.tar.gz",
+      "sha256": "85c7a46279ac8f226e1059275221e6b3d0e370d2bb6bd0500f9780781615bcea",
+      "bytes": 111231
+    },
+    {
+      "name": "cffi-2.1.1-build-controls.tar.gz",
+      "component": "cffi build controls=fd33e7700f0ebafe6f30bd5053f13327221b77a2",
+      "url": "https://codeload.github.com/python-cffi/cffi/tar.gz/fd33e7700f0ebafe6f30bd5053f13327221b77a2",
+      "sha256": "3c63006cdf332696a1e16b76e0c6aed38c17208e5de26737459ae6125c091482",
+      "bytes": 540132
+    },
+    {
+      "name": "libffi-3.4.6-source.tar.gz",
+      "component": "cffi bundled libffi=3.4.6",
+      "url": "https://codeload.github.com/libffi/libffi/tar.gz/3d0ce1e6fcf19f853894862abcbac0ae78a7be60",
+      "sha256": "148ebda16fc2dde2f0538541e7078ecf24628bbbf716fb5367e047192ebb806f",
+      "bytes": 598576
+    },
+    {
+      "name": "cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "component": "cffi=2.1.1",
+      "url": "https://files.pythonhosted.org/packages/b1/db/dceb9dd5b231e1da801793f8acc9f3c52a7e1afe40bb1aae37e02b0faad5/cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "c1453022f490d2459a11819d83ad1d586e9ff65a12ac3e705ffebd46d3685dcf",
+      "bytes": 221822
+    },
+    {
+      "name": "cffi-2.1.1.tar.gz",
+      "component": "cffi=2.1.1",
+      "url": "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz",
+      "sha256": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be",
+      "bytes": 530807
+    },
+    {
       "name": "click-8.5.0-py3-none-any.whl",
       "component": "click=8.5.0",
       "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
@@ -190,6 +239,272 @@
       "url": "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz",
       "sha256": "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34",
       "bytes": 382235
+    },
+    {
+      "name": "asn1-0.24.1.crate",
+      "component": "cryptography Cargo source:asn1=0.24.1",
+      "url": "https://static.crates.io/crates/asn1/asn1-0.24.1.crate",
+      "sha256": "c9795210620c0cb3f9a7ce4f882808c38e1ef7b347c90591dceae0886e031fb1",
+      "bytes": 50502
+    },
+    {
+      "name": "asn1_derive-0.24.1.crate",
+      "component": "cryptography Cargo source:asn1_derive=0.24.1",
+      "url": "https://static.crates.io/crates/asn1_derive/asn1_derive-0.24.1.crate",
+      "sha256": "909e307f1cc32bb8bccbd98f446e6d1bf03fa30f7b53a4337da7181ad30fa11a",
+      "bytes": 9534
+    },
+    {
+      "name": "base64-0.23.0.crate",
+      "component": "cryptography Cargo source:base64=0.23.0",
+      "url": "https://static.crates.io/crates/base64/base64-0.23.0.crate",
+      "sha256": "b25655df2c3cdd83c5e5b293b88acd880332b2ddadd7c30ac43144fdc0033da9",
+      "bytes": 93578
+    },
+    {
+      "name": "bitflags-2.13.1.crate",
+      "component": "cryptography Cargo source:bitflags=2.13.1",
+      "url": "https://static.crates.io/crates/bitflags/bitflags-2.13.1.crate",
+      "sha256": "b588b76d00fde79687d7646a9b5bdf3cc0f655e0bbd080335a95d7e96f3587da",
+      "bytes": 51395
+    },
+    {
+      "name": "cc-1.4.0.crate",
+      "component": "cryptography Cargo source:cc=1.4.0",
+      "url": "https://static.crates.io/crates/cc/cc-1.4.0.crate",
+      "sha256": "5add81bb678e6cb321aff7fa0dc7689ad82b112dbc032cea19f91d6b8e3582b9",
+      "bytes": 97878
+    },
+    {
+      "name": "cfg-if-1.0.4.crate",
+      "component": "cryptography Cargo source:cfg-if=1.0.4",
+      "url": "https://static.crates.io/crates/cfg-if/cfg-if-1.0.4.crate",
+      "sha256": "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801",
+      "bytes": 9360
+    },
+    {
+      "name": "find-msvc-tools-0.1.9.crate",
+      "component": "cryptography Cargo source:find-msvc-tools=0.1.9",
+      "url": "https://static.crates.io/crates/find-msvc-tools/find-msvc-tools-0.1.9.crate",
+      "sha256": "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582",
+      "bytes": 31493
+    },
+    {
+      "name": "foreign-types-shared-0.1.1.crate",
+      "component": "cryptography Cargo source:foreign-types-shared=0.1.1",
+      "url": "https://static.crates.io/crates/foreign-types-shared/foreign-types-shared-0.1.1.crate",
+      "sha256": "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b",
+      "bytes": 5672
+    },
+    {
+      "name": "foreign-types-0.3.2.crate",
+      "component": "cryptography Cargo source:foreign-types=0.3.2",
+      "url": "https://static.crates.io/crates/foreign-types/foreign-types-0.3.2.crate",
+      "sha256": "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1",
+      "bytes": 7504
+    },
+    {
+      "name": "itoa-1.0.18.crate",
+      "component": "cryptography Cargo source:itoa=1.0.18",
+      "url": "https://static.crates.io/crates/itoa/itoa-1.0.18.crate",
+      "sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+      "bytes": 15935
+    },
+    {
+      "name": "libc-0.2.189.crate",
+      "component": "cryptography Cargo source:libc=0.2.189",
+      "url": "https://static.crates.io/crates/libc/libc-0.2.189.crate",
+      "sha256": "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2",
+      "bytes": 851502
+    },
+    {
+      "name": "once_cell-1.21.4.crate",
+      "component": "cryptography Cargo source:once_cell=1.21.4",
+      "url": "https://static.crates.io/crates/once_cell/once_cell-1.21.4.crate",
+      "sha256": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50",
+      "bytes": 35010
+    },
+    {
+      "name": "openssl-macros-0.1.1.crate",
+      "component": "cryptography Cargo source:openssl-macros=0.1.1",
+      "url": "https://static.crates.io/crates/openssl-macros/openssl-macros-0.1.1.crate",
+      "sha256": "a948666b637a0f465e8564c73e89d4dde00d72d4d473cc972f390fc3dcee7d9c",
+      "bytes": 5601
+    },
+    {
+      "name": "openssl-sys-0.9.117.crate",
+      "component": "cryptography Cargo source:openssl-sys=0.9.117",
+      "url": "https://static.crates.io/crates/openssl-sys/openssl-sys-0.9.117.crate",
+      "sha256": "b47e7e6bb2c38cd930d25a23b40fa52e068c10e85f3e03a7f5ba5aaca5713695",
+      "bytes": 76045
+    },
+    {
+      "name": "openssl-0.10.81.crate",
+      "component": "cryptography Cargo source:openssl=0.10.81",
+      "url": "https://static.crates.io/crates/openssl/openssl-0.10.81.crate",
+      "sha256": "77823a27f0babb03091cb9ed9ef80af3b39dbc82f97e8fa530374b7dafd87a45",
+      "bytes": 311187
+    },
+    {
+      "name": "pem-4.0.0.crate",
+      "component": "cryptography Cargo source:pem=4.0.0",
+      "url": "https://static.crates.io/crates/pem/pem-4.0.0.crate",
+      "sha256": "d354a98a3d1251555de99e8fdd8afda05573c31b82f59063a7b0a29b5527f120",
+      "bytes": 18770
+    },
+    {
+      "name": "pkg-config-0.3.33.crate",
+      "component": "cryptography Cargo source:pkg-config=0.3.33",
+      "url": "https://static.crates.io/crates/pkg-config/pkg-config-0.3.33.crate",
+      "sha256": "19f132c84eca552bf34cab8ec81f1c1dcc229b811638f9d283dceabe58c5569e",
+      "bytes": 21590
+    },
+    {
+      "name": "portable-atomic-1.14.0.crate",
+      "component": "cryptography Cargo source:portable-atomic=1.14.0",
+      "url": "https://static.crates.io/crates/portable-atomic/portable-atomic-1.14.0.crate",
+      "sha256": "3d20d5497ef88037a52ff98267d066e7f11fcc5e99bbfbd58a42336193aacec3",
+      "bytes": 200703
+    },
+    {
+      "name": "proc-macro2-1.0.107.crate",
+      "component": "cryptography Cargo source:proc-macro2=1.0.107",
+      "url": "https://static.crates.io/crates/proc-macro2/proc-macro2-1.0.107.crate",
+      "sha256": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9",
+      "bytes": 59588
+    },
+    {
+      "name": "pyo3-build-config-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-build-config=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-build-config/pyo3-build-config-0.29.2.crate",
+      "sha256": "f41027e41b4bd03f6e60f9f417fe24a6341a6bb744edd62b6f709f2a52ea30e9",
+      "bytes": 41104
+    },
+    {
+      "name": "pyo3-ffi-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-ffi=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-ffi/pyo3-ffi-0.29.2.crate",
+      "sha256": "e591a95526fead067432c3b3a33fc74770b87b1e04e73671090d9c2055a2b327",
+      "bytes": 90029
+    },
+    {
+      "name": "pyo3-macros-backend-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-macros-backend=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-macros-backend/pyo3-macros-backend-0.29.2.crate",
+      "sha256": "571575aa3749fa6216757dd47d2a3e7ef360f329a40f0666a9fbd14889024952",
+      "bytes": 93749
+    },
+    {
+      "name": "pyo3-macros-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3-macros=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3-macros/pyo3-macros-0.29.2.crate",
+      "sha256": "73225868fc1cd84eef2c3c230ddb91273bf1de46aeb8a4248da76d32a0924a1c",
+      "bytes": 9044
+    },
+    {
+      "name": "pyo3-0.29.2.crate",
+      "component": "cryptography Cargo source:pyo3=0.29.2",
+      "url": "https://static.crates.io/crates/pyo3/pyo3-0.29.2.crate",
+      "sha256": "4688ddedf473e32662b9b067670129a8afb8c18e351482c70d62ba4a88171e8b",
+      "bytes": 1255741
+    },
+    {
+      "name": "quote-1.0.47.crate",
+      "component": "cryptography Cargo source:quote=1.0.47",
+      "url": "https://static.crates.io/crates/quote/quote-1.0.47.crate",
+      "sha256": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001",
+      "bytes": 31622
+    },
+    {
+      "name": "self_cell-1.3.0.crate",
+      "component": "cryptography Cargo source:self_cell=1.3.0",
+      "url": "https://static.crates.io/crates/self_cell/self_cell-1.3.0.crate",
+      "sha256": "2ab42ca02749e120097e328d91d415325bdf43b1c72c4c8badf37375fe40a813",
+      "bytes": 23869
+    },
+    {
+      "name": "shlex-2.0.1.crate",
+      "component": "cryptography Cargo source:shlex=2.0.1",
+      "url": "https://static.crates.io/crates/shlex/shlex-2.0.1.crate",
+      "sha256": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba",
+      "bytes": 19332
+    },
+    {
+      "name": "syn-2.0.119.crate",
+      "component": "cryptography Cargo source:syn=2.0.119",
+      "url": "https://static.crates.io/crates/syn/syn-2.0.119.crate",
+      "sha256": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297",
+      "bytes": 307407
+    },
+    {
+      "name": "target-lexicon-0.13.5.crate",
+      "component": "cryptography Cargo source:target-lexicon=0.13.5",
+      "url": "https://static.crates.io/crates/target-lexicon/target-lexicon-0.13.5.crate",
+      "sha256": "adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca",
+      "bytes": 26928
+    },
+    {
+      "name": "unicode-ident-1.0.24.crate",
+      "component": "cryptography Cargo source:unicode-ident=1.0.24",
+      "url": "https://static.crates.io/crates/unicode-ident/unicode-ident-1.0.24.crate",
+      "sha256": "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75",
+      "bytes": 49298
+    },
+    {
+      "name": "vcpkg-0.2.15.crate",
+      "component": "cryptography Cargo source:vcpkg=0.2.15",
+      "url": "https://static.crates.io/crates/vcpkg/vcpkg-0.2.15.crate",
+      "sha256": "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426",
+      "bytes": 228735
+    },
+    {
+      "name": "rustc-1.98.1-src.tar.xz",
+      "component": "cryptography Rust runtime=1.98.1",
+      "url": "https://static.rust-lang.org/dist/rustc-1.98.1-src.tar.xz",
+      "sha256": "be1816e7f6c40abb90245ad6e024bed2a7e88d7dda4561e4d5470207df616b9f",
+      "bytes": 244440824
+    },
+    {
+      "name": "openssl-4.0.3.tar.gz",
+      "component": "cryptography SBOM OpenSSL=4.0.3",
+      "url": "https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz",
+      "sha256": "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9",
+      "bytes": 55235667
+    },
+    {
+      "name": "cryptography-50.0.2-build-controls.tar.gz",
+      "component": "cryptography build controls=4dda5c7fe4ae71b8925f2551910a0ef959df9c7a",
+      "url": "https://codeload.github.com/pyca/cryptography/tar.gz/4dda5c7fe4ae71b8925f2551910a0ef959df9c7a",
+      "sha256": "6471dd1d85685ec951a5457b1098161b73cccd165d267a420487ce1256bdd0eb",
+      "bytes": 58532666
+    },
+    {
+      "name": "cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+      "component": "cryptography=50.0.2",
+      "url": "https://files.pythonhosted.org/packages/d3/69/2c833a049475e0a3444e94c7d0aca0aa51d166374a449b09e92ac98138de/cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl",
+      "sha256": "9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079",
+      "bytes": 4752576
+    },
+    {
+      "name": "cryptography-50.0.2.tar.gz",
+      "component": "cryptography=50.0.2",
+      "url": "https://files.pythonhosted.org/packages/9d/af/182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252/cryptography-50.0.2.tar.gz",
+      "sha256": "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5",
+      "bytes": 880623
+    },
+    {
+      "name": "cwt-3.3.0-py3-none-any.whl",
+      "component": "cwt=3.3.0",
+      "url": "https://files.pythonhosted.org/packages/15/b8/be71b74139ca0da69f137361b5f89fc9cf5f0f2d752992d25e093bc60802/cwt-3.3.0-py3-none-any.whl",
+      "sha256": "37547b286e84942e89c02b1ebcbe8f3e4b2a40c22c9b5837391175bcb8437146",
+      "bytes": 72861
+    },
+    {
+      "name": "cwt-3.3.0.tar.gz",
+      "component": "cwt=3.3.0",
+      "url": "https://files.pythonhosted.org/packages/d5/7e/4d4e9bff3b12a39a06da913ad9835a6cc844ec573a8957fceec41f89db56/cwt-3.3.0.tar.gz",
+      "sha256": "407d6bde19f8d584093904df8c8a3a7b1312db077fb534091d8899b16614eb3b",
+      "bytes": 239271
     },
     {
       "name": "acl_2.3.1-3.debian.tar.xz",
@@ -2622,6 +2937,20 @@
       "bytes": 1950850
     },
     {
+      "name": "pycparser-3.0-py3-none-any.whl",
+      "component": "pycparser=3.0",
+      "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+      "bytes": 48172
+    },
+    {
+      "name": "pycparser-3.0.tar.gz",
+      "component": "pycparser=3.0",
+      "url": "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz",
+      "sha256": "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29",
+      "bytes": 103492
+    },
+    {
       "name": "ahash-0.8.12.crate",
       "component": "pydantic-core Cargo source:ahash=0.8.12",
       "url": "https://static.crates.io/crates/ahash/ahash-0.8.12.crate",
@@ -3371,6 +3700,20 @@
       "bytes": 845750
     },
     {
+      "name": "pyhpke-0.6.5-py3-none-any.whl",
+      "component": "pyhpke=0.6.5",
+      "url": "https://files.pythonhosted.org/packages/04/31/2a0edff785b15d700199fed77186b3d070724cafd02fccfffb187e450d83/pyhpke-0.6.5-py3-none-any.whl",
+      "sha256": "e8d794724e43053fe04e8971be55033225d6da904effc748b303cece763a3f3c",
+      "bytes": 24435
+    },
+    {
+      "name": "pyhpke-0.6.5.tar.gz",
+      "component": "pyhpke=0.6.5",
+      "url": "https://files.pythonhosted.org/packages/bd/81/692a67c409e0a81423941791f875313e7ebcf1493180363eec8051acc767/pyhpke-0.6.5.tar.gz",
+      "sha256": "8dac22eb143cd83b8066213b8ad0ecc9d5326ef41f930197197f3bbb5c99cb93",
+      "bytes": 1639080
+    },
+    {
       "name": "pysweph-publication-provenance.json",
       "component": "pysweph PyPI publication evidence",
       "url": "https://pypi.org/integrity/pysweph/2.10.3.6/pysweph-2.10.3.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl/provenance",
@@ -3432,6 +3775,20 @@
       "url": "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz",
       "sha256": "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b",
       "bytes": 2716969
+    },
+    {
+      "name": "starlette-1.7.0-py3-none-any.whl",
+      "component": "starlette=1.7.0",
+      "url": "https://files.pythonhosted.org/packages/4e/d6/1ec1b290f9e0fb067899b61e1d37a30c923068bad260b216dbe37a7d2967/starlette-1.7.0-py3-none-any.whl",
+      "sha256": "67f8e99895493dd2911a03f11314af6ceebeae4e704bb9f43dfc6a9db151c93e",
+      "bytes": 78980
+    },
+    {
+      "name": "starlette-1.7.0.tar.gz",
+      "component": "starlette=1.7.0",
+      "url": "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz",
+      "sha256": "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d",
+      "bytes": 2736246
     },
     {
       "name": "typing_extensions-4.16.0-py3-none-any.whl",

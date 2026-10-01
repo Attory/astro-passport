@@ -1,53 +1,5 @@
 [
   {
-    "distribution": "fastapi",
-    "version": "0.141.1",
-    "license": "MIT",
-    "retained_license_sha256": {
-      "fastapi-0.141.1.dist-info/licenses/LICENSE": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
-    }
-  },
-  {
-    "distribution": "starlette",
-    "version": "1.6.0",
-    "license": "BSD-3-Clause",
-    "retained_license_sha256": {
-      "starlette-1.6.0.dist-info/licenses/LICENSE.md": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
-    }
-  },
-  {
-    "distribution": "pydantic",
-    "version": "2.13.5",
-    "license": "MIT",
-    "retained_license_sha256": {
-      "pydantic-2.13.5.dist-info/licenses/LICENSE": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
-    }
-  },
-  {
-    "distribution": "pydantic-core",
-    "version": "2.46.5",
-    "license": "MIT",
-    "retained_license_sha256": {
-      "pydantic_core-2.46.5.dist-info/licenses/LICENSE": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
-    }
-  },
-  {
-    "distribution": "uvicorn",
-    "version": "0.53.0",
-    "license": "BSD-3-Clause",
-    "retained_license_sha256": {
-      "uvicorn-0.53.0.dist-info/licenses/LICENSE.md": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
-    }
-  },
-  {
-    "distribution": "anyio",
-    "version": "4.15.1",
-    "license": "MIT",
-    "retained_license_sha256": {
-      "anyio-4.15.1.dist-info/licenses/LICENSE": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
-    }
-  },
-  {
     "distribution": "annotated-doc",
     "version": "0.0.5",
     "license": "MIT",
@@ -64,19 +16,27 @@
     }
   },
   {
-    "distribution": "typing-extensions",
-    "version": "4.16.0",
-    "license": "PSF-2.0",
+    "distribution": "anyio",
+    "version": "4.15.1",
+    "license": "MIT",
     "retained_license_sha256": {
-      "typing_extensions-4.16.0.dist-info/licenses/LICENSE": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+      "anyio-4.15.1.dist-info/licenses/LICENSE": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
     }
   },
   {
-    "distribution": "typing-inspection",
-    "version": "0.4.4",
+    "distribution": "cbor2",
+    "version": "5.9.0",
     "license": "MIT",
     "retained_license_sha256": {
-      "typing_inspection-0.4.4.dist-info/licenses/LICENSE": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+      "cbor2-5.9.0.dist-info/licenses/LICENSE.txt": "a6afd126d8f545a15166a22f25fadff4b9fb4978bbdd17e97d97d950b66d2fef"
+    }
+  },
+  {
+    "distribution": "cffi",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "retained_license_sha256": {
+      "cffi-2.1.1.dist-info/licenses/LICENSE": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
     }
   },
   {
@@ -85,6 +45,32 @@
     "license": "BSD-3-Clause",
     "retained_license_sha256": {
       "click-8.5.0.dist-info/licenses/LICENSE.txt": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+    }
+  },
+  {
+    "distribution": "cryptography",
+    "version": "50.0.2",
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "retained_license_sha256": {
+      "cryptography-50.0.2.dist-info/licenses/LICENSE": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+      "cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+      "cryptography-50.0.2.dist-info/licenses/LICENSE.BSD": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb"
+    }
+  },
+  {
+    "distribution": "cwt",
+    "version": "3.3.0",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "cwt-3.3.0.dist-info/licenses/LICENSE": "6528b1d12fd7033af45fc0f7eba4885c4d93ef27e67b3c21665b04e1d9695040"
+    }
+  },
+  {
+    "distribution": "fastapi",
+    "version": "0.141.1",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "fastapi-0.141.1.dist-info/licenses/LICENSE": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
     }
   },
   {
@@ -104,27 +90,13 @@
     }
   },
   {
-    "distribution": "pysweph",
-    "version": "2.10.3.6",
-    "license": "AGPL-3.0-or-later (v3 selected)",
-    "retained_license_sha256": {
-      "pysweph-2.10.3.6.dist-info/licenses/LICENSE": "7491d821a58cfa08c32e93af69ee4facb0a1b3ea06ee26110a3c400cbe557714"
-    }
-  },
-  {
-    "distribution": "shapely",
-    "version": "2.1.2",
-    "license": "BSD-3-Clause; bundled GEOS LGPL-2.1-or-later",
-    "retained_license_sha256": {
-      "shapely-2.1.2.dist-info/licenses/LICENSE.txt": "4a207eac9bf257ed286e1c6f0fce253d1abfdb134fc61ec855e37f5692a3f754",
-      "shapely-2.1.2.dist-info/licenses/LICENSE_GEOS": "138b2c2f9450073d7c116abe397ca4382625671c752b7a9a5f320b33fc3f3f2a"
-    }
-  },
-  {
     "distribution": "numpy",
     "version": "2.5.3",
-    "license": "BSD-3-Clause plus bundled native notices; see compliance/native-notices.json",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
     "retained_license_sha256": {
+      "numpy/_core/include/numpy/random/LICENSE.txt": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec",
+      "numpy/ma/LICENSE": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6",
+      "numpy/random/LICENSE.md": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f",
       "numpy-2.5.3.dist-info/licenses/LICENSE.txt": "4860083caa0de2ac3292ca98bd074bd8f45d8b32624e37b1e70a240bff61e488",
       "numpy-2.5.3.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec",
       "numpy-2.5.3.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING": "3f2c1ffa76383a55ae0aac01c9737cd70050dff63e1f026694fbe9d662573c98",
@@ -142,6 +114,87 @@
       "numpy-2.5.3.dist-info/licenses/numpy/random/src/philox/LICENSE.md": "6f5828a57223d4cc7f8ea505a2623e7b978b242752c1515e355f46ba2cec1800",
       "numpy-2.5.3.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md": "9d4098846018319cd68e228ee6220361787f73bccbf00237a85e4fc9621b998f",
       "numpy-2.5.3.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md": "268b0ca06759d31ea3ca68dd35f20e877916e927b1c2a835e4592a3c4354b1f9"
+    }
+  },
+  {
+    "distribution": "pycparser",
+    "version": "3.0",
+    "license": "BSD-3-Clause",
+    "retained_license_sha256": {
+      "pycparser-3.0.dist-info/licenses/LICENSE": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+    }
+  },
+  {
+    "distribution": "pydantic",
+    "version": "2.13.5",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "pydantic-2.13.5.dist-info/licenses/LICENSE": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+    }
+  },
+  {
+    "distribution": "pydantic-core",
+    "version": "2.46.5",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "pydantic_core-2.46.5.dist-info/licenses/LICENSE": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+    }
+  },
+  {
+    "distribution": "pyhpke",
+    "version": "0.6.5",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "pyhpke-0.6.5.dist-info/licenses/LICENSE": "d749a6cb9a26f209af97b381366caf71091e646ede04c55f85a092b35180adbd"
+    }
+  },
+  {
+    "distribution": "pysweph",
+    "version": "2.10.3.6",
+    "license": "See original retained upstream notices; metadata is not a compact SPDX expression",
+    "retained_license_sha256": {
+      "pysweph-2.10.3.6.dist-info/licenses/LICENSE": "7491d821a58cfa08c32e93af69ee4facb0a1b3ea06ee26110a3c400cbe557714"
+    }
+  },
+  {
+    "distribution": "shapely",
+    "version": "2.1.2",
+    "license": "BSD 3-Clause",
+    "retained_license_sha256": {
+      "shapely-2.1.2.dist-info/licenses/LICENSE.txt": "4a207eac9bf257ed286e1c6f0fce253d1abfdb134fc61ec855e37f5692a3f754",
+      "shapely-2.1.2.dist-info/licenses/LICENSE_GEOS": "138b2c2f9450073d7c116abe397ca4382625671c752b7a9a5f320b33fc3f3f2a"
+    }
+  },
+  {
+    "distribution": "starlette",
+    "version": "1.7.0",
+    "license": "BSD-3-Clause",
+    "retained_license_sha256": {
+      "starlette-1.7.0.dist-info/licenses/LICENSE.md": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    }
+  },
+  {
+    "distribution": "typing-extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "retained_license_sha256": {
+      "typing_extensions-4.16.0.dist-info/licenses/LICENSE": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    }
+  },
+  {
+    "distribution": "typing-inspection",
+    "version": "0.4.4",
+    "license": "MIT",
+    "retained_license_sha256": {
+      "typing_inspection-0.4.4.dist-info/licenses/LICENSE": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+    }
+  },
+  {
+    "distribution": "uvicorn",
+    "version": "0.53.0",
+    "license": "BSD-3-Clause",
+    "retained_license_sha256": {
+      "uvicorn-0.53.0.dist-info/licenses/LICENSE.md": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
     }
   }
 ]

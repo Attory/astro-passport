@@ -82,6 +82,7 @@ def run(
     directory: Path,
     lahiri: bool = False,
     western: tuple[float, float] | None = None,
+    kinematics: bool = False,
 ) -> dict[str, object]:
     swe = _library()
     swe.set_ephe_path(str(directory))
@@ -121,6 +122,7 @@ def run(
     western_result = None
     if western is not None:
         bodies = []
+        motion = []
         for body in (
             swe.SUN,
             swe.MOON,
@@ -145,6 +147,20 @@ def run(
             ):
                 raise WorkerFailure("native_failure")
             bodies.append(float(values[0]).hex())
+            if kinematics:
+                # Additive facts only: preserve the established flags2 longitudes
+                # above. SPEED supplies actual native velocities, never finite
+                # differences or an ACE/Unbubble recomputation.
+                complete, complete_flags, complete_warning = swe.calc(jd_tt, body, 258)
+                if complete_flags != 258:
+                    raise WorkerFailure("fallback_rejected")
+                if (
+                    complete_warning
+                    or len(complete) != 6
+                    or not all(math.isfinite(v) for v in complete)
+                ):
+                    raise WorkerFailure("native_failure")
+                motion.append([float(v).hex() for v in complete])
         houses: dict[str, object]
         try:
             cusps, axes = swe.houses_ex(jd_ut1, western[0], western[1], b"P", 0)
@@ -165,6 +181,13 @@ def run(
                 "mc": float(axes[1]).hex(),
             }
         western_result = {"positions": bodies, "houses": houses}
+        if kinematics:
+            western_result["kinematics"] = {
+                "profile": "swiss-geocentric-kinematics.v1",
+                "requested_flags": 258,
+                "returned_flags": [258] * len(motion),
+                "values": motion,
+            }
     sidereal = None
     if lahiri:
         swe.set_sid_mode(swe.SIDM_LAHIRI, 0.0, 0.0)
@@ -219,8 +242,15 @@ def main() -> None:
         utc = dt.datetime.fromisoformat(raw["utc"])
         if (
             utc.utcoffset() != dt.timedelta(0)
-            or set(raw) not in ({"utc"}, {"utc", "lahiri"}, {"utc", "western"})
+            or set(raw)
+            not in (
+                {"utc"},
+                {"utc", "lahiri"},
+                {"utc", "western"},
+                {"utc", "western", "kinematics"},
+            )
             or ("lahiri" in raw and raw["lahiri"] is not True)
+            or ("kinematics" in raw and raw["kinematics"] is not True)
         ):
             raise WorkerFailure("invalid_input")
         if "western" in raw:
@@ -235,7 +265,9 @@ def main() -> None:
                 or not -180 <= lon <= 180
             ):
                 raise WorkerFailure("invalid_input")
-            result = run(utc, Path.cwd(), western=(lat, lon))
+            result = run(
+                utc, Path.cwd(), western=(lat, lon), kinematics=raw.get("kinematics", False)
+            )
         else:
             result = run(utc, Path.cwd(), True) if raw.get("lahiri") else run(utc, Path.cwd())
         print(json.dumps(result, separators=(",", ":"), allow_nan=False))

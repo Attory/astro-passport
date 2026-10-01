@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any, TypeVar
 
 from app.build import require_revision
-from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1, ErrorCode
+from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1, ErrorCode, SelectedPlace
 from app.lahiri import LahiriRequest, LahiriResponse
 from app.science.boundaries.contracts import GeographicCoordinates, TimezoneBoundaryError
 from app.science.boundaries.tbb import TBBTimezoneBoundaryResolver
@@ -17,6 +17,7 @@ from app.science.civil.contracts import CivilTimeError
 from app.science.civil.tzdb import PinnedCivilTimeResolver
 from app.science.ephemeris.adapter import SwissEphemeris
 from app.science.ephemeris.contracts import EphemerisError, EphemerisRequest, longitude_decimal
+from app.science.ephemeris.identity import BINARY_SHA256, BINDING_SOURCE_SHA256, DATA
 from app.science.errors import ScienceFailure
 from app.science.natal.service import NatalError, NatalService
 from app.science.raw_input import RawBirthInput
@@ -213,15 +214,25 @@ class PassportScience:
         return await self._submit(lambda: self._lahiri(request))
 
     def _western(self, request: WesternRequest) -> WesternResponse:
+        return self._western_bundle(request)[0]
+
+    def _western_bundle(
+        self,
+        request: WesternRequest,
+        *,
+        kinematics: bool = False,
+    ) -> tuple[WesternResponse, dict[int, Any] | None]:
         base = self._lahiri(request.lahiri_request())
         try:
             astronomy, raw = self.ephemeris.calculate_western(
                 EphemerisRequest(utc=dt.datetime.fromisoformat(base.tropical.civil.utc)),
                 request.selected_place.latitude,
                 request.selected_place.longitude,
+                kinematics=kinematics,
             )
         except EphemerisError as exc:
             raise ScienceFailure(ERROR_CODES[exc.category.value]) from None
+        extra = raw.pop("kinematics", None) if kinematics else None
         if (
             tuple(p.binary64_hex for p in astronomy.positions)
             != tuple(p.binary64_hex for p in base.tropical.bodies)
@@ -258,7 +269,7 @@ class PassportScience:
             output_houses = {**common, **houses}
         else:
             raise ScienceFailure("invalid_result")
-        return WesternResponse.model_validate_json(
+        result = WesternResponse.model_validate_json(
             json.dumps(
                 {
                     "schema_version": "AstroPassportWesternResponse.v1-mvp",
@@ -285,6 +296,74 @@ class PassportScience:
                 }
             )
         )
+        motion = None
+        if kinematics:
+            if (
+                not isinstance(extra, dict)
+                or set(extra)
+                != {
+                    "profile",
+                    "requested_flags",
+                    "returned_flags",
+                    "values",
+                }
+                or extra["profile"] != "swiss-geocentric-kinematics.v1"
+            ):
+                raise ScienceFailure("invalid_result")
+            motion = {
+                0: 1,
+                1: extra["requested_flags"],
+                2: extra["returned_flags"],
+                3: [[float.fromhex(v) for v in row] for row in extra["values"]],
+            }
+        return result, motion
+
+    async def calculate_portable(
+        self,
+        request: WesternRequest,
+    ) -> tuple[WesternResponse, dict[int, Any] | None]:
+        return await self._submit(lambda: self._western_bundle(request, kinematics=True))
+
+    async def describe_unknown(self, selected: SelectedPlace) -> dict[str, Any]:
+        def describe() -> dict[str, Any]:
+            try:
+                boundary = self.boundaries.resolve(
+                    GeographicCoordinates(
+                        latitude=selected.latitude,
+                        longitude=selected.longitude,
+                    )
+                )
+            except TimezoneBoundaryError as exc:
+                raise ScienceFailure(ERROR_CODES[exc.category.value]) from None
+            if boundary.status != "resolved":
+                codes: dict[str, ErrorCode] = {
+                    "boundary": "boundary_boundary",
+                    "ambiguous": "boundary_ambiguous",
+                    "no_match": "boundary_no_match",
+                }
+                raise ScienceFailure(codes[boundary.status])
+            # Resource provenance, NOT a fabricated UTC/UT1/TT or natal position.
+            return {
+                "status": "unavailable",
+                "reason": "unknown_birth_time",
+                "library": "2.10.03",
+                "binding": "pysweph-2.10.3.6",
+                "binary_sha256": BINARY_SHA256,
+                "binding_source_sha256": BINDING_SOURCE_SHA256,
+                "planet_data_sha256": DATA[0][2],
+                "moon_data_sha256": DATA[1][2],
+                "data_origin": "DE441",
+                "source_repository": "https://github.com/Attory/astro-passport",
+                "source_revision": self.revision,
+                "boundary": {
+                    "schema_version": boundary.schema_version,
+                    "outcome": "unique",
+                    "iana_zone": boundary.tzid,
+                    "provenance": boundary.provenance.model_dump(mode="json"),
+                },
+            }
+
+        return await self._submit(describe)
 
     async def calculate_western(self, request: WesternRequest) -> WesternResponse:
         return await self._submit(lambda: self._western(request))

@@ -4,14 +4,16 @@
 import asyncio
 from collections.abc import AsyncIterator, Awaitable, Callable
 from contextlib import asynccontextmanager
+from typing import Any
 
 from fastapi import FastAPI, Request
 from starlette.responses import JSONResponse, Response
 
 from app.api import SciencePort, ScienceUnavailable, UnavailableScience, install_api
 from app.build import identity
-from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1
+from app.contracts import AstroPassportRequestV1, AstroPassportResponseV1, SelectedPlace
 from app.lahiri import LahiriRequest, LahiriResponse
+from app.portable import PortableIssuer
 from app.security import Settings
 from app.western import WesternRequest, WesternResponse
 
@@ -40,7 +42,30 @@ def create_app(settings: Settings | None = None, science: SciencePort | None = N
             result = await method(request)
             return WesternResponse.model_validate_json(result.model_dump_json())
 
+        async def calculate_portable(
+            self, request: WesternRequest
+        ) -> tuple[WesternResponse, dict[int, Any] | None]:
+            method = getattr(self.delegate, "calculate_portable", None)
+            if method is None:
+                raise ScienceUnavailable
+            result = await method(request)
+            return WesternResponse.model_validate_json(result[0].model_dump_json()), result[1]
+
+        async def describe_unknown(self, selected: SelectedPlace) -> dict[str, Any]:
+            method = getattr(self.delegate, "describe_unknown", None)
+            if method is None:
+                raise ScienceUnavailable
+            result: dict[str, Any] = await method(selected)
+            return result
+
     runtime = Runtime()
+    issuer = None
+    if configured.signing_key_file is not None and configured.signing_key_id is not None:
+        try:
+            issuer = PortableIssuer(configured.signing_key_file, configured.signing_key_id)
+        except Exception:
+            # Legacy consumers remain available; signed issuance fails closed.
+            issuer = None
 
     @asynccontextmanager
     async def lifespan(service: FastAPI) -> AsyncIterator[None]:
@@ -86,13 +111,23 @@ def create_app(settings: Settings | None = None, science: SciencePort | None = N
             {"status": "not_ready", "reason": "science_unavailable"}, status_code=503
         )
 
+    @service.get("/v2/health/ready")
+    async def portable_ready() -> JSONResponse:
+        available = runtime.ready and issuer is not None
+        return JSONResponse(
+            {"status": "ready" if available else "not_ready", "contract_version": "2.0.0"},
+            status_code=200 if available else 503,
+        )
+
     @service.get("/source")
     @service.get("/health/version")
+    @service.get("/v2/source")
+    @service.get("/v2/health/version")
     async def version() -> JSONResponse:
         data = identity()
         return JSONResponse(data, status_code=200 if data["git_sha"] else 503)
 
-    install_api(service, configured, runtime)
+    install_api(service, configured, runtime, issuer)
     return service
 
 
