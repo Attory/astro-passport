@@ -23,3 +23,11 @@ def test_apache_notice_matches_only_exact_contract_bytes() -> None:
         source = (ROOT / "contracts" / relative).read_bytes()
         assert hashlib.sha256(source).hexdigest() == expected
         assert f"| `{relative}` | `{expected}` |" in notice
+
+
+def test_contract_readme_distinguishes_canonical_tag_and_later_five_file_grant() -> None:
+    readme = (ROOT / "contracts/README.md").read_text()
+    assert "astropassport-schema-v1.0.0" in readme
+    assert "2ec5788d7c5fde2313df189f304e5cc312d128c0" in readme
+    assert "five other exact neutral" in readme
+    assert "No schema tag or canonical release exists" not in readme

@@ -1,7 +1,8 @@
-# Accepted public API semantics — canonical release pending
+# Accepted public API semantics — canonical schema released
 
-Status: **AAC-accepted 1.0.0 revision 2 semantics; not a published schema release**.
-request/response/provenance/error families are `.v1`. No schema tag or canonical release exists.
+Status: **AAC-accepted 1.0.0 revision 2 semantics; canonical schema tag
+`astropassport-schema-v1.0.0` resolves to APT `2ec5788d7c5fde2313df189f304e5cc312d128c0`**.
+Request/response/provenance/error families are `.v1`.
 The limited `sun-moon.v1` profile is not full AstroIdentity, ACEP1, NCF, NAD, WPF or a fingerprint.
 
 Accepted bytes: `accepted/schema.json`; validators: `app/contracts.py`; conformance checker:
@@ -12,17 +13,18 @@ Pydantic semantic validators add invariants beyond JSON Schema (calendar validit
 finite hexadecimal numbers); the release must approve both the specification and conformance
 tests. This implementation is not a required client SDK. Independent JSON/HTTPS clients only.
 
-The sole prospective canonical publication path is the schema's `$id`:
+The sole canonical publication path is the schema's `$id`:
 `https://raw.githubusercontent.com/Attory/astro-passport/astropassport-schema-v1.0.0/contracts/astropassport/v1/schema.json`.
-AAC must approve exact bytes/digest and rights before that immutable tag/release is created.
-Record the tag's resolved Git SHA and protect deletion/retagging; clients additionally pin SHA-256.
+AAC approved the exact bytes/digest and rights before that tag was created.
+Protect deletion/retagging; clients additionally pin the SHA-256
+`6d02118dd7b5ed16f52e1a67d2b270da53d070afe83c58e934484a0db5e8467c`.
 Do not treat a floating main URL, generated OpenAPI, or private governance copy as an authority.
-The 2026-10-01 publication authorization grants Apache-2.0 only for the two
-identical, independently authored neutral JSON Schema files identified in
-[`NOTICE`](NOTICE). Their accepted bytes and `$id` do not change. The other
-contract documents and the APT scientific service retain their prior terms.
-Publication must still pin the exact commit and schema SHA-256 and protect the
-canonical tag; a licence grant by itself is not proof of a released tag.
+The 2026-10-01 grant covers the two identical neutral JSON Schema files.
+The 2026-10-02 rights-holder grant adds **only** the five other exact neutral
+contract files, individually SHA-256-pinned in [`NOTICE`](NOTICE). No accepted
+bytes or `$id` changed; every other contract document and the APT scientific
+service retains its prior terms. The licence grant and canonical release are
+separate facts with separate evidence.
 
 ## Request
 
@@ -79,6 +81,7 @@ The server currently supports exactly `1.0.0` in both header and body. No implic
 additive unknown-field acceptance. Future compatible releases need explicit support matrices and
 conformance tests; incompatible changes require a new major route. Scientific profile, datasets,
 numerical policy and source SHA remain separate from API version. Limits are operational policy,
-not astrological constants. **Default disabled; missing artifacts/build/runtime prerequisites
-fail readiness closed. Scientific implementation and parity evidence are under review; no
-deployment or external activation is authorized.**
+not astrological constants. **Calculation remains default disabled; missing
+artifacts/build/runtime prerequisites fail readiness closed.** This v1
+contract does not itself authorize any new deployment or v2 activation; actual
+hosted route state is recorded separately in deployment evidence.

@@ -7,6 +7,7 @@ import hashlib
 import json
 import logging
 import sqlite3
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -264,16 +265,33 @@ def test_atomic_quota_clock_rollback_and_no_overwrite(tmp_path: Path) -> None:
         initialize_quota(settings.quota_file)
 
 
-def test_quota_waits_for_short_lock_and_keeps_atomic_limit(tmp_path: Path) -> None:
+def test_quota_waits_for_short_lock_and_keeps_atomic_limit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     settings = provision(tmp_path, 1)
     assert settings.keys_file and settings.quota_file
     key = KeyRecord.model_validate(json.loads(settings.keys_file.read_text())[0])
     now = dt.datetime(2030, 1, 1, tzinfo=dt.UTC)
     with sqlite3.connect(settings.quota_file) as blocker:
         blocker.execute("BEGIN IMMEDIATE")
+        entered = threading.Event()
+        original_connect = sqlite3.connect
+
+        class ProbedConnection(sqlite3.Connection):
+            def execute(self, sql: str, *args: object, **kwargs: object):
+                if sql == "BEGIN IMMEDIATE":
+                    entered.set()
+                return super().execute(sql, *args, **kwargs)
+
+        def probed_connect(*args: object, **kwargs: object) -> sqlite3.Connection:
+            return original_connect(*args, factory=ProbedConnection, **kwargs)
+
+        monkeypatch.setattr("app.security.sqlite3.connect", probed_connect)
         with ThreadPoolExecutor(max_workers=1) as workers:
             future = workers.submit(reserve_quota, settings.quota_file, key, now)
+            assert entered.wait(timeout=1)
             time.sleep(0.25)
+            assert not future.done()
             blocker.rollback()
             assert future.result(timeout=2) is True
     assert reserve_quota(settings.quota_file, key, now) is False
