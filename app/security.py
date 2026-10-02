@@ -137,7 +137,10 @@ def reserve_quota(path: Path | None, key: KeyRecord, now: dt.datetime) -> bool:
         if info.st_uid not in (0, os.getuid()):
             raise SecurityStateError
         bucket = int(now.timestamp()) // 60
-        with sqlite3.connect(path.resolve().as_uri() + "?mode=rw", uri=True, timeout=0.1) as db:
+        # Bounded contention across concurrent worker threads/processes.
+        # A 100 ms wait was shorter than ordinary CI/VPS scheduling jitter;
+        # persistent lock failure still raises SecurityStateError fail-closed.
+        with sqlite3.connect(path.resolve().as_uri() + "?mode=rw", uri=True, timeout=1.0) as db:
             db.execute("PRAGMA synchronous = FULL")
             db.execute("BEGIN IMMEDIATE")
             if db.execute("PRAGMA user_version").fetchone()[0] != 1:

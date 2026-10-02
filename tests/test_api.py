@@ -6,6 +6,8 @@ import datetime as dt
 import hashlib
 import json
 import logging
+import sqlite3
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -260,6 +262,21 @@ def test_atomic_quota_clock_rollback_and_no_overwrite(tmp_path: Path) -> None:
         reserve_quota(settings.quota_file, key, now)
     with pytest.raises(FileExistsError):
         initialize_quota(settings.quota_file)
+
+
+def test_quota_waits_for_short_lock_and_keeps_atomic_limit(tmp_path: Path) -> None:
+    settings = provision(tmp_path, 1)
+    assert settings.keys_file and settings.quota_file
+    key = KeyRecord.model_validate(json.loads(settings.keys_file.read_text())[0])
+    now = dt.datetime(2030, 1, 1, tzinfo=dt.UTC)
+    with sqlite3.connect(settings.quota_file) as blocker:
+        blocker.execute("BEGIN IMMEDIATE")
+        with ThreadPoolExecutor(max_workers=1) as workers:
+            future = workers.submit(reserve_quota, settings.quota_file, key, now)
+            time.sleep(0.25)
+            blocker.rollback()
+            assert future.result(timeout=2) is True
+    assert reserve_quota(settings.quota_file, key, now) is False
 
 
 @pytest.mark.parametrize("body", [b'{"a":1,"a":2}', b"NaN", b"{", b"[]", b'"secret"'])
