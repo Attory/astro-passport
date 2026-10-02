@@ -2,8 +2,8 @@
 
 Public **AGPL-3.0-only** service implementation. The additive signed `/v2`
 candidate is not deployed at this source checkpoint; the hosted `/v1` service
-is an older release. The neutral codec and two JSON Schema files have narrow
-Apache-2.0 grants; see [licensing](docs/licensing.md).
+is an older release. The neutral codec and exact contract files identified in
+`contracts/NOTICE` have narrow Apache-2.0 grants; see [licensing](docs/licensing.md).
 APT produces deterministic geographic, civil-time and astronomical facts for one
 person. It does not calculate compatibility, scores, interpretation or social/account identity.
 

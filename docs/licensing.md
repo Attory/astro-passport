@@ -10,12 +10,14 @@ The standard upstream AGPL licence text is not private implementation.
 
 The newly authored implementation-neutral [passport codec](../passport_codec/README.md)
 is independently Apache-2.0 at version 1.0.0; its package licence and notice
-are in that directory. The two identical neutral JSON Schema files named in
-`contracts/NOTICE` are independently Apache-2.0 without changing their accepted
-bytes. No ACE compatibility methodology or AGPL scientific code was copied into
-either narrow grant. The 2026-10-01 human publication authorization supplies
-the previously missing licence choice; the provenance inventory remains the
-limit on what can be granted. Other contract documents retain their prior terms.
+are in that directory. The two identical neutral JSON Schema files and five
+additional exact neutral contract artifacts named and SHA-256-pinned in
+[the contract notice](../contracts/NOTICE) are independently Apache-2.0 without
+changing their bytes. The 2026-10-02 rights-holder clarification identifies
+Anton Mosin and supplies the five-file additional grant; prior grants remain.
+No ACE compatibility methodology or AGPL scientific code is covered. The
+[provenance inventory](publication/rights-inventory.md) limits this grant;
+other contract documents retain their prior terms.
 
 Public source: <https://github.com/Attory/astro-passport>. A release must retain its exact source
 commit, lockfile, Docker/build instructions, editable contract sources and public synthetic tests.

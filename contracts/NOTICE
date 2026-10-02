@@ -1,14 +1,31 @@
-AstroPassport neutral schema publication
-Copyright 2026 Attory contributors
+AstroPassport neutral contract publication
+Copyright © 2026 Anton Mosin
 
-Apache-2.0 applies only to the independently authored neutral JSON Schema
-artifacts at `accepted/schema.json` and `astropassport/v1/schema.json`.
-The accepted schema's bytes, `$id`, profile/domain identifiers and scientific
-semantics are unchanged. Other files in this directory retain their previously
-applicable licence and governance status; no private ACE methodology is granted
-for publication under this notice.
+The Apache License, Version 2.0, in `LICENSE` applies **only** to these exact
+implementation-neutral artifact bytes (paths relative to this directory):
 
-The canonical schema is intended for the immutable
-`astropassport-schema-v1.0.0` tag. Until that exact protected tag and its
-resolved Git commit are verified publicly, this notice does not claim a
-canonical release. Consumers must pin both commit and schema SHA-256.
+| Path | SHA-256 |
+| --- | --- |
+| `accepted/schema.json` | `6d02118dd7b5ed16f52e1a67d2b270da53d070afe83c58e934484a0db5e8467c` |
+| `astropassport/v1/schema.json` | `6d02118dd7b5ed16f52e1a67d2b270da53d070afe83c58e934484a0db5e8467c` |
+| `accepted/errors.json` | `7e942b8e0c48929ebb91b440bbb3fd8a36d123c144ed3af97f4806d7389dc38d` |
+| `mvp/lahiri-v1/schema.json` | `95fc7cd0fc093c6c3faa8f10a2282470f58d91cbed1f6f2709d1b5b410d8b477` |
+| `mvp/western-v1/schema.json` | `3a56dc3638c0bd95d9ec60faec0ef8147b58550284299b4380e24263c7c5d062` |
+| `accepted/acep1-profile.md` | `a6f289c3e685a4551301773cd920b3bb64884952f9d7571719a15fb6d41f913b` |
+| `accepted/semantics.md` | `e10218f503ca0c3cf18517f10318a24b5ff30f97ed68a7e163f8982f849f2de8` |
+
+The five newly listed files were byte-verified against ACE revision
+`6739b741f585a9bddf42110c65ba12cb10521a2c` and APT revision
+`2ec5788d7c5fde2313df189f304e5cc312d128c0` before the rights holder
+authorized this additional exact-byte grant on 2026-10-02. It preserves every
+earlier licence grant and recipient right. The accepted schema's bytes, `$id`,
+profile/domain identifiers and scientific semantics are unchanged. All other
+files in this directory retain their previously applicable terms; this notice
+does not relicense the AGPL APT implementation, private ACE methodology,
+third-party material, unrelated source or Git history.
+
+The canonical schema's protected `astropassport-schema-v1.0.0` tag resolved to
+APT commit `2ec5788d7c5fde2313df189f304e5cc312d128c0` at the prior
+publication checkpoint. Consumers must pin both commit and schema SHA-256.
+This new adjacent notice does not change the running APT image or its exact
+Corresponding Source identity.
